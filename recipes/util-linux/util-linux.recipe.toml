@@ -3,7 +3,7 @@ name = "util-linux"
 version = "2.41.1"
 description = "System utilities (mount, fdisk, lsblk...)"
 license = "GPL-2.0-or-later"
-revision = 2
+revision = 3
 arch = ["x86_64"]
 config_files = ["/etc/orchid/services/agetty-tty1.toml", "/etc/orchid/services/agetty-ttyS0.toml"]
 depends = ["ncurses", "zlib"]
@@ -21,14 +21,14 @@ cat > "$DESTDIR/etc/orchid/services/agetty-tty1.toml" <<'SERVICE'
 [service]
 description = "login on the first console"
 exec = ["/usr/sbin/agetty", "--noclear", "tty1", "linux"]
-after = ["mounts"]
+after = ["mounts", "udev-settle", "random-seed", "swap", "sysctl", "hwclock", "dhcpcd", "syslogd"]
 restart = "always"
 SERVICE
 cat > "$DESTDIR/etc/orchid/services/agetty-ttyS0.toml" <<'SERVICE'
 [service]
 description = "login on the serial console"
 exec = ["/usr/sbin/agetty", "-L", "115200", "ttyS0", "vt100"]
-after = ["mounts"]
+after = ["mounts", "udev-settle", "random-seed", "swap", "sysctl", "hwclock", "dhcpcd", "syslogd"]
 restart = "always"
 SERVICE
 mkdir -p "$DESTDIR/var/lib/hwclock"

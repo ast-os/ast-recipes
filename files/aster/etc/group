@@ -21,3 +21,5 @@ uuidd:x:80:
 wheel:x:97:
 users:x:999:
 nogroup:x:65534:
+sgx:x:100:
+render:x:101:

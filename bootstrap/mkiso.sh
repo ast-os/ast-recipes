@@ -32,7 +32,7 @@ cat > "$iso/boot/grub/grub.cfg" <<GRUBCFG
 set timeout=3
 set default=0
 menuentry "asterOS live" {
-    linux /boot/vmlinuz console=tty0 console=ttyS0,115200
+    linux /boot/vmlinuz quiet console=tty0 console=ttyS0,115200
     initrd /boot/initrd
 }
 GRUBCFG
