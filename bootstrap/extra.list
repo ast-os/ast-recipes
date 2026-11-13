@@ -1,3 +1,0 @@
-# Not part of the base: the live media tools and the system information tools.
-squashfs-tools libburn libisofs libisoburn
-cmake fastfetch neofetch pfetch
