@@ -4,43 +4,55 @@ asterOS is installed by hand, the way Gentoo is: boot the live medium, partition
 unpack the stage archive, chroot into it, configure it, install the bootloader. There is no
 installer. x86_64, UEFI only.
 
-The live medium holds the stage archive (`/medium/live/asteros-stage-x86_64.tar.xz`): the
-base system with the kernel, `ast` and the recipes of this release. Nothing needs a network
-until you install packages.
+The live medium carries the stage archive, `/medium/live/asteros-stage-x86_64.tar.xz`: the
+base system with a generic kernel, `ast`, and the recipes of this release. Installing needs no
+network. A network is needed only later, to download the sources of the packages you build.
 
 ## 1. Boot the live medium
 
-Write the ISO to a USB stick (`dd if=asteros-live-x86_64.iso of=/dev/sdX bs=4M status=progress`)
-or attach it to a virtual machine, and boot it in UEFI mode. Log in as `root`, there is no password.
-Check that the firmware booted in UEFI mode: `ls /sys/firmware/efi` must show files.
+Write the ISO to a USB stick, or attach it to a virtual machine, and boot it in UEFI mode.
+
+```bash
+dd if=asteros-live-x86_64.iso of=/dev/sdX bs=4M status=progress conv=fsync
+```
+
+Log in as `root`; there is no password on the live medium. Check that the firmware booted in
+UEFI mode: `ls /sys/firmware/efi` must list files.
 
 ## 2. Partition and format
 
-Below the disk is `/dev/sda` (`lsblk` shows yours): a 512 MiB EFI system partition and the rest
-for the root.
+Find the disk with `lsblk` and set it once. Everything below uses these two variables:
 
 ```bash
-sfdisk /dev/sda <<TABLE
+disk=/dev/sda                  # or /dev/nvme0n1, /dev/vda
+case $disk in *[0-9]) p=${disk}p ;; *) p=$disk ;; esac
+```
+
+A 512 MiB EFI system partition and the rest for the root. This erases the disk.
+
+```bash
+sfdisk "$disk" <<TABLE
 label: gpt
 size=512MiB, type=U
 type=L
 TABLE
-mkfs.vfat -F32 /dev/sda1
-mkfs.ext4 /dev/sda2
+mkfs.vfat -F32 "${p}1"
+mkfs.ext4 "${p}2"
 ```
 
 ## 3. Unpack the stage
 
 ```bash
-mount /dev/sda2 /mnt
+mount "${p}2" /mnt
 mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
+mount "${p}1" /mnt/boot/efi
 tar xpf /medium/live/asteros-stage-x86_64.tar.xz -C /mnt --numeric-owner
 ```
 
 ## 4. Configure
 
-`astfstab` prints the fstab lines for what is mounted under a root; `astchroot` enters it.
+`astfstab` prints the fstab lines, by UUID, for everything mounted under a root. `astchroot`
+mounts `/proc`, `/sys`, `/dev` and `/run` and enters the root.
 
 ```bash
 astfstab /mnt >> /mnt/etc/fstab
@@ -50,23 +62,28 @@ astchroot /mnt
 Inside the chroot:
 
 ```bash
-passwd                         # root has no password yet
+passwd
 echo myhost > /etc/hostname
 ```
 
-Everything else is a file in `/etc`: `fstab`, `hostname`, `hosts`, `profile`, the services in
-`/etc/orchid/services`. `orchid enable NAME` and `orchid disable NAME` choose what starts at boot.
+The rest is plain files in `/etc`: `fstab`, `hostname`, `hosts`, `profile`, and the services in
+`/etc/orchid/services`. `orchid enable NAME` and `orchid disable NAME` choose what starts at
+boot; `orchid list` shows what runs.
 
 ## 5. The bootloader
+
+Still inside the chroot:
 
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=asterOS
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Add `--removable` to `grub-install` for a stick or a firmware that forgets boot entries.
-`grub-mkconfig` finds the kernels in `/boot`. The kernel in the stage is a generic one; to
-configure and build your own, `ast -i linux` builds it from the recipe.
+`grub-install` registers a boot entry in the firmware. If the firmware forgets entries (some
+do), or for a bootable stick, add `--removable`. `grub-mkconfig` finds the kernels in `/boot`.
+
+The kernel in the stage is a generic one. To configure and build your own: `ast -i linux`
+builds it from the recipe.
 
 ## 6. Reboot
 
@@ -76,14 +93,20 @@ umount -R /mnt
 reboot
 ```
 
+Remove the live medium. The system starts from the disk.
+
 ## Afterwards
 
 ```bash
-ast -s ""          # all the packages of the recipes
-ast -iy fastfetch  # build and install one from source
-ast -u             # refresh the repository
-ast -ua            # upgrade everything
+ast -s ""            # every package of the recipes
+ast -iy fastfetch    # build one from source and install it
+ast -u               # refresh the repository
+ast -ua              # upgrade everything
 ```
 
-Packages are built from source on your machine; binaries are rare. The base system's own
-build tools (compiler, `make`, ...) are in the stage.
+Packages are built from source on your machine; binaries are released rarely. The compiler and
+the other build tools are part of the installed system. The live medium has none: it only installs.
+
+Network: there is no DHCP client yet. Configure an interface by hand, for example
+`ip link set eth0 up; ip addr add 192.168.1.10/24 dev eth0; ip route add default via 192.168.1.1`,
+and put the resolver in `/etc/resolv.conf`.
