@@ -1,0 +1,8 @@
+# The base system in build order: the toolchain first, then what builds on it.
+iana-etc glibc zlib bzip2 xz lz4 zstd file readline m4 bc flex pkgconf
+binutils gmp mpfr mpc attr acl libcap libxcrypt shadow gcc
+ncurses sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils less
+perl autoconf automake openssl elfutils libffi python ninja meson kmod
+coreutils diffutils gawk findutils grub gzip iproute2 kbd make patch tar texinfo vim
+eudev util-linux e2fsprogs sysklogd procps-ng tzdata
+dosfstools efivar popt efibootmgr sudo

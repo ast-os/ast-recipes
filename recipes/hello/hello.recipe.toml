@@ -1,0 +1,13 @@
+[package]
+name = "hello"
+version = "2.12.2"
+description = "Prints a greeting (the test package)"
+license = "GPL-3.0-or-later"
+arch = ["x86_64"]
+
+[source]
+url = "https://ftpmirror.gnu.org/hello/hello-2.12.2.tar.gz"
+sha256 = "5a9a996dc292cc24dcf411cee87e92f6aae5b8d13bd9c6819b4c7a9dce0818ab"
+
+[build]
+style = "gnu"

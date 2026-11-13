@@ -1,0 +1,6 @@
+NAME="asterOS"
+PRETTY_NAME="asterOS"
+ID=asteros
+BUILD_ID=rolling
+ANSI_COLOR="1;35"
+HOME_URL="https://github.com/ast-os"

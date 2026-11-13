@@ -1,0 +1,26 @@
+[package]
+name = "gcc"
+version = "15.2.0"
+description = "The GNU compiler collection (C, C++)"
+license = "GPL-3.0-or-later"
+arch = ["x86_64"]
+depends = ["binutils", "gmp", "mpfr", "mpc", "zlib"]
+
+[source]
+url = "https://ftpmirror.gnu.org/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz"
+sha256 = "438fd996826b0c82485a29da03a72d71d6e3541a83ec702df4271f6fe025d24e"
+
+[build]
+style = "gnu"
+configure = ["--enable-languages=c,c++", "--enable-default-pie", "--enable-default-ssp", "--enable-host-pie", "--disable-multilib", "--disable-bootstrap", "--disable-fixincludes", "--with-system-zlib"]
+out_of_tree = true
+prepare = '''
+sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
+'''
+fixup = '''
+ln -sf gcc "$DESTDIR/usr/bin/cc"
+ln -sfr "$DESTDIR/usr/bin/cpp" "$DESTDIR/usr/lib/cpp"
+mkdir -p "$DESTDIR/usr/lib/bfd-plugins"
+ln -sf ../../libexec/gcc/x86_64-pc-linux-gnu/15.2.0/liblto_plugin.so "$DESTDIR/usr/lib/bfd-plugins/"
+rm -rf "$DESTDIR/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.0/include-fixed/bits"
+'''

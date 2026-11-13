@@ -1,0 +1,12 @@
+# Begin /etc/profile
+export PATH=/usr/local/bin:/usr/bin:/usr/sbin
+export LANG=C.UTF-8 2>/dev/null || export LANG=C
+if [ "$(id -u)" = 0 ]; then
+    PS1='\u@\h:\w# '
+else
+    PS1='\u@\h:\w$ '
+fi
+export PS1
+for script in /etc/profile.d/*.sh; do [ -r "$script" ] && . "$script"; done
+unset script
+# End /etc/profile

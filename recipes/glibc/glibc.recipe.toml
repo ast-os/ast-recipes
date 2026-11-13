@@ -1,0 +1,45 @@
+[package]
+name = "glibc"
+version = "2.42"
+description = "The GNU C library"
+license = "LGPL-2.1-or-later"
+arch = ["x86_64"]
+config_files = ["/etc/nsswitch.conf", "/etc/ld.so.conf"]
+
+[source]
+url = "https://ftpmirror.gnu.org/glibc/glibc-2.42.tar.xz"
+sha256 = "d1775e32e4628e64ef930f435b67bb63af7599acb6be2b335b9f19f16509f17f"
+
+[build]
+build = '''
+mkdir -p build
+cd build
+echo "rootsbindir=/usr/sbin" > configparms
+../configure --prefix=/usr --disable-werror --enable-kernel=5.4 --enable-stack-protector=strong --disable-nscd libc_cv_slibdir=/usr/lib
+make -j"$JOBS"
+'''
+install = '''
+cd build
+sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+make DESTDIR="$DESTDIR" install
+sed '/RTLDLIST=/s@/usr@@g' -i "$DESTDIR/usr/bin/ldd"
+'''
+fixup = '''
+install -d "$DESTDIR/etc/ld.so.conf.d"
+cat > "$DESTDIR/etc/nsswitch.conf" <<'NSS'
+passwd: files
+group: files
+shadow: files
+hosts: files dns
+networks: files
+protocols: files
+services: files
+ethers: files
+rpc: files
+NSS
+cat > "$DESTDIR/etc/ld.so.conf" <<'LDS'
+/usr/local/lib
+/opt/lib
+include /etc/ld.so.conf.d/*.conf
+LDS
+'''

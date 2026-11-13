@@ -1,0 +1,16 @@
+[package]
+name = "sudo"
+version = "1.9.17p2"
+description = "Run commands as another user"
+license = "ISC"
+arch = ["x86_64"]
+depends = ["zlib"]
+config_files = ["/etc/sudoers"]
+
+[source]
+url = "https://www.sudo.ws/dist/sudo-1.9.17p2.tar.gz"
+sha256 = "4a38a1ab3adb1199257edc2a7c4a2bd714665eb605b04368843b06dada2cfcfb"
+
+[build]
+style = "gnu"
+configure = ["--libexecdir=/usr/lib", "--with-secure-path", "--with-env-editor", "--with-passprompt=\"[sudo] password for %p: \""]
