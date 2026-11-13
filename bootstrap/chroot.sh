@@ -13,5 +13,8 @@ exec unshare --mount --pid --fork --propagation private -- bash -ec '
     mount --bind "$1" "$0/sources"
     for b in $BIND; do mkdir -p "$0${b#*=}"; mount --bind "${b%%=*}" "$0${b#*=}"; done
     root=$0; shift
-    exec chroot "$root" /usr/bin/env -i HOME=/root TERM="$TERM" PATH=/usr/bin:/usr/sbin LC_ALL=POSIX "$@"
+    rc=0; chroot "$root" /usr/bin/env -i HOME=/root TERM="$TERM" PATH=/usr/bin:/usr/sbin LC_ALL=POSIX "$@" || rc=$?
+    # the mount points made for BIND do not stay in the system
+    for b in $BIND; do umount "$root${b#*=}" && rmdir "$root${b#*=}"; done
+    exit $rc
 ' "$AST" "$SRC" "$@"

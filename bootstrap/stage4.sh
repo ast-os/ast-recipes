@@ -5,15 +5,15 @@ set -e
 . "$(dirname "$0")/env.sh"
 [ "$(id -u)" = 0 ] || { echo "run it as: unshare -r --map-auto $0" >&2; exit 1; }
 ASTBIN=$HERE/ast/target/release
-KEY=$HERE/work/keys/asteros-dev
+KEY=${ASTEROS_KEY:-$HOME/.config/asteros-keys/asteros}   # the release key (secret part: keep it offline)
 
 # ast itself, the recipes as a repository, its configuration, the sources as a mirror
 install -m755 "$ASTBIN/ast" "$ASTBIN/astpkg" "$AST/usr/bin/"
 rm -rf "$AST/repo"; mkdir -p "$AST/repo"
-"$ASTBIN/astpkg" publish "$HERE/recipes" --no-build --out "$AST/repo" --name ast --arch x86_64 --channel stable --key "$KEY.key" >/dev/null
-mkdir -p "$AST/etc/ast/keys" "$AST/var/cache/ast" "$AST"/{dev,proc,sys,run,sources}
-cp "$KEY.pub" "$AST/etc/ast/keys/asteros-dev.pub"
-cat > "$AST/etc/ast/ast.toml" <<TOML
+"$ASTBIN/astpkg" publish "$HERE/recipes" --no-build --out "$AST/repo" --name ast --arch x86_64 --channel stable --key "$KEY.key" --files "$HERE/work/dist" >/dev/null
+mkdir -p "$AST/etc/ast-bootstrap/keys" "$AST/var/cache/ast" "$AST"/{dev,proc,sys,run,sources}
+cp "$KEY.pub" "$AST/etc/ast-bootstrap/keys/asteros.pub"
+cat > "$AST/etc/ast-bootstrap/ast.toml" <<TOML
 [core]
 architecture = "x86_64"
 
@@ -21,18 +21,20 @@ architecture = "x86_64"
 allow_untested = true
 
 [build]
+# a chroot cannot create the namespaces bubblewrap needs: the bootstrap builds unisolated, the
+# installed system (the aster package) requires the sandbox
 sandbox = "none"
 uid = 0
 gid = 0
 jobs = $(nproc)
 mirrors = ["file:///sources"]
 TOML
-cat > "$AST/etc/ast/repos.toml" <<TOML
+cat > "$AST/etc/ast-bootstrap/repos.toml" <<TOML
 [ast]
 url = "file:///repo"
 enabled = true
 priority = 100
-key = "asteros-dev.pub"
+key = "asteros.pub"
 channel = "stable"
 TOML
 cp /etc/resolv.conf "$AST/etc/resolv.conf" 2>/dev/null || true
@@ -41,12 +43,22 @@ if [ $# -gt 0 ]; then list="$*"; else list=$(grep -v '^#' "$HERE/bootstrap/base.
 cat > "$AST/stage4-chroot.sh" <<'INNER'
 #!/bin/bash
 set -e
+# this build reads its own configuration (local repository, local sources, no sandbox)
+ast() { command ast -C /etc/ast-bootstrap "$@"; }
 ast -uy
 for p in "$@"; do
     if ast -l | grep -q "^$p  "; then echo "== $p (installed)"; continue; fi
     echo "== $p"
     ast -iy --adopt "$p" || { echo "FAILED: $p"; exit 1; }
 done
+# recipes that changed since the last run (the host-built ast of the first lines becomes the package)
+ast -uay --adopt
+# the cross toolchain of the first stages is not part of the system (the temporary tools were
+# adopted by the packages; what no package owns and is named for the cross target goes)
+rm -rf /usr/x86_64-aster-linux-gnu /usr/lib/gcc/x86_64-aster-linux-gnu /usr/libexec/gcc/x86_64-aster-linux-gnu /usr/include/c++/*/x86_64-aster-linux-gnu
+rm -f /usr/bin/x86_64-aster-linux-gnu-*
+# what only the build needed
+for p in rust-bin; do ast -l | grep -q "^$p  " && ast -ry "$p"; done
 echo "== stage 4 done"
 INNER
 exec unshare --mount --pid --fork --propagation private -- bash -ec '

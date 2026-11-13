@@ -1,37 +1,26 @@
 #!/bin/bash
-# The live ISO (UEFI, x86_64): the system without the toolchain on a squashfs, an initramfs that finds
-# the medium and puts a tmpfs over it, GRUB, and the stage archive to install from.
-# Run as: unshare -r --map-auto bootstrap/mkiso.sh      (after mkstage.sh)
-# Needs squashfs-tools and libisoburn installed in work/root (extra.list).
+# The live ISO (UEFI, x86_64): the stage as a squashfs, an initramfs that finds the medium and puts a
+# tmpfs over the image, GRUB. The system on the medium is the system that gets installed: the live
+# settings (no root password, a hostname) are added above the image at boot, not in it.
+# Run as: unshare -r --map-auto bootstrap/mkiso.sh      (after mkstage.sh and hosttools.sh)
 set -e
 . "$(dirname "$0")/env.sh"
 [ "$(id -u)" = 0 ] || { echo "run it as: unshare -r --map-auto $0" >&2; exit 1; }
 W=$HERE/work
-stage=$W/stage; live=$W/live; iso=$W/iso; initrd=$W/initrd; efi=$W/efi
+stage=$W/stage; iso=$W/iso; initrd=$W/initrd; efi=$W/efi
 out=$W/asteros-live-x86_64.iso
+xorriso=$W/host/bin/xorriso
 [ -d "$stage" ] || { echo "no $stage: run mkstage.sh first" >&2; exit 1; }
-rm -rf "$live" "$iso" "$initrd" "$efi"; mkdir -p "$live" "$iso"/{boot/grub,live} "$efi"
+[ -x "$xorriso" ] || { echo "no xorriso: run hosttools.sh first" >&2; exit 1; }
+rm -rf "$iso" "$initrd" "$efi"; mkdir -p "$iso"/{boot/grub,live} "$efi"
 
-echo "== the live system"
-tar -C "$stage" -cf - . | tar -C "$live" -xpf -
-# no compilers on the medium: a live system installs, it does not build
-rm -rf "$live"/usr/include "$live"/usr/lib/gcc "$live"/usr/libexec/gcc "$live"/usr/lib/perl5 "$live"/usr/lib/python3* \
-    "$live"/usr/share/{doc,man,info,gtk-doc,perl5} "$live"/usr/lib/*.a "$live"/usr/lib/cmake "$live"/var/db/ast/repo
-for b in gcc g++ cc c++ cpp gcov gcov-dump gcov-tool lto-dump gcc-ar gcc-nm gcc-ranlib ld ld.bfd ld.gold as ar nm objdump objcopy \
-    ranlib readelf strip size strings gprof addr2line c++filt elfedit perl python3 pydoc3 meson ninja; do
-    rm -f "$live/usr/bin/$b" "$live/usr/bin/$AST_TGT-$b" "$live/usr/bin/x86_64-pc-linux-gnu-$b"
-done
-rm -f "$live"/usr/bin/perl[0-9]* "$live"/usr/bin/python3.* "$live"/usr/bin/x86_64-*
-kernel=$(cd "$live/boot" && ls vmlinuz-* | head -1)
-cp "$live/boot/$kernel" "$iso/boot/vmlinuz"
-rm -rf "$live"/boot/*; mkdir -p "$live/boot"
-echo asteros-live > "$live/etc/hostname"
-echo 'root::19000:0:99999:7:::' > "$live/etc/shadow"; chmod 600 "$live/etc/shadow"
-cp "$HERE/INSTALL.md" "$live/root/INSTALL.md"
-printf 'asterOS live \\r (\\l)\n\nroot has no password here. The guide: less /root/INSTALL.md\n\n' > "$live/etc/issue"
+echo "== kernel"
+kernel=$(cd "$stage/boot" && ls vmlinuz-* | head -1)
+cp "$stage/boot/$kernel" "$iso/boot/vmlinuz"
 
 echo "== squashfs"
-BIND="$live=/live-src $iso=/iso-out" "$HERE/bootstrap/chroot.sh" mksquashfs /live-src /iso-out/live/root.squashfs -comp zstd -Xcompression-level 15 -noappend -quiet -no-progress
+# the kernel and the bootloader files are on the medium itself; the image has them too, as installed
+BIND="$stage=/stage-in $iso=/iso-out" "$HERE/bootstrap/chroot.sh" mksquashfs /stage-in /iso-out/live/root.squashfs -comp zstd -Xcompression-level 15 -noappend -quiet -no-progress
 
 echo "== initramfs"
 mkdir -p "$initrd"/{dev,proc,sys,ro,rw,newroot,medium}
@@ -57,13 +46,10 @@ BIND="$efi=/efi-out" "$HERE/bootstrap/chroot.sh" grub-mkimage -O x86_64-efi -o /
 mkdir -p "$efi/esp/EFI/BOOT"; cp "$efi/BOOTX64.EFI" "$efi/esp/EFI/BOOT/"
 truncate -s 16M "$efi/efi.img"; mkfs.vfat -n ASTEREFI "$efi/efi.img" >/dev/null
 mcopy -s -i "$efi/efi.img" "$efi/esp/EFI" ::
-
-echo "== the stage archive"
-cp "$W/asteros-stage-x86_64.tar.xz" "$iso/live/"
 cp "$HERE/INSTALL.md" "$iso/INSTALL.md"
 
 echo "== iso"
-BIND="$iso=/iso-in $efi=/efi-in $W=/out" "$HERE/bootstrap/chroot.sh" xorriso -as mkisofs -r -V ASTERLIVE -J -joliet-long -iso-level 3 \
-    -appended_part_as_gpt -append_partition 2 C12A7328-F81F-11D2-BA4B-00A0C93EC93B /efi-in/efi.img \
-    -e --interval:appended_partition_2:all:: -no-emul-boot -o /out/asteros-live-x86_64.iso /iso-in
+LD_LIBRARY_PATH=$W/host/lib "$xorriso" -as mkisofs -r -V ASTERLIVE -J -joliet-long -iso-level 3 \
+    -appended_part_as_gpt -append_partition 2 C12A7328-F81F-11D2-BA4B-00A0C93EC93B "$efi/efi.img" \
+    -e --interval:appended_partition_2:all:: -no-emul-boot -o "$out" "$iso" 2>&1 | grep -v "UPDATE\|WARNING\|^$" || true
 echo "$out  $(du -h "$out" | cut -f1)"

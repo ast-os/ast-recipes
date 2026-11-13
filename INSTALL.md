@@ -1,12 +1,13 @@
 # Installing asterOS
 
 asterOS is installed by hand, the way Gentoo is: boot the live medium, partition a disk,
-unpack the stage archive, chroot into it, configure it, install the bootloader. There is no
+unpack the system onto it, chroot into it, configure it, install the bootloader. There is no
 installer. x86_64, UEFI only.
 
-The live medium carries the stage archive, `/medium/live/asteros-stage-x86_64.tar.xz`: the
-base system with a generic kernel, `ast`, and the recipes of this release. Installing needs no
-network. A network is needed only later, to download the sources of the packages you build.
+The live medium is the system itself: `/medium/live/root.squashfs` is the base system with a
+generic kernel, the compiler, `ast` and `git`, and what you boot is that image with a writable
+layer over it. Installing it copies it to the disk. The installation needs no network; `ast` does,
+to read the repository and to download the sources of what you build.
 
 ## 1. Boot the live medium
 
@@ -40,13 +41,13 @@ mkfs.vfat -F32 "${p}1"
 mkfs.ext4 "${p}2"
 ```
 
-## 3. Unpack the stage
+## 3. Copy the system
 
 ```bash
 mount "${p}2" /mnt
 mkdir -p /mnt/boot/efi
 mount "${p}1" /mnt/boot/efi
-tar xpf /medium/live/asteros-stage-x86_64.tar.xz -C /mnt --numeric-owner
+unsquashfs -f -d /mnt /medium/live/root.squashfs
 ```
 
 ## 4. Configure
@@ -82,7 +83,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 `grub-install` registers a boot entry in the firmware. If the firmware forgets entries (some
 do), or for a bootable stick, add `--removable`. `grub-mkconfig` finds the kernels in `/boot`.
 
-The kernel in the stage is a generic one. To configure and build your own: `ast -i linux`
+The kernel on the image is a generic one. To configure and build your own: `ast -i linux`
 builds it from the recipe.
 
 ## 6. Reboot
@@ -105,7 +106,7 @@ ast -ua              # upgrade everything
 ```
 
 Packages are built from source on your machine; binaries are released rarely. The compiler and
-the other build tools are part of the installed system. The live medium has none: it only installs.
+the other build tools are part of the system.
 
 Network: there is no DHCP client yet. Configure an interface by hand, for example
 `ip link set eth0 up; ip addr add 192.168.1.10/24 dev eth0; ip route add default via 192.168.1.1`,

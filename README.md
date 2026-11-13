@@ -6,7 +6,7 @@ source-based: `ast -i NAME` builds a package from its recipe, binaries are relea
 ```
 recipes/NAME/NAME.recipe.toml   one recipe per package (see ast-pm: docs/format.md)
 bootstrap/                      the base system from nothing, in four stages
-files/                          the source of the aster (base configuration) and orchid (services) packages
+files/aster/                    the source of the aster package: os-release, profile, fstab, the configuration and key of ast
 ```
 
 ## Recipes
@@ -45,9 +45,10 @@ bootstrap/stage1.sh                          # a cross toolchain in work/root/to
 bootstrap/stage2.sh                          # the temporary tools, cross-compiled into work/root
 unshare -r --map-auto bootstrap/stage3.sh    # in the new system: perl, python, util-linux, ...
 unshare -r --map-auto bootstrap/stage4.sh    # ast builds the base from the recipes (build order: base.list)
-unshare -r --map-auto bootstrap/stage4.sh linux aster orchid
-unshare -r --map-auto bootstrap/mkstage.sh   # the stage archive: the base system as one tarball
-unshare -r --map-auto bootstrap/mkiso.sh     # the live ISO (needs the packages of extra.list)
+unshare -r --map-auto bootstrap/stage4.sh linux
+unshare -r --map-auto bootstrap/mkstage.sh   # the base system as a tree and one tarball
+bootstrap/hosttools.sh                       # xorriso, for the ISO, built on the host
+unshare -r --map-auto bootstrap/mkiso.sh     # the live ISO: the system as a squashfs
 ```
 
 Stages 1 to 3 follow Linux From Scratch 12.4 (kernel headers 6.16.1; glibc 2.42 does not build
