@@ -108,6 +108,9 @@ ast -ua              # upgrade everything
 Packages are built from source on your machine; binaries are released rarely. The compiler and
 the other build tools are part of the system.
 
-Network: there is no DHCP client yet. Configure an interface by hand, for example
-`ip link set eth0 up; ip addr add 192.168.1.10/24 dev eth0; ip route add default via 192.168.1.1`,
-and put the resolver in `/etc/resolv.conf`.
+Network: `dhcpcd` configures the interfaces by DHCP at boot (`orchid status dhcpcd`). For a fixed
+address, `orchid disable dhcpcd` and set it by hand with `ip`, and write the resolver in
+`/etc/resolv.conf`.
+
+Rescue: add `rescue` (or `single`) to the kernel command line in GRUB. Only the root file system
+and a root shell start.
