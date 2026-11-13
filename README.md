@@ -6,7 +6,7 @@ source-based: `ast -i NAME` builds a package from its recipe, binaries are relea
 ```
 recipes/NAME/NAME.recipe.toml   one recipe per package (see ast-pm: docs/format.md)
 bootstrap/                      the base system from nothing, in four stages
-files/                          the source of the asteros-files package (os-release, orchid services)
+files/                          the source of the aster (base configuration) and orchid (services) packages
 ```
 
 ## Recipes
@@ -45,7 +45,7 @@ bootstrap/stage1.sh                          # a cross toolchain in work/root/to
 bootstrap/stage2.sh                          # the temporary tools, cross-compiled into work/root
 unshare -r --map-auto bootstrap/stage3.sh    # in the new system: perl, python, util-linux, ...
 unshare -r --map-auto bootstrap/stage4.sh    # ast builds the base from the recipes (build order: base.list)
-unshare -r --map-auto bootstrap/stage4.sh linux asteros-files
+unshare -r --map-auto bootstrap/stage4.sh linux aster orchid
 EMPTY_ROOT_PASSWORD=1 unshare -r --map-auto bootstrap/mkdisk.sh work/asteros.img    # a bootable UEFI test disk
 ```
 

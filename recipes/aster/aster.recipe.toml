@@ -1,0 +1,21 @@
+[package]
+name = "aster"
+version = "1.0"
+description = "asterOS: os-release, issue, profile, fstab and the other base configuration"
+license = "MIT"
+arch = ["x86_64"]
+replaces = ["asteros-files"]
+config_files = ["/etc/fstab", "/etc/inputrc", "/etc/issue", "/etc/profile", "/etc/shells"]
+
+[source]
+url = "aster-1.0.tar.gz"
+sha256 = "3474dd797bc63936b5b48ea32face69e73642e114f6c39a14746ec63ecc6ee89"
+strip = 0
+
+[build]
+build = '''
+true
+'''
+install = '''
+cp -a etc "$DESTDIR/"
+'''
