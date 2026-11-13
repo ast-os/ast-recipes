@@ -1,14 +1,14 @@
 [package]
 name = "asteros-files"
-version = "1.0"
+version = "1.2"
 description = "asterOS: os-release, profile and the orchid services"
 license = "MIT"
 arch = ["x86_64"]
 config_files = ["/etc/fstab", "/etc/inputrc", "/etc/issue", "/etc/orchid/services/agetty-tty1.toml", "/etc/orchid/services/agetty-ttyS0.toml", "/etc/orchid/services/mounts.toml", "/etc/orchid/services/syslogd.toml", "/etc/orchid/services/udev-settle.toml", "/etc/orchid/services/udev-trigger.toml", "/etc/orchid/services/udevd.toml", "/etc/profile", "/etc/shells"]
 
 [source]
-url = "asteros-files-1.0.tar.gz"
-sha256 = "3d94cbb09de62ce11395ea1f0de5d27bd1d1949795d5afc109a8d2f6f92fce0b"
+url = "asteros-files-1.2.tar.gz"
+sha256 = "059dfb0daa6d26e8d89340820521ad7a4a7591cd6009a264224891d322159129"
 strip = 0
 
 [build]

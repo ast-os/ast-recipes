@@ -13,7 +13,8 @@ stage=$work/root
 cp -a --reflink=auto "$AST" "$stage"
 rm -rf "$stage"/{repo,sources,build,stage3-chroot.sh,stage4-chroot.sh} "$stage"/var/cache/ast/* "$stage"/dev/* "$stage"/proc/* "$stage"/sys/* "$stage"/run/* "$stage"/tmp/*
 mkdir -p "$stage"/{repo,sources,build,boot/efi,boot/grub}
-install -m755 "$orchid" "$stage/usr/sbin/orchid"; ln -sf orchid "$stage/usr/sbin/init"
+install -m755 "$orchid" "$stage/usr/sbin/orchid"
+for l in init reboot poweroff halt; do ln -sf orchid "$stage/usr/sbin/$l"; done
 echo asteros > "$stage/etc/hostname"
 if [ -n "${EMPTY_ROOT_PASSWORD:-}" ]; then echo 'root::19000:0:99999:7:::' > "$stage/etc/shadow"; chmod 600 "$stage/etc/shadow"; fi
 cat > "$stage/etc/fstab" <<FSTAB
