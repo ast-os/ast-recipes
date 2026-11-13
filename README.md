@@ -46,9 +46,14 @@ bootstrap/stage2.sh                          # the temporary tools, cross-compil
 unshare -r --map-auto bootstrap/stage3.sh    # in the new system: perl, python, util-linux, ...
 unshare -r --map-auto bootstrap/stage4.sh    # ast builds the base from the recipes (build order: base.list)
 unshare -r --map-auto bootstrap/stage4.sh linux aster orchid
-EMPTY_ROOT_PASSWORD=1 unshare -r --map-auto bootstrap/mkdisk.sh work/asteros.img    # a bootable UEFI test disk
+unshare -r --map-auto bootstrap/mkstage.sh   # the stage archive: the base system as one tarball
+unshare -r --map-auto bootstrap/mkiso.sh     # the live ISO (needs the packages of extra.list)
 ```
 
 Stages 1 to 3 follow Linux From Scratch 12.4 (kernel headers 6.16.1; glibc 2.42 does not build
 with newer ones). Stage 4 uses `ast` itself: every package of the base is installed by it, over
 the temporary tools (`--adopt`).
+
+## Installing
+
+By hand, from the live ISO, the way Gentoo is: see [INSTALL.md](INSTALL.md).

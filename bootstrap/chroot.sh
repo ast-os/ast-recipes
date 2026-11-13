@@ -1,5 +1,6 @@
 #!/bin/bash
 # Run a command inside the new system (work/root): unshare -r --map-auto bootstrap/chroot.sh COMMAND...
+# BIND="/host/dir=/dir /other=/other2" makes host directories visible inside.
 set -e
 . "$(dirname "$0")/env.sh"
 [ "$(id -u)" = 0 ] || { echo "run it as: unshare -r --map-auto $0 COMMAND..." >&2; exit 1; }
@@ -10,6 +11,7 @@ exec unshare --mount --pid --fork --propagation private -- bash -ec '
     mount --rbind /sys "$0/sys"; mount --make-rslave "$0/sys"
     mount -t tmpfs tmpfs "$0/run"
     mount --bind "$1" "$0/sources"
+    for b in $BIND; do mkdir -p "$0${b#*=}"; mount --bind "${b%%=*}" "$0${b#*=}"; done
     root=$0; shift
     exec chroot "$root" /usr/bin/env -i HOME=/root TERM="$TERM" PATH=/usr/bin:/usr/sbin LC_ALL=POSIX "$@"
 ' "$AST" "$SRC" "$@"
