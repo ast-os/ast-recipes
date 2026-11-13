@@ -14,6 +14,7 @@ sha256 = "438fd996826b0c82485a29da03a72d71d6e3541a83ec702df4271f6fe025d24e"
 style = "gnu"
 configure = ["--enable-languages=c,c++", "--enable-default-pie", "--enable-default-ssp", "--enable-host-pie", "--disable-multilib", "--disable-bootstrap", "--disable-fixincludes", "--with-system-zlib"]
 out_of_tree = true
+# 64-bit libraries go in lib, not lib64
 prepare = '''
 sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
 '''

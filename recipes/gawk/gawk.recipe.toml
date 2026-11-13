@@ -12,6 +12,7 @@ sha256 = "f8c3486509de705192138b00ef2c00bbbdd0e84c30d5c07d23fc73a9dc4cc9cc"
 
 [build]
 style = "gnu"
+# the extra programs of the source tree are not installed
 prepare = '''
 sed -i 's/extras//' Makefile.in
 '''

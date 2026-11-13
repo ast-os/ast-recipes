@@ -1,15 +1,14 @@
 [package]
 name = "aster"
-version = "1.0"
-description = "asterOS: os-release, issue, profile, fstab and the other base configuration"
+version = "1.2"
+description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
 license = "MIT"
 arch = ["x86_64"]
-replaces = ["asteros-files"]
-config_files = ["/etc/fstab", "/etc/inputrc", "/etc/issue", "/etc/profile", "/etc/shells"]
+config_files = ["/etc/ast/ast.toml", "/etc/ast/repos.toml", "/etc/fstab", "/etc/group", "/etc/hosts", "/etc/passwd", "/etc/inputrc", "/etc/issue", "/etc/profile", "/etc/shells"]
 
 [source]
-url = "aster-1.0.tar.gz"
-sha256 = "3474dd797bc63936b5b48ea32face69e73642e114f6c39a14746ec63ecc6ee89"
+url = "aster-1.2.tar.gz"
+sha256 = "f6840b75371fec811033069b38ee4f7b7d213636c6a652e82fc40377f0078068"
 strip = 0
 
 [build]
@@ -17,5 +16,5 @@ build = '''
 true
 '''
 install = '''
-cp -a etc "$DESTDIR/"
+cp -a bin sbin lib lib64 etc "$DESTDIR/"
 '''

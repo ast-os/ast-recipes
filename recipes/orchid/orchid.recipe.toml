@@ -1,0 +1,22 @@
+[package]
+name = "orchid"
+version = "1.0.0"
+description = "The init system of asterOS"
+license = "BSD-3-Clause"
+revision = 3
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["rust-bin"]
+config_files = ["/etc/orchid/services/efivars.toml", "/etc/orchid/services/fsck.toml", "/etc/orchid/services/hwclock.toml", "/etc/orchid/services/loopback.toml", "/etc/orchid/services/mounts.toml", "/etc/orchid/services/random-seed.toml", "/etc/orchid/services/rescue-shell.toml", "/etc/orchid/services/rootfs.toml", "/etc/orchid/services/swap.toml", "/etc/orchid/services/sysctl.toml"]
+
+[source]
+url = "orchid-1.0.0.tar.xz"
+sha256 = "bd3421175cbb504c7244c24873626072d88d366ce8e01d370095c097548a1227"
+
+[build]
+style = "cargo"
+install = '''
+install -Dm755 target/release/orchid "$DESTDIR/usr/sbin/orchid"
+for l in init reboot poweroff halt; do ln -s orchid "$DESTDIR/usr/sbin/$l"; done
+install -Dm644 -t "$DESTDIR/etc/orchid/services" data/services/*.toml
+'''

@@ -3,6 +3,7 @@ name = "bzip2"
 version = "1.0.8"
 description = "bzip2 compression"
 license = "bzip2-1.0.6"
+revision = 2
 arch = ["x86_64"]
 
 [source]
@@ -10,20 +11,24 @@ url = "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
 sha256 = "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
 
 [build]
-prepare = '''
-sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
-sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
-'''
 build = '''
 make -f Makefile-libbz2_so
 make clean
 make -j"$JOBS"
 '''
+# the Makefile installs absolute symlinks and the static library; the files are put in place here
 install = '''
-make PREFIX="$DESTDIR/usr" install
+install -d "$DESTDIR"/usr/{bin,lib,include,share/man/man1}
+install -m755 bzip2-shared "$DESTDIR/usr/bin/bzip2"
+install -m755 bzip2recover bzdiff bzgrep bzmore "$DESTDIR/usr/bin/"
+ln -s bzip2 "$DESTDIR/usr/bin/bunzip2"
+ln -s bzip2 "$DESTDIR/usr/bin/bzcat"
+ln -s bzdiff "$DESTDIR/usr/bin/bzcmp"
+ln -s bzgrep "$DESTDIR/usr/bin/bzegrep"
+ln -s bzgrep "$DESTDIR/usr/bin/bzfgrep"
+ln -s bzmore "$DESTDIR/usr/bin/bzless"
+install -m644 bzlib.h "$DESTDIR/usr/include/"
 cp -a libbz2.so.* "$DESTDIR/usr/lib/"
-ln -sf libbz2.so.1.0.8 "$DESTDIR/usr/lib/libbz2.so"
-cp bzip2-shared "$DESTDIR/usr/bin/bzip2"
-for i in bzcat bunzip2; do ln -sf bzip2 "$DESTDIR/usr/bin/$i"; done
-rm -f "$DESTDIR/usr/lib/libbz2.a"
+ln -s libbz2.so.1.0.8 "$DESTDIR/usr/lib/libbz2.so"
+install -m644 bzip2.1 "$DESTDIR/usr/share/man/man1/"
 '''

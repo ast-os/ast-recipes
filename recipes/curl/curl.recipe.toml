@@ -1,0 +1,15 @@
+[package]
+name = "curl"
+version = "8.23.0"
+description = "Transfer data with URLs"
+license = "curl"
+arch = ["x86_64"]
+depends = ["openssl", "zlib", "zstd", "ca-certificates"]
+
+[source]
+url = "https://curl.se/download/curl-8.23.0.tar.xz"
+sha256 = "8dadd7d2536a314f982ad05a651b713f426bf7d02cc2c76cffb9796f2218e6c5"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--with-openssl", "--with-zstd", "--with-ca-bundle=/etc/ssl/certs/ca-certificates.crt", "--without-libpsl", "--without-libidn2", "--without-nghttp2", "--without-brotli", "--disable-ldap", "--disable-docs"]
