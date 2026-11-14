@@ -8,8 +8,8 @@ depends = ["zlib"]
 config_files = ["/etc/sudoers"]
 
 [source]
-url = "https://www.sudo.ws/dist/sudo-1.9.17p2.tar.gz"
-sha256 = "4a38a1ab3adb1199257edc2a7c4a2bd714665eb605b04368843b06dada2cfcfb"
+git = "https://github.com/sudo-project/sudo"
+commit = "d1b48c651cec19fe37d1f0d3299d2283fb0f88e4"
 
 [build]
 style = "gnu"

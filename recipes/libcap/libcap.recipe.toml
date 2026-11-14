@@ -7,8 +7,8 @@ revision = 2
 arch = ["x86_64"]
 
 [source]
-url = "https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.76.tar.xz"
-sha256 = "629da4ab29900d0f7fcc36227073743119925fd711c99a1689bbf5c9b40c8e6f"
+git = "https://git.kernel.org/pub/scm/libs/libcap/libcap.git"
+commit = "5f3e12ca39c476b78160df6e2345a642a8e6f178"
 
 [build]
 build = '''

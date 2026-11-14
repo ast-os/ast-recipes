@@ -8,8 +8,8 @@ depends = ["glibc"]
 config_files = ["/etc/orchid/services/dhcpcd.toml"]
 
 [source]
-url = "https://github.com/NetworkConfiguration/dhcpcd/releases/download/v10.5.2/dhcpcd-10.5.2.tar.xz"
-sha256 = "3e476657fdb6eeb38b277da3a48d0ac0113ecce5858ebdcddff2b629faed52b4"
+git = "https://github.com/NetworkConfiguration/dhcpcd"
+commit = "7c50b51a142ca5e8cbbf8f65cd8111d6f200608a"
 
 [build]
 style = "gnu"

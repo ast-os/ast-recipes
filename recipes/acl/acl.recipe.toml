@@ -4,12 +4,16 @@ version = "2.3.2"
 description = "Access control lists"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext"]
 depends = ["attr"]
 
 [source]
-url = "https://download.savannah.gnu.org/releases/acl/acl-2.3.2.tar.xz"
-sha256 = "97203a72cae99ab89a067fe2210c1cbf052bc492b479eca7d226d9830883b0bd"
+git = "https://git.savannah.gnu.org/git/acl.git"
+commit = "214c7d146945c31a9dc04cb7094b85053f52a21e"
 
 [build]
 style = "gnu"
+prepare = '''
+./autogen.sh
+'''
 configure = ["--disable-static"]

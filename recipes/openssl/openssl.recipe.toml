@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["zlib"]
 
 [source]
-url = "https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz"
-sha256 = "c53a47e5e441c930c3928cf7bf6fb00e5d129b630e0aa873b08258656e7345ec"
+git = "https://github.com/openssl/openssl"
+commit = "0893a62353583343eb712adef6debdfbe597c227"
 
 [build]
 build = '''

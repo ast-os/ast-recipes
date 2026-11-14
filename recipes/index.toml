@@ -8,7 +8,13 @@ arch = "x86_64"
 description = "Access control lists"
 license = "GPL-2.0-or-later"
 depends = ["attr"]
-recipe = "16ea7d6cb17a3568c9861d235e192c1fecca960c19696ad096fede0c050f4bae"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "fb91d846413351614f8aaa9cc564fb4bfb25b5fe15b51333f4c6822887def80f"
 
 [ast."0.1.0-8"]
 arch = "x86_64"
@@ -46,7 +52,13 @@ recipe = "63d84b7b45a1c4e54dcf514bdbb7fb803fc78fa044bcce5551596e5bda180a57"
 arch = "x86_64"
 description = "Extended attributes"
 license = "GPL-2.0-or-later"
-recipe = "9e7805c2ed1fdbe6d4bc1c771cb234a99f0aa0ce9b7081e0f96d1c0a2a9490b7"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "be5a9828f08a03905e1f2929e7ebf4d13d3424103b165222cc436c60a408b023"
 
 [autoconf."2.72-1"]
 arch = "x86_64"
@@ -76,19 +88,19 @@ depends = [
     "readline",
     "ncurses",
 ]
-recipe = "9211b4ff2d671523ccb028885ff26f7c3ef28cd636d614ba9582e0ce29f4eaf6"
+recipe = "071f54a428243c76d086383f103aadb3087d8aba871c3234449814a2c9bc1ff9"
 
 [bc."7.0.3-1"]
 arch = "x86_64"
 description = "Arbitrary precision calculator"
 license = "BSD-2-Clause"
-recipe = "8e29eac8f7af012252d958f3ec5938f3bcf07829da9288418e79b4e4be8b36a1"
+recipe = "2e875b9cd16e6b2a184e7f96e02e1cbd2c4097fe8bb18fbe66e3917320a44109"
 
 [binutils."2.45-1"]
 arch = "x86_64"
 description = "Assembler, linker and binary tools"
 license = "GPL-3.0-or-later"
-recipe = "efebeaddf86aac8bf6fa11586ee173df258ab599a8d5ff67f7617a27353af302"
+recipe = "d88e289c534e8931ed3b0192c4bbd5b22dcfc55950203d6a3eb11535218d2f48"
 
 [bison."3.8.2-1"]
 arch = "x86_64"
@@ -106,13 +118,13 @@ build_depends = [
     "ninja",
     "pkgconf",
 ]
-recipe = "db4a17f1f235aeaf349ebeb662b5f6d00e28cb9839c2d4af984f9582e704a997"
+recipe = "c4e670466e8f9dba8ce7fff1ea9fbef6cf6c765456f313364b693001f30a0413"
 
 [bzip2."1.0.8-2"]
 arch = "x86_64"
 description = "bzip2 compression"
 license = "bzip2-1.0.6"
-recipe = "b1479592f5802226a2e42f9c58765d2f80dedb074fd77605d7035820307af313"
+recipe = "8629d97c1c9d13a22d5f3296e9bff70297943d81330b4432860c7c91b94db6b6"
 
 [ca-certificates."2026.11.05-1"]
 arch = "x86_64"
@@ -166,7 +178,7 @@ build_depends = [
     "gcc",
     "make",
 ]
-recipe = "e347319e99a70f3e0e8e2fa64023a7bab5c8f7ff8e14aa5f53c4cba006377053"
+recipe = "7a83624647d1db900dbf514540f92f19e4dc82558dcfeef3a54ae02ada36e05c"
 
 [coreutils."9.7-1"]
 arch = "x86_64"
@@ -189,7 +201,14 @@ depends = [
     "zstd",
     "ca-certificates",
 ]
-recipe = "8b5251df07552700ebc63f4104256a565dd2410be4e1180c7a3c5c19090e4165"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "pkgconf",
+]
+recipe = "923237fed335313d04c0faffe095ab560ffd287df6a0811226a5fc9615d00cad"
 
 [dbus."1.16.4-1"]
 arch = "x86_64"
@@ -222,7 +241,7 @@ arch = "x86_64"
 description = "DHCP and IPv6 client"
 license = "BSD-2-Clause"
 depends = ["glibc"]
-recipe = "04d4e111a130942c831e577acbcffa1097c9b74793e2f9949432d94fd475797b"
+recipe = "8cb1982a67a7d88e9112b415b92c4ccad8cee5233fb600018a367c4298997f6e"
 
 [diffutils."3.12-1"]
 arch = "x86_64"
@@ -240,14 +259,21 @@ recipe = "483b0563ea2d10ef9af7978ff26b81d4337f3561be62c3f770d24a721d944ffa"
 arch = "x86_64"
 description = "FAT file system tools"
 license = "GPL-3.0-or-later"
-recipe = "be8cc70b2f7cc073c0f9eafbc6fb9a991c1e589d384dd18e90951a9a9828cac3"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "pkgconf",
+]
+recipe = "477a3a0e01c9300ec09c39cedc2431716c58d71e3a4b1d60609bc5e76c0d27cd"
 
 [e2fsprogs."1.47.3-1"]
 arch = "x86_64"
 description = "ext2/3/4 tools"
 license = "GPL-2.0-only"
 depends = ["util-linux"]
-recipe = "1c761f619a05765112b0b6b63aaee64ba725290075222a32e36eb1d652b0bf5f"
+recipe = "235aa46c0cf0c3bf7b9552755d7c7229fc182b189f7e00d95cbd76851f622156"
 
 [efibootmgr.18-1]
 arch = "x86_64"
@@ -257,13 +283,13 @@ depends = [
     "efivar",
     "popt",
 ]
-recipe = "a3f4d9bc057ba94a4403ea3529d9e76d3ea5454515ed3ac1f510734a027c30fa"
+recipe = "fcc84047edd6525ea38999b7ff9be9595782e6b24faf03d54a222f683a244ab5"
 
 [efivar.39-1]
 arch = "x86_64"
 description = "EFI variable library"
 license = "LGPL-2.1-only"
-recipe = "12184e6bc1997aa927e91165902d31ca349515462068139a6f89964c32dc5524"
+recipe = "8fda068a5d59a78703582cb0f6b150f6bb178867841a7105f8f5e75b27dd9453"
 
 [elfutils."0.193-1"]
 arch = "x86_64"
@@ -274,7 +300,15 @@ depends = [
     "zstd",
     "xz",
 ]
-recipe = "f66aba20653b4f5e1ba1a61f0e9ed51575fd3fd13efa242a2837c1684239fb2d"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "bison",
+    "flex",
+]
+recipe = "5329745e6e25ac1b7607eda41c6b7b4b4789386ac151cb49585e4419da9579eb"
 
 [eudev."3.2.14-2"]
 arch = "x86_64"
@@ -284,7 +318,15 @@ depends = [
     "kmod",
     "gperf",
 ]
-recipe = "821edd418922726b8686a057cda39c83d3d055756ed13c01f24f2e31b0d83286"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "gperf",
+    "pkgconf",
+]
+recipe = "9e000acc39d31acb468b03824f78298ebc10172c8cb11845b95f78da3849cc38"
 
 [exo."4.20.0-1"]
 arch = "x86_64"
@@ -302,7 +344,12 @@ recipe = "c6767fad04cef583960f366161e9374cecc503b48116d46b5ca14cff3ef7420d"
 arch = "x86_64"
 description = "XML parser"
 license = "MIT"
-recipe = "4cd73829384d7886708a893f60f0b676c5711ea7f83170d5847b31d808b536fd"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+]
+recipe = "ea908e289ea59866fe305791cfc7dcf3e2e186e2401adef29628c865a7051b28"
 
 [fastfetch."2.71.0-1"]
 arch = "x86_64"
@@ -317,13 +364,19 @@ build_depends = [
     "ninja",
     "pkgconf",
 ]
-recipe = "318f750b7a20ea8a3118486e2d91254fa9b46ca632f63812039532408b5afe90"
+recipe = "b7457ca574498fdccfb9af0a67c8debd38429356c0d1271740860371c3168148"
 
 [file."5.46-1"]
 arch = "x86_64"
 description = "File type identification"
 license = "BSD-2-Clause"
-recipe = "8ed01de0da0c8c49f18a665eb65b8a9691e5bc3830fc9375af17cd3dff0835e5"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "0447c8e028d12c8feac1b116dd22c7b563781f1eb7521d599ed819b381977ea3"
 
 [findutils."4.10.0-1"]
 arch = "x86_64"
@@ -335,7 +388,15 @@ recipe = "a1c3c878c5322a90fcc470e9517f69fe11c1806decff7be73489ae0afe1e29a6"
 arch = "x86_64"
 description = "Lexical analyser generator"
 license = "BSD-2-Clause"
-recipe = "5fae1b41916840bebfaf0952da69ebbe2bedf481efa183c9a776ec91252bb4d2"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "bison",
+    "texinfo",
+]
+recipe = "9ac57cf0ea1d8c04ec4ac2bb750f4ee3187cfe6c8758716e62ff0cda2234e601"
 
 [font-util."1.4.2-1"]
 arch = "x86_64"
@@ -389,7 +450,13 @@ arch = "x86_64"
 description = "Text processing"
 license = "GPL-3.0-or-later"
 depends = ["readline"]
-recipe = "98e87c3b83fb7cfaf69764a19a850b766a6d782d636723b4274a5fa06920b6cd"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "54d958ee7b2a643ed3afa272df1896926379449b8ec9195a2ba0de147bad71e0"
 
 [gcc."15.2.0-1"]
 arch = "x86_64"
@@ -402,7 +469,7 @@ depends = [
     "mpc",
     "zlib",
 ]
-recipe = "815c1b220b9382bf36f665403c2b8576830e630f388620a043d005edfb378256"
+recipe = "5f41a52b9cd9e94a39d6ea060b16354f8541c0c81771afcf07ded1433bcd2442"
 
 [gdbm."1.26-1"]
 arch = "x86_64"
@@ -440,8 +507,11 @@ depends = [
     "expat",
     "ca-certificates",
 ]
-build_depends = ["gettext"]
-recipe = "e080670fbe5b5a2cc1da818b8e78339116834f03477ff432e36c88d3a7db513f"
+build_depends = [
+    "gettext",
+    "autoconf",
+]
+recipe = "1573035d7981f39e1c97dcc7bd507343f301cfcd0bdfbb8d8634fe84550ad162"
 
 [glib."2.90.1-1"]
 arch = "x86_64"
@@ -460,7 +530,7 @@ recipe = "7ba97dfe7c598008f34f82602ea52ba192d14c5a839c3ed898f08db8444c4cb5"
 arch = "x86_64"
 description = "The GNU C library"
 license = "LGPL-2.1-or-later"
-recipe = "322a162cc87fb8496c2d6f8bc6097e2465f66df54c24a828329082dc7a58e058"
+recipe = "3849db595cc08da1169fceb230f671aca5b2c1da4dfcf4081aa8567fe2612945"
 
 [gmp."6.3.0-1"]
 arch = "x86_64"
@@ -584,13 +654,19 @@ recipe = "904f5e738a4eff51e9b3e147a0efd9622d05202068ff4b8cdfbc352a37bb7dd0"
 arch = "x86_64"
 description = "Networking tools (ip, ss)"
 license = "GPL-2.0-or-later"
-recipe = "98234b3acda0363bbc6af27c151c3d3fdc2d017d950ac8369c60981417fc2c1f"
+recipe = "476f338f71321ab6e7716b123de564cf28bfee17800bd93f649d4fb6a836a273"
 
 [kbd."2.8.0-2"]
 arch = "x86_64"
 description = "Keyboard and console tools"
 license = "GPL-2.0-or-later"
-recipe = "6282c7215e92004c11e2930feb356bdf645f41439d9bcb6953a8fd9deae3330f"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "9a58a3a14aedb782af31b6ab7b00eb7903c278cbc81da28754bb8ef4e2207038"
 
 [kmod."34.2-1"]
 arch = "x86_64"
@@ -602,14 +678,27 @@ depends = [
     "zstd",
     "openssl",
 ]
-recipe = "337b13d2e0d69eae39f306e4bd0a5caf15776a2ef3ad28850430eb9307ad47df"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "pkgconf",
+]
+recipe = "5e3d39b123d600f59070f9b88565a1f46a6534dec3f3fa52a7e6c6fd6dab7e23"
 
 [less.679-1]
 arch = "x86_64"
 description = "Pager"
 license = "GPL-3.0-or-later"
 depends = ["ncurses"]
-recipe = "9f8c4681522bf79b13e79480f25819ccc25e732df913d321b7c743247b455f9a"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "fcb5bc5c81ce899d4a737d54c630119facf0010854359fc4712f6e5c5160736a"
 
 [libburn."1.5.8-1"]
 arch = "x86_64"
@@ -622,7 +711,7 @@ recipe = "27364839571c225df0e4c778fb81d9ef73c9ef38de07c1632ef389f3faeb4bb5"
 arch = "x86_64"
 description = "POSIX capabilities"
 license = "BSD-3-Clause"
-recipe = "f8cb57108a83592069728f7c46c5a61ebf4df9f2bba6117bfb06ab31bb051ec2"
+recipe = "fb59f687f25ea9022c85ab9051dd2bf73fd21f2265ff53f79781b6397d5c7cf7"
 
 [libdisplay-info."0.4.0-1"]
 arch = "x86_64"
@@ -658,7 +747,14 @@ recipe = "92590ca30128bcb5aaa54e836fa0b66f0283a64c6b5d8182c7910cee50e8eb48"
 arch = "x86_64"
 description = "Foreign function interface"
 license = "MIT"
-recipe = "65fa99abe2829834883bc96564e2ea823ba997e2ce43e239dd9e9127e7be5539"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "texinfo",
+]
+recipe = "7db140a4886fba54615eba12561b3a51250b70523ac9ef8c829d2437f8e2c1a7"
 
 [libfontenc."1.1.9-1"]
 arch = "x86_64"
@@ -1107,7 +1203,7 @@ arch = "x86_64"
 description = "The Linux kernel and its modules"
 license = "GPL-2.0-only"
 depends = ["kmod"]
-recipe = "919165804daafa56adf4613c1bc2128d87c16188f4a77b5791b675aeada5cf8c"
+recipe = "db2320057aff811c03872862b4407339a00dd83cc58eb0c949a50d3df8853997"
 
 [linux-firmware.20261019-1]
 arch = "x86_64"
@@ -1119,7 +1215,7 @@ recipe = "99f952b403590f143f2439b1f53cc4bbef5ff562ccedfeeafbe7f938e923534c"
 arch = "x86_64"
 description = "The kernel headers glibc is built against"
 license = "GPL-2.0-only WITH Linux-syscall-note"
-recipe = "14348b4b0fc7dcf58b0735f862f6ad2746a333e0383a31c418619e4af474b285"
+recipe = "247ce9cf0efbc06a9aa08aaed0ab6a97a8c018f382bb6cfb8d6dabcba889e53b"
 
 [llvm."23.1.5-1"]
 arch = "x86_64"
@@ -1137,7 +1233,7 @@ recipe = "3bbdd919576932b5a2c741d009919c470f448240b8cb816bc1deb8e402196c66"
 arch = "x86_64"
 description = "LZ4 compression"
 license = "BSD-2-Clause"
-recipe = "aa65bbd26fec9147d69b28157cc24aa6424a026d6ab012fa02cfc8afe48dcfc3"
+recipe = "b04f91b877bb32e801c0ae40ad33d0ffe058154b710541c56e2e477d0c72f7db"
 
 [m4."1.4.20-1"]
 arch = "x86_64"
@@ -1195,14 +1291,28 @@ depends = [
     "gmp",
     "mpfr",
 ]
-recipe = "60664803a51f447c89326827d9896a83006867f7b720bd90058b5f272fb6d5b7"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "texinfo",
+]
+recipe = "9074c3cc060646b35498d4b50a9d5e28c45d8df88579b601b41a2a8991b7975e"
 
 [mpfr."4.2.2-1"]
 arch = "x86_64"
 description = "Multiple precision floating point"
 license = "LGPL-3.0-or-later"
 depends = ["gmp"]
-recipe = "281f943d69e641e0a54d8a9cb78b6d32dc8517c7c4ed53479afca0a461f3b63b"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "texinfo",
+]
+recipe = "c5bb30f10cb3debfd6a5700f9e642ab03bdd510781e21c44cefaa83da2254cd2"
 
 [mtdev."1.1.7-1"]
 arch = "x86_64"
@@ -1214,28 +1324,28 @@ recipe = "6da09b4152e300971b828c0491adde29bfb8a134cdc0129847d625014e928469"
 arch = "x86_64"
 description = "Terminal handling library"
 license = "MIT"
-recipe = "63a25b968d97c6279b949f2e282dc5a4499d66bcb53b51f9c020500e0f12777a"
+recipe = "4938860bddf0259ff9e2debd00616187d7081b0b8c30bc39cc1da547aaf240c3"
 
 [neofetch."7.1.0-1"]
 arch = "x86_64"
 description = "System information tool written in bash"
 license = "MIT"
 depends = ["bash"]
-recipe = "a5fb7472afdb624585e048788877951790eebcb53f7fc3940dc59b4d90a315e6"
+recipe = "c6c86112555cb330bebf20565c794d150b4eeb725d49cf60efa0a3a48afea04d"
 
 [ninja."1.13.1-1"]
 arch = "x86_64"
 description = "Build system"
 license = "Apache-2.0"
 depends = ["python"]
-recipe = "472374c665f7069fbb15e9e4dca65129d77e6921d7e32cf6633413b555d8ab85"
+recipe = "afe832c3aa14761984178eb04e3ebcd9c293e199c60ab686eb35141f247827af"
 
 [openssl."3.5.2-1"]
 arch = "x86_64"
 description = "TLS and cryptography"
 license = "Apache-2.0"
 depends = ["zlib"]
-recipe = "ef2fcd19f8b2099c514d7e3393f9a4c33ba30167c46ef8794dcfc853926b963c"
+recipe = "b83d1452e4f4a3e57ccc25db36999165e9d5843c9e3199cd7ea3110fcb9d8675"
 
 [orchid."1.0.0-8"]
 arch = "x86_64"
@@ -1277,13 +1387,13 @@ arch = "x86_64"
 description = "Perl"
 license = "GPL-1.0-or-later OR Artistic-1.0-Perl"
 depends = ["gdbm"]
-recipe = "51ead9d3215ed26faa3f3ab07e9a1cf119716a210ccfc80c2990f9c23b4e7450"
+recipe = "3d2a09005b027d3ec1a4a31b481158743c0dfd63f04a8fc49d81a68bbec7ad11"
 
 [pfetch."0.6.0-1"]
 arch = "x86_64"
 description = "A pretty system information tool written in POSIX sh"
 license = "MIT"
-recipe = "e8c73b2e94ad758dfc112259cf5f7ad2be3203f00952cb709fd44a3b26ae9b6e"
+recipe = "fda3563f54a8996eeea23e526e9b81a2741355ca8ce318f79d0a323879f1376e"
 
 [pixman."0.46.4-1"]
 arch = "x86_64"
@@ -1295,27 +1405,52 @@ recipe = "38452e6854149731a275867bd250e0047858dc5f03d7dc56540c26cfb5b44c53"
 arch = "x86_64"
 description = "Compiler flags for libraries"
 license = "ISC"
-recipe = "bb6285505956ab4b1c641913742ee2edffe583adc80a6b67ba3923de9c26b9e0"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "1c67d7741f60e722005cf7ef80b66eed3e6cea3b10079e7f949c9f8038c42350"
 
 [popt."1.19-1"]
 arch = "x86_64"
 description = "Command line option parsing"
 license = "MIT"
-recipe = "5731d526366d2a21427f2aaa08d61c1a29a5e8b3d32d81957542c85e5c5d75fa"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "778fe7f6df55d87da37b08b862c8fb731d8e5b051158216c3d06ed72006d0a50"
 
 [procps-ng."4.0.5-1"]
 arch = "x86_64"
 description = "ps, top, free, vmstat..."
 license = "GPL-2.0-or-later"
 depends = ["ncurses"]
-recipe = "abe6bae71a5af6bca1f533a9ee8ddc3dc9f0c7a5c940108db91f8ba7084c8b4f"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "pkgconf",
+]
+recipe = "86997c1e9d147b849ae6f7a80b37a2575aec67e216d1b1bbbcd40f43a14d2926"
 
 [psmisc."23.7-1"]
 arch = "x86_64"
 description = "Process utilities (killall, fuser)"
 license = "GPL-2.0-or-later"
 depends = ["ncurses"]
-recipe = "8f47798a0669cc8463d0ae76acfbe606e16c77899c70e3951df7281622748adf"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "48a4a1d80d1e370d2e0cddb150237941da18bb7429ed80ba70ada18b2d76dacc"
 
 [python."3.13.7-1"]
 arch = "x86_64"
@@ -1328,7 +1463,7 @@ depends = [
     "zlib",
     "readline",
 ]
-recipe = "498798008b1d25fcdd285f0af284177cfd7d0ca78a0d51b3e0dbfa930f638e8b"
+recipe = "5bfd83b38ac9f82dac38b676b493f8bff79570f7cfbd81361ec0ed2ba1a81a62"
 
 [python-mako."1.4.3-1"]
 arch = "x86_64"
@@ -1380,7 +1515,7 @@ arch = "x86_64"
 description = "Line editing library"
 license = "GPL-3.0-or-later"
 depends = ["ncurses"]
-recipe = "24ed84e421d125edeaeecfd805f16d8c4b9c83513be743fc5e6bbc4a0b81075c"
+recipe = "f11264b5dd53164c9f33da345e4808ebce4d262956d900733813007aff7778cb"
 
 [rust-bin."1.99.1-1"]
 arch = "x86_64"
@@ -1418,7 +1553,15 @@ depends = [
     "acl",
     "attr",
 ]
-recipe = "818fbde0139e9f8a123880b033d36a026ceb656a1176e3deebb61a8f77b1ecff"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "bison",
+    "pkgconf",
+]
+recipe = "74774ba288e838b8a6180353772c73e4ba315332e2a65868bb9ad1895312641b"
 
 [shared-mime-info."2.5.1-1"]
 arch = "x86_64"
@@ -1440,20 +1583,26 @@ depends = [
     "zstd",
     "lz4",
 ]
-recipe = "46a095ef549dd4e24c16ee7fa6efbeedb7a574aec34b2599b215b14af4da93db"
+recipe = "4d939e55c1aaf398db986746445cec3e801a8c8ff50469365af9aa59e748755a"
 
 [sudo."1.9.17p2-1"]
 arch = "x86_64"
 description = "Run commands as another user"
 license = "ISC"
 depends = ["zlib"]
-recipe = "a4851b3a638132a3975185c567f5370765d14aed1d86dac23fd122770c9f9d26"
+recipe = "ee0c9952e05033d4fc3c661b8184e5586364a47f0e50a4d940c542e7f72259c1"
 
 [sysklogd."2.7.2-2"]
 arch = "x86_64"
 description = "System and kernel logging"
 license = "BSD-3-Clause"
-recipe = "6cdb971ce8e006886ed9c2e878c49e7e99589554a44ef2b76d826002f52607b1"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "0293a9f924fe7446e7795892d2cac61a22894c976f13c792433ce92068f3cb10"
 
 [tar."1.35-1"]
 arch = "x86_64"
@@ -1469,7 +1618,13 @@ depends = [
     "perl",
     "ncurses",
 ]
-recipe = "3d6c2b59568a5e6fa6d319bf7c0e955107096e34ccb3d27222616ebf14171760"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "b6ab70b630f802b98365bee6f5b814c26a271e945f5cd9ff63733d8c41bb2552"
 
 [thunar."4.20.10-1"]
 arch = "x86_64"
@@ -1492,7 +1647,7 @@ recipe = "dd0170f00bd12583442c4ca5a5a96bf88a8e4f07c09d7dd27673feb654d2b8e6"
 arch = "x86_64"
 description = "Time zone database"
 license = "LicenseRef-Public-Domain"
-recipe = "3b0a7452de67c08b0472e58c5e36b0109f170cd795582e92c952801e31119cf0"
+recipe = "ec7ee4e17f48fb72aafe49f971ba0f4ce3b9a187428271ff4144eef397cafe69"
 
 [util-linux."2.41.1-4"]
 arch = "x86_64"
@@ -1502,7 +1657,15 @@ depends = [
     "ncurses",
     "zlib",
 ]
-recipe = "e05e03cf3561b3468c7d6901ac5f49fe22e1ae61d974d345530030c09156cabf"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "bison",
+    "pkgconf",
+]
+recipe = "ac9bb4fed306cbb296a14c14d4a2b3ce6283321a114afee2ec3179cdfcf73f5e"
 
 [util-macros."1.20.2-1"]
 arch = "x86_64"
@@ -1515,7 +1678,7 @@ arch = "x86_64"
 description = "Text editor"
 license = "Vim"
 depends = ["ncurses"]
-recipe = "d80ffed1ab88f9a6adebd0351468f048b78248512f449b2efaade778f9cd4eee"
+recipe = "a8cc65e41391e9b7ac507ade759224d03e2b06d66e88fc9c90e4a0315e04a240"
 
 [xauth."1.1.5-1"]
 arch = "x86_64"
@@ -1922,16 +2085,22 @@ recipe = "2a3119fa970d3bcb7168df80e81abc3f3c78d9989d029e9ca6d97ef93f8fd148"
 arch = "x86_64"
 description = "XZ compression"
 license = "0BSD"
-recipe = "0b0708af3c544255f0e331ec05195860a297a42b15144c03098ec5e4aa4d12d0"
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+]
+recipe = "54dd2805a59502bf412ff8262aeb7d8594b06b7f1f3c082d70f29f7a47f083e2"
 
 [zlib."1.3.1-1"]
 arch = "x86_64"
 description = "Compression library"
 license = "Zlib"
-recipe = "554cd14a661429a1e749328b20d3a271d51f1bb5279393ab4949294621e6d19b"
+recipe = "1230d16455d48e8fc331cb33ad4cde7c8f27f3e06ce2f1e144ef914a1646297e"
 
 [zstd."1.5.7-1"]
 arch = "x86_64"
 description = "Zstandard compression"
 license = "BSD-3-Clause"
-recipe = "f20f4374a693eeafb562e4ff5359bac5c9bfd9481fa3b24332e0803d73035ab9"
+recipe = "5e39933d4284b77abdde4d711e9ea5be242809d5655f30080ca0887e057b4b31"

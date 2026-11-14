@@ -6,8 +6,8 @@ license = "MIT"
 arch = ["x86_64"]
 
 [source]
-url = "https://github.com/dylanaraps/pfetch/archive/0.6.0/pfetch-0.6.0.tar.gz"
-sha256 = "d1f611e61c1f8ae55bd14f8f6054d06fcb9a2d973095367c1626842db66b3182"
+git = "https://github.com/dylanaraps/pfetch"
+commit = "675814f33e5581265eb5931dd30ae984c587c734"
 
 [build]
 build = '''

@@ -4,13 +4,17 @@ version = "2.5.1"
 description = "Compiler flags for libraries"
 license = "ISC"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext"]
 
 [source]
-url = "https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz"
-sha256 = "cd05c9589b9f86ecf044c10a2269822bc9eb001eced2582cfffd658b0a50c243"
+git = "https://github.com/pkgconf/pkgconf"
+commit = "4fc570f91d9d8d843ab32d2198a5c064538d8ffd"
 
 [build]
 style = "gnu"
+prepare = '''
+./autogen.sh
+'''
 configure = ["--disable-static"]
 fixup = '''
 ln -sf pkgconf "$DESTDIR/usr/bin/pkg-config"

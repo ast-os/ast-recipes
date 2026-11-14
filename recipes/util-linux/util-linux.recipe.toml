@@ -5,15 +5,19 @@ description = "System utilities (mount, fdisk, lsblk...)"
 license = "GPL-2.0-or-later"
 revision = 4
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "bison", "pkgconf"]
 config_files = ["/etc/orchid/services/agetty-tty1.toml", "/etc/orchid/services/agetty-ttyS0.toml"]
 depends = ["ncurses", "zlib"]
 
 [source]
-url = "https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz"
-sha256 = "be9ad9a276f4305ab7dd2f5225c8be1ff54352f565ff4dede9628c1aaa7dec57"
+git = "https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git"
+commit = "67b6f19adad289cc4ff4071ae8eceda41bdce9e8"
 
 [build]
 style = "gnu"
+prepare = '''
+./autogen.sh
+'''
 configure = ["--bindir=/usr/bin", "--libdir=/usr/lib", "--runstatedir=/run", "--sbindir=/usr/sbin", "--disable-chfn-chsh", "--disable-login", "--disable-nologin", "--disable-su", "--disable-setpriv", "--disable-runuser", "--disable-pylibmount", "--disable-liblastlog2", "--disable-static", "--without-python", "--without-systemd", "--without-systemdsystemunitdir", "ADJTIME_PATH=/var/lib/hwclock/adjtime"]
 fixup = '''
 install -d "$DESTDIR/etc/orchid/services"

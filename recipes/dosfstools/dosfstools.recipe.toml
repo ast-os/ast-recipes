@@ -4,11 +4,15 @@ version = "4.2"
 description = "FAT file system tools"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "pkgconf"]
 
 [source]
-url = "https://github.com/dosfstools/dosfstools/releases/download/v4.2/dosfstools-4.2.tar.gz"
-sha256 = "64926eebf90092dca21b14259a5301b7b98e7b1943e8a201c7d726084809b527"
+git = "https://github.com/dosfstools/dosfstools"
+commit = "697f7692c951173c1b732901e13f72bd3182d575"
 
 [build]
 style = "gnu"
+prepare = '''
+./autogen.sh
+'''
 configure = ["--enable-compat-symlinks"]

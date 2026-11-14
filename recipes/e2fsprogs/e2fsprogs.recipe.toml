@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["util-linux"]
 
 [source]
-url = "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.3/e2fsprogs-1.47.3.tar.gz"
-sha256 = "2f5164e64dd7d91eadd1e0e8a77d92c06dd7837bb19f1d9189ce1939b363d2b4"
+git = "https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git"
+commit = "da631e117dcf8797bfda0f48bdaa05ac0fbcf7af"
 
 [build]
 style = "gnu"

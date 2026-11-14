@@ -4,12 +4,16 @@ version = "34.2"
 description = "Kernel module tools"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "pkgconf"]
 depends = ["zlib", "xz", "zstd", "openssl"]
 
 [source]
-url = "https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.2.tar.xz"
-sha256 = "5a5d5073070cc7e0c7a7a3c6ec2a0e1780850c8b47b3e3892226b93ffcb9cb54"
+git = "https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git"
+commit = "13330c958deef15c227a9c83d8ba72106152fd7f"
 
 [build]
 style = "meson"
+prepare = '''
+./autogen.sh
+'''
 configure = ["-D manpages=false"]

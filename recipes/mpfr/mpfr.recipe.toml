@@ -4,12 +4,16 @@ version = "4.2.2"
 description = "Multiple precision floating point"
 license = "LGPL-3.0-or-later"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "texinfo"]
 depends = ["gmp"]
 
 [source]
-url = "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.2.tar.xz"
-sha256 = "b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01"
+git = "https://gitlab.inria.fr/mpfr/mpfr.git"
+commit = "eaa57b856d814af32f97d5e5eb129fb986235323"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--enable-thread-safe"]

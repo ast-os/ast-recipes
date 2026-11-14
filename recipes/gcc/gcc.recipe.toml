@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["binutils", "gmp", "mpfr", "mpc", "zlib"]
 
 [source]
-url = "https://ftpmirror.gnu.org/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz"
-sha256 = "438fd996826b0c82485a29da03a72d71d6e3541a83ec702df4271f6fe025d24e"
+git = "https://gcc.gnu.org/git/gcc.git"
+commit = "5115c7e447fc07457443df874bf57840e8316d5f"
 
 [build]
 style = "gnu"

@@ -6,8 +6,8 @@ license = "MIT"
 arch = ["x86_64"]
 
 [source]
-url = "https://ftpmirror.gnu.org/ncurses/ncurses-6.6.tar.gz"
-sha256 = "355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11"
+git = "https://github.com/ThomasDickey/ncurses-snapshots"
+commit = "0096bd402c4a9c8f39bd7ed266e1b8920327e4d8"
 
 [build]
 style = "gnu"

@@ -4,11 +4,23 @@ version = "2.7.1"
 description = "XML parser"
 license = "MIT"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool"]
 
 [source]
-url = "https://prdownloads.sourceforge.net/expat/expat-2.7.1.tar.xz"
-sha256 = "354552544b8f99012e5062f7d570ec77f14b412a3ff5c7d8d0dae62c0d217c30"
+git = "https://github.com/libexpat/libexpat"
+commit = "f9a3eeb3e09fbea04b1c451ffc422ab2f1e45744"
 
 [build]
-style = "gnu"
-configure = ["--disable-static"]
+prepare = '''
+cd expat
+./buildconf.sh
+'''
+build = '''
+cd expat
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static --without-docbook
+make -j"$JOBS"
+'''
+install = '''
+cd expat
+make DESTDIR="$DESTDIR" install
+'''

@@ -4,15 +4,19 @@ version = "0.193"
 description = "libelf (the rest of elfutils is not installed)"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "bison", "flex"]
 depends = ["zlib", "zstd", "xz"]
 
 [source]
-url = "https://sourceware.org/ftp/elfutils/0.193/elfutils-0.193.tar.bz2"
-sha256 = "7857f44b624f4d8d421df851aaae7b1402cfe6bcdd2d8049f15fc07d3dde7635"
+git = "https://sourceware.org/git/elfutils.git"
+commit = "853c2943b582ac65fda6c28eaea21a1595fbaecd"
 
 [build]
+prepare = '''
+autoreconf -fiv
+'''
 build = '''
-./configure --prefix=/usr --disable-debuginfod --enable-libdebuginfod=dummy
+./configure --prefix=/usr --disable-debuginfod --enable-libdebuginfod=dummy --enable-maintainer-mode
 make -j"$JOBS"
 '''
 install = '''

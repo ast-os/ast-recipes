@@ -4,11 +4,15 @@ version = "5.8.1"
 description = "XZ compression"
 license = "0BSD"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext"]
 
 [source]
-url = "https://github.com/tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.xz"
-sha256 = "0b54f79df85912504de0b14aec7971e3f964491af1812d83447005807513cd9e"
+git = "https://github.com/tukaani-project/xz"
+commit = "a522a226545730551f7e7c2685fab27cf567746c"
 
 [build]
 style = "gnu"
+prepare = '''
+./autogen.sh --no-po4a
+'''
 configure = ["--disable-static"]

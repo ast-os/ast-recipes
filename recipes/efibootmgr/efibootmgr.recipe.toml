@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["efivar", "popt"]
 
 [source]
-url = "https://github.com/rhboot/efibootmgr/archive/refs/tags/18.tar.gz"
-sha256 = "442867d12f8525034a404fc8af3036dba8e1fc970998af2486c3b940dfad0874"
+git = "https://github.com/rhboot/efibootmgr"
+commit = "c3f9f0534e32158f62c43564036878b93b9e0fd6"
 
 [build]
 build = '''

@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["expat", "libffi", "openssl", "zlib", "readline"]
 
 [source]
-url = "https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tar.xz"
-sha256 = "5462f9099dfd30e238def83c71d91897d8caa5ff6ebc7a50f14d4802cdaaa79a"
+git = "https://github.com/python/cpython"
+commit = "bcee1c322115c581da27600f2ae55e5439c027eb"
 
 [build]
 style = "gnu"

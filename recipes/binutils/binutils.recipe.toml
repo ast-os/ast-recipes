@@ -6,15 +6,16 @@ license = "GPL-3.0-or-later"
 arch = ["x86_64"]
 
 [source]
-url = "https://ftpmirror.gnu.org/binutils/binutils-2.45.tar.xz"
-sha256 = "c50c0e7f9cb188980e2cc97e4537626b1672441815587f1eab69d2a1bfbef5d2"
+git = "https://sourceware.org/git/binutils-gdb.git"
+commit = "2bc7af1ff7732451b6a7b09462a815c3284f9613"
 
 [build]
 style = "gnu"
-configure = ["--enable-ld=default", "--enable-plugins", "--enable-shared", "--disable-werror", "--enable-64-bit-bfd", "--enable-new-dtags", "--enable-default-hash-style=gnu"]
+configure = ["--enable-ld=default", "--enable-plugins", "--enable-shared", "--disable-werror", "--enable-64-bit-bfd", "--enable-new-dtags", "--enable-default-hash-style=gnu", "--disable-gdb", "--disable-gdbserver", "--disable-sim", "--disable-readline", "--disable-libdecnumber"]
 make = ["tooldir=/usr"]
 install_args = ["tooldir=/usr"]
 out_of_tree = true
 fixup = '''
+rm -rf "$DESTDIR/usr/share/doc"
 rm -rf "$DESTDIR"/usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a "$DESTDIR/usr/share/doc/gprofng"
 '''

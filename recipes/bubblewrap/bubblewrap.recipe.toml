@@ -8,8 +8,8 @@ depends = ["libcap"]
 build_depends = ["meson", "ninja", "pkgconf"]
 
 [source]
-url = "https://github.com/containers/bubblewrap/releases/download/v0.13.1/bubblewrap-0.13.1.tar.xz"
-sha256 = "0e85c8702248b8dd64144f594147553650cdd0e4c951690345faace79c217c4d"
+git = "https://github.com/containers/bubblewrap"
+commit = "362936aea0d5c6e70f7af75d2d44b5a914cb4ba2"
 
 [build]
 style = "meson"

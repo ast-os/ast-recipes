@@ -6,11 +6,13 @@ license = "LicenseRef-Public-Domain"
 arch = ["x86_64"]
 
 [source]
-url = "https://www.iana.org/time-zones/repository/releases/tzdata2025b.tar.gz"
-sha256 = "11810413345fc7805017e27ea9fa4885fd74cd61b2911711ad038f5d28d71474"
-strip = 0
+git = "https://github.com/eggert/tz"
+commit = "7e1145bfdb9630c127841dc8ce808a937a300938"
 
 [build]
+prepare = '''
+make leapseconds
+'''
 build = '''
 true
 '''

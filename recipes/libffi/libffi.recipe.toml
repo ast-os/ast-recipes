@@ -4,11 +4,15 @@ version = "3.5.2"
 description = "Foreign function interface"
 license = "MIT"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "texinfo"]
 
 [source]
-url = "https://github.com/libffi/libffi/releases/download/v3.5.2/libffi-3.5.2.tar.gz"
-sha256 = "f3a3082a23b37c293a4fcd1053147b371f2ff91fa7ea1b2a52e335676bac82dc"
+git = "https://github.com/libffi/libffi"
+commit = "e2eda0cf72a0598b44278cc91860ea402273fa29"
 
 [build]
 style = "gnu"
+prepare = '''
+./autogen.sh
+'''
 configure = ["--disable-static", "--with-gcc-arch=x86-64"]

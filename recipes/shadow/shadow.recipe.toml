@@ -5,23 +5,25 @@ description = "User and group management"
 license = "BSD-3-Clause"
 revision = 2
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "bison", "pkgconf"]
 depends = ["libxcrypt", "acl", "attr"]
 config_files = ["/etc/login.defs"]
 
 [source]
-url = "https://github.com/shadow-maint/shadow/releases/download/4.18.0/shadow-4.18.0.tar.xz"
-sha256 = "add4604d3bc410344433122a819ee4154b79dd8316a56298c60417e637c07608"
+git = "https://github.com/shadow-maint/shadow"
+commit = "045652a925a4c8016dfae8d42c03f8c23df2103e"
 
 [build]
 style = "gnu"
-configure = ["--disable-static", "--with-bcrypt", "--with-yescrypt", "--without-libbsd", "--with-group-name-max-length=32"]
+configure = ["--disable-static", "--disable-man", "--with-bcrypt", "--with-yescrypt", "--without-libbsd", "--with-group-name-max-length=32"]
 install_args = ["exec_prefix=/usr"]
 # the defaults of login.defs: yescrypt, the mail spool of this system, no sbin in PATH
 prepare = '''
+autoreconf -fiv
 sed -e 's:#ENCRYPT_METHOD DES:ENCRYPT_METHOD YESCRYPT:' -e 's:/var/spool/mail:/var/mail:' -e '/PATH=/{s@/sbin:@@;s@/bin:@@}' -i etc/login.defs
 '''
 fixup = '''
-# groups comes from coreutils
+# groups comes from coreutils (the man pages need xsltproc and are not built)
 rm -f "$DESTDIR/usr/bin/groups" "$DESTDIR"/usr/share/man/*/man1/groups.1 "$DESTDIR"/usr/share/man/man3/getspnam.3 "$DESTDIR"/usr/share/man/man5/passwd.5
 mkdir -p "$DESTDIR/etc/default"
 '''

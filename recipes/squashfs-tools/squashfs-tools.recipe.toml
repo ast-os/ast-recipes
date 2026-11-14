@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["zlib", "xz", "zstd", "lz4"]
 
 [source]
-url = "https://github.com/plougher/squashfs-tools/archive/4.7.5/squashfs-tools-4.7.5.tar.gz"
-sha256 = "547b7b7f4d2e44bf91b6fc554664850c69563701deab9fd9cd7e21f694c88ea6"
+git = "https://github.com/plougher/squashfs-tools"
+commit = "708c59ae80853b0845017c33b42e56061cc546cd"
 
 [build]
 build = '''

@@ -6,8 +6,8 @@ license = "GPL-2.0-only WITH Linux-syscall-note"
 arch = ["x86_64"]
 
 [source]
-url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.1.tar.xz"
-sha256 = "ea43491bc7ace1e414b3b2d957f8cf96e7049155123f0acce798accf8da1acba"
+git = "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git"
+commit = "3e0969c9a8c57ff3c6139c084673ebedfc1cf14f"
 
 [build]
 # glibc 2.42 does not build with the headers of 7.x (OPEN_TREE_CLONE is defined twice), so the

@@ -4,11 +4,15 @@ version = "2.5.2"
 description = "Extended attributes"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext"]
 
 [source]
-url = "https://download.savannah.gnu.org/releases/attr/attr-2.5.2.tar.gz"
-sha256 = "39bf67452fa41d0948c2197601053f48b3d78a029389734332a6309a680c6c87"
+git = "https://git.savannah.gnu.org/git/attr.git"
+commit = "ee80fdbc11c351fe96bc54a20c2893dde7df8845"
 
 [build]
 style = "gnu"
+prepare = '''
+./autogen.sh
+'''
 configure = ["--disable-static"]

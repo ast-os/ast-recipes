@@ -5,15 +5,19 @@ description = "Device manager"
 license = "GPL-2.0-or-later"
 revision = 2
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "gperf", "pkgconf"]
 config_files = ["/etc/orchid/services/udevd.toml", "/etc/orchid/services/udev-trigger.toml", "/etc/orchid/services/udev-settle.toml"]
 depends = ["kmod", "gperf"]
 
 [source]
-url = "https://github.com/eudev-project/eudev/releases/download/v3.2.14/eudev-3.2.14.tar.gz"
-sha256 = "8da4319102f24abbf7fff5ce9c416af848df163b29590e666d334cc1927f006f"
+git = "https://github.com/eudev-project/eudev"
+commit = "9e7c4e744b9e7813af9acee64b5e8549ea1fbaa3"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--bindir=/usr/sbin", "--disable-static", "--disable-manpages", "--enable-kmod"]
 fixup = '''
 install -d "$DESTDIR/etc/orchid/services"

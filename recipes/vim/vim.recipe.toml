@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["ncurses"]
 
 [source]
-url = "https://github.com/vim/vim/archive/v9.1.1629/vim-9.1.1629.tar.gz"
-sha256 = "d92c6550e8eca741085fce94e5b0d3d13d2c62fcb5b69bf5a6010d3114de4828"
+git = "https://github.com/vim/vim"
+commit = "706b6f5867cb0fe65c4fefac8382fe2995eedde7"
 
 [build]
 style = "gnu"

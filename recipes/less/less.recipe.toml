@@ -4,11 +4,15 @@ version = "679"
 description = "Pager"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext"]
 depends = ["ncurses"]
 
 [source]
-url = "https://www.greenwoodsoftware.com/less/less-679.tar.gz"
-sha256 = "9b68820c34fa8a0af6b0e01b74f0298bcdd40a0489c61649b47058908a153d78"
+git = "https://github.com/gwsw/less"
+commit = "70f0ca12511098674d937436e70bff9672398daf"
 
 [build]
 style = "gnu"
+prepare = '''
+make -f Makefile.aut all less.nro lesskey.nro lessecho.nro
+'''

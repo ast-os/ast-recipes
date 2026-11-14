@@ -4,14 +4,20 @@ version = "2.6.4"
 description = "Lexical analyser generator"
 license = "BSD-2-Clause"
 arch = ["x86_64"]
+build_depends = ["autoconf", "automake", "libtool", "gettext", "bison", "texinfo"]
 
 [source]
-url = "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz"
-sha256 = "e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995"
+git = "https://github.com/westes/flex"
+commit = "ab49343b08c933e32de8de78132649f9560a3727"
 
 [build]
 style = "gnu"
+prepare = '''
+./autogen.sh
+'''
 configure = ["--disable-static"]
+# the man page needs help2man, which the base does not have
+install_args = ["dist_man_MANS="]
 fixup = '''
 ln -sf flex "$DESTDIR/usr/bin/lex"
 '''
