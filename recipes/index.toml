@@ -1077,7 +1077,7 @@ build_depends = [
 ]
 recipe = "e8ac158b9684317d15def40ac5c7c44b4fefb72dcb1e20ede721e6493303176a"
 
-[meson."1.8.3-1"]
+[meson."1.12.1-1"]
 arch = "x86_64"
 description = "Build system"
 license = "Apache-2.0"
@@ -1085,7 +1085,7 @@ depends = [
     "python",
     "ninja",
 ]
-recipe = "95771253d00cae408c6828f0752a6057b5eb1ab32894864cac13cb50090050df"
+recipe = "10d2f3b5fcb26387aa651869f5aef638ef17e5793fab82ba16dff405aaf3d369"
 
 [mpc."1.3.1-1"]
 arch = "x86_64"
