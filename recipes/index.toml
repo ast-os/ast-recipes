@@ -665,7 +665,8 @@ arch = "x86_64"
 description = "PNG library"
 license = "Libpng-2.0"
 depends = ["zlib"]
-recipe = "0cddb67dfb52c05c44283884ae30d895458b747b59013eb6810492b0fd5b6a54"
+build_depends = ["cmake"]
+recipe = "d5f71d2a6c4008f540f5df035e59521a1b7011716e7f571f4fb930804f556a3c"
 
 [libsm."1.2.6-1"]
 arch = "x86_64"
@@ -1680,7 +1681,7 @@ depends = [
 ]
 recipe = "bd5c30c5d7678708d1021b87792dad6fabf3660ef35aeeb354d32e0d00af1a8e"
 
-[xterm."1.18.6-1"]
+[xterm.412-1]
 arch = "x86_64"
 description = "Terminal emulator for X"
 license = "X11"
@@ -1694,7 +1695,7 @@ depends = [
     "libxmu",
     "libxpm",
 ]
-recipe = "798747b9db82f86061cd422231088a3dc01bdfe3d2503137e11b5ef4eb19872b"
+recipe = "6d1d6273fd59b2570cf49cf6019161d0f06c23dcc125646bbd1bceab96c8cadb"
 
 [xtrans."1.6.0-1"]
 arch = "x86_64"
