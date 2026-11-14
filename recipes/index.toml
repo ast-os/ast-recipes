@@ -1347,13 +1347,13 @@ license = "Apache-2.0"
 depends = ["zlib"]
 recipe = "b83d1452e4f4a3e57ccc25db36999165e9d5843c9e3199cd7ea3110fcb9d8675"
 
-[orchid."1.0.0-8"]
+[orchid."1.0.0-9"]
 arch = "x86_64"
 description = "The init system of asterOS"
 license = "BSD-3-Clause"
 depends = ["glibc"]
 build_depends = ["rust-bin"]
-recipe = "33a4c7583e7e7c4c5033ed38798189bb38592ef9e707337f4e2aca33cdbf901d"
+recipe = "b70984362d9d63f12195f28207c359b13187f1239505773cb9b4fc709ce8f54a"
 
 [pango."1.58.2-1"]
 arch = "x86_64"
