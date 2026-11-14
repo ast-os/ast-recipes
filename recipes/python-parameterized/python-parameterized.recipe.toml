@@ -1,0 +1,21 @@
+[package]
+name = "python-parameterized"
+version = "0.9.0"
+description = "Parameterized testing for Python"
+license = "BSD-2-Clause"
+arch = ["x86_64"]
+depends = ["python"]
+
+[source]
+git = "https://github.com/wolever/parameterized"
+commit = "8719c41604c41a0ee372511ea87d2ecbb3215f8d"
+
+[build]
+build = '''
+true
+'''
+install = '''
+site="$DESTDIR/usr/lib/python3.13/site-packages"
+mkdir -p "$site"
+cp -r parameterized "$site/"
+'''

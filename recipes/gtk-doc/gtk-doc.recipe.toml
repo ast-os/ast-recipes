@@ -4,7 +4,7 @@ version = "1.37.0"
 description = "Documentation tools of GNOME libraries (gtkdocize and macros)"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
-depends = ["python", "libxslt", "libxml2"]
+depends = ["python", "python-pygments", "python-parameterized", "libxslt", "libxml2"]
 
 [source]
 git = "https://gitlab.gnome.org/GNOME/gtk-doc"

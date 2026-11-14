@@ -1,0 +1,21 @@
+[package]
+name = "python-pygments"
+version = "2.21.0"
+description = "Syntax highlighter"
+license = "BSD-2-Clause"
+arch = ["x86_64"]
+depends = ["python"]
+
+[source]
+git = "https://github.com/pygments/pygments"
+commit = "a43b45dcf081b6010c6ab4428f149f7f6d2499c4"
+
+[build]
+build = '''
+true
+'''
+install = '''
+site="$DESTDIR/usr/lib/python3.13/site-packages"
+mkdir -p "$site"
+cp -r pygments "$site/"
+'''
