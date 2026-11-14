@@ -1,14 +1,14 @@
 [package]
 name = "aster"
-version = "1.5"
+version = "1.6"
 description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
 license = "MIT"
 arch = ["x86_64"]
 config_files = ["/etc/ast/ast.toml", "/etc/ast/repos.toml", "/etc/default/grub", "/etc/fstab", "/etc/group", "/etc/hosts", "/etc/passwd", "/etc/inputrc", "/etc/issue", "/etc/profile", "/etc/shells"]
 
 [source]
-url = "aster-1.5.tar.gz"
-sha256 = "395cb9d01765ff39a64417fc8d2186380a7b371011132904a935ee1142d6c444"
+url = "aster-1.6.tar.gz"
+sha256 = "cac02d87312a175600e55490640fd24a6cb6c21cced8b06443b9896217a163b9"
 strip = 0
 
 [build]
