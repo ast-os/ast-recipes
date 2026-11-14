@@ -1,6 +1,5 @@
 [package]
 name = "libx11"
-version = "1.8.14"
 description = "Xlib"
 license = "MIT"
 arch = ["x86_64"]

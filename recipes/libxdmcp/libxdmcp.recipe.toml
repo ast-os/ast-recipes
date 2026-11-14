@@ -1,6 +1,5 @@
 [package]
 name = "libxdmcp"
-version = "1.1.5"
 description = "X display manager control protocol"
 license = "MIT"
 arch = ["x86_64"]

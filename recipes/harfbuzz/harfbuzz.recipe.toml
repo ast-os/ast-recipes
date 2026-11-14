@@ -1,6 +1,5 @@
 [package]
 name = "harfbuzz"
-version = "15.1.0"
 description = "Text shaping"
 license = "MIT"
 arch = ["x86_64"]

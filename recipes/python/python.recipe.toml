@@ -1,6 +1,5 @@
 [package]
 name = "python"
-version = "3.13.7"
 description = "Python"
 license = "PSF-2.0"
 arch = ["x86_64"]

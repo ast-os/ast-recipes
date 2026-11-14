@@ -1,6 +1,5 @@
 [package]
 name = "libepoxy"
-version = "1.5.10"
 description = "OpenGL function pointer management"
 license = "MIT"
 arch = ["x86_64"]

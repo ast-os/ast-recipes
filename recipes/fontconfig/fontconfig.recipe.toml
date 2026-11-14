@@ -1,6 +1,5 @@
 [package]
 name = "fontconfig"
-version = "2.18.3"
 description = "Font configuration"
 license = "MIT"
 arch = ["x86_64"]

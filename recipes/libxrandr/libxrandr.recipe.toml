@@ -1,6 +1,5 @@
 [package]
 name = "libxrandr"
-version = "1.5.5"
 description = "XRandR"
 license = "MIT"
 arch = ["x86_64"]

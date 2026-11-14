@@ -1,6 +1,5 @@
 [package]
 name = "pfetch"
-version = "0.6.0"
 description = "A pretty system information tool written in POSIX sh"
 license = "MIT"
 arch = ["x86_64"]

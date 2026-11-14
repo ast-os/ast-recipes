@@ -1,6 +1,5 @@
 [package]
 name = "cmake"
-version = "4.5.0"
 description = "Cross-platform build system generator"
 license = "BSD-3-Clause"
 arch = ["x86_64"]

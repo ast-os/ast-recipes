@@ -1,6 +1,5 @@
 [package]
 name = "xinput"
-version = "1.6.4"
 description = "X.Org application xinput"
 license = "MIT"
 arch = ["x86_64"]

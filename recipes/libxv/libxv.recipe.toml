@@ -1,6 +1,5 @@
 [package]
 name = "libxv"
-version = "1.0.13"
 description = "XVideo"
 license = "MIT"
 arch = ["x86_64"]

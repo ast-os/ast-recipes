@@ -1,6 +1,5 @@
 [package]
 name = "xterm"
-version = "412"
 description = "Terminal emulator for X"
 license = "X11"
 arch = ["x86_64"]

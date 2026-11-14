@@ -1,6 +1,5 @@
 [package]
 name = "libxfont2"
-version = "2.0.9"
 description = "X font library"
 license = "MIT"
 arch = ["x86_64"]

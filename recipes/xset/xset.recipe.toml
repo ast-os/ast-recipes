@@ -1,6 +1,5 @@
 [package]
 name = "xset"
-version = "1.2.6"
 description = "X.Org application xset"
 license = "MIT"
 arch = ["x86_64"]

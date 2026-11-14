@@ -1,6 +1,5 @@
 [package]
 name = "desktop-file-utils"
-version = "0.29"
 description = "Desktop entry utilities"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

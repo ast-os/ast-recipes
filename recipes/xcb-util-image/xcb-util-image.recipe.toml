@@ -1,6 +1,5 @@
 [package]
 name = "xcb-util-image"
-version = "0.4.1"
 description = "XCB utility library xcb-util-image"
 license = "MIT"
 arch = ["x86_64"]

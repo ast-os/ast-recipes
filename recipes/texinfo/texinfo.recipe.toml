@@ -1,6 +1,5 @@
 [package]
 name = "texinfo"
-version = "7.2"
 description = "Documentation system"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]

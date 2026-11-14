@@ -1,6 +1,5 @@
 [package]
 name = "bash"
-version = "5.3"
 description = "The GNU shell"
 license = "GPL-3.0-or-later"
 revision = 2

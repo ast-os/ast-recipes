@@ -1,6 +1,5 @@
 [package]
 name = "ast"
-version = "0.1.0"
 description = "The package manager of asterOS"
 license = "BSD-3-Clause"
 revision = 8
@@ -10,7 +9,7 @@ build_depends = ["rust-bin"]
 
 [source]
 git = "https://github.com/ast-os/ast-pm"
-commit = "80a1c8d67b685d952f049cc4fdff2d4ee333ea72"
+commit = "79aaada8786a1095f9b2fe3d5a3f4723c4d6bce4"
 
 [build]
 style = "cargo"

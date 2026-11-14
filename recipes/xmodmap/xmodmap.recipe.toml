@@ -1,6 +1,5 @@
 [package]
 name = "xmodmap"
-version = "1.0.12"
 description = "X.Org application xmodmap"
 license = "MIT"
 arch = ["x86_64"]

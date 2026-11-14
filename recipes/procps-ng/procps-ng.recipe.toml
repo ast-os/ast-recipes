@@ -1,6 +1,5 @@
 [package]
 name = "procps-ng"
-version = "4.0.5"
 description = "ps, top, free, vmstat..."
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "iproute2"
-version = "6.16.0"
 description = "Networking tools (ip, ss)"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "python-mako"
-version = "1.4.3"
 description = "Template library"
 license = "MIT"
 arch = ["x86_64"]

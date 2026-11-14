@@ -1,6 +1,5 @@
 [package]
 name = "libinput"
-version = "1.32.0"
 description = "Input device handling"
 license = "MIT"
 arch = ["x86_64"]

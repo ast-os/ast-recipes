@@ -1,6 +1,5 @@
 [package]
 name = "xfce4-session"
-version = "4.20.4"
 description = "Xfce session manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

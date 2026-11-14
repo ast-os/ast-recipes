@@ -1,6 +1,5 @@
 [package]
 name = "xorgproto"
-version = "2026.1"
 description = "X.Org protocol headers"
 license = "MIT"
 arch = ["x86_64"]

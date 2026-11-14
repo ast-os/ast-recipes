@@ -1,6 +1,5 @@
 [package]
 name = "libxcb"
-version = "1.17.0"
 description = "X protocol C binding"
 license = "MIT"
 arch = ["x86_64"]

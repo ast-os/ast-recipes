@@ -1,6 +1,5 @@
 [package]
 name = "flex"
-version = "2.6.4"
 description = "Lexical analyser generator"
 license = "BSD-2-Clause"
 arch = ["x86_64"]

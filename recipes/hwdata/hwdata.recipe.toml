@@ -1,6 +1,5 @@
 [package]
 name = "hwdata"
-version = "0.413"
 description = "Hardware identification and configuration data (pci.ids, usb.ids, pnp.ids)"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "libxfce4util"
-version = "4.20.1"
 description = "Xfce utility library"
 license = "LGPL-2.0-or-later"
 arch = ["x86_64"]

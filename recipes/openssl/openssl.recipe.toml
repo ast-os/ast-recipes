@@ -1,6 +1,5 @@
 [package]
 name = "openssl"
-version = "3.5.2"
 description = "TLS and cryptography"
 license = "Apache-2.0"
 arch = ["x86_64"]

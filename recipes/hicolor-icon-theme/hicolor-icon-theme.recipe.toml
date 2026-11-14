@@ -1,6 +1,5 @@
 [package]
 name = "hicolor-icon-theme"
-version = "0.18"
 description = "Fallback icon theme"
 license = "GPL-2.0-only"
 arch = ["x86_64"]

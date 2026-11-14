@@ -1,6 +1,5 @@
 [package]
 name = "shared-mime-info"
-version = "2.5.1"
 description = "MIME type database"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

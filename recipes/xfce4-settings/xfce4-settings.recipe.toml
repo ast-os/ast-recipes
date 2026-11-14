@@ -1,6 +1,5 @@
 [package]
 name = "xfce4-settings"
-version = "4.20.5"
 description = "Xfce settings manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

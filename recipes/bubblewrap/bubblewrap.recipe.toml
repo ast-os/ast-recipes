@@ -1,6 +1,5 @@
 [package]
 name = "bubblewrap"
-version = "0.13.1"
 description = "Unprivileged sandboxing tool (ast runs the build scripts in it)"
 license = "LGPL-2.0-or-later"
 arch = ["x86_64"]

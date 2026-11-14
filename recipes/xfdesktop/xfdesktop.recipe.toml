@@ -1,6 +1,5 @@
 [package]
 name = "xfdesktop"
-version = "4.20.2"
 description = "Xfce desktop manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "xz"
-version = "5.8.1"
 description = "XZ compression"
 license = "0BSD"
 arch = ["x86_64"]

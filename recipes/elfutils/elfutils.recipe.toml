@@ -1,6 +1,5 @@
 [package]
 name = "elfutils"
-version = "0.193"
 description = "libelf (the rest of elfutils is not installed)"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]

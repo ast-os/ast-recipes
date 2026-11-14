@@ -1,6 +1,5 @@
 [package]
 name = "meson"
-version = "1.12.1"
 description = "Build system"
 license = "Apache-2.0"
 arch = ["x86_64"]

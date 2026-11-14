@@ -1,6 +1,5 @@
 [package]
 name = "xcb-util-cursor"
-version = "0.1.6"
 description = "XCB utility library xcb-util-cursor"
 license = "MIT"
 arch = ["x86_64"]

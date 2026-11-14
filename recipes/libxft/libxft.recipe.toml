@@ -1,6 +1,5 @@
 [package]
 name = "libxft"
-version = "2.3.9"
 description = "X FreeType interface"
 license = "MIT"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "tzdata"
-version = "2025b"
 description = "Time zone database"
 license = "LicenseRef-Public-Domain"
 arch = ["x86_64"]

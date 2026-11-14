@@ -1,6 +1,5 @@
 [package]
 name = "bc"
-version = "7.0.3"
 description = "Arbitrary precision calculator"
 license = "BSD-2-Clause"
 arch = ["x86_64"]

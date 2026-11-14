@@ -1,6 +1,5 @@
 [package]
 name = "cargo-c"
-version = "0.10.26"
 description = "Cargo subcommands that build and install C libraries"
 license = "MIT"
 arch = ["x86_64"]

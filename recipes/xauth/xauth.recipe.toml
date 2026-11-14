@@ -1,6 +1,5 @@
 [package]
 name = "xauth"
-version = "1.1.5"
 description = "X.Org application xauth"
 license = "MIT"
 arch = ["x86_64"]

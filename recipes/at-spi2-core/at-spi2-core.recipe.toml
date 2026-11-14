@@ -1,6 +1,5 @@
 [package]
 name = "at-spi2-core"
-version = "2.62.1"
 description = "Accessibility toolkit (atk, at-spi2)"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]

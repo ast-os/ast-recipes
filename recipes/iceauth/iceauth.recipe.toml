@@ -1,6 +1,5 @@
 [package]
 name = "iceauth"
-version = "1.0.11"
 description = "X.Org application iceauth"
 license = "MIT"
 arch = ["x86_64"]

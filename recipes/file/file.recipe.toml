@@ -1,6 +1,5 @@
 [package]
 name = "file"
-version = "5.46"
 description = "File type identification"
 license = "BSD-2-Clause"
 arch = ["x86_64"]

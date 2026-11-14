@@ -1,6 +1,5 @@
 [package]
 name = "xkeyboard-config"
-version = "2.48"
 description = "Keyboard layouts for XKB"
 license = "MIT"
 arch = ["x86_64"]

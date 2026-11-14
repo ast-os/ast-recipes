@@ -1,6 +1,5 @@
 [package]
 name = "squashfs-tools"
-version = "4.7.5"
 description = "Tools to create and extract squashfs filesystems"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

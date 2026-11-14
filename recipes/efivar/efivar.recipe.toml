@@ -1,6 +1,5 @@
 [package]
 name = "efivar"
-version = "39"
 description = "EFI variable library"
 license = "LGPL-2.1-only"
 arch = ["x86_64"]

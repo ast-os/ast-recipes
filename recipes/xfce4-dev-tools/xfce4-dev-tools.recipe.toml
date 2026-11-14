@@ -1,6 +1,5 @@
 [package]
 name = "xfce4-dev-tools"
-version = "4.20.0"
 description = "Autotools macros and xdt-autogen of the Xfce projects"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

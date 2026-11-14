@@ -3,7 +3,7 @@ repo = "ast"
 arch = "x86_64"
 channel = "stable"
 
-[acl."2.3.2-1"]
+[acl."git.214c7d14-1"]
 arch = "x86_64"
 description = "Access control lists"
 license = "GPL-2.0-or-later"
@@ -14,9 +14,9 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "fb91d846413351614f8aaa9cc564fb4bfb25b5fe15b51333f4c6822887def80f"
+recipe = "295ff9475d58aa863d559c69917ff06faa15e69bf1c9de5b4d7fcc1a50767a3f"
 
-[ast."0.1.0-8"]
+[ast."git.79aaada8-8"]
 arch = "x86_64"
 description = "The package manager of asterOS"
 license = "BSD-3-Clause"
@@ -26,15 +26,15 @@ depends = [
     "ca-certificates",
 ]
 build_depends = ["rust-bin"]
-recipe = "15166fb11afd82be5294c3b3431542479deb5fdd8315300e9091afa165af3909"
+recipe = "743059ebf36ca52f4f4f3b8da993d581144e99ddc3b9906662688829e231f08d"
 
-[aster."1.7-4"]
+[aster."git.7878ab7b-4"]
 arch = "x86_64"
 description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
 license = "MIT"
-recipe = "7b2fa249960483caddfae7e26d56b743c61dc38de388aaa7097ebe931db18c59"
+recipe = "d862aa5f69dc321b065d967df7ded24eba28c463c07621d7c74c3c1e963283e8"
 
-[at-spi2-core."2.62.1-1"]
+[at-spi2-core."git.3a214cdd-1"]
 arch = "x86_64"
 description = "Accessibility toolkit (atk, at-spi2)"
 license = "LGPL-2.1-or-later"
@@ -46,9 +46,9 @@ depends = [
     "libxtst",
     "libxi",
 ]
-recipe = "63d84b7b45a1c4e54dcf514bdbb7fb803fc78fa044bcce5551596e5bda180a57"
+recipe = "b9b1eec5888fa4c0d99935210282d57b4cbe3fd78551cf0057bc437519828f2a"
 
-[attr."2.5.2-1"]
+[attr."git.ee80fdbc-1"]
 arch = "x86_64"
 description = "Extended attributes"
 license = "GPL-2.0-or-later"
@@ -58,7 +58,7 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "be5a9828f08a03905e1f2929e7ebf4d13d3424103b165222cc436c60a408b023"
+recipe = "9d228d8dc092893089ff33eb600ef3ce8873358953350369192499d23b7d9651"
 
 [autoconf."2.72-1"]
 arch = "x86_64"
@@ -80,7 +80,7 @@ depends = [
 ]
 recipe = "d9c70b69757e319754de5c7ba933fd46a547beb654621f3713ad0249d8598b25"
 
-[bash."5.3-2"]
+[bash."git.b8c60bc9-2"]
 arch = "x86_64"
 description = "The GNU shell"
 license = "GPL-3.0-or-later"
@@ -88,19 +88,19 @@ depends = [
     "readline",
     "ncurses",
 ]
-recipe = "071f54a428243c76d086383f103aadb3087d8aba871c3234449814a2c9bc1ff9"
+recipe = "36854d69b7ccf30acf473dde84f309d5205cb1d35f2a8d693ab0c20653d2274b"
 
-[bc."7.0.3-1"]
+[bc."git.c8dabac6-1"]
 arch = "x86_64"
 description = "Arbitrary precision calculator"
 license = "BSD-2-Clause"
-recipe = "2e875b9cd16e6b2a184e7f96e02e1cbd2c4097fe8bb18fbe66e3917320a44109"
+recipe = "6df019bf0564b845a7604dcee51c0313eac9cf514bc8ba997e974985a93b14aa"
 
-[binutils."2.45-1"]
+[binutils."git.2bc7af1f-1"]
 arch = "x86_64"
 description = "Assembler, linker and binary tools"
 license = "GPL-3.0-or-later"
-recipe = "d88e289c534e8931ed3b0192c4bbd5b22dcfc55950203d6a3eb11535218d2f48"
+recipe = "939b92b17b94db33d0ff3feb404a0307d498ce406fea00e57f5b0e072a34729a"
 
 [bison."3.8.2-1"]
 arch = "x86_64"
@@ -108,7 +108,7 @@ description = "Parser generator"
 license = "GPL-3.0-or-later"
 recipe = "e089a419686e7c5ec22b5b58a8f979eeeea98547772ab87fbf3319bcedbf5e5f"
 
-[bubblewrap."0.13.1-1"]
+[bubblewrap."git.362936ae-1"]
 arch = "x86_64"
 description = "Unprivileged sandboxing tool (ast runs the build scripts in it)"
 license = "LGPL-2.0-or-later"
@@ -118,13 +118,13 @@ build_depends = [
     "ninja",
     "pkgconf",
 ]
-recipe = "c4e670466e8f9dba8ce7fff1ea9fbef6cf6c765456f313364b693001f30a0413"
+recipe = "8cf4ca191dc6c8367107e4c2e5712c758edb435b14a09794e257cd836698c3a3"
 
-[bzip2."1.0.8-2"]
+[bzip2."git.6a8690fc-2"]
 arch = "x86_64"
 description = "bzip2 compression"
 license = "bzip2-1.0.6"
-recipe = "8629d97c1c9d13a22d5f3296e9bff70297943d81330b4432860c7c91b94db6b6"
+recipe = "65a4655e46b99da455dd9f86da069f66e20121cf7303b7254e2ec6f47c51029c"
 
 [ca-certificates."2026.11.05-1"]
 arch = "x86_64"
@@ -132,7 +132,7 @@ description = "The certificate authorities Mozilla trusts, as a bundle (extracte
 license = "MPL-2.0"
 recipe = "4ff2e06e095e0945af970365c9e302c2daf7f159661441ba87ca6defa2d4bad6"
 
-[cairo."1.18.6-1"]
+[cairo."git.018b3424-1"]
 arch = "x86_64"
 description = "2D graphics library"
 license = "LGPL-2.1-only OR MPL-1.1"
@@ -148,9 +148,9 @@ depends = [
     "libxcb",
     "zlib",
 ]
-recipe = "26aa1bb94265aa5a01d3584b870f46d9a616d646e595efda0e5fb788096c51c1"
+recipe = "b3d6827a14249ec56a3084369595efe5899b96c771b02ae3eba124b4cd6a66f6"
 
-[cargo-c."0.10.26-1"]
+[cargo-c."git.22591c05-1"]
 arch = "x86_64"
 description = "Cargo subcommands that build and install C libraries"
 license = "MIT"
@@ -163,9 +163,9 @@ build_depends = [
     "rust-bin",
     "cmake",
 ]
-recipe = "fe92aa324ef1b67676a9e947686d28a15cd9e8783904e2a62b1d1af51f62a352"
+recipe = "600853f92afa2f3036cb2684204d4714c27124ca9efc59295066bd9e2ff4b1a5"
 
-[cmake."4.5.0-1"]
+[cmake."git.f3a3cb0c-1"]
 arch = "x86_64"
 description = "Cross-platform build system generator"
 license = "BSD-3-Clause"
@@ -178,7 +178,7 @@ build_depends = [
     "gcc",
     "make",
 ]
-recipe = "7a83624647d1db900dbf514540f92f19e4dc82558dcfeef3a54ae02ada36e05c"
+recipe = "bea4e7ecf31e4408cf79608f34f1ed9752fd63bff53d6c8ffa73e3141b28a10e"
 
 [coreutils."9.7-1"]
 arch = "x86_64"
@@ -191,7 +191,7 @@ depends = [
 ]
 recipe = "1863d960899c4e03832f086512e80bd33b12ed3b5323e6c936f710a05ca831c6"
 
-[curl."8.23.0-1"]
+[curl."git.3163ec06-1"]
 arch = "x86_64"
 description = "Transfer data with URLs"
 license = "curl"
@@ -208,9 +208,9 @@ build_depends = [
     "gettext",
     "pkgconf",
 ]
-recipe = "923237fed335313d04c0faffe095ab560ffd287df6a0811226a5fc9615d00cad"
+recipe = "b9b0f7d1cd5cd7cc303ab110f9500449e85f1e43c734bf5d5b624d004830bdd1"
 
-[dbus."1.16.4-1"]
+[dbus."git.5a5d9001-1"]
 arch = "x86_64"
 description = "Message bus"
 license = "AFL-2.1 OR GPL-2.0-or-later"
@@ -221,7 +221,7 @@ depends = [
     "libsm",
     "eudev",
 ]
-recipe = "f2ced32a8387aedc0816d40338c561d93bbcae29c669734c395cdbccfacd9c85"
+recipe = "9370b3d9f1a90666e7b33462ffb07d6864aa29f7a38389e1c87c56ad56ff64cd"
 
 [dejavu-fonts."2.37-1"]
 arch = "x86_64"
@@ -229,19 +229,19 @@ description = "DejaVu fonts"
 license = "Bitstream-Vera"
 recipe = "3dd93284ac54fc70fdeda4f7d92f21b4f1e9adea354f54a3b99e6861b22ee0c6"
 
-[desktop-file-utils."0.29-1"]
+[desktop-file-utils."git.495012dd-1"]
 arch = "x86_64"
 description = "Desktop entry utilities"
 license = "GPL-2.0-or-later"
 depends = ["glib"]
-recipe = "b7cbf7d9d818c7f1c8c3273c406116bdb25d8f8dc6ee9becd941b752196410de"
+recipe = "e9a93249e59df8d8f2f1295fcb4b67b56d4c2ddbb02a5d132b1bf75ba2211ab2"
 
-[dhcpcd."10.5.2-1"]
+[dhcpcd."git.7c50b51a-1"]
 arch = "x86_64"
 description = "DHCP and IPv6 client"
 license = "BSD-2-Clause"
 depends = ["glibc"]
-recipe = "8cb1982a67a7d88e9112b415b92c4ccad8cee5233fb600018a367c4298997f6e"
+recipe = "bb41a07e506c8f63b7a637909fe4aa60c3798c51694137e0483a1c2a2ff59a5f"
 
 [diffutils."3.12-1"]
 arch = "x86_64"
@@ -255,7 +255,7 @@ description = "DocBook XSL stylesheets (the release archive: the git tree genera
 license = "MIT"
 recipe = "483b0563ea2d10ef9af7978ff26b81d4337f3561be62c3f770d24a721d944ffa"
 
-[dosfstools."4.2-1"]
+[dosfstools."git.697f7692-1"]
 arch = "x86_64"
 description = "FAT file system tools"
 license = "GPL-3.0-or-later"
@@ -266,16 +266,16 @@ build_depends = [
     "gettext",
     "pkgconf",
 ]
-recipe = "477a3a0e01c9300ec09c39cedc2431716c58d71e3a4b1d60609bc5e76c0d27cd"
+recipe = "9cacf653e6114951a0eed1e1befb568086c437ae88d0f928f6cca7d295d5ba9f"
 
-[e2fsprogs."1.47.3-1"]
+[e2fsprogs."git.da631e11-1"]
 arch = "x86_64"
 description = "ext2/3/4 tools"
 license = "GPL-2.0-only"
 depends = ["util-linux"]
-recipe = "235aa46c0cf0c3bf7b9552755d7c7229fc182b189f7e00d95cbd76851f622156"
+recipe = "c3c28b18a29ac3d7901b98d27ae30d5315e3a7b1c8865ce574e80e84f33a224c"
 
-[efibootmgr.18-1]
+[efibootmgr."git.c3f9f053-1"]
 arch = "x86_64"
 description = "UEFI boot manager tool"
 license = "GPL-2.0-or-later"
@@ -283,15 +283,15 @@ depends = [
     "efivar",
     "popt",
 ]
-recipe = "fcc84047edd6525ea38999b7ff9be9595782e6b24faf03d54a222f683a244ab5"
+recipe = "3d1a8fa47777f469b1a13d4efffb6d73487cc526d7b152a9b8dce1482736c3f3"
 
-[efivar.39-1]
+[efivar."git.c47820c3-1"]
 arch = "x86_64"
 description = "EFI variable library"
 license = "LGPL-2.1-only"
-recipe = "8fda068a5d59a78703582cb0f6b150f6bb178867841a7105f8f5e75b27dd9453"
+recipe = "a40b340aef4970d91b302d0f0f6fe450f30f4c420c0f731a0e02748522d9a819"
 
-[elfutils."0.193-1"]
+[elfutils."git.853c2943-1"]
 arch = "x86_64"
 description = "libelf (the rest of elfutils is not installed)"
 license = "GPL-3.0-or-later"
@@ -308,9 +308,9 @@ build_depends = [
     "bison",
     "flex",
 ]
-recipe = "5329745e6e25ac1b7607eda41c6b7b4b4789386ac151cb49585e4419da9579eb"
+recipe = "4e5bdb78bbce0df3838f994f63ee0568d3958c19c218eb88032a70112f968c42"
 
-[eudev."3.2.14-2"]
+[eudev."git.9e7c4e74-2"]
 arch = "x86_64"
 description = "Device manager"
 license = "GPL-2.0-or-later"
@@ -326,9 +326,9 @@ build_depends = [
     "gperf",
     "pkgconf",
 ]
-recipe = "9e000acc39d31acb468b03824f78298ebc10172c8cb11845b95f78da3849cc38"
+recipe = "00b05bf06c835a6554918c6107d8d8aa48d1b6df51dfef266151edc21e61dfb8"
 
-[exo."4.20.0-1"]
+[exo."git.6157f1ba-1"]
 arch = "x86_64"
 description = "Xfce application support library"
 license = "LGPL-2.1-or-later"
@@ -338,9 +338,9 @@ depends = [
     "libxfce4util",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "c6767fad04cef583960f366161e9374cecc503b48116d46b5ca14cff3ef7420d"
+recipe = "fa7f6ec953addd1c460990b2d252e34909bc46cb9615057f5b9676ad3bfa42cc"
 
-[expat."2.7.1-1"]
+[expat."git.f9a3eeb3-1"]
 arch = "x86_64"
 description = "XML parser"
 license = "MIT"
@@ -349,9 +349,9 @@ build_depends = [
     "automake",
     "libtool",
 ]
-recipe = "ea908e289ea59866fe305791cfc7dcf3e2e186e2401adef29628c865a7051b28"
+recipe = "9e22862087dee0be800878c142663591d5294feddc8bb8b43115bb3e00313d3b"
 
-[fastfetch."2.71.0-1"]
+[fastfetch."git.8c9d9c04-1"]
 arch = "x86_64"
 description = "Fast system information tool written in C"
 license = "MIT"
@@ -364,9 +364,9 @@ build_depends = [
     "ninja",
     "pkgconf",
 ]
-recipe = "b7457ca574498fdccfb9af0a67c8debd38429356c0d1271740860371c3168148"
+recipe = "5d913a27f5569e00bb1d1ec3cadc3d8550d2b46ae5afc077b68bfac4c456c77b"
 
-[file."5.46-1"]
+[file."git.b310a0c2-1"]
 arch = "x86_64"
 description = "File type identification"
 license = "BSD-2-Clause"
@@ -376,7 +376,7 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "0447c8e028d12c8feac1b116dd22c7b563781f1eb7521d599ed819b381977ea3"
+recipe = "e27773a74f3f452dd66488a3b05d59e448546a8c58b3df517c4d2499f650f58f"
 
 [findutils."4.10.0-1"]
 arch = "x86_64"
@@ -384,7 +384,7 @@ description = "find, locate, xargs"
 license = "GPL-3.0-or-later"
 recipe = "a1c3c878c5322a90fcc470e9517f69fe11c1806decff7be73489ae0afe1e29a6"
 
-[flex."2.6.4-1"]
+[flex."git.ab49343b-1"]
 arch = "x86_64"
 description = "Lexical analyser generator"
 license = "BSD-2-Clause"
@@ -396,16 +396,16 @@ build_depends = [
     "bison",
     "texinfo",
 ]
-recipe = "9ac57cf0ea1d8c04ec4ac2bb750f4ee3187cfe6c8758716e62ff0cda2234e601"
+recipe = "6fa91050f7e60dbb1b7fa9a616a27a15eaa2d341a5653fa4b7b4fa07b254c08e"
 
-[font-util."1.4.2-1"]
+[font-util."git.5c92c114-1"]
 arch = "x86_64"
 description = "X.Org font utilities and macros"
 license = "MIT"
 build_depends = ["util-macros"]
-recipe = "45322304101413d57485fe16a88564e66faf93be2b5d1bec7cf88a2ce4a061b4"
+recipe = "997206751c341eddb4c92a123616afd83718ec00324c5f87cd4f41f3e25adf32"
 
-[fontconfig."2.18.3-1"]
+[fontconfig."git.0f236723-1"]
 arch = "x86_64"
 description = "Font configuration"
 license = "MIT"
@@ -414,9 +414,9 @@ depends = [
     "expat",
     "util-linux",
 ]
-recipe = "7ca47e5a8766f06d1481b11d5ce1f142e20bccd5a305af3ae2527e2939076b7e"
+recipe = "4b88cd02a94dc8de22bb66ef9b7b31235ea46fba8b02c8cb30d3f6c080e3bab4"
 
-[freetype."2.15.0-1"]
+[freetype."git.37515cf5-1"]
 arch = "x86_64"
 description = "Font rendering library"
 license = "FTL"
@@ -425,15 +425,15 @@ depends = [
     "bzip2",
     "libpng",
 ]
-recipe = "938ee729077fbc3dc83cf14ed2e603e018efd9ee107e82704bf57bc04a3d61d8"
+recipe = "a77906c2a672e059c69e407865223f71792a333ed2d94d4d58dcc3803dbd2460"
 
-[fribidi."1.0.18-1"]
+[fribidi."git.15393e49-1"]
 arch = "x86_64"
 description = "Unicode bidirectional algorithm"
 license = "LGPL-2.1-or-later"
-recipe = "fce38213e8a8dd50375f6a088045bfe5332d11588790cca750953e7e4aff260a"
+recipe = "d8c3e3199e1f8affb2b08c62dc93c721a537f4881daccbad80770de91363eb53"
 
-[garcon."4.20.0-1"]
+[garcon."git.16e9e527-1"]
 arch = "x86_64"
 description = "Xfce freedesktop menus"
 license = "LGPL-2.0-or-later"
@@ -443,9 +443,9 @@ depends = [
     "libxfce4util",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "8692c0a47d5f61bd5a750646771159854cdeaff1295a8999243fdab43de1537d"
+recipe = "8bb32778d684bed7f36b7f3b8904e15eb97cf0730dd06099590b48c1877b9e3a"
 
-[gawk."5.3.2-1"]
+[gawk."git.027ebff5-1"]
 arch = "x86_64"
 description = "Text processing"
 license = "GPL-3.0-or-later"
@@ -456,9 +456,9 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "54d958ee7b2a643ed3afa272df1896926379449b8ec9195a2ba0de147bad71e0"
+recipe = "6ef75a80783e40b0b82271b836f6d3c6a4baf022b8887a3964df328bc2fd1b1b"
 
-[gcc."15.2.0-1"]
+[gcc."git.5115c7e4-1"]
 arch = "x86_64"
 description = "The GNU compiler collection (C, C++)"
 license = "GPL-3.0-or-later"
@@ -469,7 +469,7 @@ depends = [
     "mpc",
     "zlib",
 ]
-recipe = "5f41a52b9cd9e94a39d6ea060b16354f8541c0c81771afcf07ded1433bcd2442"
+recipe = "c255e09b3e8744b246bb597e0d06c118b5349bfa4839483a6890275d4ff9caad"
 
 [gdbm."1.26-1"]
 arch = "x86_64"
@@ -478,7 +478,7 @@ license = "GPL-3.0-or-later"
 depends = ["readline"]
 recipe = "53cdaed87865e91dc2facb556c8f8efdeabe471cbdea7f59dec543ee1aa8e65e"
 
-[gdk-pixbuf."2.44.8-1"]
+[gdk-pixbuf."git.0bd66153-1"]
 arch = "x86_64"
 description = "Image loading library"
 license = "LGPL-2.1-or-later"
@@ -488,7 +488,7 @@ depends = [
     "libjpeg-turbo",
     "shared-mime-info",
 ]
-recipe = "d80d1d6d940fe9a4272f3691a57d80c9d6b4c0718e0e00e3fcdbc1d25f6e2310"
+recipe = "bf72fb419a2fba099f5604a8b1d400c3004bb92995714a88eb1d02f09e7d04ed"
 
 [gettext."0.26-1"]
 arch = "x86_64"
@@ -496,7 +496,7 @@ description = "Internationalisation tools"
 license = "GPL-3.0-or-later"
 recipe = "12247f6989c9672a2a33796d6de37ea2a58ccd6350d4b90173faec934e6c0360"
 
-[git."2.56.1-1"]
+[git."git.03b41523-1"]
 arch = "x86_64"
 description = "Distributed version control system"
 license = "GPL-2.0-only"
@@ -511,9 +511,9 @@ build_depends = [
     "gettext",
     "autoconf",
 ]
-recipe = "1573035d7981f39e1c97dcc7bd507343f301cfcd0bdfbb8d8634fe84550ad162"
+recipe = "044e1eaa35bb341377b6a3c85f4c2f61ace4f94afec788c9ccf237d8914a968f"
 
-[glib."2.90.1-1"]
+[glib."git.e05063cc-1"]
 arch = "x86_64"
 description = "Core application library"
 license = "LGPL-2.1-or-later"
@@ -524,13 +524,13 @@ depends = [
     "util-linux",
     "python",
 ]
-recipe = "7ba97dfe7c598008f34f82602ea52ba192d14c5a839c3ed898f08db8444c4cb5"
+recipe = "3402461b9756d7666fb151c26705953cd0a1acab267aa6ed4a5fe673505a2c8b"
 
-[glibc."2.42-1"]
+[glibc."git.d2097651-1"]
 arch = "x86_64"
 description = "The GNU C library"
 license = "LGPL-2.1-or-later"
-recipe = "3849db595cc08da1169fceb230f671aca5b2c1da4dfcf4081aa8567fe2612945"
+recipe = "7cd2464feb9ae2b5f3825c33c98ec2c002674b53257f062e4cc31090d4891590"
 
 [gmp."6.3.0-1"]
 arch = "x86_64"
@@ -557,7 +557,7 @@ license = "GPL-3.0-or-later"
 depends = ["gettext"]
 recipe = "2ef9418fe085d204ee95eb71944b474149832e3a5a42b3d7989792021dee7975"
 
-["gtk+"."3.24.43-1"]
+["gtk+"."git.788f4de2-1"]
 arch = "x86_64"
 description = "GTK 3 toolkit"
 license = "LGPL-2.1-or-later"
@@ -581,9 +581,9 @@ depends = [
     "fribidi",
     "mesa",
 ]
-recipe = "eb1cb1415bb2380b9ef3da343dd26379a2943656855541a1027a542cc16db0ad"
+recipe = "34547ef285c4ec42c123a86418bc09d34ec555198c75f6480d3f85e4d8dba81f"
 
-[gtk-doc."1.37.0-1"]
+[gtk-doc."git.1e7f700d-1"]
 arch = "x86_64"
 description = "Documentation tools of GNOME libraries (gtkdocize and macros)"
 license = "GPL-2.0-or-later"
@@ -594,7 +594,7 @@ depends = [
     "libxslt",
     "libxml2",
 ]
-recipe = "adb900b398006ceab4871620cd9b44feefa0997f93f4ced63b2981cb91f40c22"
+recipe = "834a1d9d47a49a8f2c9b638fa4123d7f3bed6677907d29c1614eedcb1c87d28c"
 
 [gzip."1.14-1"]
 arch = "x86_64"
@@ -602,7 +602,7 @@ description = "gzip compression"
 license = "GPL-3.0-or-later"
 recipe = "bfca731695d1561f5ef74ab6d11090818591e700f688dda8a868932fb8a4450a"
 
-[harfbuzz."15.1.0-1"]
+[harfbuzz."git.3df40d9b-1"]
 arch = "x86_64"
 description = "Text shaping"
 license = "MIT"
@@ -610,7 +610,7 @@ depends = [
     "glib",
     "freetype",
 ]
-recipe = "40c669d9cb918d500c49e28018e33ec4798cc33bb10e1b9723def224b1e5e437"
+recipe = "f45c5ced310d871fbfb2ad8f77d005a7f0124b7250eb35078602e0b307cb942a"
 
 [hello."2.12.2-1"]
 arch = "x86_64"
@@ -618,17 +618,17 @@ description = "Prints a greeting (the test package)"
 license = "GPL-3.0-or-later"
 recipe = "1cf88007349e09f1e20647ef0fd8b05f2a3d50e5a16d32e8b2ef63f43d5bf11e"
 
-[hicolor-icon-theme."0.18-1"]
+[hicolor-icon-theme."git.a6dd0257-1"]
 arch = "x86_64"
 description = "Fallback icon theme"
 license = "GPL-2.0-only"
-recipe = "bfb14d92ca88b8f35bafa8c419845b6741b691c5153a21a08432fe126cf13995"
+recipe = "0d215f1176e3999dd7027a2cf529c0a630c099339eb5e73b73bc0df7da149cda"
 
-[hwdata."0.413-1"]
+[hwdata."git.1cf70321-1"]
 arch = "x86_64"
 description = "Hardware identification and configuration data (pci.ids, usb.ids, pnp.ids)"
 license = "GPL-2.0-or-later"
-recipe = "656a458c07a7d0563c682c2b8bfa932c85611b84cb9c0a04126c75163a8d999d"
+recipe = "568fce0a3319d80718a4900349383f1343d7826d47f6ecec5c08efa6bfe39342"
 
 [iana-etc.20250807-1]
 arch = "x86_64"
@@ -636,13 +636,13 @@ description = "Protocol and port names for /etc"
 license = "MIT"
 recipe = "c6c382209571edcb836fb98f2a29a980038d134175d145a2aceb38906f30541a"
 
-[iceauth."1.0.11-1"]
+[iceauth."git.dd8a8dbe-1"]
 arch = "x86_64"
 description = "X.Org application iceauth"
 license = "MIT"
 depends = ["libice"]
 build_depends = ["util-macros"]
-recipe = "495fcd76380e862618cc016c4ef6200dea9861ccb3c297c2a473899873b4d83e"
+recipe = "bb09ef12e1b0ba449465782e86497d6f605844351cf1782f5d6919caaf72ca6b"
 
 [inetutils."2.6-1"]
 arch = "x86_64"
@@ -650,13 +650,13 @@ description = "hostname, ping, ifconfig and friends"
 license = "GPL-3.0-or-later"
 recipe = "904f5e738a4eff51e9b3e147a0efd9622d05202068ff4b8cdfbc352a37bb7dd0"
 
-[iproute2."6.16.0-1"]
+[iproute2."git.915d3eaf-1"]
 arch = "x86_64"
 description = "Networking tools (ip, ss)"
 license = "GPL-2.0-or-later"
-recipe = "476f338f71321ab6e7716b123de564cf28bfee17800bd93f649d4fb6a836a273"
+recipe = "9075921f459d7377ae9c0425ded1d9f8c88d39c9c2789d2595e1d0693b0f4d3a"
 
-[kbd."2.8.0-2"]
+[kbd."git.7f08e8db-2"]
 arch = "x86_64"
 description = "Keyboard and console tools"
 license = "GPL-2.0-or-later"
@@ -666,9 +666,9 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "9a58a3a14aedb782af31b6ab7b00eb7903c278cbc81da28754bb8ef4e2207038"
+recipe = "b8095477055c7556ec982a2c2a9f7fff46553fbf59bcf791f704bfc25a33b767"
 
-[kmod."34.2-1"]
+[kmod."git.13330c95-1"]
 arch = "x86_64"
 description = "Kernel module tools"
 license = "LGPL-2.1-or-later"
@@ -685,9 +685,9 @@ build_depends = [
     "gettext",
     "pkgconf",
 ]
-recipe = "5e3d39b123d600f59070f9b88565a1f46a6534dec3f3fa52a7e6c6fd6dab7e23"
+recipe = "30b10fa4b3170cc632e61155614d3498a948520aaafaf0b66803225e7a6e98bd"
 
-[less.679-1]
+[less."git.70f0ca12-1"]
 arch = "x86_64"
 description = "Pager"
 license = "GPL-3.0-or-later"
@@ -698,7 +698,7 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "fcb5bc5c81ce899d4a737d54c630119facf0010854359fc4712f6e5c5160736a"
+recipe = "0646514a7d284b8f28a244a95ab43ac13c2b739fbf52ca6676774cc1a9c1d385"
 
 [libburn."1.5.8-1"]
 arch = "x86_64"
@@ -707,27 +707,27 @@ license = "GPL-2.0-or-later"
 depends = ["glibc"]
 recipe = "27364839571c225df0e4c778fb81d9ef73c9ef38de07c1632ef389f3faeb4bb5"
 
-[libcap."2.76-2"]
+[libcap."git.5f3e12ca-2"]
 arch = "x86_64"
 description = "POSIX capabilities"
 license = "BSD-3-Clause"
-recipe = "fb59f687f25ea9022c85ab9051dd2bf73fd21f2265ff53f79781b6397d5c7cf7"
+recipe = "e1930bff0a037dd8e93acacf4fb89a8188f43832024f44e444bd4e1c2d6a4c49"
 
-[libdisplay-info."0.4.0-1"]
+[libdisplay-info."git.c67a3e9b-1"]
 arch = "x86_64"
 description = "EDID and DisplayID library"
 license = "MIT"
 depends = ["hwdata"]
-recipe = "cbe6ec2f0120a5b124a1585124c5777ef5fc0eaf22f0aaa77a28802abafc6d0e"
+recipe = "9827f9849cfd6cec90e83405bc7457220abbadc7c60efd6edaccc6e32d00acdd"
 
-[libdrm."2.4.134-1"]
+[libdrm."git.e984d448-1"]
 arch = "x86_64"
 description = "Direct rendering manager library"
 license = "MIT"
 depends = ["libpciaccess"]
-recipe = "ee72f1cfa32e08e9ee1bfd72ca00765c8c28b3d067beb87c3d376caf892baa9a"
+recipe = "ce5d708721bbd0b4347a8fc1b8fd36706e9be217de1d92d35208ac851f7e9590"
 
-[libepoxy."1.5.10-1"]
+[libepoxy."git.c84bc945-1"]
 arch = "x86_64"
 description = "OpenGL function pointer management"
 license = "MIT"
@@ -735,15 +735,15 @@ depends = [
     "libx11",
     "mesa",
 ]
-recipe = "35a0f40f4d478e744daf97ca0b36529926e39d668ffa3bead937b9b368bf228e"
+recipe = "2292bf4532297b5ecbdff7f57f37554e689b23281df3bd2cbab534ac5ad8e32b"
 
-[libevdev."1.14.0-1"]
+[libevdev."git.d9af2e45-1"]
 arch = "x86_64"
 description = "Wrapper for evdev devices"
 license = "MIT"
-recipe = "92590ca30128bcb5aaa54e836fa0b66f0283a64c6b5d8182c7910cee50e8eb48"
+recipe = "91dfa8943a8b16ab3ae1533c491b44e804d612fb493433df1833172a34394c53"
 
-[libffi."3.5.2-1"]
+[libffi."git.e2eda0cf-1"]
 arch = "x86_64"
 description = "Foreign function interface"
 license = "MIT"
@@ -754,9 +754,9 @@ build_depends = [
     "gettext",
     "texinfo",
 ]
-recipe = "7db140a4886fba54615eba12561b3a51250b70523ac9ef8c829d2437f8e2c1a7"
+recipe = "dc426681daf876944d1a864656406632d0094b0a0a8a0c3a3b53e5122566bb6b"
 
-[libfontenc."1.1.9-1"]
+[libfontenc."git.780d1f6f-1"]
 arch = "x86_64"
 description = "Font encodings"
 license = "MIT"
@@ -768,9 +768,9 @@ build_depends = [
     "font-util",
     "util-macros",
 ]
-recipe = "4293dd41e98a32c9a6b27184a9cc2e8df41d4f5bbdbf4c80009b7fb384f0741d"
+recipe = "b1a6cd67125429ddce00d9af50cc6a10b5ed32135f42062e75b1f19932ec24e1"
 
-[libice."1.1.2-1"]
+[libice."git.adf389fc-1"]
 arch = "x86_64"
 description = "Inter-client exchange"
 license = "MIT"
@@ -779,9 +779,9 @@ depends = [
     "xtrans",
 ]
 build_depends = ["util-macros"]
-recipe = "73c3d6877c0f7f5089ee6d8e78a2bf467375a30596f09effe7ebad653d904abf"
+recipe = "35f623d0431d4b50dcee5cabe5a8db8f709907fbcbcc6336d9e34b03efb08417"
 
-[libinput."1.32.0-1"]
+[libinput."git.5cf833b5-1"]
 arch = "x86_64"
 description = "Input device handling"
 license = "MIT"
@@ -790,7 +790,7 @@ depends = [
     "mtdev",
     "eudev",
 ]
-recipe = "5421f775f3d2e262ba03654a9fda601429c2aba50b2dc4993e2df2c7f7f3ce16"
+recipe = "b628096740557c19ef6a43a45c4abc97762fd1bc9b8bacccbb66f0a90af17b64"
 
 [libisoburn."1.5.8-1"]
 arch = "x86_64"
@@ -814,29 +814,29 @@ depends = [
 ]
 recipe = "b7435f2191d679b8afbcd723849a8b08fba74d5891356133e237001d1cf8091e"
 
-[libjpeg-turbo."3.2.1-1"]
+[libjpeg-turbo."git.7b499378-1"]
 arch = "x86_64"
 description = "JPEG codec"
 license = "BSD-3-Clause"
 build_depends = ["cmake"]
-recipe = "ae628a7eaca696e5c5d0e464ce12212339d89afe3826b8fb8e742cdc368cfbeb"
+recipe = "fa25a277264ef16988dcf6d6cb5cb3b724eba5f591744ed983e48e24adf95c27"
 
-[libpciaccess."0.19-1"]
+[libpciaccess."git.38e6f15f-1"]
 arch = "x86_64"
 description = "PCI access"
 license = "MIT"
 depends = ["zlib"]
-recipe = "5bdf5f8143961464532b734b812142bfa29b4629153d036c3894e82e35de4636"
+recipe = "3dfb84a5a786319ba2da6d95f60acd51ff305ae86f5179c2836d83186d254270"
 
-[libpng."1.6.59-1"]
+[libpng."git.cd952f49-1"]
 arch = "x86_64"
 description = "PNG library"
 license = "Libpng-2.0"
 depends = ["zlib"]
 build_depends = ["cmake"]
-recipe = "849472f04508f1cfe6e19219dc26fa6907e4f8b144bf4877b8cc3359414ca518"
+recipe = "01c01c9033b5f74d5be90d3cf894c5f344db5ab09af4ba79c1fb94f08fc6f2b7"
 
-[librsvg."2.63.4-1"]
+[librsvg."git.0c074d0a-1"]
 arch = "x86_64"
 description = "SVG rendering library and the gdk-pixbuf loader for it"
 license = "LGPL-2.1-or-later"
@@ -853,9 +853,9 @@ build_depends = [
     "rust-bin",
     "cargo-c",
 ]
-recipe = "758694569d88047fa24ac06f5e09d9c88b8ceebaa38370f10ad99d2539f73cea"
+recipe = "073056ea3bd307e454b6336cd9e7c84f3e9d5b12e746ec694f8115b992894a7f"
 
-[libsm."1.2.6-1"]
+[libsm."git.5f6da959-1"]
 arch = "x86_64"
 description = "Session management"
 license = "MIT"
@@ -864,7 +864,7 @@ depends = [
     "util-linux",
 ]
 build_depends = ["util-macros"]
-recipe = "e3dc1062744a3085fe065e3d97b4699036442dc25bd323e70504425f20cd4991"
+recipe = "7e7b765b1c75feea7e1e8da960bbc1ea9b45453f016b5e4e9f09838ce5bf8c03"
 
 [libtool."2.5.4-1"]
 arch = "x86_64"
@@ -872,7 +872,7 @@ description = "Generic library support script"
 license = "GPL-2.0-or-later"
 recipe = "f34340f3f3b0872be5cfddaad47f41bede6d14b408f77f3281cb2563cc9735bd"
 
-[libwnck."43.3-1"]
+[libwnck."git.75e56cf1-1"]
 arch = "x86_64"
 description = "Window navigation library"
 license = "LGPL-2.0-or-later"
@@ -880,9 +880,9 @@ depends = [
     "gtk+",
     "libxrender",
 ]
-recipe = "4b49294fc3abfd5d571b829616bf9a6f8ad844338b5f47e3e26b1595b818832e"
+recipe = "5f2bafcbf76f6f3b75d2b02fee01585f28455445a85b09345d578bf88ae206a4"
 
-[libx11."1.8.14-1"]
+[libx11."git.b8d5a704-1"]
 arch = "x86_64"
 description = "Xlib"
 license = "MIT"
@@ -892,17 +892,17 @@ depends = [
     "xtrans",
 ]
 build_depends = ["util-macros"]
-recipe = "1d827e909597f0cfcf806dcabe25ce2232c1e4cf0a9c3521032826c849758e05"
+recipe = "0459be256ea108983bcc120642004bed8b12dea3c23e1c0484b5c3b632f24a2c"
 
-[libxau."1.0.12-1"]
+[libxau."git.a9c65683-1"]
 arch = "x86_64"
 description = "X authorization"
 license = "MIT"
 depends = ["xorgproto"]
 build_depends = ["util-macros"]
-recipe = "142aff0bacc2f3c15f2ad929ea46ebf3cf2a6bbd3e10d5cae799a4ecf6f81732"
+recipe = "f67a32c52701efc12f18f661a42e8bf872fa547a8a362c217c0d536559b5abb4"
 
-[libxaw."1.0.16-1"]
+[libxaw."git.f14ba54e-1"]
 arch = "x86_64"
 description = "Athena widgets"
 license = "MIT"
@@ -913,9 +913,9 @@ depends = [
     "libxext",
 ]
 build_depends = ["util-macros"]
-recipe = "072b2c4f8c00b7f8a6b4987546fb73d935f33828d672991036558827df0ff986"
+recipe = "a06f1cf1dc0b60064b2495f8e4ad72a09ba0da6783125186fafb67450a188f7e"
 
-[libxcb."1.17.0-1"]
+[libxcb."git.622152ee-1"]
 arch = "x86_64"
 description = "X protocol C binding"
 license = "MIT"
@@ -925,15 +925,15 @@ depends = [
     "xcb-proto",
 ]
 build_depends = ["util-macros"]
-recipe = "9f71266b9ad31e982fc2f12a017267d938db69068a2b91f1af80c9c159da69f5"
+recipe = "3ddf93d83a3ca5c68eac712d85ef814b13d923705c8e05296cccbe05058eb917"
 
-[libxcomposite."0.4.7-1"]
+[libxcomposite."git.a6d5d773-1"]
 arch = "x86_64"
 description = "XComposite"
 license = "MIT"
 depends = ["libxfixes"]
 build_depends = ["util-macros"]
-recipe = "61566b3008718373a368bb7cdc830fa9f40ceb843dffa7180083deebd01556e5"
+recipe = "8683cc6c758ba1fc51da29796da36ecc60609771dea61b92880156f2ada8cbda"
 
 [libxcrypt."4.4.38-1"]
 arch = "x86_64"
@@ -941,7 +941,7 @@ description = "Password hashing library"
 license = "LGPL-2.1-or-later"
 recipe = "cbbf8271155e00bfacb40e5e371f7c56164ab2c03b7a107dbd5eb19e21e80f64"
 
-[libxcursor."1.2.3-1"]
+[libxcursor."git.8ae6cf61-1"]
 arch = "x86_64"
 description = "X cursors"
 license = "MIT"
@@ -950,39 +950,39 @@ depends = [
     "libxrender",
 ]
 build_depends = ["util-macros"]
-recipe = "78e495a6078e45e7d82a3feee2e5924c67c33d252874c899bcb877b887f13462"
+recipe = "21f44f4bb26c061c59a61631bb116230d871bbf972edb25ff1da91dbcad7c55d"
 
-[libxcvt."0.1.3-1"]
+[libxcvt."git.dd8631c6-1"]
 arch = "x86_64"
 description = "VESA CVT modelines"
 license = "MIT"
-recipe = "efa2ce29b1ace54e0d6ade6baa493abcbe9ab96d487e0240a022dcc019193835"
+recipe = "4581268c0d8482afdbc79505b470c5ee01855ade5ff538a59c06b09938dd4099"
 
-[libxdamage."1.1.7-1"]
+[libxdamage."git.4ff0f0e7-1"]
 arch = "x86_64"
 description = "XDamage"
 license = "MIT"
 depends = ["libxfixes"]
 build_depends = ["util-macros"]
-recipe = "e6577c2ba8c08d99b203e6bc6b71d8df58f3cc27837f22b1063db3887b84ea07"
+recipe = "23e8c989b81303cdc65cd02019b5ce00fde250625c12a2d7ccdf730043c7040c"
 
-[libxdmcp."1.1.5-1"]
+[libxdmcp."git.1192d3bc-1"]
 arch = "x86_64"
 description = "X display manager control protocol"
 license = "MIT"
 depends = ["xorgproto"]
 build_depends = ["util-macros"]
-recipe = "23d5cd442dc08910e13ea255d15b19d1e735a22909516b4584a2a9ee80907c36"
+recipe = "1a58e4328decdd69d141d75a5a9a8e61296dd660b2502898db82550793b42b18"
 
-[libxext."1.3.7-1"]
+[libxext."git.2a694ba2-1"]
 arch = "x86_64"
 description = "X extensions"
 license = "MIT"
 depends = ["libx11"]
 build_depends = ["util-macros"]
-recipe = "b0f6325ef77e84449bd1b8c9b2cab90962d34a2ff81b78fb1d5672e9127c05b7"
+recipe = "64b4800c0a88e9fb826e0ff7162b1290c580876892226df80fd5c198ba061ab3"
 
-[libxfce4ui."4.20.2-1"]
+[libxfce4ui."git.0a95a649-1"]
 arch = "x86_64"
 description = "Xfce widget library"
 license = "LGPL-2.0-or-later"
@@ -996,17 +996,17 @@ depends = [
     "librsvg",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "5e8ccca94c71abc86cbcf9eea0f3c402cfcd9ca71f927450ac1f1f933be069a0"
+recipe = "b60a78c08cf91d092e2b5b7df80424cfdef86a5900eff5f7e5b523cfa08937ab"
 
-[libxfce4util."4.20.1-1"]
+[libxfce4util."git.fe1b3c88-1"]
 arch = "x86_64"
 description = "Xfce utility library"
 license = "LGPL-2.0-or-later"
 depends = ["glib"]
 build_depends = ["xfce4-dev-tools"]
-recipe = "88d99964c4006be6d1b9e5300746313e1bc6b0ece33ae98c69437eac429574c6"
+recipe = "fb350236a5497a4d2b7033a6f93c2992d8b2fa98f78fd67ea4506f9b221d0086"
 
-[libxfce4windowing."4.20.7-1"]
+[libxfce4windowing."git.e288652b-1"]
 arch = "x86_64"
 description = "Xfce windowing library"
 license = "LGPL-2.1-or-later"
@@ -1019,17 +1019,17 @@ depends = [
     "libdisplay-info",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "79275bb476cd48dc743be376e31f5db14a5902bd4679cc939a37d0c053a0e4c3"
+recipe = "b6ac40f72b30816d4412d610a1c2562ed5b692aeb20730d883f2e8e7411fc4e7"
 
-[libxfixes."6.0.2-1"]
+[libxfixes."git.70d5b0e3-1"]
 arch = "x86_64"
 description = "XFIXES"
 license = "MIT"
 depends = ["libx11"]
 build_depends = ["util-macros"]
-recipe = "b4366029e9b61c5fbd26ec8e3f030e3448af3de8976e4d4838eb2e9104b726b0"
+recipe = "25a5996b362d10ddbc583410cb527b457bc71e2a5b50cb57fcc71a9689dbdde8"
 
-[libxfont2."2.0.9-1"]
+[libxfont2."git.975cc652-1"]
 arch = "x86_64"
 description = "X font library"
 license = "MIT"
@@ -1043,9 +1043,9 @@ build_depends = [
     "font-util",
     "util-macros",
 ]
-recipe = "7fc134a3f6f05ea16d7d6d59cc301ba790eb18c7850b6f02e1afb6aea07ed0da"
+recipe = "a2d4f2c3792616d863eab7c799d0c3f784c67f4a6daf74aad354007cf16705b7"
 
-[libxft."2.3.9-1"]
+[libxft."git.f4805c86-1"]
 arch = "x86_64"
 description = "X FreeType interface"
 license = "MIT"
@@ -1055,9 +1055,9 @@ depends = [
     "freetype",
 ]
 build_depends = ["util-macros"]
-recipe = "1d0e761502933aa47af625ce4f1988a9b653dbee3099a7dca866c259d2e6efc3"
+recipe = "446e5c0e909090a410fadf58b645a1b6fab26ea9815ceeb706317b566f1f062b"
 
-[libxi."1.8.4-1"]
+[libxi."git.9ea632ab-1"]
 arch = "x86_64"
 description = "XInput"
 license = "MIT"
@@ -1066,17 +1066,17 @@ depends = [
     "libxfixes",
 ]
 build_depends = ["util-macros"]
-recipe = "782f488cf65504f4fabf75808a8ccb69be0defe4ce8e51102edcec3cae6253ea"
+recipe = "6c731912021b0f9490c19e20001faf36bf3dbb80ece7377e5ee3a34c0ba093a5"
 
-[libxinerama."1.1.6-1"]
+[libxinerama."git.cc4ac9cf-1"]
 arch = "x86_64"
 description = "Xinerama"
 license = "MIT"
 depends = ["libxext"]
 build_depends = ["util-macros"]
-recipe = "acdeaeb30bd7cc8c4b01899563b72de9e8194e5a3e6a578e9327c6dda16609e7"
+recipe = "eea88188307c6be68a67b4b5416b6068f845a154797bbca336aab501e4074467"
 
-[libxkbcommon."1.13.2-1"]
+[libxkbcommon."git.d1442aaa-1"]
 arch = "x86_64"
 description = "Keyboard handling library"
 license = "MIT"
@@ -1084,16 +1084,16 @@ depends = [
     "xkeyboard-config",
     "libxcb",
 ]
-recipe = "c9a0f617eb85aa3cce7820b368ec0fbba92f77b746aeb327322a5aba755b903b"
+recipe = "ef4e26a90232707f73d96fb8db51e09ea0b7069040096f36daba8c81bb3fe075"
 
-[libxkbfile."1.2.0-1"]
+[libxkbfile."git.42e5dedd-1"]
 arch = "x86_64"
 description = "XKB file handling"
 license = "MIT"
 depends = ["libx11"]
-recipe = "b0f5725f58083e28ef637cb30d89ec9bb7962eb1fbd1e3f7b90c312b0ae311ba"
+recipe = "78c172104c6fce5918e579345e906092bb4a774b5d7e9e95021dc6fcc549356d"
 
-[libxml2."2.15.4-1"]
+[libxml2."git.96498992-1"]
 arch = "x86_64"
 description = "XML library"
 license = "MIT"
@@ -1101,9 +1101,9 @@ depends = [
     "zlib",
     "xz",
 ]
-recipe = "57d8cc0b9aed4a09a363d3b23634676eea11d5fc5aff6fb0797ccdd157772e7b"
+recipe = "744c4f7fba2dcf2211dcf81dfda294d7b4c136708753ae6723f962d1a1ac9456"
 
-[libxmu."1.3.1-1"]
+[libxmu."git.cdf280f6-1"]
 arch = "x86_64"
 description = "X miscellaneous utilities"
 license = "MIT"
@@ -1112,9 +1112,9 @@ depends = [
     "libxext",
 ]
 build_depends = ["util-macros"]
-recipe = "8aa8dd185a2ff796eba58f0f046fced0e3073a747218bef9d09a452adf124c38"
+recipe = "5d4d4eaca903be1c6e917c6ea5dd1fdd29faa9ed6f6c530af083049103aeea14"
 
-[libxpm."3.5.20-1"]
+[libxpm."git.34f15baa-1"]
 arch = "x86_64"
 description = "X pixmap"
 license = "MIT"
@@ -1124,9 +1124,9 @@ depends = [
     "libxext",
 ]
 build_depends = ["util-macros"]
-recipe = "041443a7808cf79dff205eacb230fb2101a6d0b6c28b9ba4d2e690c8543f0e6e"
+recipe = "cd029b7ffb8ba1c0ace74b00268b64d73279d91b58aa19859daf4b9faeac2eaa"
 
-[libxrandr."1.5.5-1"]
+[libxrandr."git.540c3cee-1"]
 arch = "x86_64"
 description = "XRandR"
 license = "MIT"
@@ -1135,32 +1135,32 @@ depends = [
     "libxrender",
 ]
 build_depends = ["util-macros"]
-recipe = "92d71b7eae6c0313cc70d51216bf8a04e8a0087df2bfa9949f49b365f74f6b60"
+recipe = "adae2d6124efa705278b872abcf23fa0d14de2a85ed3d3ef493ddc22b2acfc3b"
 
-[libxrender."0.9.13-1"]
+[libxrender."git.f30d6546-1"]
 arch = "x86_64"
 description = "XRender"
 license = "MIT"
 depends = ["libx11"]
 build_depends = ["util-macros"]
-recipe = "e326a7c7cb5b139b17b0c16a865d35f9fe646c444d7c8ebdd43355848ef3787f"
+recipe = "569a03cb2f05168ee7eecddb9bbabe0806eb34fe42458d6712746d9771749c0b"
 
-[libxshmfence."1.3.3-1"]
+[libxshmfence."git.89f06474-1"]
 arch = "x86_64"
 description = "Shared memory fences"
 license = "MIT"
 depends = ["xorgproto"]
 build_depends = ["util-macros"]
-recipe = "2849cc68f9515acc0ea8f7d1a50f625b4bacbf8cca119b53458abda79c6ee153"
+recipe = "a57582dd253fba85d93076e08c20fcc696d49c089f643770c3d8798105ff6fb6"
 
-[libxslt."1.1.45-1"]
+[libxslt."git.35323d6a-1"]
 arch = "x86_64"
 description = "XSLT library and xsltproc"
 license = "MIT"
 depends = ["libxml2"]
-recipe = "2fde2f167279b823b8224c32e0048d13a2840c1d4bdf485563ba0af83db4fb46"
+recipe = "4e1e7fcef21f6278ac5ea8cbbf6eba4845d29c739199672194e51c40aa0f73e4"
 
-[libxt."1.3.1-1"]
+[libxt."git.1dfcfa8d-1"]
 arch = "x86_64"
 description = "X toolkit intrinsics"
 license = "MIT"
@@ -1169,9 +1169,9 @@ depends = [
     "libx11",
 ]
 build_depends = ["util-macros"]
-recipe = "8f3bb40ce22776eec4fdb5f82a292a53581a3c3fe21573ae6d15e7e33d08a56c"
+recipe = "9f96f80ebcf427abb0f07e8375912a09480d3a3d60c9bea4e70ed6853a89fd7e"
 
-[libxtst."1.2.6-1"]
+[libxtst."git.b95aac65-1"]
 arch = "x86_64"
 description = "XTest and RECORD"
 license = "MIT"
@@ -1180,44 +1180,44 @@ depends = [
     "libxi",
 ]
 build_depends = ["util-macros"]
-recipe = "1df80630eaa8161d8dfdda7481bf4bbcd696771f46c16de7e9a96442b6242011"
+recipe = "e73c2724d2c514c6896792f8ed6beaa1cbce3056a06801bdc8dec541c192ccfc"
 
-[libxv."1.0.13-1"]
+[libxv."git.e1cde545-1"]
 arch = "x86_64"
 description = "XVideo"
 license = "MIT"
 depends = ["libxext"]
 build_depends = ["util-macros"]
-recipe = "fc56b790fbdc9b219e6358c4a6460580cbed428e1e6b9bea2811901ad142f8ef"
+recipe = "9cf6553c99ff8221911791e5ec769e7730660ffbb760d895a42a33a3e3c0b30a"
 
-[libxxf86vm."1.1.7-1"]
+[libxxf86vm."git.7f200bf0-1"]
 arch = "x86_64"
 description = "XFree86-VidMode"
 license = "MIT"
 depends = ["libxext"]
 build_depends = ["util-macros"]
-recipe = "1d798cffb1206f267320fa173c0cc88a60929c90a42470163bbdcc3856cb8452"
+recipe = "85627b7787c1d042d651ea9bcb9cf5f98f83a30c0246b83bd86307257070a0a9"
 
-[linux."7.3.4-2"]
+[linux."git.7595a62d-2"]
 arch = "x86_64"
 description = "The Linux kernel and its modules"
 license = "GPL-2.0-only"
 depends = ["kmod"]
-recipe = "db2320057aff811c03872862b4407339a00dd83cc58eb0c949a50d3df8853997"
+recipe = "27382c3a4d51b0c0305a54863d462279bc7708deeb655505df9b05ce6b08448f"
 
-[linux-firmware.20261019-1]
+[linux-firmware."git.a2dcb924-1"]
 arch = "x86_64"
 description = "Firmware of GPUs and other devices (amdgpu, radeon, i915, xe, nvidia)"
 license = "Redistributable"
-recipe = "99f952b403590f143f2439b1f53cc4bbef5ff562ccedfeeafbe7f938e923534c"
+recipe = "3b3f93312074e72609a69375c3647c58dd857312e945e50f18f8e48ca9116fce"
 
-[linux-headers."6.16.1-1"]
+[linux-headers."git.3e0969c9-1"]
 arch = "x86_64"
 description = "The kernel headers glibc is built against"
 license = "GPL-2.0-only WITH Linux-syscall-note"
-recipe = "247ce9cf0efbc06a9aa08aaed0ab6a97a8c018f382bb6cfb8d6dabcba889e53b"
+recipe = "3f5607afb8f6dcd3d80fd7f0164c9944aad9cb4b768182374cbe6954be4e2527"
 
-[llvm."23.1.5-1"]
+[llvm."git.392dfff9-1"]
 arch = "x86_64"
 description = "The LLVM compiler infrastructure (libraries, for Mesa)"
 license = "Apache-2.0 WITH LLVM-exception"
@@ -1227,13 +1227,13 @@ depends = [
     "zstd",
 ]
 build_depends = ["cmake"]
-recipe = "3bbdd919576932b5a2c741d009919c470f448240b8cb816bc1deb8e402196c66"
+recipe = "f4609a03d42bbbf17003e68b09e9428e6373efbee4c55979f4d991cb7fe2ecf1"
 
-[lz4."1.10.0-1"]
+[lz4."git.ebb370ca-1"]
 arch = "x86_64"
 description = "LZ4 compression"
 license = "BSD-2-Clause"
-recipe = "b04f91b877bb32e801c0ae40ad33d0ffe058154b710541c56e2e477d0c72f7db"
+recipe = "18339698586a8fe60f050b7f8ab2d39a71d4731dc89510e5d850a3351570f6f6"
 
 [m4."1.4.20-1"]
 arch = "x86_64"
@@ -1247,7 +1247,7 @@ description = "GNU make"
 license = "GPL-3.0-or-later"
 recipe = "3766c92e9b324091e2ed2b0ac60151fc99693188a3fe11d583ee73ac32cfc6a6"
 
-[mesa."26.3.0-1"]
+[mesa."git.0a6fa60a-1"]
 arch = "x86_64"
 description = "OpenGL, EGL and Vulkan drivers: radeonsi, radv, nouveau, llvmpipe"
 license = "MIT"
@@ -1271,9 +1271,9 @@ build_depends = [
     "python-pyyaml",
     "python-packaging",
 ]
-recipe = "6fc5348c6cc736b5291712b042dadea6a024564410e5bf826eb8474638748c99"
+recipe = "74166012de830b4f01107612225abff202a1c71c57adad19d89a71165c1c2b26"
 
-[meson."1.12.1-1"]
+[meson."git.70598bb7-1"]
 arch = "x86_64"
 description = "Build system"
 license = "Apache-2.0"
@@ -1281,9 +1281,9 @@ depends = [
     "python",
     "ninja",
 ]
-recipe = "10d2f3b5fcb26387aa651869f5aef638ef17e5793fab82ba16dff405aaf3d369"
+recipe = "7cebee40becc632d4064369e3fbd3bc618444e3799de5855773645a65cc5c725"
 
-[mpc."1.3.1-1"]
+[mpc."git.9e125d94-1"]
 arch = "x86_64"
 description = "Complex number arithmetic"
 license = "LGPL-3.0-or-later"
@@ -1298,9 +1298,9 @@ build_depends = [
     "gettext",
     "texinfo",
 ]
-recipe = "9074c3cc060646b35498d4b50a9d5e28c45d8df88579b601b41a2a8991b7975e"
+recipe = "15c3ce9aae576376bd0fc0770262164b4f4f0785890f0c05d2d8969ea41d24e4"
 
-[mpfr."4.2.2-1"]
+[mpfr."git.eaa57b85-1"]
 arch = "x86_64"
 description = "Multiple precision floating point"
 license = "LGPL-3.0-or-later"
@@ -1312,7 +1312,7 @@ build_depends = [
     "gettext",
     "texinfo",
 ]
-recipe = "c5bb30f10cb3debfd6a5700f9e642ab03bdd510781e21c44cefaa83da2254cd2"
+recipe = "4159407e0df61b00df32d1a17d5edef779fd984f0658ab6f17b0c3bd8d9b89ed"
 
 [mtdev."1.1.7-1"]
 arch = "x86_64"
@@ -1320,42 +1320,42 @@ description = "Multitouch protocol translation library"
 license = "MIT"
 recipe = "6da09b4152e300971b828c0491adde29bfb8a134cdc0129847d625014e928469"
 
-[ncurses."6.6-1"]
+[ncurses."git.0096bd40-1"]
 arch = "x86_64"
 description = "Terminal handling library"
 license = "MIT"
-recipe = "4938860bddf0259ff9e2debd00616187d7081b0b8c30bc39cc1da547aaf240c3"
+recipe = "1a94bba85d3fc5b2ae66b2e3acfde8b37c2f4531a02928d3b235622c44d60f17"
 
-[neofetch."7.1.0-1"]
+[neofetch."git.60d07dee-1"]
 arch = "x86_64"
 description = "System information tool written in bash"
 license = "MIT"
 depends = ["bash"]
-recipe = "c6c86112555cb330bebf20565c794d150b4eeb725d49cf60efa0a3a48afea04d"
+recipe = "63c17ef2e80a43226db36c94a16275c80b6d9abfff2fcce23e12ded1246b9a41"
 
-[ninja."1.13.1-1"]
+[ninja."git.79feac0f-1"]
 arch = "x86_64"
 description = "Build system"
 license = "Apache-2.0"
 depends = ["python"]
-recipe = "afe832c3aa14761984178eb04e3ebcd9c293e199c60ab686eb35141f247827af"
+recipe = "a2f4abdb6a90b7a9d79733702c66032c8b5720c6b341a89275e2318ffe54dcd8"
 
-[openssl."3.5.2-1"]
+[openssl."git.0893a623-1"]
 arch = "x86_64"
 description = "TLS and cryptography"
 license = "Apache-2.0"
 depends = ["zlib"]
-recipe = "b83d1452e4f4a3e57ccc25db36999165e9d5843c9e3199cd7ea3110fcb9d8675"
+recipe = "9733a8fe2e7d5fd3f0d56b1db73af0806baf7176865b3429d928b685f68548db"
 
-[orchid."1.0.0-11"]
+[orchid."git.eb10092c-11"]
 arch = "x86_64"
 description = "The init system of asterOS"
 license = "BSD-3-Clause"
 depends = ["glibc"]
 build_depends = ["rust-bin"]
-recipe = "27af979b03eeb435823d543f155cc7733256a2bdef42c827352d1ceb2ddb7744"
+recipe = "00efeca51ba79efbcc4133a2cf855894f6fa2262d47c56c7a52425e45f10be31"
 
-[pango."1.58.2-1"]
+[pango."git.d360f140-1"]
 arch = "x86_64"
 description = "Text layout and rendering"
 license = "LGPL-2.1-or-later"
@@ -1368,7 +1368,7 @@ depends = [
     "fontconfig",
     "libxft",
 ]
-recipe = "71988409b9651c58cc465ca3b2d16777c3ff8d1d7f8f5fddda4354540bc20ec9"
+recipe = "bb42e61f36e6e55a07c8a48ced89e379ab2699549107c5096736761f5e48c26c"
 
 [patch."2.8-1"]
 arch = "x86_64"
@@ -1376,32 +1376,32 @@ description = "Apply patches"
 license = "GPL-3.0-or-later"
 recipe = "aad194896cbaaf5f045b5433a70911b818668ba04aa575eb8a81afe37776d429"
 
-[pcre2."10.49-1"]
+[pcre2."git.6f9d7c13-1"]
 arch = "x86_64"
 description = "Perl-compatible regular expressions"
 license = "BSD-3-Clause"
-recipe = "c7d21be3f998fcd076e2acf85658c631d72101ad1ba6a3a5569095f59505b537"
+recipe = "540f0b944eaf8a154570af024a443ae7a58392d0952184c4f057debbd1ffc451"
 
-[perl."5.42.0-1"]
+[perl."git.5551b97c-1"]
 arch = "x86_64"
 description = "Perl"
 license = "GPL-1.0-or-later OR Artistic-1.0-Perl"
 depends = ["gdbm"]
-recipe = "3d2a09005b027d3ec1a4a31b481158743c0dfd63f04a8fc49d81a68bbec7ad11"
+recipe = "ebd4fd1d836cfbe3e18e8a66e0c8978d77a4158381d1b12a03d6563d74a36b54"
 
-[pfetch."0.6.0-1"]
+[pfetch."git.675814f3-1"]
 arch = "x86_64"
 description = "A pretty system information tool written in POSIX sh"
 license = "MIT"
-recipe = "fda3563f54a8996eeea23e526e9b81a2741355ca8ce318f79d0a323879f1376e"
+recipe = "970f7aa66252738f0bbdc043a7e9ce100c20ba5922a7bdd9d61d85b4a7193f71"
 
-[pixman."0.46.4-1"]
+[pixman."git.9cc163c9-1"]
 arch = "x86_64"
 description = "Pixel manipulation library"
 license = "MIT"
-recipe = "38452e6854149731a275867bd250e0047858dc5f03d7dc56540c26cfb5b44c53"
+recipe = "bad03f95d2173e31a22724ae670e06c2e2bffc85e4450d2ca401c3475d253079"
 
-[pkgconf."2.5.1-1"]
+[pkgconf."git.4fc570f9-1"]
 arch = "x86_64"
 description = "Compiler flags for libraries"
 license = "ISC"
@@ -1411,9 +1411,9 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "1c67d7741f60e722005cf7ef80b66eed3e6cea3b10079e7f949c9f8038c42350"
+recipe = "c47a0dd1e25825b467829a204dfc6304bee2941132235ca01061b978603b5c2b"
 
-[popt."1.19-1"]
+[popt."git.916e6104-1"]
 arch = "x86_64"
 description = "Command line option parsing"
 license = "MIT"
@@ -1423,9 +1423,9 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "778fe7f6df55d87da37b08b862c8fb731d8e5b051158216c3d06ed72006d0a50"
+recipe = "9f8d87234f2fbb0191245792ed5ee3af1186d60f2bc4184d62f2084202537c4d"
 
-[procps-ng."4.0.5-1"]
+[procps-ng."git.f46b2f79-1"]
 arch = "x86_64"
 description = "ps, top, free, vmstat..."
 license = "GPL-2.0-or-later"
@@ -1437,9 +1437,9 @@ build_depends = [
     "gettext",
     "pkgconf",
 ]
-recipe = "86997c1e9d147b849ae6f7a80b37a2575aec67e216d1b1bbbcd40f43a14d2926"
+recipe = "a0fe52594386d1f9691344c6d391ba2775514553ab9d0e823e7d88cf774bef28"
 
-[psmisc."23.7-1"]
+[psmisc."git.9091d6db-1"]
 arch = "x86_64"
 description = "Process utilities (killall, fuser)"
 license = "GPL-2.0-or-later"
@@ -1450,9 +1450,9 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "48a4a1d80d1e370d2e0cddb150237941da18bb7429ed80ba70ada18b2d76dacc"
+recipe = "b970753893e0e829dd20518eaa4be043e0362daaba858336a4f225d6c9413bde"
 
-[python."3.13.7-1"]
+[python."git.bcee1c32-1"]
 arch = "x86_64"
 description = "Python"
 license = "PSF-2.0"
@@ -1463,9 +1463,9 @@ depends = [
     "zlib",
     "readline",
 ]
-recipe = "5bfd83b38ac9f82dac38b676b493f8bff79570f7cfbd81361ec0ed2ba1a81a62"
+recipe = "5f7f7f73a05559ed6bdd1d266fa1b8bbbb76dd0f715e86268936a5cd691d838b"
 
-[python-mako."1.4.3-1"]
+[python-mako."git.6b833ae0-1"]
 arch = "x86_64"
 description = "Template library"
 license = "MIT"
@@ -1473,49 +1473,49 @@ depends = [
     "python",
     "python-markupsafe",
 ]
-recipe = "55aef1a2d24558dda7e74599fb51042b449dd621d7676b937493bbe0363826ed"
+recipe = "4e180cbe21603525042d1b71618a982fe35eac831658f97b42c5fc5cc4732b92"
 
-[python-markupsafe."3.0.4-1"]
+[python-markupsafe."git.ece26078-1"]
 arch = "x86_64"
 description = "String escaping for templates"
 license = "BSD-3-Clause"
 depends = ["python"]
-recipe = "8c58caa7d125d3cd44cb66bd7d5ede376162bedca89042691bbc4c436d2f4ced"
+recipe = "9afea7da9a724f0ad53507bf460b840f0751ca62b4b8bea3bf3bac2f025e74cf"
 
-[python-packaging."26.3-1"]
+[python-packaging."git.929fd4b1-1"]
 arch = "x86_64"
 description = "Python package version handling"
 license = "Apache-2.0"
 depends = ["python"]
-recipe = "15ab41b207acaf55321a5a8ddb4d3be9de5ba26a0dc41c0d1199b03f48688b5f"
+recipe = "fd80f4bae712647bbf5e7d095645987e67920a93977940b24a801f59914285b2"
 
-[python-parameterized."0.9.0-1"]
+[python-parameterized."git.8719c416-1"]
 arch = "x86_64"
 description = "Parameterized testing for Python"
 license = "BSD-2-Clause"
 depends = ["python"]
-recipe = "66b5561502aed6b56438d305b5d1b70ce736347806745bb4c145e5efbca1438a"
+recipe = "4c3cea5381d2ac4a6adce8baca4dfc6f33bf6f3b25c4bc95f7ef7cade22952a1"
 
-[python-pygments."2.21.0-1"]
+[python-pygments."git.a43b45dc-1"]
 arch = "x86_64"
 description = "Syntax highlighter"
 license = "BSD-2-Clause"
 depends = ["python"]
-recipe = "ca466614503161a03eeba04d7ebdc450314c3e5065be8ce529a0bb8c2a3a9edd"
+recipe = "739d945c481c6bb8c54a13d658eea6aefd9b85b55a8c91aaf2e90cbf519f5216"
 
-[python-pyyaml."6.0.3-1"]
+[python-pyyaml."git.49790e73-1"]
 arch = "x86_64"
 description = "YAML parser"
 license = "MIT"
 depends = ["python"]
-recipe = "80afa0237c0b7535846a8a4d99cb97b1b70c7c1d4c907ae565dff2e44b6fae9b"
+recipe = "1c8a287a34f67a11809990f0685fc7cd5594af5ff3900b41e21666985fcc7013"
 
-[readline."8.3-1"]
+[readline."git.447b8290-1"]
 arch = "x86_64"
 description = "Line editing library"
 license = "GPL-3.0-or-later"
 depends = ["ncurses"]
-recipe = "f11264b5dd53164c9f33da345e4808ebce4d262956d900733813007aff7778cb"
+recipe = "644d327c40c29aaff126437603cf80a7667f3f8aedd44693a58d8e8e9c7b31ff"
 
 [rust-bin."1.99.1-1"]
 arch = "x86_64"
@@ -1533,7 +1533,7 @@ description = "Stream editor"
 license = "GPL-3.0-or-later"
 recipe = "87c476c6901970de438ce6a874adda2432d0c78e7f9afedd88224342a3bf4f52"
 
-[setxkbmap."1.3.5-1"]
+[setxkbmap."git.66d92298-1"]
 arch = "x86_64"
 description = "X.Org application setxkbmap"
 license = "MIT"
@@ -1542,9 +1542,9 @@ depends = [
     "libx11",
 ]
 build_depends = ["util-macros"]
-recipe = "ec28fd3cd7e5abff551e1cb23fbd518dfdb3c838089abf0fe0de8e15c5c03ecb"
+recipe = "c82d11416103520056d4e3d9cad1142f820777c546b5bb4702556a9f6837139a"
 
-[shadow."4.18.0-2"]
+[shadow."git.045652a9-2"]
 arch = "x86_64"
 description = "User and group management"
 license = "BSD-3-Clause"
@@ -1561,9 +1561,9 @@ build_depends = [
     "bison",
     "pkgconf",
 ]
-recipe = "74774ba288e838b8a6180353772c73e4ba315332e2a65868bb9ad1895312641b"
+recipe = "77a8c3e85ef9d79842b6627ce58049ba7199d2fff734449f9043723d03d92350"
 
-[shared-mime-info."2.5.1-1"]
+[shared-mime-info."git.fd8ab89c-1"]
 arch = "x86_64"
 description = "MIME type database"
 license = "GPL-2.0-or-later"
@@ -1571,9 +1571,9 @@ depends = [
     "glib",
     "libxml2",
 ]
-recipe = "b3fe002691394e601d4e0f3fd9282295343bce95848dccb34abf1fee3f0b87b5"
+recipe = "581d25e0789b0e38d012d5664442721fd7aa337268aa365c4cc2cc6b04ee7aae"
 
-[squashfs-tools."4.7.5-1"]
+[squashfs-tools."git.708c59ae-1"]
 arch = "x86_64"
 description = "Tools to create and extract squashfs filesystems"
 license = "GPL-2.0-or-later"
@@ -1583,16 +1583,16 @@ depends = [
     "zstd",
     "lz4",
 ]
-recipe = "4d939e55c1aaf398db986746445cec3e801a8c8ff50469365af9aa59e748755a"
+recipe = "c8b5da8cf7ca36a7252547e1c2060b94e7a282320efaab8c260c92072556488e"
 
-[sudo."1.9.17p2-1"]
+[sudo."git.d1b48c65-1"]
 arch = "x86_64"
 description = "Run commands as another user"
 license = "ISC"
 depends = ["zlib"]
-recipe = "ee0c9952e05033d4fc3c661b8184e5586364a47f0e50a4d940c542e7f72259c1"
+recipe = "17bea94587ba5ed55bae5ff4a8416788ef81cdacefe06c38226511ef32208f30"
 
-[sysklogd."2.7.2-2"]
+[sysklogd."git.5fb314cb-2"]
 arch = "x86_64"
 description = "System and kernel logging"
 license = "BSD-3-Clause"
@@ -1602,7 +1602,7 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "0293a9f924fe7446e7795892d2cac61a22894c976f13c792433ce92068f3cb10"
+recipe = "63b759858c993df889fb91ee13964581febdbae0adf1fbd88b7709ec4e61eb00"
 
 [tar."1.35-1"]
 arch = "x86_64"
@@ -1610,7 +1610,7 @@ description = "Archiver"
 license = "GPL-3.0-or-later"
 recipe = "3d5dc19ad9dc23501d64fc6c9e90408eb073bd26d21a6a770f8f3259a29eeeee"
 
-[texinfo."7.2-1"]
+[texinfo."git.f244dc37-1"]
 arch = "x86_64"
 description = "Documentation system"
 license = "GPL-3.0-or-later"
@@ -1624,9 +1624,9 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "b6ab70b630f802b98365bee6f5b814c26a271e945f5cd9ff63733d8c41bb2552"
+recipe = "1090659ed8b5b6be352ba00a451095c341aea11cfa862768252e889c77d8ce08"
 
-[thunar."4.20.10-1"]
+[thunar."git.7760dfaa-1"]
 arch = "x86_64"
 description = "Xfce file manager"
 license = "GPL-2.0-or-later"
@@ -1641,15 +1641,15 @@ depends = [
     "desktop-file-utils",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "dd0170f00bd12583442c4ca5a5a96bf88a8e4f07c09d7dd27673feb654d2b8e6"
+recipe = "2d3283be72e53305371957252b7b3ef56384b8776b3063f1d0942b59b84aeb90"
 
-[tzdata.2025b-1]
+[tzdata."git.7e1145bf-1"]
 arch = "x86_64"
 description = "Time zone database"
 license = "LicenseRef-Public-Domain"
-recipe = "ec7ee4e17f48fb72aafe49f971ba0f4ce3b9a187428271ff4144eef397cafe69"
+recipe = "d1c1268389b1c72ed39cd2f61404acabbe0c5cfc8cf91c5e44f2ca8f4e1dadcb"
 
-[util-linux."2.41.1-4"]
+[util-linux."git.67b6f19a-4"]
 arch = "x86_64"
 description = "System utilities (mount, fdisk, lsblk...)"
 license = "GPL-2.0-or-later"
@@ -1665,22 +1665,22 @@ build_depends = [
     "bison",
     "pkgconf",
 ]
-recipe = "ac9bb4fed306cbb296a14c14d4a2b3ce6283321a114afee2ec3179cdfcf73f5e"
+recipe = "2da1186fc9e6eecde92e61a18202fe194a516af359be247672b36afd2bf970c2"
 
-[util-macros."1.20.2-1"]
+[util-macros."git.a9d71e3f-1"]
 arch = "x86_64"
 description = "X.Org autotools macros"
 license = "MIT"
-recipe = "fee69133c786b25a3d7ada382f5b5c3f8a25c5d6a7c119a3e10a9e6afb8fe1d2"
+recipe = "4bb978d59cb5c1451bc962c984dbc1d62a1e21489d6b4f62ebc651c119236858"
 
-[vim."9.1.1629-1"]
+[vim."git.706b6f58-1"]
 arch = "x86_64"
 description = "Text editor"
 license = "Vim"
 depends = ["ncurses"]
-recipe = "a8cc65e41391e9b7ac507ade759224d03e2b06d66e88fc9c90e4a0315e04a240"
+recipe = "e6f4e6db6ca1797afd91eb02559acbfe7d2af51fa6d4098123b8d471d8b7f324"
 
-[xauth."1.1.5-1"]
+[xauth."git.6fe9365f-1"]
 arch = "x86_64"
 description = "X.Org application xauth"
 license = "MIT"
@@ -1691,32 +1691,32 @@ depends = [
     "libx11",
 ]
 build_depends = ["util-macros"]
-recipe = "ecc5b975e44775fd0e473a68bd66df7dd11d725d2c9c9efb03487ab40a6da237"
+recipe = "d0d99b519ddeabf6f964b58972fad92e67035a69b55110cd799cc7916ec481d1"
 
-[xbitmaps."1.1.4-1"]
+[xbitmaps."git.433634f3-1"]
 arch = "x86_64"
 description = "X.Org bitmaps"
 license = "MIT"
 build_depends = ["util-macros"]
-recipe = "3b44927cd57720336b453cfae2dbf5d494a799707a8148d3422922d95cf59e22"
+recipe = "cd4597b0de4ce3a06b519df314323b5f810c9928a20f54d95fa51a4b910b5258"
 
-[xcb-proto."1.17.0-1"]
+[xcb-proto."git.77d7fc04-1"]
 arch = "x86_64"
 description = "XCB protocol descriptions"
 license = "MIT"
 depends = ["python"]
 build_depends = ["util-macros"]
-recipe = "f530e6b63b1c4e53fd685d7a507fdbfc12bbfa1cda4731fe8e35edd42e92d718"
+recipe = "b9275a227208f5c5f891d82865ef3a1b47d3b7afb395d71339bdcc4efe165669"
 
-[xcb-util."0.4.1-1"]
+[xcb-util."git.3a157762-1"]
 arch = "x86_64"
 description = "XCB utility library xcb-util"
 license = "MIT"
 depends = ["libxcb"]
 build_depends = ["util-macros"]
-recipe = "72e4aaa3341bd2fdb054498f18373ba8c17361148667c57dab5321d6a5c81659"
+recipe = "fb41b5eb5e84a8580151de06a3793e58dbb8b8f1bfcaad6096270237af9fed32"
 
-[xcb-util-cursor."0.1.6-1"]
+[xcb-util-cursor."git.7b0fa99a-1"]
 arch = "x86_64"
 description = "XCB utility library xcb-util-cursor"
 license = "MIT"
@@ -1725,41 +1725,41 @@ depends = [
     "xcb-util-renderutil",
 ]
 build_depends = ["util-macros"]
-recipe = "c4aca04643939de3e10f73036a9f8c912b08eef6c4106cc2092cdd0b8b0be083"
+recipe = "2cf762b4b17f3368de37ccd68856cd10dda9166a17b1ce7ca87030d46dd6b5fb"
 
-[xcb-util-image."0.4.1-1"]
+[xcb-util-image."git.525ce59f-1"]
 arch = "x86_64"
 description = "XCB utility library xcb-util-image"
 license = "MIT"
 depends = ["xcb-util"]
 build_depends = ["util-macros"]
-recipe = "398b2cfda3cd6c218d895c95ca3e2c402180865cbfde304b525e740b2df05128"
+recipe = "5710ee05156d019b65e7be09592633725411605b6028ba3da774204d23498fc4"
 
-[xcb-util-keysyms."0.4.1-1"]
+[xcb-util-keysyms."git.85e093f1-1"]
 arch = "x86_64"
 description = "XCB utility library xcb-util-keysyms"
 license = "MIT"
 depends = ["libxcb"]
 build_depends = ["util-macros"]
-recipe = "e0050cb5417b79162c621cda1bb9058c60bee3807f10d1e049da06c7a013bbf2"
+recipe = "6f661b36fd3bd3cf02f5bb55cc231f96d32e3c98a4d7dbfca1395883ea326757"
 
-[xcb-util-renderutil."0.3.10-1"]
+[xcb-util-renderutil."git.5293d8b6-1"]
 arch = "x86_64"
 description = "XCB utility library xcb-util-renderutil"
 license = "MIT"
 depends = ["libxcb"]
 build_depends = ["util-macros"]
-recipe = "1b6ade2c7f2dc024bfeb5bf575b07096aa86f8dbe252b58d527f264e75f1e613"
+recipe = "b42443b2969602b2577a0852c3e1ff98cce81f4f6aa1a500316ad06366228f97"
 
-[xcb-util-wm."0.4.2-1"]
+[xcb-util-wm."git.0c6681e4-1"]
 arch = "x86_64"
 description = "XCB utility library xcb-util-wm"
 license = "MIT"
 depends = ["libxcb"]
 build_depends = ["util-macros"]
-recipe = "7d182047cf3d4ea73a50127d7bb1837fc78505a3fa6425674dfde02764b44243"
+recipe = "635711646371fbf333bdb92802e1db5140d5f57dde64a348e4188b2c34525a9f"
 
-[xdpyinfo."1.4.0-1"]
+[xdpyinfo."git.7fe49a22-1"]
 arch = "x86_64"
 description = "X.Org application xdpyinfo"
 license = "MIT"
@@ -1770,9 +1770,9 @@ depends = [
     "libxi",
 ]
 build_depends = ["util-macros"]
-recipe = "bf4b66e35928385706e54496c8331e76237395ef2ef15b0171a397822679db44"
+recipe = "af213ece6afeace679d0a7e862acb46013df57f8c4adb631da3da925c9b8d43b"
 
-[xf86-input-libinput."1.5.0-1"]
+[xf86-input-libinput."git.c712930e-1"]
 arch = "x86_64"
 description = "libinput driver for the X server"
 license = "MIT"
@@ -1781,9 +1781,9 @@ depends = [
     "xorg-server",
 ]
 build_depends = ["util-macros"]
-recipe = "06cae884ff2f9a002a1f1a366e5122a9fad97543da5442ba22210fb5fba71a1e"
+recipe = "d909f18e07a8bfaa0617a9f708d0cadcb1f9885549c0f093413f1cb7f4383100"
 
-[xfce4-appfinder."4.20.0-1"]
+[xfce4-appfinder."git.a96aaffd-1"]
 arch = "x86_64"
 description = "Xfce application finder"
 license = "GPL-2.0-or-later"
@@ -1795,9 +1795,9 @@ depends = [
     "xfconf",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "651cef967714df29496cf395948f93d430346565da8a83aecee9fd52299d7c53"
+recipe = "35784262a9f5e935ad60ca46a5c08aba01c6661f8b13cba1d0827f6641453f2f"
 
-[xfce4-dev-tools."4.20.0-1"]
+[xfce4-dev-tools."git.127d0abd-1"]
 arch = "x86_64"
 description = "Autotools macros and xdt-autogen of the Xfce projects"
 license = "GPL-2.0-or-later"
@@ -1807,9 +1807,9 @@ depends = [
     "docbook-xsl",
 ]
 build_depends = ["libxslt"]
-recipe = "25b2dd07f86d82a9e5ca1f541fbf538c59ddfbc03143ebb46daa974e818cdd94"
+recipe = "617f25ad8bbead84b97117ac223d64eab9ea02c5d50d61fa5a7960ea23c80a3c"
 
-[xfce4-panel."4.20.8-1"]
+[xfce4-panel."git.56211a5f-1"]
 arch = "x86_64"
 description = "Xfce panel"
 license = "GPL-2.0-or-later"
@@ -1826,9 +1826,9 @@ depends = [
     "libxfce4windowing",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "d70316cd734d36b04e4e2077688c978fdc0875f88da56bb755d25ddd6307d7d4"
+recipe = "97c553d15b52ddddb7730275e1f5f2c2ae84d693256baf395e11a05d5973eddb"
 
-[xfce4-session."4.20.4-1"]
+[xfce4-session."git.0abb763a-1"]
 arch = "x86_64"
 description = "Xfce session manager"
 license = "GPL-2.0-or-later"
@@ -1846,9 +1846,9 @@ depends = [
     "iceauth",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "9b878a96dd50c5f3a37c0e4c2983afbea7cb3108860bfa86bac3760aeb1fa92f"
+recipe = "9eb8ec57a76961bc1206de4e9b541af3d64d4a6448b257c9145c7cca211a3fc2"
 
-[xfce4-settings."4.20.5-1"]
+[xfce4-settings."git.02ee2a3f-1"]
 arch = "x86_64"
 description = "Xfce settings manager"
 license = "GPL-2.0-or-later"
@@ -1866,9 +1866,9 @@ depends = [
     "libxfce4windowing",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "b47dc883ef3f462088b32c9fe197793a389a3e619298f65c7045370981cd604d"
+recipe = "d3df8a50bbf4469f7c9cd792570814a00c89b83174cb0530301fccaea59ce233"
 
-[xfconf."4.20.0-1"]
+[xfconf."git.078859af-1"]
 arch = "x86_64"
 description = "Xfce configuration storage"
 license = "LGPL-2.0-or-later"
@@ -1878,9 +1878,9 @@ depends = [
     "libxfce4util",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "207071e6bfa07506e20bdab409113a4c874bc8b04ea108b2987962ef025a0c19"
+recipe = "c6bdc7905809dca1cf28b5af36b8cee07cd3bc748fa90c61b6395c2865514c7e"
 
-[xfdesktop."4.20.2-1"]
+[xfdesktop."git.9f50062e-1"]
 arch = "x86_64"
 description = "Xfce desktop manager"
 license = "GPL-2.0-or-later"
@@ -1896,9 +1896,9 @@ depends = [
     "libxfce4windowing",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "5488f5e94469c44e0a6449e18046653edee1bd29cfde063a06a8c72e1620ca16"
+recipe = "bf5a6ae38671adf3b20b20ccd8d1b32170bf263237e911535be9485ab8d3ee18"
 
-[xfwm4."4.20.0-1"]
+[xfwm4."git.7cadce33-1"]
 arch = "x86_64"
 description = "Xfce window manager"
 license = "GPL-2.0-or-later"
@@ -1916,9 +1916,9 @@ depends = [
     "libxfce4windowing",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "3cc2e7c101abfec2024905caf44b281e695b32de33d906a836343742b445bb15"
+recipe = "bcbca134f156f06845cf1ec9eb33748ee5bd207ebb62aa77e922579b840b6550"
 
-[xinit."1.4.4-1"]
+[xinit."git.cfa71d44-1"]
 arch = "x86_64"
 description = "X.Org application xinit"
 license = "MIT"
@@ -1927,9 +1927,9 @@ depends = [
     "xauth",
 ]
 build_depends = ["util-macros"]
-recipe = "eb243e2bcea86f1863dc1edfce6efd77338ce023687d4c13e89dc0d8107f12a2"
+recipe = "c5dac272d3d120a9efc797d1a10938df4b2439ecd71c063ddc738a86631f44e1"
 
-[xinput."1.6.4-1"]
+[xinput."git.b6092488-1"]
 arch = "x86_64"
 description = "X.Org application xinput"
 license = "MIT"
@@ -1939,9 +1939,9 @@ depends = [
     "libx11",
 ]
 build_depends = ["util-macros"]
-recipe = "d0c36293d10f6c1ff8706bb4a2dece33d52049c1a2f4af2aeab1299e737716bb"
+recipe = "fff91c3135c33bd36758c1612f2c3fc6cfec76603084825716e740dd7595d08f"
 
-[xkbcomp."1.5.0-1"]
+[xkbcomp."git.2c778978-1"]
 arch = "x86_64"
 description = "XKB keymap compiler"
 license = "MIT"
@@ -1953,24 +1953,24 @@ build_depends = [
     "util-macros",
     "xorgproto",
 ]
-recipe = "a9c396e7ceb52dd4aecc904ec4a24aa247acb86e2ea8d26025d4c025c2c00de4"
+recipe = "3f7c3a6daf31a9be6456fbd369abfa7873ac809175b24aeed29dd528cce3c4dd"
 
-[xkeyboard-config."2.48-1"]
+[xkeyboard-config."git.cf8d1151-1"]
 arch = "x86_64"
 description = "Keyboard layouts for XKB"
 license = "MIT"
 depends = ["xkbcomp"]
-recipe = "9d05c5cb82dcf7420f3b09bd0e6a117c4968c836c135cbc49209bffd2e07f36a"
+recipe = "b756284fe50ac795c847e12c2fd3cfa1ad37874ab88d7fede6988145b4e6b5a1"
 
-[xmodmap."1.0.12-1"]
+[xmodmap."git.55b2208d-1"]
 arch = "x86_64"
 description = "X.Org application xmodmap"
 license = "MIT"
 depends = ["libx11"]
 build_depends = ["util-macros"]
-recipe = "c2e20df53b58955803df744194d588265a0208836b368d603f9e2187342099cf"
+recipe = "1bbd2b31e84510244c768f2628ec92d88b33cdd5b935002f0d719e55ce42f3c1"
 
-[xorg-server."21.1.26-1"]
+[xorg-server."git.7dbd8d0d-1"]
 arch = "x86_64"
 description = "The X.Org X server"
 license = "MIT"
@@ -1994,24 +1994,24 @@ depends = [
     "libx11",
     "libxext",
 ]
-recipe = "5d1b79d459bff5015e22852d6ce5f7cb56cd91c4f3097a83fa6731b6337b15ce"
+recipe = "fe1cdeb3578ab7ee0afcd6bdaf0d3108f42bc96adf60f98630e510a3e225961a"
 
-[xorgproto."2026.1-1"]
+[xorgproto."git.6d3907b6-1"]
 arch = "x86_64"
 description = "X.Org protocol headers"
 license = "MIT"
 build_depends = ["util-macros"]
-recipe = "81357e79280273f1b696252bc8ebb31c8db5c47377fe662673c43e140abc950a"
+recipe = "257c5fca6efb36e264584bc84c8f9b1430abbebd87c4bfadbf1f26a9fc44643a"
 
-[xprop."1.2.8-1"]
+[xprop."git.a6906a8a-1"]
 arch = "x86_64"
 description = "X.Org application xprop"
 license = "MIT"
 depends = ["libx11"]
 build_depends = ["util-macros"]
-recipe = "048111881002a01b8ae0aee5caace879aebde87bb01f3b6035078e4beac14f7a"
+recipe = "695f938f3777a73b5841335104340e914b50874027b7d015cc48f193a4b91247"
 
-[xrandr."1.5.4-1"]
+[xrandr."git.0a9c71cc-1"]
 arch = "x86_64"
 description = "X.Org application xrandr"
 license = "MIT"
@@ -2020,9 +2020,9 @@ depends = [
     "libx11",
 ]
 build_depends = ["util-macros"]
-recipe = "b4826b7180b9b443184a7c01cd867b1b5ceee9cfa3cb21e326e2ba9b4ec6c8da"
+recipe = "36837bab49aefb2b40886614576a18a030783e3344f685596522c210d8c8c0f6"
 
-[xrdb."1.2.3-1"]
+[xrdb."git.aaf6f3df-1"]
 arch = "x86_64"
 description = "X.Org application xrdb"
 license = "MIT"
@@ -2031,9 +2031,9 @@ depends = [
     "libxmu",
 ]
 build_depends = ["util-macros"]
-recipe = "b83318a3b331515dd381274483f3824de5414ab6c7665d6e40414661c1a0c6cf"
+recipe = "7ec9b66a374b0487d788a640b63b0e9fae2eec4c297518aa147be1caa3d466c2"
 
-[xset."1.2.6-1"]
+[xset."git.498f661c-1"]
 arch = "x86_64"
 description = "X.Org application xset"
 license = "MIT"
@@ -2043,9 +2043,9 @@ depends = [
     "libxext",
 ]
 build_depends = ["util-macros"]
-recipe = "f79f90312fe207374a3bf42f17d90bc652b614884f69857a113069d65c366928"
+recipe = "1ea17797ba4a007ea60a8cd184b603c8b97621f982d86e60da738118c84736c6"
 
-[xsetroot."1.1.4-1"]
+[xsetroot."git.ea3de0ef-1"]
 arch = "x86_64"
 description = "X.Org application xsetroot"
 license = "MIT"
@@ -2056,9 +2056,9 @@ depends = [
     "libxcursor",
 ]
 build_depends = ["util-macros"]
-recipe = "e51a9e0abf14dee356c289d36866ab0a572a4e76df51f70ceedce4e2b9cfb4c3"
+recipe = "1bf86348e0b7cbd4f18538ab3663f9eed6a69a0d522198496a3408476b53609a"
 
-[xterm.412-1]
+[xterm."git.5c75ead9-1"]
 arch = "x86_64"
 description = "Terminal emulator for X"
 license = "X11"
@@ -2072,16 +2072,16 @@ depends = [
     "libxmu",
     "libxpm",
 ]
-recipe = "20ec97bb15719e7462559fba61d035f8b4e12ec2d6816e817f0c56166655f4b4"
+recipe = "fda3f323fb74dc0b308077773a4cf06947abdf164d4359d24d291644d36f2b65"
 
-[xtrans."1.6.0-1"]
+[xtrans."git.cf05ba4a-1"]
 arch = "x86_64"
 description = "X transport library"
 license = "MIT"
 build_depends = ["util-macros"]
-recipe = "2a3119fa970d3bcb7168df80e81abc3f3c78d9989d029e9ca6d97ef93f8fd148"
+recipe = "67be85d0bc288bd44602a7a5ffb7fa585445f0b049ea1c5ed77d73b3d2417926"
 
-[xz."5.8.1-1"]
+[xz."git.a522a226-1"]
 arch = "x86_64"
 description = "XZ compression"
 license = "0BSD"
@@ -2091,16 +2091,16 @@ build_depends = [
     "libtool",
     "gettext",
 ]
-recipe = "54dd2805a59502bf412ff8262aeb7d8594b06b7f1f3c082d70f29f7a47f083e2"
+recipe = "35b14cfe3a3960a46d5759bc0100fbc383aa7dc25bf40762c1d9fd0a1ab8f8ca"
 
-[zlib."1.3.1-1"]
+[zlib."git.51b7f2ab-1"]
 arch = "x86_64"
 description = "Compression library"
 license = "Zlib"
-recipe = "1230d16455d48e8fc331cb33ad4cde7c8f27f3e06ce2f1e144ef914a1646297e"
+recipe = "37a2e740a4e9c2317671e6b425b97fccb68f63f5195da45a5e11cd8ee1810343"
 
-[zstd."1.5.7-1"]
+[zstd."git.f8745da6-1"]
 arch = "x86_64"
 description = "Zstandard compression"
 license = "BSD-3-Clause"
-recipe = "5e39933d4284b77abdde4d711e9ea5be242809d5655f30080ca0887e057b4b31"
+recipe = "e9861d15562434c1609bb9f468bcf2a4a109c5e04f99399fd9da00869b087a6d"

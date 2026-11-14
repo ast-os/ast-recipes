@@ -1,6 +1,5 @@
 [package]
 name = "xorg-server"
-version = "21.1.26"
 description = "The X.Org X server"
 license = "MIT"
 arch = ["x86_64"]

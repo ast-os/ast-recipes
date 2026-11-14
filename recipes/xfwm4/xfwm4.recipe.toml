@@ -1,6 +1,5 @@
 [package]
 name = "xfwm4"
-version = "4.20.0"
 description = "Xfce window manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

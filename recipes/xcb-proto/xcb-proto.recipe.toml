@@ -1,6 +1,5 @@
 [package]
 name = "xcb-proto"
-version = "1.17.0"
 description = "XCB protocol descriptions"
 license = "MIT"
 arch = ["x86_64"]

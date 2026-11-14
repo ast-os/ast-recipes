@@ -1,6 +1,5 @@
 [package]
 name = "python-pygments"
-version = "2.21.0"
 description = "Syntax highlighter"
 license = "BSD-2-Clause"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "libdrm"
-version = "2.4.134"
 description = "Direct rendering manager library"
 license = "MIT"
 arch = ["x86_64"]

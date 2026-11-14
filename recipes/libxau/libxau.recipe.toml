@@ -1,6 +1,5 @@
 [package]
 name = "libxau"
-version = "1.0.12"
 description = "X authorization"
 license = "MIT"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "popt"
-version = "1.19"
 description = "Command line option parsing"
 license = "MIT"
 arch = ["x86_64"]

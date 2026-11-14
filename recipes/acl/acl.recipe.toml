@@ -1,6 +1,5 @@
 [package]
 name = "acl"
-version = "2.3.2"
 description = "Access control lists"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

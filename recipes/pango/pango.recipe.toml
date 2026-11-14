@@ -1,6 +1,5 @@
 [package]
 name = "pango"
-version = "1.58.2"
 description = "Text layout and rendering"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]

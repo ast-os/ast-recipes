@@ -1,6 +1,5 @@
 [package]
 name = "python-parameterized"
-version = "0.9.0"
 description = "Parameterized testing for Python"
 license = "BSD-2-Clause"
 arch = ["x86_64"]

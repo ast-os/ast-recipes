@@ -1,6 +1,5 @@
 [package]
 name = "libevdev"
-version = "1.14.0"
 description = "Wrapper for evdev devices"
 license = "MIT"
 arch = ["x86_64"]

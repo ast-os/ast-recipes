@@ -1,6 +1,5 @@
 [package]
 name = "e2fsprogs"
-version = "1.47.3"
 description = "ext2/3/4 tools"
 license = "GPL-2.0-only"
 arch = ["x86_64"]

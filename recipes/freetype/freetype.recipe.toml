@@ -1,6 +1,5 @@
 [package]
 name = "freetype"
-version = "2.15.0"
 description = "Font rendering library"
 license = "FTL"
 arch = ["x86_64"]

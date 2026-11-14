@@ -1,6 +1,5 @@
 [package]
 name = "pcre2"
-version = "10.49"
 description = "Perl-compatible regular expressions"
 license = "BSD-3-Clause"
 arch = ["x86_64"]

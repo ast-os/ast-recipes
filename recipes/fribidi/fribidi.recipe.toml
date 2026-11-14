@@ -1,6 +1,5 @@
 [package]
 name = "fribidi"
-version = "1.0.18"
 description = "Unicode bidirectional algorithm"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]

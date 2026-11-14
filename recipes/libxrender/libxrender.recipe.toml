@@ -1,6 +1,5 @@
 [package]
 name = "libxrender"
-version = "0.9.13"
 description = "XRender"
 license = "MIT"
 arch = ["x86_64"]

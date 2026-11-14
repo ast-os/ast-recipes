@@ -1,6 +1,5 @@
 [package]
 name = "attr"
-version = "2.5.2"
 description = "Extended attributes"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

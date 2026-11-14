@@ -1,6 +1,5 @@
 [package]
 name = "libxslt"
-version = "1.1.45"
 description = "XSLT library and xsltproc"
 license = "MIT"
 arch = ["x86_64"]

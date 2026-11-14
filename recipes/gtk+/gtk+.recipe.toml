@@ -1,6 +1,5 @@
 [package]
 name = "gtk+"
-version = "3.24.43"
 description = "GTK 3 toolkit"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]

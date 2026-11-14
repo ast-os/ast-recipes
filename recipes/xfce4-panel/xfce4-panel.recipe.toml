@@ -1,6 +1,5 @@
 [package]
 name = "xfce4-panel"
-version = "4.20.8"
 description = "Xfce panel"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "llvm"
-version = "23.1.5"
 description = "The LLVM compiler infrastructure (libraries, for Mesa)"
 license = "Apache-2.0 WITH LLVM-exception"
 arch = ["x86_64"]

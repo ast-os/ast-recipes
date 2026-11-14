@@ -1,6 +1,5 @@
 [package]
 name = "librsvg"
-version = "2.63.4"
 description = "SVG rendering library and the gdk-pixbuf loader for it"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]

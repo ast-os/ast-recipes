@@ -1,6 +1,5 @@
 [package]
 name = "eudev"
-version = "3.2.14"
 description = "Device manager"
 license = "GPL-2.0-or-later"
 revision = 2

@@ -1,6 +1,5 @@
 [package]
 name = "perl"
-version = "5.42.0"
 description = "Perl"
 license = "GPL-1.0-or-later OR Artistic-1.0-Perl"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "zstd"
-version = "1.5.7"
 description = "Zstandard compression"
 license = "BSD-3-Clause"
 arch = ["x86_64"]

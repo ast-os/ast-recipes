@@ -1,6 +1,5 @@
 [package]
 name = "psmisc"
-version = "23.7"
 description = "Process utilities (killall, fuser)"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]

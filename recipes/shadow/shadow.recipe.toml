@@ -1,6 +1,5 @@
 [package]
 name = "shadow"
-version = "4.18.0"
 description = "User and group management"
 license = "BSD-3-Clause"
 revision = 2

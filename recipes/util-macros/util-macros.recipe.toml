@@ -1,6 +1,5 @@
 [package]
 name = "util-macros"
-version = "1.20.2"
 description = "X.Org autotools macros"
 license = "MIT"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "libfontenc"
-version = "1.1.9"
 description = "Font encodings"
 license = "MIT"
 arch = ["x86_64"]

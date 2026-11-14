@@ -1,6 +1,5 @@
 [package]
 name = "xsetroot"
-version = "1.1.4"
 description = "X.Org application xsetroot"
 license = "MIT"
 arch = ["x86_64"]

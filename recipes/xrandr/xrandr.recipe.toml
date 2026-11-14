@@ -1,6 +1,5 @@
 [package]
 name = "xrandr"
-version = "1.5.4"
 description = "X.Org application xrandr"
 license = "MIT"
 arch = ["x86_64"]

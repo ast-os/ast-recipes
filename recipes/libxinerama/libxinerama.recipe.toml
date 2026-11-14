@@ -1,6 +1,5 @@
 [package]
 name = "libxinerama"
-version = "1.1.6"
 description = "Xinerama"
 license = "MIT"
 arch = ["x86_64"]

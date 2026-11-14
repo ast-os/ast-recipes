@@ -1,6 +1,5 @@
 [package]
 name = "libjpeg-turbo"
-version = "3.2.1"
 description = "JPEG codec"
 license = "BSD-3-Clause"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "ncurses"
-version = "6.6"
 description = "Terminal handling library"
 license = "MIT"
 arch = ["x86_64"]

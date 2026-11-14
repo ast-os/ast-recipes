@@ -1,6 +1,5 @@
 [package]
 name = "dhcpcd"
-version = "10.5.2"
 description = "DHCP and IPv6 client"
 license = "BSD-2-Clause"
 arch = ["x86_64"]

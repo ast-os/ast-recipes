@@ -1,6 +1,5 @@
 [package]
 name = "libxfixes"
-version = "6.0.2"
 description = "XFIXES"
 license = "MIT"
 arch = ["x86_64"]

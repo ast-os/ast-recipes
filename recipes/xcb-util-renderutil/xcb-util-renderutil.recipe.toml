@@ -1,6 +1,5 @@
 [package]
 name = "xcb-util-renderutil"
-version = "0.3.10"
 description = "XCB utility library xcb-util-renderutil"
 license = "MIT"
 arch = ["x86_64"]

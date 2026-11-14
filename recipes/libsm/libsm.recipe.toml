@@ -1,6 +1,5 @@
 [package]
 name = "libsm"
-version = "1.2.6"
 description = "Session management"
 license = "MIT"
 arch = ["x86_64"]

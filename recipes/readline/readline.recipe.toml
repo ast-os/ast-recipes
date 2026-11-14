@@ -1,6 +1,5 @@
 [package]
 name = "readline"
-version = "8.3"
 description = "Line editing library"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "zlib"
-version = "1.3.1"
 description = "Compression library"
 license = "Zlib"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "libxpm"
-version = "3.5.20"
 description = "X pixmap"
 license = "MIT"
 arch = ["x86_64"]

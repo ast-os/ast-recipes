@@ -1,6 +1,5 @@
 [package]
 name = "xdpyinfo"
-version = "1.4.0"
 description = "X.Org application xdpyinfo"
 license = "MIT"
 arch = ["x86_64"]

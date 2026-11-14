@@ -1,6 +1,5 @@
 [package]
 name = "setxkbmap"
-version = "1.3.5"
 description = "X.Org application setxkbmap"
 license = "MIT"
 arch = ["x86_64"]

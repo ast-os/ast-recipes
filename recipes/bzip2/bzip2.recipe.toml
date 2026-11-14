@@ -1,6 +1,5 @@
 [package]
 name = "bzip2"
-version = "1.0.8"
 description = "bzip2 compression"
 license = "bzip2-1.0.6"
 revision = 2

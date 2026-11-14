@@ -1,6 +1,5 @@
 [package]
 name = "kbd"
-version = "2.8.0"
 description = "Keyboard and console tools"
 license = "GPL-2.0-or-later"
 revision = 2

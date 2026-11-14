@@ -1,6 +1,5 @@
 [package]
 name = "dosfstools"
-version = "4.2"
 description = "FAT file system tools"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]

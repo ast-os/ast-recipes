@@ -1,6 +1,5 @@
 [package]
 name = "pkgconf"
-version = "2.5.1"
 description = "Compiler flags for libraries"
 license = "ISC"
 arch = ["x86_64"]

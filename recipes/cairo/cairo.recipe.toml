@@ -1,6 +1,5 @@
 [package]
 name = "cairo"
-version = "1.18.6"
 description = "2D graphics library"
 license = "LGPL-2.1-only OR MPL-1.1"
 arch = ["x86_64"]

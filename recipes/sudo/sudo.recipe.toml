@@ -1,6 +1,5 @@
 [package]
 name = "sudo"
-version = "1.9.17p2"
 description = "Run commands as another user"
 license = "ISC"
 arch = ["x86_64"]

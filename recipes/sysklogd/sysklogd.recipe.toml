@@ -1,6 +1,5 @@
 [package]
 name = "sysklogd"
-version = "2.7.2"
 description = "System and kernel logging"
 license = "BSD-3-Clause"
 revision = 2

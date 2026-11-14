@@ -1,6 +1,5 @@
 [package]
 name = "font-util"
-version = "1.4.2"
 description = "X.Org font utilities and macros"
 license = "MIT"
 arch = ["x86_64"]

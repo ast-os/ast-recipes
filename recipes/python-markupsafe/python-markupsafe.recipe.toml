@@ -1,6 +1,5 @@
 [package]
 name = "python-markupsafe"
-version = "3.0.4"
 description = "String escaping for templates"
 license = "BSD-3-Clause"
 arch = ["x86_64"]

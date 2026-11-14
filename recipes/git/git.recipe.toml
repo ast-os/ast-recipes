@@ -1,6 +1,5 @@
 [package]
 name = "git"
-version = "2.56.1"
 description = "Distributed version control system"
 license = "GPL-2.0-only"
 arch = ["x86_64"]

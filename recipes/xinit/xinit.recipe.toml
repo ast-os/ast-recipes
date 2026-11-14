@@ -1,6 +1,5 @@
 [package]
 name = "xinit"
-version = "1.4.4"
 description = "X.Org application xinit"
 license = "MIT"
 arch = ["x86_64"]

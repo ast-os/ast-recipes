@@ -1,6 +1,5 @@
 [package]
 name = "libxfce4ui"
-version = "4.20.2"
 description = "Xfce widget library"
 license = "LGPL-2.0-or-later"
 arch = ["x86_64"]

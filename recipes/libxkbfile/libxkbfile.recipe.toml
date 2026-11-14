@@ -1,6 +1,5 @@
 [package]
 name = "libxkbfile"
-version = "1.2.0"
 description = "XKB file handling"
 license = "MIT"
 arch = ["x86_64"]

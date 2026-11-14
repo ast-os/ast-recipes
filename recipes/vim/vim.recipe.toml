@@ -1,6 +1,5 @@
 [package]
 name = "vim"
-version = "9.1.1629"
 description = "Text editor"
 license = "Vim"
 arch = ["x86_64"]

@@ -1,6 +1,5 @@
 [package]
 name = "python-packaging"
-version = "26.3"
 description = "Python package version handling"
 license = "Apache-2.0"
 arch = ["x86_64"]

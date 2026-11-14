@@ -1,6 +1,5 @@
 [package]
 name = "linux-firmware"
-version = "20261019"
 description = "Firmware of GPUs and other devices (amdgpu, radeon, i915, xe, nvidia)"
 license = "Redistributable"
 arch = ["x86_64"]

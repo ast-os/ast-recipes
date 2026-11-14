@@ -1,6 +1,5 @@
 [package]
 name = "binutils"
-version = "2.45"
 description = "Assembler, linker and binary tools"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]

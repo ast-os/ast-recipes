@@ -1,6 +1,5 @@
 [package]
 name = "libxml2"
-version = "2.15.4"
 description = "XML library"
 license = "MIT"
 arch = ["x86_64"]

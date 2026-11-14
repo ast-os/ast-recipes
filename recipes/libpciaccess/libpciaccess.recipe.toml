@@ -1,6 +1,5 @@
 [package]
 name = "libpciaccess"
-version = "0.19"
 description = "PCI access"
 license = "MIT"
 arch = ["x86_64"]

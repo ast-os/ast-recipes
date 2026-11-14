@@ -1,6 +1,5 @@
 [package]
 name = "libxcursor"
-version = "1.2.3"
 description = "X cursors"
 license = "MIT"
 arch = ["x86_64"]

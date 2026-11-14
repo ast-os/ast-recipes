@@ -1,6 +1,5 @@
 [package]
 name = "curl"
-version = "8.23.0"
 description = "Transfer data with URLs"
 license = "curl"
 arch = ["x86_64"]

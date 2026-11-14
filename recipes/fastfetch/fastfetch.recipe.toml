@@ -1,6 +1,5 @@
 [package]
 name = "fastfetch"
-version = "2.71.0"
 description = "Fast system information tool written in C"
 license = "MIT"
 arch = ["x86_64"]

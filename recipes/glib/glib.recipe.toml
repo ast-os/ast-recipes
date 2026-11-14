@@ -1,6 +1,5 @@
 [package]
 name = "glib"
-version = "2.90.1"
 description = "Core application library"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]

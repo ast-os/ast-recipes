@@ -1,6 +1,5 @@
 [package]
 name = "util-linux"
-version = "2.41.1"
 description = "System utilities (mount, fdisk, lsblk...)"
 license = "GPL-2.0-or-later"
 revision = 4

@@ -1,6 +1,5 @@
 [package]
 name = "libxi"
-version = "1.8.4"
 description = "XInput"
 license = "MIT"
 arch = ["x86_64"]

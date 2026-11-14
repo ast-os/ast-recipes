@@ -1,6 +1,5 @@
 [package]
 name = "libffi"
-version = "3.5.2"
 description = "Foreign function interface"
 license = "MIT"
 arch = ["x86_64"]

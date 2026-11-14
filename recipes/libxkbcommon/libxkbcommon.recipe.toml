@@ -1,6 +1,5 @@
 [package]
 name = "libxkbcommon"
-version = "1.13.2"
 description = "Keyboard handling library"
 license = "MIT"
 arch = ["x86_64"]

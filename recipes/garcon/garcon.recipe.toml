@@ -1,6 +1,5 @@
 [package]
 name = "garcon"
-version = "4.20.0"
 description = "Xfce freedesktop menus"
 license = "LGPL-2.0-or-later"
 arch = ["x86_64"]

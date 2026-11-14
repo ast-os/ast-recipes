@@ -1,6 +1,5 @@
 [package]
 name = "pixman"
-version = "0.46.4"
 description = "Pixel manipulation library"
 license = "MIT"
 arch = ["x86_64"]

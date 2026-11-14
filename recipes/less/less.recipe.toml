@@ -1,6 +1,5 @@
 [package]
 name = "less"
-version = "679"
 description = "Pager"
 license = "GPL-3.0-or-later"
 arch = ["x86_64"]

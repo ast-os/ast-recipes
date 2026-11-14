@@ -1,6 +1,5 @@
 [package]
 name = "kmod"
-version = "34.2"
 description = "Kernel module tools"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]
