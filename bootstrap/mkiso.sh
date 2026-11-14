@@ -46,7 +46,7 @@ BIND="$efi=/efi-out" "$HERE/bootstrap/chroot.sh" grub-mkimage -O x86_64-efi -o /
 mkdir -p "$efi/esp/EFI/BOOT"; cp "$efi/BOOTX64.EFI" "$efi/esp/EFI/BOOT/"
 truncate -s 16M "$efi/efi.img"; mkfs.vfat -n ASTEREFI "$efi/efi.img" >/dev/null
 mcopy -s -i "$efi/efi.img" "$efi/esp/EFI" ::
-cp "$HERE/INSTALL.md" "$iso/INSTALL.md"
+[ -f "$HERE/INSTALL.md" ] && cp "$HERE/INSTALL.md" "$iso/INSTALL.md"
 
 echo "== iso"
 LD_LIBRARY_PATH=$W/host/lib "$xorriso" -as mkisofs -r -V ASTERLIVE -J -joliet-long -iso-level 3 \

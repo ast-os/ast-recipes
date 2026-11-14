@@ -24,5 +24,3 @@ unshare -r --map-auto bootstrap/mkiso.sh     # live ISO
 
 The recipes tree is the package repository: `bootstrap/index.sh` signs `recipes/index.toml`, `ast -u`
 reads it from `raw.githubusercontent.com/ast-os/ast-recipes/main/recipes`.
-
-Install: [INSTALL.md](INSTALL.md).
