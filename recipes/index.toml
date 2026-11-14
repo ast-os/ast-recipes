@@ -316,6 +316,13 @@ description = "Lexical analyser generator"
 license = "BSD-2-Clause"
 recipe = "5fae1b41916840bebfaf0952da69ebbe2bedf481efa183c9a776ec91252bb4d2"
 
+[font-util."1.4.2-1"]
+arch = "x86_64"
+description = "X.Org font utilities and macros"
+license = "MIT"
+build_depends = ["util-macros"]
+recipe = "45322304101413d57485fe16a88564e66faf93be2b5d1bec7cf88a2ce4a061b4"
+
 [fontconfig."2.18.3-1"]
 arch = "x86_64"
 description = "Font configuration"
@@ -603,8 +610,11 @@ depends = [
     "zlib",
     "xorgproto",
 ]
-build_depends = ["util-macros"]
-recipe = "46f8f39e8a59abb017c57f22b2806a1e5e4d583c49df9e08f847bbd548db1ee4"
+build_depends = [
+    "font-util",
+    "util-macros",
+]
+recipe = "4293dd41e98a32c9a6b27184a9cc2e8df41d4f5bbdbf4c80009b7fb384f0741d"
 
 [libice."1.1.2-1"]
 arch = "x86_64"
@@ -840,8 +850,11 @@ depends = [
     "xtrans",
     "xorgproto",
 ]
-build_depends = ["util-macros"]
-recipe = "25bf7ba20999e628920044c75078991af5e74078b63c31188482f0ae550d7200"
+build_depends = [
+    "font-util",
+    "util-macros",
+]
+recipe = "7fc134a3f6f05ea16d7d6d59cc301ba790eb18c7850b6f02e1afb6aea07ed0da"
 
 [libxft."2.3.9-1"]
 arch = "x86_64"

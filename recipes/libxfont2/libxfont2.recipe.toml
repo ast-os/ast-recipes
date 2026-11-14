@@ -5,7 +5,7 @@ description = "X font library"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["freetype", "libfontenc", "xtrans", "xorgproto"]
-build_depends = ["util-macros"]
+build_depends = ["font-util", "util-macros"]
 
 [source]
 git = "https://gitlab.freedesktop.org/xorg/lib/libXfont"

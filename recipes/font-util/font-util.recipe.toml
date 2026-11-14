@@ -1,0 +1,18 @@
+[package]
+name = "font-util"
+version = "1.4.2"
+description = "X.Org font utilities and macros"
+license = "MIT"
+arch = ["x86_64"]
+build_depends = ["util-macros"]
+
+[source]
+git = "https://gitlab.freedesktop.org/xorg/font/util"
+commit = "5c92c11482e017fa7210a71b6f44e40042816209"
+
+[build]
+style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
+configure = ["--disable-static"]
