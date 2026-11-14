@@ -16,7 +16,7 @@ style = "gnu"
 prepare = '''
 NOCONFIGURE=1 xdt-autogen
 '''
-configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug"]
+configure = ["--enable-maintainer-mode", "--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete
 '''
