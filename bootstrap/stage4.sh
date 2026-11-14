@@ -5,12 +5,13 @@ set -e
 . "$(dirname "$0")/env.sh"
 [ "$(id -u)" = 0 ] || { echo "run it as: unshare -r --map-auto $0" >&2; exit 1; }
 ASTBIN=$HERE/ast/target/release
+TOOLS=$HERE/tools/target/release   # astpkg: on the host only, not in the system
 KEY=${ASTEROS_KEY:-$HOME/.config/asteros-keys/asteros}   # the release key (secret part: keep it offline)
 
 # ast itself, the recipes as a repository, its configuration, the sources as a mirror
-install -m755 "$ASTBIN/ast" "$ASTBIN/astpkg" "$AST/usr/bin/"
+install -m755 "$ASTBIN/ast" "$AST/usr/bin/"
 rm -rf "$AST/repo"; cp -a "$HERE/recipes" "$AST/repo"
-"$ASTBIN/astpkg" index "$AST/repo" --name ast --arch x86_64 --channel stable --key "$KEY.key" >/dev/null
+"$TOOLS/astpkg" index "$AST/repo" --name ast --arch x86_64 --channel stable --key "$KEY.key" >/dev/null
 mkdir -p "$AST/etc/ast-bootstrap/keys" "$AST/var/cache/ast" "$AST"/{dev,proc,sys,run,sources}
 cp "$KEY.pub" "$AST/etc/ast-bootstrap/keys/asteros.pub"
 cat > "$AST/etc/ast-bootstrap/ast.toml" <<TOML

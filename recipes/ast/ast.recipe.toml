@@ -9,8 +9,8 @@ build_depends = ["rust-bin"]
 
 [source]
 git = "https://github.com/ast-os/ast-pm"
-commit = "62cbfd4f377fe109a6e1835df0a9c1cdd68a1c3e"
+commit = "50635eb22674ba7458a38e3c0e48449649dbca32"
 
 [build]
 style = "cargo"
-bins = ["ast", "astrap", "astfstab", "astchroot", "astpkg"]
+bins = ["ast"]

@@ -5,4 +5,4 @@
 set -e
 HERE=$(cd "$(dirname "$0")/.." && pwd)
 KEY=${ASTEROS_KEY:-$HOME/.config/asteros-keys/asteros}
-"$HERE/ast/target/release/astpkg" index "$HERE/recipes" --name ast --arch x86_64 --channel stable --key "$KEY.key"
+"$HERE/tools/target/release/astpkg" index "$HERE/recipes" --name ast --arch x86_64 --channel stable --key "$KEY.key"

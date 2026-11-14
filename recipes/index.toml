@@ -16,7 +16,7 @@ build_depends = [
 ]
 recipe = "295ff9475d58aa863d559c69917ff06faa15e69bf1c9de5b4d7fcc1a50767a3f"
 
-[ast."git.62cbfd4f-8"]
+[ast."git.50635eb2-8"]
 arch = "x86_64"
 description = "The package manager of asterOS"
 license = "BSD-3-Clause"
@@ -26,7 +26,7 @@ depends = [
     "ca-certificates",
 ]
 build_depends = ["rust-bin"]
-recipe = "a7dcbf698b174b5ef724c6946f63de977040ab7003ed413ee44788d1815361fc"
+recipe = "8f529366a8b52b39eab6f6029c4bf1645a640164268c4ef0f6046e511311caf0"
 
 [aster."git.58b15fc9-4"]
 arch = "x86_64"
