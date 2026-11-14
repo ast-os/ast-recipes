@@ -4,6 +4,7 @@ version = "3.2.1"
 description = "JPEG codec"
 license = "BSD-3-Clause"
 arch = ["x86_64"]
+build_depends = ["cmake"]
 
 [source]
 url = "https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.1/libjpeg-turbo-3.2.1.tar.gz"

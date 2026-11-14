@@ -650,7 +650,8 @@ recipe = "b7435f2191d679b8afbcd723849a8b08fba74d5891356133e237001d1cf8091e"
 arch = "x86_64"
 description = "JPEG codec"
 license = "BSD-3-Clause"
-recipe = "acef70d3974c702fef185b48cc1fa506ae1d537b08066d5ca490d2d13deceef9"
+build_depends = ["cmake"]
+recipe = "6a950db70eae48c640966a2a338e3f3aa605c847f08ecc90c782ae00d00164cd"
 
 [libpciaccess."0.19-1"]
 arch = "x86_64"
@@ -1679,7 +1680,7 @@ depends = [
 ]
 recipe = "bd5c30c5d7678708d1021b87792dad6fabf3660ef35aeeb354d32e0d00af1a8e"
 
-[xterm.412-1]
+[xterm."1.18.6-1"]
 arch = "x86_64"
 description = "Terminal emulator for X"
 license = "X11"
@@ -1693,7 +1694,7 @@ depends = [
     "libxmu",
     "libxpm",
 ]
-recipe = "6d1d6273fd59b2570cf49cf6019161d0f06c23dcc125646bbd1bceab96c8cadb"
+recipe = "798747b9db82f86061cd422231088a3dc01bdfe3d2503137e11b5ef4eb19872b"
 
 [xtrans."1.6.0-1"]
 arch = "x86_64"
