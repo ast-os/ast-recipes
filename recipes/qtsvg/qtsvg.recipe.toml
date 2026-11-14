@@ -1,0 +1,15 @@
+[package]
+name = "qtsvg"
+description = "Qt 6 SVG support"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+arch = ["x86_64"]
+depends = ["qtbase"]
+build_depends = ["cmake", "ninja", "pkgconf"]
+
+[source]
+git = "https://code.qt.io/qt/qtsvg.git"
+commit = "883a58532078d003cefef0a549bfe9f885ce41f5"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DINSTALL_BINDIR=lib/qt6/bin", "-DINSTALL_LIBEXECDIR=lib/qt6", "-DINSTALL_DOCDIR=share/doc/qt6", "-DINSTALL_ARCHDATADIR=lib/qt6", "-DINSTALL_DATADIR=share/qt6", "-DINSTALL_INCLUDEDIR=include/qt6", "-DINSTALL_MKSPECSDIR=lib/qt6/mkspecs", "-DINSTALL_EXAMPLESDIR=share/doc/qt6/examples", "-DINSTALL_DESCRIPTIONSDIR=lib/qt6/modules", "-DINSTALL_PLUGINSDIR=lib/qt6/plugins", "-DINSTALL_QMLDIR=lib/qt6/qml", "-DINSTALL_TRANSLATIONSDIR=share/qt6/translations", "-DQT_BUILD_EXAMPLES=OFF", "-DQT_BUILD_TESTS=OFF", "-DBUILD_SHARED_LIBS=ON"]

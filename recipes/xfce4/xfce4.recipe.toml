@@ -1,0 +1,6 @@
+[package]
+name = "xfce4"
+version = "1"
+description = "Xfce desktop"
+arch = ["x86_64"]
+depends = ["x11", "dbus", "dejavu-fonts", "librsvg", "networkmanager", "xfce4-session", "xfce4-panel", "xfwm4", "xfdesktop", "xfce4-settings", "xfce4-appfinder", "thunar", "xfce4-terminal"]

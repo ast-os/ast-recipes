@@ -1,0 +1,6 @@
+[package]
+name = "x11"
+version = "1"
+description = "X session: server, input, tools, terminal, drivers, firmware"
+arch = ["x86_64"]
+depends = ["xorg-server", "xf86-input-libinput", "xinit", "xauth", "xrandr", "setxkbmap", "xset", "xsetroot", "xrdb", "xprop", "xmodmap", "xinput", "xdpyinfo", "xterm", "mesa", "linux-firmware"]

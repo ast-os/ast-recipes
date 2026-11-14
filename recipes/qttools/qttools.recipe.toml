@@ -1,0 +1,15 @@
+[package]
+name = "qttools"
+description = "Qt 6 lupdate, lrelease and the other command line tools"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+arch = ["x86_64"]
+depends = ["qtbase"]
+build_depends = ["cmake", "ninja", "pkgconf", "qtdeclarative"]
+
+[source]
+git = "https://code.qt.io/qt/qttools.git"
+commit = "613a6fbf0a7998010ab2fda260b64066d66a021d"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DINSTALL_BINDIR=lib/qt6/bin", "-DINSTALL_LIBEXECDIR=lib/qt6", "-DINSTALL_DOCDIR=share/doc/qt6", "-DINSTALL_ARCHDATADIR=lib/qt6", "-DINSTALL_DATADIR=share/qt6", "-DINSTALL_INCLUDEDIR=include/qt6", "-DINSTALL_MKSPECSDIR=lib/qt6/mkspecs", "-DINSTALL_EXAMPLESDIR=share/doc/qt6/examples", "-DINSTALL_DESCRIPTIONSDIR=lib/qt6/modules", "-DINSTALL_PLUGINSDIR=lib/qt6/plugins", "-DINSTALL_QMLDIR=lib/qt6/qml", "-DINSTALL_TRANSLATIONSDIR=share/qt6/translations", "-DQT_BUILD_EXAMPLES=OFF", "-DQT_BUILD_TESTS=OFF", "-DBUILD_SHARED_LIBS=ON", "-DFEATURE_assistant=OFF", "-DFEATURE_designer=OFF", "-DFEATURE_pixeltool=OFF", "-DFEATURE_qdoc=OFF", "-DFEATURE_distancefieldgenerator=OFF", "-DFEATURE_kmap2qmap=OFF", "-DFEATURE_qtattributionsscanner=OFF", "-DFEATURE_qtdiag=OFF", "-DFEATURE_qtplugininfo=OFF", "-DFEATURE_windeployqt=OFF", "-DFEATURE_macdeployqt=OFF", "-DFEATURE_clang=OFF", "-DFEATURE_linguist=ON"]

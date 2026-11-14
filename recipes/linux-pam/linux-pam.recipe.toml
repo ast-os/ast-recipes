@@ -1,0 +1,52 @@
+[package]
+name = "linux-pam"
+description = "Pluggable authentication modules"
+license = "BSD-3-Clause"
+arch = ["x86_64"]
+depends = ["libxcrypt", "glibc"]
+build_depends = ["flex", "pkgconf"]
+config_files = ["/etc/pam.d/other", "/etc/pam.d/system-auth", "/etc/pam.d/system-login", "/etc/pam.d/system-local-login"]
+
+[source]
+git = "https://github.com/linux-pam/linux-pam"
+commit = "28fce1fd55b003fec90f34e5bc785e9439b216f2"
+
+[build]
+style = "meson"
+configure = ["-Di18n=disabled", "-Ddocs=disabled", "-Daudit=disabled", "-Deconf=disabled", "-Dlogind=disabled", "-Delogind=disabled", "-Dopenssl=disabled", "-Dpwaccess=disabled", "-Dselinux=disabled", "-Dnis=disabled", "-Dexamples=false", "-Dxtests=false", "-Dpam_userdb=disabled", "-Dpam_lastlog=disabled"]
+fixup = '''
+install -d "$DESTDIR/etc/pam.d"
+cat > "$DESTDIR/etc/pam.d/other" <<'PAM'
+#%PAM-1.0
+auth     required pam_deny.so
+account  required pam_deny.so
+password required pam_deny.so
+session  required pam_deny.so
+PAM
+cat > "$DESTDIR/etc/pam.d/system-auth" <<'PAM'
+#%PAM-1.0
+auth      required pam_env.so
+auth      required pam_unix.so try_first_pass nullok
+account   required pam_unix.so
+password  required pam_unix.so try_first_pass nullok sha512 shadow
+session   required pam_limits.so
+session   required pam_unix.so
+PAM
+cat > "$DESTDIR/etc/pam.d/system-login" <<'PAM'
+#%PAM-1.0
+auth      required pam_shells.so
+auth      required pam_nologin.so
+auth      include  system-auth
+account   required pam_access.so
+account   include  system-auth
+password  include  system-auth
+session   include  system-auth
+PAM
+cat > "$DESTDIR/etc/pam.d/system-local-login" <<'PAM'
+#%PAM-1.0
+auth      include  system-login
+account   include  system-login
+password  include  system-login
+session   include  system-login
+PAM
+'''

@@ -1,0 +1,15 @@
+[package]
+name = "qtbase"
+description = "Qt 6 core, gui and network libraries (X11 xcb platform, no widgets)"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+arch = ["x86_64"]
+depends = ["libxcb", "xcb-util", "xcb-util-image", "xcb-util-keysyms", "xcb-util-renderutil", "xcb-util-wm", "xcb-util-cursor", "libxkbcommon", "libx11", "libxi", "libxext", "libxrender", "libxfixes", "libice", "libsm", "fontconfig", "freetype", "harfbuzz", "libpng", "libjpeg-turbo", "zlib", "zstd", "pcre2", "dbus", "mesa", "libdrm", "libepoxy", "libxcb", "glib"]
+build_depends = ["cmake", "ninja", "pkgconf", "perl", "python", "xorgproto"]
+
+[source]
+git = "https://code.qt.io/qt/qtbase.git"
+commit = "025bdad181de241e81bf853c8a2d7bf3d19261a9"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DINSTALL_BINDIR=lib/qt6/bin", "-DINSTALL_LIBEXECDIR=lib/qt6", "-DINSTALL_DOCDIR=share/doc/qt6", "-DINSTALL_ARCHDATADIR=lib/qt6", "-DINSTALL_DATADIR=share/qt6", "-DINSTALL_INCLUDEDIR=include/qt6", "-DINSTALL_MKSPECSDIR=lib/qt6/mkspecs", "-DINSTALL_EXAMPLESDIR=share/doc/qt6/examples", "-DINSTALL_DESCRIPTIONSDIR=lib/qt6/modules", "-DINSTALL_PLUGINSDIR=lib/qt6/plugins", "-DINSTALL_QMLDIR=lib/qt6/qml", "-DINSTALL_TRANSLATIONSDIR=share/qt6/translations", "-DQT_BUILD_EXAMPLES=OFF", "-DQT_BUILD_TESTS=OFF", "-DBUILD_SHARED_LIBS=ON", "-DFEATURE_xcb=ON", "-DFEATURE_xcb_xlib=ON", "-DFEATURE_xkbcommon=ON", "-DINPUT_opengl=desktop", "-DFEATURE_widgets=OFF", "-DFEATURE_sql=OFF", "-DFEATURE_printsupport=OFF", "-DFEATURE_cups=OFF", "-DFEATURE_ssl=OFF", "-DFEATURE_openssl=OFF", "-DFEATURE_icu=OFF", "-DFEATURE_glib=OFF", "-DFEATURE_libinput=OFF", "-DFEATURE_evdev=OFF", "-DFEATURE_mtdev=OFF", "-DFEATURE_tslib=OFF", "-DFEATURE_vulkan=OFF", "-DFEATURE_eglfs=OFF", "-DFEATURE_kms=OFF", "-DFEATURE_gbm=OFF", "-DFEATURE_linuxfb=OFF", "-DFEATURE_libproxy=OFF", "-DFEATURE_gssapi=OFF", "-DFEATURE_journald=OFF", "-DFEATURE_syslog=OFF", "-DFEATURE_system_freetype=ON", "-DFEATURE_system_harfbuzz=ON", "-DFEATURE_system_png=ON", "-DFEATURE_system_jpeg=ON", "-DFEATURE_system_zlib=ON", "-DFEATURE_system_pcre2=ON", "-DFEATURE_fontconfig=ON", "-DFEATURE_dbus=ON"]

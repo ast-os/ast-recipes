@@ -1,0 +1,15 @@
+[package]
+name = "qtshadertools"
+description = "Qt 6 shader tools"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+arch = ["x86_64"]
+depends = ["qtbase"]
+build_depends = ["cmake", "ninja", "pkgconf"]
+
+[source]
+git = "https://code.qt.io/qt/qtshadertools.git"
+commit = "bccd516b990a6396900051470ac86cc27a7042ea"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DINSTALL_BINDIR=lib/qt6/bin", "-DINSTALL_LIBEXECDIR=lib/qt6", "-DINSTALL_DOCDIR=share/doc/qt6", "-DINSTALL_ARCHDATADIR=lib/qt6", "-DINSTALL_DATADIR=share/qt6", "-DINSTALL_INCLUDEDIR=include/qt6", "-DINSTALL_MKSPECSDIR=lib/qt6/mkspecs", "-DINSTALL_EXAMPLESDIR=share/doc/qt6/examples", "-DINSTALL_DESCRIPTIONSDIR=lib/qt6/modules", "-DINSTALL_PLUGINSDIR=lib/qt6/plugins", "-DINSTALL_QMLDIR=lib/qt6/qml", "-DINSTALL_TRANSLATIONSDIR=share/qt6/translations", "-DQT_BUILD_EXAMPLES=OFF", "-DQT_BUILD_TESTS=OFF", "-DBUILD_SHARED_LIBS=ON"]

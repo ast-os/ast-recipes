@@ -1,0 +1,52 @@
+[package]
+name = "sddm"
+description = "Display manager"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["qtbase", "qtdeclarative", "qtsvg", "linux-pam", "libxcb", "libxau", "libxkbcommon", "xorg-server", "xauth", "dbus"]
+build_depends = ["cmake", "ninja", "pkgconf", "qttools"]
+config_files = ["/etc/orchid/services/sddm.toml", "/etc/pam.d/sddm", "/etc/pam.d/sddm-greeter", "/etc/pam.d/sddm-autologin"]
+
+[source]
+git = "https://github.com/sddm/sddm"
+commit = "63780fcd79f1dbf81a30eef48c28c699ab15aded"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", "-DBUILD_WITH_QT6=ON", "-DNO_SYSTEMD=ON", "-DENABLE_JOURNALD=OFF", "-DBUILD_MAN_PAGES=OFF", "-DINSTALL_PAM_CONFIGURATION=OFF", "-DCMAKE_INSTALL_SYSCONFDIR=/etc", "-DCMAKE_INSTALL_LOCALSTATEDIR=/var", "-DSTATE_DIR=/var/lib/sddm", "-DRUNTIME_DIR=/run/sddm", "-DQT_IMPORTS_DIR=lib/qt6/qml"]
+fixup = '''
+install -d "$DESTDIR/etc/pam.d" "$DESTDIR/etc/orchid/services"
+cat > "$DESTDIR/etc/pam.d/sddm" <<'PAM'
+#%PAM-1.0
+auth      include  system-login
+account   include  system-login
+password  include  system-login
+session   include  system-login
+PAM
+cat > "$DESTDIR/etc/pam.d/sddm-greeter" <<'PAM'
+#%PAM-1.0
+auth      required pam_env.so
+auth      required pam_permit.so
+account   required pam_permit.so
+password  required pam_deny.so
+session   required pam_unix.so
+PAM
+cat > "$DESTDIR/etc/pam.d/sddm-autologin" <<'PAM'
+#%PAM-1.0
+auth      required pam_env.so
+auth      required pam_shells.so
+auth      required pam_nologin.so
+auth      required pam_permit.so
+account   include  system-local-login
+password  include  system-local-login
+session   include  system-local-login
+PAM
+cat > "$DESTDIR/etc/orchid/services/sddm.toml" <<'SERVICE'
+[service]
+description = "display manager"
+exec = ["/bin/sh", "-c", "mkdir -p /var/lib/sddm /run/sddm && exec /usr/bin/sddm"]
+needs = ["dbus"]
+after = ["udev-settle"]
+restart = "on-failure"
+SERVICE
+'''
