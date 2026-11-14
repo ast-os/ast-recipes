@@ -10,7 +10,7 @@ license = "GPL-2.0-or-later"
 depends = ["attr"]
 recipe = "16ea7d6cb17a3568c9861d235e192c1fecca960c19696ad096fede0c050f4bae"
 
-[ast."0.1.0-7"]
+[ast."0.1.0-8"]
 arch = "x86_64"
 description = "The package manager of asterOS"
 license = "BSD-3-Clause"
@@ -20,13 +20,13 @@ depends = [
     "ca-certificates",
 ]
 build_depends = ["rust-bin"]
-recipe = "43fb652da4ca5e306c18e6ee8e16163882fdb3a31350d00a996124bb451aefaa"
+recipe = "15166fb11afd82be5294c3b3431542479deb5fdd8315300e9091afa165af3909"
 
-[aster."1.7-3"]
+[aster."1.7-4"]
 arch = "x86_64"
 description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
 license = "MIT"
-recipe = "662d1b84e2f7cca0c87f4cdd5d8243bdfe8fb3999861fef507dfbf5229a44e2a"
+recipe = "7b2fa249960483caddfae7e26d56b743c61dc38de388aaa7097ebe931db18c59"
 
 [at-spi2-core."2.62.1-1"]
 arch = "x86_64"
@@ -138,6 +138,21 @@ depends = [
 ]
 recipe = "26aa1bb94265aa5a01d3584b870f46d9a616d646e595efda0e5fb788096c51c1"
 
+[cargo-c."0.10.26-1"]
+arch = "x86_64"
+description = "Cargo subcommands that build and install C libraries"
+license = "MIT"
+depends = [
+    "glibc",
+    "openssl",
+    "zlib",
+]
+build_depends = [
+    "rust-bin",
+    "cmake",
+]
+recipe = "fe92aa324ef1b67676a9e947686d28a15cd9e8783904e2a62b1d1af51f62a352"
+
 [cmake."4.5.0-1"]
 arch = "x86_64"
 description = "Cross-platform build system generator"
@@ -215,6 +230,12 @@ description = "File comparison"
 license = "GPL-3.0-or-later"
 recipe = "62dd13e821857961c294239e0c4c766af74178f9bdc4c8bcd7a1541f58607641"
 
+[docbook-xsl."1.79.2-1"]
+arch = "x86_64"
+description = "DocBook XSL stylesheets (the release archive: the git tree generates them with a Java build), with a catalog that maps their web address to the installed files"
+license = "MIT"
+recipe = "483b0563ea2d10ef9af7978ff26b81d4337f3561be62c3f770d24a721d944ffa"
+
 [dosfstools."4.2-1"]
 arch = "x86_64"
 description = "FAT file system tools"
@@ -275,7 +296,7 @@ depends = [
     "libxfce4util",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "b2e51666b19caa6fa76c35a620006fb5ad6c82cbc3cca704c1195175c3d94836"
+recipe = "c6767fad04cef583960f366161e9374cecc503b48116d46b5ca14cff3ef7420d"
 
 [expat."2.7.1-1"]
 arch = "x86_64"
@@ -361,7 +382,7 @@ depends = [
     "libxfce4util",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "76d532519b1f2b70775616e7af24acee7c9e175e3599fc5b8123d5c0c3fce045"
+recipe = "8692c0a47d5f61bd5a750646771159854cdeaff1295a8999243fdab43de1537d"
 
 [gawk."5.3.2-1"]
 arch = "x86_64"
@@ -492,6 +513,19 @@ depends = [
 ]
 recipe = "eb1cb1415bb2380b9ef3da343dd26379a2943656855541a1027a542cc16db0ad"
 
+[gtk-doc."1.37.0-1"]
+arch = "x86_64"
+description = "Documentation tools of GNOME libraries (gtkdocize and macros)"
+license = "GPL-2.0-or-later"
+depends = [
+    "python",
+    "python-pygments",
+    "python-parameterized",
+    "libxslt",
+    "libxml2",
+]
+recipe = "adb900b398006ceab4871620cd9b44feefa0997f93f4ced63b2981cb91f40c22"
+
 [gzip."1.14-1"]
 arch = "x86_64"
 description = "gzip compression"
@@ -520,11 +554,25 @@ description = "Fallback icon theme"
 license = "GPL-2.0-only"
 recipe = "bfb14d92ca88b8f35bafa8c419845b6741b691c5153a21a08432fe126cf13995"
 
+[hwdata."0.413-1"]
+arch = "x86_64"
+description = "Hardware identification and configuration data (pci.ids, usb.ids, pnp.ids)"
+license = "GPL-2.0-or-later"
+recipe = "656a458c07a7d0563c682c2b8bfa932c85611b84cb9c0a04126c75163a8d999d"
+
 [iana-etc.20250807-1]
 arch = "x86_64"
 description = "Protocol and port names for /etc"
 license = "MIT"
 recipe = "c6c382209571edcb836fb98f2a29a980038d134175d145a2aceb38906f30541a"
+
+[iceauth."1.0.11-1"]
+arch = "x86_64"
+description = "X.Org application iceauth"
+license = "MIT"
+depends = ["libice"]
+build_depends = ["util-macros"]
+recipe = "495fcd76380e862618cc016c4ef6200dea9861ccb3c297c2a473899873b4d83e"
 
 [inetutils."2.6-1"]
 arch = "x86_64"
@@ -575,6 +623,13 @@ arch = "x86_64"
 description = "POSIX capabilities"
 license = "BSD-3-Clause"
 recipe = "f8cb57108a83592069728f7c46c5a61ebf4df9f2bba6117bfb06ab31bb051ec2"
+
+[libdisplay-info."0.4.0-1"]
+arch = "x86_64"
+description = "EDID and DisplayID library"
+license = "MIT"
+depends = ["hwdata"]
+recipe = "cbe6ec2f0120a5b124a1585124c5777ef5fc0eaf22f0aaa77a28802abafc6d0e"
 
 [libdrm."2.4.134-1"]
 arch = "x86_64"
@@ -684,6 +739,25 @@ license = "Libpng-2.0"
 depends = ["zlib"]
 build_depends = ["cmake"]
 recipe = "849472f04508f1cfe6e19219dc26fa6907e4f8b144bf4877b8cc3359414ca518"
+
+[librsvg."2.63.4-1"]
+arch = "x86_64"
+description = "SVG rendering library and the gdk-pixbuf loader for it"
+license = "LGPL-2.1-or-later"
+depends = [
+    "cairo",
+    "pango",
+    "gdk-pixbuf",
+    "libxml2",
+    "harfbuzz",
+    "freetype",
+    "glib",
+]
+build_depends = [
+    "rust-bin",
+    "cargo-c",
+]
+recipe = "758694569d88047fa24ac06f5e09d9c88b8ceebaa38370f10ad99d2539f73cea"
 
 [libsm."1.2.6-1"]
 arch = "x86_64"
@@ -823,9 +897,10 @@ depends = [
     "libsm",
     "libice",
     "libx11",
+    "librsvg",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "9c1e581ec06570ef743a969ce1babc23573908106505389c8ab796b69d18747e"
+recipe = "5e8ccca94c71abc86cbcf9eea0f3c402cfcd9ca71f927450ac1f1f933be069a0"
 
 [libxfce4util."4.20.1-1"]
 arch = "x86_64"
@@ -833,7 +908,22 @@ description = "Xfce utility library"
 license = "LGPL-2.0-or-later"
 depends = ["glib"]
 build_depends = ["xfce4-dev-tools"]
-recipe = "f9bd97d4034e0985838963345c7494ba45a816c123839b99bf8b654e45945323"
+recipe = "88d99964c4006be6d1b9e5300746313e1bc6b0ece33ae98c69437eac429574c6"
+
+[libxfce4windowing."4.20.7-1"]
+arch = "x86_64"
+description = "Xfce windowing library"
+license = "LGPL-2.1-or-later"
+depends = [
+    "gtk+",
+    "libwnck",
+    "libx11",
+    "libxrandr",
+    "glib",
+    "libdisplay-info",
+]
+build_depends = ["xfce4-dev-tools"]
+recipe = "79275bb476cd48dc743be376e31f5db14a5902bd4679cc939a37d0c053a0e4c3"
 
 [libxfixes."6.0.2-1"]
 arch = "x86_64"
@@ -907,7 +997,7 @@ license = "MIT"
 depends = ["libx11"]
 recipe = "b0f5725f58083e28ef637cb30d89ec9bb7962eb1fbd1e3f7b90c312b0ae311ba"
 
-[libxml2."2.14.6-1"]
+[libxml2."2.15.4-1"]
 arch = "x86_64"
 description = "XML library"
 license = "MIT"
@@ -915,7 +1005,7 @@ depends = [
     "zlib",
     "xz",
 ]
-recipe = "6b43fb888d3000b377a9ee2e6d032faf2cdaf33c79ef7d7920f7874bda73e9aa"
+recipe = "57d8cc0b9aed4a09a363d3b23634676eea11d5fc5aff6fb0797ccdd157772e7b"
 
 [libxmu."1.3.1-1"]
 arch = "x86_64"
@@ -966,6 +1056,13 @@ license = "MIT"
 depends = ["xorgproto"]
 build_depends = ["util-macros"]
 recipe = "2849cc68f9515acc0ea8f7d1a50f625b4bacbf8cca119b53458abda79c6ee153"
+
+[libxslt."1.1.45-1"]
+arch = "x86_64"
+description = "XSLT library and xsltproc"
+license = "MIT"
+depends = ["libxml2"]
+recipe = "2fde2f167279b823b8224c32e0048d13a2840c1d4bdf485563ba0af83db4fb46"
 
 [libxt."1.3.1-1"]
 arch = "x86_64"
@@ -1078,7 +1175,7 @@ build_depends = [
     "python-pyyaml",
     "python-packaging",
 ]
-recipe = "e8ac158b9684317d15def40ac5c7c44b4fefb72dcb1e20ede721e6493303176a"
+recipe = "6fc5348c6cc736b5291712b042dadea6a024564410e5bf826eb8474638748c99"
 
 [meson."1.12.1-1"]
 arch = "x86_64"
@@ -1257,6 +1354,20 @@ license = "Apache-2.0"
 depends = ["python"]
 recipe = "15ab41b207acaf55321a5a8ddb4d3be9de5ba26a0dc41c0d1199b03f48688b5f"
 
+[python-parameterized."0.9.0-1"]
+arch = "x86_64"
+description = "Parameterized testing for Python"
+license = "BSD-2-Clause"
+depends = ["python"]
+recipe = "66b5561502aed6b56438d305b5d1b70ce736347806745bb4c145e5efbca1438a"
+
+[python-pygments."2.21.0-1"]
+arch = "x86_64"
+description = "Syntax highlighter"
+license = "BSD-2-Clause"
+depends = ["python"]
+recipe = "ca466614503161a03eeba04d7ebdc450314c3e5065be8ce529a0bb8c2a3a9edd"
+
 [python-pyyaml."6.0.3-1"]
 arch = "x86_64"
 description = "YAML parser"
@@ -1375,7 +1486,7 @@ depends = [
     "desktop-file-utils",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "c13a27637b5f22e27a359983c8e7ecc2aae5149baf04b5d76ae813eb7dc7f8c6"
+recipe = "dd0170f00bd12583442c4ca5a5a96bf88a8e4f07c09d7dd27673feb654d2b8e6"
 
 [tzdata.2025b-1]
 arch = "x86_64"
@@ -1521,14 +1632,19 @@ depends = [
     "xfconf",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "dd0ec9e8937b3eff78dfea7590230bbad7d13c3e44955d8c7b045425d82835df"
+recipe = "651cef967714df29496cf395948f93d430346565da8a83aecee9fd52299d7c53"
 
 [xfce4-dev-tools."4.20.0-1"]
 arch = "x86_64"
 description = "Autotools macros and xdt-autogen of the Xfce projects"
 license = "GPL-2.0-or-later"
-depends = ["glib"]
-recipe = "2e0557a8412c336d020e3e222dce4a1bddcddb80da1d9df36936b1d3129b3fa9"
+depends = [
+    "glib",
+    "gtk-doc",
+    "docbook-xsl",
+]
+build_depends = ["libxslt"]
+recipe = "25b2dd07f86d82a9e5ca1f541fbf538c59ddfbc03143ebb46daa974e818cdd94"
 
 [xfce4-panel."4.20.8-1"]
 arch = "x86_64"
@@ -1544,9 +1660,10 @@ depends = [
     "libwnck",
     "libx11",
     "libxext",
+    "libxfce4windowing",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "0005a9474de1d1746b1f60c9af5b46f82f1ed5312dd95ecd219c280ddf00269f"
+recipe = "d70316cd734d36b04e4e2077688c978fdc0875f88da56bb755d25ddd6307d7d4"
 
 [xfce4-session."4.20.4-1"]
 arch = "x86_64"
@@ -1562,9 +1679,11 @@ depends = [
     "xorg-server",
     "xinit",
     "dbus",
+    "libxfce4windowing",
+    "iceauth",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "8f9632e3e39dade476343b2bfec487a69b7dfa637e930f5d6ffcf9206f44eee1"
+recipe = "9b878a96dd50c5f3a37c0e4c2983afbea7cb3108860bfa86bac3760aeb1fa92f"
 
 [xfce4-settings."4.20.5-1"]
 arch = "x86_64"
@@ -1581,9 +1700,10 @@ depends = [
     "libxrandr",
     "libxcursor",
     "libxkbfile",
+    "libxfce4windowing",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "e446524c57f6e6f1b1e3988fc4b300e4550a5b9b7e7a82b393a1cde13463a3d2"
+recipe = "b47dc883ef3f462088b32c9fe197793a389a3e619298f65c7045370981cd604d"
 
 [xfconf."4.20.0-1"]
 arch = "x86_64"
@@ -1595,7 +1715,7 @@ depends = [
     "libxfce4util",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "f2dbd44b5a535eb44ae28e98d55418571fa87015940a7554b0ce1e6d2a414190"
+recipe = "207071e6bfa07506e20bdab409113a4c874bc8b04ea108b2987962ef025a0c19"
 
 [xfdesktop."4.20.2-1"]
 arch = "x86_64"
@@ -1610,9 +1730,10 @@ depends = [
     "xfconf",
     "libwnck",
     "thunar",
+    "libxfce4windowing",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "0684a8b00e5dca3f7c125578533d4795230068f55a33481e2675b54519e73e8b"
+recipe = "5488f5e94469c44e0a6449e18046653edee1bd29cfde063a06a8c72e1620ca16"
 
 [xfwm4."4.20.0-1"]
 arch = "x86_64"
@@ -1629,9 +1750,10 @@ depends = [
     "libxrandr",
     "libxext",
     "libepoxy",
+    "libxfce4windowing",
 ]
 build_depends = ["xfce4-dev-tools"]
-recipe = "166326187fc77dd511baff08a474ba5f382030419e53db874c2d79fb03ed282f"
+recipe = "3cc2e7c101abfec2024905caf44b281e695b32de33d906a836343742b445bb15"
 
 [xinit."1.4.4-1"]
 arch = "x86_64"
@@ -1709,7 +1831,7 @@ depends = [
     "libx11",
     "libxext",
 ]
-recipe = "fa972ceb887ec875565622e0341d4d060e8849c5027980d405ba73360c626835"
+recipe = "5d1b79d459bff5015e22852d6ce5f7cb56cd91c4f3097a83fa6731b6337b15ce"
 
 [xorgproto."2026.1-1"]
 arch = "x86_64"
