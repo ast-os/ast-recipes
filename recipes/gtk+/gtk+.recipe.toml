@@ -1,0 +1,15 @@
+[package]
+name = "gtk+"
+version = "3.24.43"
+description = "GTK 3 toolkit"
+license = "LGPL-2.1-or-later"
+arch = ["x86_64"]
+depends = ["glib", "cairo", "pango", "gdk-pixbuf", "at-spi2-core", "libepoxy", "libxi", "libxrandr", "libxcursor", "libxfixes", "libxcomposite", "libxdamage", "libxinerama", "libxkbcommon", "shared-mime-info", "hicolor-icon-theme", "fribidi", "mesa"]
+
+[source]
+url = "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.43.tar.xz"
+sha256 = "7e04f0648515034b806b74ae5d774d87cffb1a2a96c468cb5be476d51bf2f3c7"
+
+[build]
+style = "meson"
+configure = ["-Dx11_backend=true", "-Dwayland_backend=false", "-Dbroadway_backend=false", "-Dintrospection=false", "-Dprint_backends=file", "-Dcloudproviders=false", "-Dcolord=no", "-Dgtk_doc=false", "-Ddemos=false", "-Dexamples=false", "-Dtests=false"]

@@ -1,0 +1,18 @@
+[package]
+name = "xfce4-appfinder"
+version = "4.20.0"
+description = "Xfce application finder"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["gtk+", "garcon", "libxfce4ui", "libxfce4util", "xfconf"]
+
+[source]
+url = "https://archive.xfce.org/src/xfce/xfce4-appfinder/4.20/xfce4-appfinder-4.20.0.tar.bz2"
+sha256 = "82ca82f77dc83e285db45438c2fe31df445148aa986ffebf2faabee4af9e7304"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

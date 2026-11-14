@@ -1,0 +1,18 @@
+[package]
+name = "xauth"
+version = "1.1.5"
+description = "X.Org application xauth"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxau", "libxext", "libxmu", "libx11"]
+
+[source]
+url = "https://www.x.org/releases/individual/app/xauth-1.1.5.tar.xz"
+sha256 = "a4000e2f441facebf569026bedecc23ba262cc6927be52070abe0002625cfbe0"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

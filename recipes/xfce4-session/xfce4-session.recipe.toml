@@ -1,0 +1,18 @@
+[package]
+name = "xfce4-session"
+version = "4.20.4"
+description = "Xfce session manager"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["gtk+", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "libsm", "xorg-server", "xinit", "dbus"]
+
+[source]
+url = "https://archive.xfce.org/src/xfce/xfce4-session/4.20/xfce4-session-4.20.4.tar.bz2"
+sha256 = "805c373378d080754d69dd2f20db95cdc066c89a4f024a41435ca0d66571c402"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug", "--disable-polkit", "--disable-legacy-sm"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

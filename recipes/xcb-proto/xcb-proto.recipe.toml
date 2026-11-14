@@ -1,0 +1,15 @@
+[package]
+name = "xcb-proto"
+version = "1.17.0"
+description = "XCB protocol descriptions"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["python"]
+
+[source]
+url = "https://xcb.freedesktop.org/dist/xcb-proto-1.17.0.tar.xz"
+sha256 = "2c1bacd2110f4799f74de6ebb714b94cf6f80fb112316b1219480fd22562148c"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]

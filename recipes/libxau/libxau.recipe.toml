@@ -1,0 +1,18 @@
+[package]
+name = "libxau"
+version = "1.0.12"
+description = "X authorization"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["xorgproto"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXau-1.0.12.tar.xz"
+sha256 = "74d0e4dfa3d39ad8939e99bda37f5967aba528211076828464d2777d477fc0fb"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

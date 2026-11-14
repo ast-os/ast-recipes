@@ -1,0 +1,15 @@
+[package]
+name = "harfbuzz"
+version = "15.1.0"
+description = "Text shaping"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["glib", "freetype"]
+
+[source]
+url = "https://github.com/harfbuzz/harfbuzz/releases/download/15.1.0/harfbuzz-15.1.0.tar.xz"
+sha256 = "0fc7c565443a5f4be7da65ac5ee5bd737d9b158dc908708b7689a0a5796b0c8d"
+
+[build]
+style = "meson"
+configure = ["-Dtests=disabled", "-Ddocs=disabled", "-Dglib=enabled", "-Dfreetype=enabled", "-Dcairo=disabled", "-Dintrospection=disabled", "-Dicu=disabled", "-Dgraphite=disabled", "-Dbenchmark=disabled", "-Dutilities=disabled"]

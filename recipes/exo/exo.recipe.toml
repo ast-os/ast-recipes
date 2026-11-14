@@ -1,0 +1,18 @@
+[package]
+name = "exo"
+version = "4.20.0"
+description = "Xfce application support library"
+license = "LGPL-2.1-or-later"
+arch = ["x86_64"]
+depends = ["gtk+", "libxfce4ui", "libxfce4util"]
+
+[source]
+url = "https://archive.xfce.org/src/xfce/exo/4.20/exo-4.20.0.tar.bz2"
+sha256 = "4277f799245f1efde01cd917fd538ba6b12cf91c9f8a73fe2035fd5456ec078d"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

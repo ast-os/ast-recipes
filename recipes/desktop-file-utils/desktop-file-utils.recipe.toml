@@ -1,0 +1,14 @@
+[package]
+name = "desktop-file-utils"
+version = "0.29"
+description = "Desktop entry utilities"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["glib"]
+
+[source]
+url = "https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-0.29.tar.xz"
+sha256 = "661f225be4c667abc4962f075717db4252b63c84480f6d37b26050d029da8fa0"
+
+[build]
+style = "meson"

@@ -1,0 +1,18 @@
+[package]
+name = "garcon"
+version = "4.20.0"
+description = "Xfce freedesktop menus"
+license = "LGPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["gtk+", "libxfce4ui", "libxfce4util"]
+
+[source]
+url = "https://archive.xfce.org/src/xfce/garcon/4.20/garcon-4.20.0.tar.bz2"
+sha256 = "7fb8517c12309ca4ddf8b42c34bc0c315e38ea077b5442bfcc4509415feada8f"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

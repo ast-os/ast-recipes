@@ -1,0 +1,15 @@
+[package]
+name = "xterm"
+version = "412"
+description = "Terminal emulator for X"
+license = "X11"
+arch = ["x86_64"]
+depends = ["libxaw", "libxft", "fontconfig", "ncurses", "libxinerama", "libxt", "libxmu", "libxpm"]
+
+[source]
+url = "https://github.com/ThomasDickey/xterm-snapshots/archive/refs/tags/xterm-412.tar.gz"
+sha256 = "26b76917f13b56f5bfa69ac1984ef688c1b22cf7100cd4ad02352ba5899c537d"
+
+[build]
+style = "gnu"
+configure = ["--enable-wide-chars", "--enable-256-color", "--with-x", "--disable-setuid", "--disable-full-tgetent"]

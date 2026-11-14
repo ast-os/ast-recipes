@@ -1,0 +1,18 @@
+[package]
+name = "xcb-util"
+version = "0.4.1"
+description = "XCB utility library xcb-util"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxcb"]
+
+[source]
+url = "https://xcb.freedesktop.org/dist/xcb-util-0.4.1.tar.xz"
+sha256 = "5abe3bbbd8e54f0fa3ec945291b7e8fa8cfd3cccc43718f8758430f94126e512"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

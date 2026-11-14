@@ -1,0 +1,18 @@
+[package]
+name = "libx11"
+version = "1.8.14"
+description = "Xlib"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxcb", "xorgproto", "xtrans"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libX11-1.8.14.tar.xz"
+sha256 = "bbc78c46217174655c2b32b138ad119f3ac15f50808b4d0b3a2677a4b1afc950"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc", "--disable-malloc0returnsnull"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

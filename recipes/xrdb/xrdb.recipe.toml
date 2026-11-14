@@ -1,0 +1,18 @@
+[package]
+name = "xrdb"
+version = "1.2.3"
+description = "X.Org application xrdb"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libx11", "libxmu"]
+
+[source]
+url = "https://www.x.org/releases/individual/app/xrdb-1.2.3.tar.xz"
+sha256 = "c88f560243278c896ce4fc92ae5a45a2b505a316ffa427fe55b02e5d5914c4e4"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

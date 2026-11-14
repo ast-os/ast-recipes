@@ -1,0 +1,15 @@
+[package]
+name = "xorg-server"
+version = "21.1.26"
+description = "The X.Org X server"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libdrm", "mesa", "libepoxy", "pixman", "libxfont2", "libxkbfile", "libxcvt", "libpciaccess", "xkbcomp", "xkeyboard-config", "eudev", "libxau", "libxdmcp", "xorgproto", "xtrans", "libxshmfence", "libx11", "libxext"]
+
+[source]
+url = "https://www.x.org/releases/individual/xserver/xorg-server-21.1.26.tar.xz"
+sha256 = "c8609f9cdafde14de7ec7cb406dac9507add1d536df8d3c3e3d3d9c1cd864066"
+
+[build]
+style = "meson"
+configure = ["-Dxorg=true", "-Dxnest=false", "-Dxvfb=false", "-Dglamor=true", "-Dsystemd_logind=false", "-Dudev=true", "-Dudev_kms=true", "-Dxkb_dir=/usr/share/X11/xkb", "-Dxkb_output_dir=/var/lib/xkb", "-Dsuid_wrapper=false", "-Ddocs=false", "-Ddevel-docs=false"]

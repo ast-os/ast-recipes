@@ -1,0 +1,16 @@
+[package]
+name = "mesa"
+version = "26.3.0"
+description = "OpenGL, EGL and Vulkan drivers: radeonsi, radv, nouveau, llvmpipe"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libdrm", "llvm", "expat", "zlib", "zstd", "libxshmfence", "libx11", "libxext", "libxfixes", "libxxf86vm", "libxrandr", "libxcb", "libxdamage"]
+build_depends = ["python-mako", "python-pyyaml", "python-packaging"]
+
+[source]
+url = "https://archive.mesa3d.org/mesa-26.3.0.tar.xz"
+sha256 = "91d729aa68bb89e4ec857841300bbe922bcb3e52b1f97566ca83930d3b28343a"
+
+[build]
+style = "meson"
+configure = ["-Dplatforms=x11", "-Dgallium-drivers=llvmpipe,softpipe,radeonsi,nouveau,virgl", "-Dvulkan-drivers=amd,swrast", "-Dglx=dri", "-Dgbm=enabled", "-Degl=enabled", "-Dgles1=disabled", "-Dgles2=enabled", "-Dllvm=enabled", "-Dshared-llvm=enabled", "-Dvalgrind=disabled", "-Dlibunwind=disabled", "-Dbuild-tests=false", "-Dglvnd=disabled", "-Dvideo-codecs="]

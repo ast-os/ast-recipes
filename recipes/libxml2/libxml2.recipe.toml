@@ -1,0 +1,18 @@
+[package]
+name = "libxml2"
+version = "2.14.6"
+description = "XML library"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["zlib", "xz"]
+
+[source]
+url = "https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.6.tar.xz"
+sha256 = "7ce458a0affeb83f0b55f1f4f9e0e55735dbfc1a9de124ee86fb4a66b597203a"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--without-python", "--without-icu"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

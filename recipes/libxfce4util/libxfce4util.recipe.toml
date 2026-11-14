@@ -1,0 +1,18 @@
+[package]
+name = "libxfce4util"
+version = "4.20.1"
+description = "Xfce utility library"
+license = "LGPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["glib"]
+
+[source]
+url = "https://archive.xfce.org/src/xfce/libxfce4util/4.20/libxfce4util-4.20.1.tar.bz2"
+sha256 = "84bfc4daab9e466193540c3665eee42b2cf4d24e3f38fc3e8d1e0a2bebe3b8f1"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

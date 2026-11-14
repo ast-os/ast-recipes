@@ -1,0 +1,18 @@
+[package]
+name = "libxrender"
+version = "0.9.13"
+description = "XRender"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libx11"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXrender-0.9.13.tar.xz"
+sha256 = "3fe88c609df6782e1e7af2e4de36b2563d70cd70ff7dcb1cda561ad64912bb64"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

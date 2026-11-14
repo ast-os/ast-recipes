@@ -1,0 +1,21 @@
+[package]
+name = "python-packaging"
+version = "26.3"
+description = "Python package version handling"
+license = "Apache-2.0"
+arch = ["x86_64"]
+depends = ["python"]
+
+[source]
+url = "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+sha256 = "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+
+[build]
+build = '''
+true
+'''
+install = '''
+site="$DESTDIR/usr/lib/python3.13/site-packages"
+mkdir -p "$site"
+cp -r src/packaging "$site/"
+'''

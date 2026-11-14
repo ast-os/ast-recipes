@@ -1,0 +1,18 @@
+[package]
+name = "xinput"
+version = "1.6.4"
+description = "X.Org application xinput"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxi", "libxrandr", "libx11"]
+
+[source]
+url = "https://www.x.org/releases/individual/app/xinput-1.6.4.tar.xz"
+sha256 = "ad04d00d656884d133110eeddc34e9c69e626ebebbbab04dc95791c2907057c8"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

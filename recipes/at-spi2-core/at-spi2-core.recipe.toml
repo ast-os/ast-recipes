@@ -1,0 +1,15 @@
+[package]
+name = "at-spi2-core"
+version = "2.62.1"
+description = "Accessibility toolkit (atk, at-spi2)"
+license = "LGPL-2.1-or-later"
+arch = ["x86_64"]
+depends = ["dbus", "glib", "libxml2", "libx11", "libxtst", "libxi"]
+
+[source]
+url = "https://download.gnome.org/sources/at-spi2-core/2.62/at-spi2-core-2.62.1.tar.xz"
+sha256 = "cca6b6a86e4389d89b370288761ce2385ddeceb10c4412da78689bc30c88af2d"
+
+[build]
+style = "meson"
+configure = ["-Dintrospection=disabled", "-Dx11=enabled", "-Ddocs=false"]

@@ -1,0 +1,18 @@
+[package]
+name = "thunar"
+version = "4.20.10"
+description = "Xfce file manager"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["exo", "gtk+", "libxfce4ui", "libxfce4util", "xfconf", "gdk-pixbuf", "shared-mime-info", "desktop-file-utils"]
+
+[source]
+url = "https://archive.xfce.org/src/xfce/thunar/4.20/thunar-4.20.10.tar.bz2"
+sha256 = "a5a32b51028dc821155e44cdec025fe70398bae193c619ae6ba8b1babf6f49f1"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug", "--disable-notifications", "--disable-gudev"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

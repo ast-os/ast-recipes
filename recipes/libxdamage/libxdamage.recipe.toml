@@ -1,0 +1,18 @@
+[package]
+name = "libxdamage"
+version = "1.1.7"
+description = "XDamage"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxfixes"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXdamage-1.1.7.tar.xz"
+sha256 = "127067f521d3ee467b97bcb145aeba1078e2454d448e8748eb984d5b397bde24"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

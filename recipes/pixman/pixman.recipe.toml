@@ -1,0 +1,14 @@
+[package]
+name = "pixman"
+version = "0.46.4"
+description = "Pixel manipulation library"
+license = "MIT"
+arch = ["x86_64"]
+
+[source]
+url = "https://www.cairographics.org/releases/pixman-0.46.4.tar.xz"
+sha256 = "a098c33924754ad43f981b740f6d576c70f9ed1006e12221b1845431ebce1239"
+
+[build]
+style = "meson"
+configure = ["-Dtests=disabled", "-Ddemos=disabled", "-Dgtk=disabled", "-Dlibpng=disabled"]

@@ -1,0 +1,26 @@
+[package]
+name = "llvm"
+version = "23.1.5"
+description = "The LLVM compiler infrastructure (libraries, for Mesa)"
+license = "Apache-2.0 WITH LLVM-exception"
+arch = ["x86_64"]
+depends = ["libffi", "zlib", "zstd"]
+build_depends = ["cmake"]
+
+[source]
+url = "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/llvm-project-23.1.5.src.tar.xz"
+sha256 = "fb50b1eac93ddeb3aa8dab4cfe324dff74f4a9c2bdee6160c9e36188f8d06a6e"
+
+[build]
+build = '''
+cmake -S llvm -B build -G Ninja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release \
+    -DLLVM_TARGETS_TO_BUILD="X86;AMDGPU" -DLLVM_HOST_TRIPLE=x86_64-pc-linux-gnu \
+    -DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_LINK_LLVM_DYLIB=ON -DLLVM_ENABLE_RTTI=ON \
+    -DLLVM_ENABLE_FFI=ON -DLLVM_ENABLE_ZSTD=ON -DLLVM_ENABLE_ZLIB=ON -DLLVM_ENABLE_LIBXML2=OFF \
+    -DLLVM_INCLUDE_TESTS=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DLLVM_INCLUDE_BENCHMARKS=OFF -DLLVM_INCLUDE_DOCS=OFF \
+    -DLLVM_ENABLE_BINDINGS=OFF -DLLVM_PARALLEL_LINK_JOBS=1
+cmake --build build -j"$JOBS"
+'''
+install = '''
+DESTDIR="$DESTDIR" cmake --install build
+'''

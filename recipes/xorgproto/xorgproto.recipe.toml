@@ -1,0 +1,15 @@
+[package]
+name = "xorgproto"
+version = "2026.1"
+description = "X.Org protocol headers"
+license = "MIT"
+arch = ["x86_64"]
+build_depends = ["util-macros"]
+
+[source]
+url = "https://www.x.org/releases/individual/proto/xorgproto-2026.1.tar.xz"
+sha256 = "f9bfe4a9ed8c8ab9d2a3b0d49797f046052dadd06b7a8b45dbffaffb137e8290"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]

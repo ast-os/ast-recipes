@@ -1,0 +1,15 @@
+[package]
+name = "libxkbcommon"
+version = "1.13.2"
+description = "Keyboard handling library"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["xkeyboard-config", "libxcb"]
+
+[source]
+url = "https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1.13.2.tar.gz"
+sha256 = "acc4d5f7c3cbba5f9f8d08d8bdbeede84ecede46792f47929aa9321873385528"
+
+[build]
+style = "meson"
+configure = ["-Denable-wayland=false", "-Denable-docs=false", "-Denable-tools=false", "-Denable-bash-completion=false", "-Denable-xkbregistry=false"]

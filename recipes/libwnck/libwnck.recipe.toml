@@ -1,0 +1,15 @@
+[package]
+name = "libwnck"
+version = "43.3"
+description = "Window navigation library"
+license = "LGPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["gtk+", "libxrender"]
+
+[source]
+url = "https://download.gnome.org/sources/libwnck/43/libwnck-43.3.tar.xz"
+sha256 = "6af8ac41a8f067ade1d3caaed254a83423b5f61ad3f7a460fcacbac2e192bdf7"
+
+[build]
+style = "meson"
+configure = ["-Dintrospection=disabled", "-Dgtk_doc=false", "-Dinstall_tools=true"]

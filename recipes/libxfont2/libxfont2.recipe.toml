@@ -1,0 +1,18 @@
+[package]
+name = "libxfont2"
+version = "2.0.9"
+description = "X font library"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["freetype", "libfontenc", "xtrans", "xorgproto"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXfont2-2.0.9.tar.xz"
+sha256 = "f042a370666815e7b941e9b7019024755bd1c6c2954afbfa515af378251799e2"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc", "--disable-devel-docs"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

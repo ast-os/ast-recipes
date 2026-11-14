@@ -1,0 +1,18 @@
+[package]
+name = "xfconf"
+version = "4.20.0"
+description = "Xfce configuration storage"
+license = "LGPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["glib", "dbus", "libxfce4util"]
+
+[source]
+url = "https://archive.xfce.org/src/xfce/xfconf/4.20/xfconf-4.20.0.tar.bz2"
+sha256 = "8bc43c60f1716b13cf35fc899e2a36ea9c6cdc3478a8f051220eef0f53567efd"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

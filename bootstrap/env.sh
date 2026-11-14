@@ -1,6 +1,6 @@
 # Shared by the bootstrap stages. Source it; nothing here runs anything.
 HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
-export AST=$HERE/work/root              # the system under construction
+export AST=${ASTEROS_ROOT:-$HERE/work/root}   # the system under construction (ASTEROS_ROOT: another tree)
 export SRC=$HERE/work/sources
 export BUILD=$HERE/work/build
 export AST_TGT=x86_64-aster-linux-gnu

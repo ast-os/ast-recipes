@@ -1,0 +1,18 @@
+[package]
+name = "libxrandr"
+version = "1.5.5"
+description = "XRandR"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxext", "libxrender"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXrandr-1.5.5.tar.xz"
+sha256 = "72b922c2e765434e9e9f0960148070bd4504b288263e2868a4ccce1b7cf2767a"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

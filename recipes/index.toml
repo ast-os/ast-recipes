@@ -28,6 +28,20 @@ description = "asterOS: the layout of the file system, the system accounts, os-r
 license = "MIT"
 recipe = "662d1b84e2f7cca0c87f4cdd5d8243bdfe8fb3999861fef507dfbf5229a44e2a"
 
+[at-spi2-core."2.62.1-1"]
+arch = "x86_64"
+description = "Accessibility toolkit (atk, at-spi2)"
+license = "LGPL-2.1-or-later"
+depends = [
+    "dbus",
+    "glib",
+    "libxml2",
+    "libx11",
+    "libxtst",
+    "libxi",
+]
+recipe = "85e848cce08835e93eec50cdba9c5b0c911fe7520f3e24516b420427b8b69e6c"
+
 [attr."2.5.2-1"]
 arch = "x86_64"
 description = "Extended attributes"
@@ -106,6 +120,24 @@ description = "The certificate authorities Mozilla trusts, as a bundle (extracte
 license = "MPL-2.0"
 recipe = "4ff2e06e095e0945af970365c9e302c2daf7f159661441ba87ca6defa2d4bad6"
 
+[cairo."1.18.6-1"]
+arch = "x86_64"
+description = "2D graphics library"
+license = "LGPL-2.1-only OR MPL-1.1"
+depends = [
+    "pixman",
+    "freetype",
+    "fontconfig",
+    "libpng",
+    "glib",
+    "libx11",
+    "libxrender",
+    "libxext",
+    "libxcb",
+    "zlib",
+]
+recipe = "d7b71fbc570bbc615772b385d59321b899385ac3cdaee3b46c0dabc633f34725"
+
 [cmake."4.5.0-1"]
 arch = "x86_64"
 description = "Cross-platform build system generator"
@@ -143,6 +175,32 @@ depends = [
     "ca-certificates",
 ]
 recipe = "8b5251df07552700ebc63f4104256a565dd2410be4e1180c7a3c5c19090e4165"
+
+[dbus."1.16.4-1"]
+arch = "x86_64"
+description = "Message bus"
+license = "AFL-2.1 OR GPL-2.0-or-later"
+depends = [
+    "expat",
+    "libx11",
+    "libice",
+    "libsm",
+    "eudev",
+]
+recipe = "09a7cdc2d20fcd9742e3f20bb0b8ce36013da4512b98ee4d2695159440d3c928"
+
+[dejavu-fonts."2.37-1"]
+arch = "x86_64"
+description = "DejaVu fonts"
+license = "Bitstream-Vera"
+recipe = "3dd93284ac54fc70fdeda4f7d92f21b4f1e9adea354f54a3b99e6861b22ee0c6"
+
+[desktop-file-utils."0.29-1"]
+arch = "x86_64"
+description = "Desktop entry utilities"
+license = "GPL-2.0-or-later"
+depends = ["glib"]
+recipe = "9f9311b93e01121f2f2714d1e7fd161f390a4662b54633d76d93510f48a45270"
 
 [dhcpcd."10.5.2-1"]
 arch = "x86_64"
@@ -207,6 +265,17 @@ depends = [
 ]
 recipe = "821edd418922726b8686a057cda39c83d3d055756ed13c01f24f2e31b0d83286"
 
+[exo."4.20.0-1"]
+arch = "x86_64"
+description = "Xfce application support library"
+license = "LGPL-2.1-or-later"
+depends = [
+    "gtk+",
+    "libxfce4ui",
+    "libxfce4util",
+]
+recipe = "3645e6784387f1cebd72bcfa9e426632992adb16cbea9c3248ceb92257b4c2b0"
+
 [expat."2.7.1-1"]
 arch = "x86_64"
 description = "XML parser"
@@ -246,6 +315,45 @@ description = "Lexical analyser generator"
 license = "BSD-2-Clause"
 recipe = "5fae1b41916840bebfaf0952da69ebbe2bedf481efa183c9a776ec91252bb4d2"
 
+[fontconfig."2.16.0-1"]
+arch = "x86_64"
+description = "Font configuration"
+license = "MIT"
+depends = [
+    "freetype",
+    "expat",
+    "util-linux",
+]
+recipe = "80d43a5cd0f9b6ed3a142bd3d15cc75b68dc4af015011ab5ebca572134b9c608"
+
+[freetype."2.15.0-1"]
+arch = "x86_64"
+description = "Font rendering library"
+license = "FTL"
+depends = [
+    "zlib",
+    "bzip2",
+    "libpng",
+]
+recipe = "875f5e2d5a7ebac9cf33be0c7c61206b32fdc44c5e10c3686e678a3252346f71"
+
+[fribidi."1.0.18-1"]
+arch = "x86_64"
+description = "Unicode bidirectional algorithm"
+license = "LGPL-2.1-or-later"
+recipe = "cd339a97a848ac789c9e10240687890527ac61d2181f7d7f4ae156c57e8f0f19"
+
+[garcon."4.20.0-1"]
+arch = "x86_64"
+description = "Xfce freedesktop menus"
+license = "LGPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "libxfce4ui",
+    "libxfce4util",
+]
+recipe = "5a4787cc8e29fec240f56fa98e759a38d46dcebdb4fc9498e6e13da94290d1d1"
+
 [gawk."5.3.2-1"]
 arch = "x86_64"
 description = "Text processing"
@@ -273,6 +381,18 @@ license = "GPL-3.0-or-later"
 depends = ["readline"]
 recipe = "53cdaed87865e91dc2facb556c8f8efdeabe471cbdea7f59dec543ee1aa8e65e"
 
+[gdk-pixbuf."2.44.8-1"]
+arch = "x86_64"
+description = "Image loading library"
+license = "LGPL-2.1-or-later"
+depends = [
+    "glib",
+    "libpng",
+    "libjpeg-turbo",
+    "shared-mime-info",
+]
+recipe = "0c923f3f56c8451cd963a0451ba8664b2bcfbe5d6f459f18537c9ad9629bec0d"
+
 [gettext."0.26-1"]
 arch = "x86_64"
 description = "Internationalisation tools"
@@ -292,6 +412,19 @@ depends = [
 ]
 build_depends = ["gettext"]
 recipe = "e080670fbe5b5a2cc1da818b8e78339116834f03477ff432e36c88d3a7db513f"
+
+[glib."2.90.1-1"]
+arch = "x86_64"
+description = "Core application library"
+license = "LGPL-2.1-or-later"
+depends = [
+    "libffi",
+    "pcre2",
+    "zlib",
+    "util-linux",
+    "python",
+]
+recipe = "9c1b3f3e4ad0ea486b92175619719c8c2b28296b8738517b77bfa5ff883ee112"
 
 [glibc."2.42-1"]
 arch = "x86_64"
@@ -324,17 +457,59 @@ license = "GPL-3.0-or-later"
 depends = ["gettext"]
 recipe = "2ef9418fe085d204ee95eb71944b474149832e3a5a42b3d7989792021dee7975"
 
+["gtk+"."3.24.43-1"]
+arch = "x86_64"
+description = "GTK 3 toolkit"
+license = "LGPL-2.1-or-later"
+depends = [
+    "glib",
+    "cairo",
+    "pango",
+    "gdk-pixbuf",
+    "at-spi2-core",
+    "libepoxy",
+    "libxi",
+    "libxrandr",
+    "libxcursor",
+    "libxfixes",
+    "libxcomposite",
+    "libxdamage",
+    "libxinerama",
+    "libxkbcommon",
+    "shared-mime-info",
+    "hicolor-icon-theme",
+    "fribidi",
+    "mesa",
+]
+recipe = "a43f6057f22ae6c756b9282ee5431e01e75397569f2690d0affbca6a6da4a043"
+
 [gzip."1.14-1"]
 arch = "x86_64"
 description = "gzip compression"
 license = "GPL-3.0-or-later"
 recipe = "bfca731695d1561f5ef74ab6d11090818591e700f688dda8a868932fb8a4450a"
 
+[harfbuzz."15.1.0-1"]
+arch = "x86_64"
+description = "Text shaping"
+license = "MIT"
+depends = [
+    "glib",
+    "freetype",
+]
+recipe = "d0b97987fa3c827bb3b4aea975ef98ecd7895fbc33c8bf48273e400ec5d7c26d"
+
 [hello."2.12.2-1"]
 arch = "x86_64"
 description = "Prints a greeting (the test package)"
 license = "GPL-3.0-or-later"
 recipe = "1cf88007349e09f1e20647ef0fd8b05f2a3d50e5a16d32e8b2ef63f43d5bf11e"
+
+[hicolor-icon-theme."0.18-1"]
+arch = "x86_64"
+description = "Fallback icon theme"
+license = "GPL-2.0-only"
+recipe = "115abea74eb078efbc58f5cea56e79b9bbb60d5c7971bfb345853ddee1e5c087"
 
 [iana-etc.20250807-1]
 arch = "x86_64"
@@ -392,11 +567,62 @@ description = "POSIX capabilities"
 license = "BSD-3-Clause"
 recipe = "f8cb57108a83592069728f7c46c5a61ebf4df9f2bba6117bfb06ab31bb051ec2"
 
+[libdrm."2.4.134-1"]
+arch = "x86_64"
+description = "Direct rendering manager library"
+license = "MIT"
+depends = ["libpciaccess"]
+recipe = "c1ac8c102a3009ae29df737ac0e28272497a0bfa6de24756adc1c289751ece99"
+
+[libepoxy."1.5.10-1"]
+arch = "x86_64"
+description = "OpenGL function pointer management"
+license = "MIT"
+depends = ["libx11"]
+recipe = "1539a6f798a1789499897a890dee685a2d7a0ea1d273775e9366111ac65b299a"
+
+[libevdev."1.14.0-1"]
+arch = "x86_64"
+description = "Wrapper for evdev devices"
+license = "MIT"
+recipe = "5139c0d584f4ff83f4d997b2f9eeaa86a3dc24e057af1a45c1375bad2d43cc21"
+
 [libffi."3.5.2-1"]
 arch = "x86_64"
 description = "Foreign function interface"
 license = "MIT"
 recipe = "65fa99abe2829834883bc96564e2ea823ba997e2ce43e239dd9e9127e7be5539"
+
+[libfontenc."1.1.9-1"]
+arch = "x86_64"
+description = "Font encodings"
+license = "MIT"
+depends = [
+    "zlib",
+    "xorgproto",
+]
+recipe = "8045518a8e00b49b8c4558a0452b20e9b851450f4ed58e1c94502a87ed65414f"
+
+[libice."1.1.2-1"]
+arch = "x86_64"
+description = "Inter-client exchange"
+license = "MIT"
+depends = [
+    "xorgproto",
+    "xtrans",
+]
+recipe = "236a899f5276de8c57562e2600c020987068888cd5c7bfc26896c56af62a724a"
+
+[libinput."1.32.0-1"]
+arch = "x86_64"
+description = "Input device handling"
+license = "MIT"
+depends = [
+    "libevdev",
+    "mtdev",
+    "eudev",
+]
+recipe = "329ddd660d238697a7e26931371bdb2fa2d9e11ace465b61ad075eba7fa06a10"
 
 [libisoburn."1.5.8-1"]
 arch = "x86_64"
@@ -420,11 +646,99 @@ depends = [
 ]
 recipe = "b7435f2191d679b8afbcd723849a8b08fba74d5891356133e237001d1cf8091e"
 
+[libjpeg-turbo."3.2.1-1"]
+arch = "x86_64"
+description = "JPEG codec"
+license = "BSD-3-Clause"
+recipe = "acef70d3974c702fef185b48cc1fa506ae1d537b08066d5ca490d2d13deceef9"
+
+[libpciaccess."0.19-1"]
+arch = "x86_64"
+description = "PCI access"
+license = "MIT"
+depends = ["zlib"]
+recipe = "87979b6ae025702e77aafc1a43a391968d9581a94497bd6f62bbc1cd205a086c"
+
+[libpng."1.6.59-1"]
+arch = "x86_64"
+description = "PNG library"
+license = "Libpng-2.0"
+depends = ["zlib"]
+recipe = "0cddb67dfb52c05c44283884ae30d895458b747b59013eb6810492b0fd5b6a54"
+
+[libsm."1.2.6-1"]
+arch = "x86_64"
+description = "Session management"
+license = "MIT"
+depends = [
+    "libice",
+    "util-linux",
+]
+recipe = "38801ea20f8e09eca225e5eb723533ec13a69f167c0f0c3644fb4129a470fbc8"
+
 [libtool."2.5.4-1"]
 arch = "x86_64"
 description = "Generic library support script"
 license = "GPL-2.0-or-later"
 recipe = "f34340f3f3b0872be5cfddaad47f41bede6d14b408f77f3281cb2563cc9735bd"
+
+[libwnck."43.3-1"]
+arch = "x86_64"
+description = "Window navigation library"
+license = "LGPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "libxrender",
+]
+recipe = "aa204e1fb5ab1f92c8adb3c46e487c9ad5972d2186ef7b664e6501441c5c6ab7"
+
+[libx11."1.8.14-1"]
+arch = "x86_64"
+description = "Xlib"
+license = "MIT"
+depends = [
+    "libxcb",
+    "xorgproto",
+    "xtrans",
+]
+recipe = "3b332283432ab52ffcf9488989d4064456bee357f306dc7f11887e30d656fe57"
+
+[libxau."1.0.12-1"]
+arch = "x86_64"
+description = "X authorization"
+license = "MIT"
+depends = ["xorgproto"]
+recipe = "0194a362757bef9be22746da809f6f519c767c3c5a962e1d7fe5e8fe185dea00"
+
+[libxaw."1.0.16-1"]
+arch = "x86_64"
+description = "Athena widgets"
+license = "MIT"
+depends = [
+    "libxmu",
+    "libxpm",
+    "libxt",
+    "libxext",
+]
+recipe = "23788a3309c4dbe55da89cb7c8e6f2a4ddbca747eb44744fbfd60aff2ee25732"
+
+[libxcb."1.17.0-1"]
+arch = "x86_64"
+description = "X protocol C binding"
+license = "MIT"
+depends = [
+    "libxau",
+    "libxdmcp",
+    "xcb-proto",
+]
+recipe = "34719a4cfe1550aa1c36f0d6cb0e800074721fb660bcba267b1a4f1814006186"
+
+[libxcomposite."0.4.7-1"]
+arch = "x86_64"
+description = "XComposite"
+license = "MIT"
+depends = ["libxfixes"]
+recipe = "55ffa6f4ec1b9459cb6e3ef8a406bdd71b0ffbee3066ab01f590157bddcabaa9"
 
 [libxcrypt."4.4.38-1"]
 arch = "x86_64"
@@ -432,18 +746,247 @@ description = "Password hashing library"
 license = "LGPL-2.1-or-later"
 recipe = "cbbf8271155e00bfacb40e5e371f7c56164ab2c03b7a107dbd5eb19e21e80f64"
 
-[linux."7.3.4-1"]
+[libxcursor."1.2.3-1"]
+arch = "x86_64"
+description = "X cursors"
+license = "MIT"
+depends = [
+    "libxfixes",
+    "libxrender",
+]
+recipe = "68fa6670a7d2c993ba6ec721b4bed8feda025d71db3cb210f7bf8d6bef55af9a"
+
+[libxcvt."0.1.3-1"]
+arch = "x86_64"
+description = "VESA CVT modelines"
+license = "MIT"
+recipe = "9dad74b2db55f56977553827a5b5340bd1d57e02adb48b28ea5e010d03790213"
+
+[libxdamage."1.1.7-1"]
+arch = "x86_64"
+description = "XDamage"
+license = "MIT"
+depends = ["libxfixes"]
+recipe = "33a996d7820e8ce540e10b8ff4004c56a285acb97b5f0379acfd02122f46dea5"
+
+[libxdmcp."1.1.5-1"]
+arch = "x86_64"
+description = "X display manager control protocol"
+license = "MIT"
+depends = ["xorgproto"]
+recipe = "a29fc167e5e445a36d6900390b773d4d3329b80f5bfbb557d03d481e561dc2de"
+
+[libxext."1.3.7-1"]
+arch = "x86_64"
+description = "X extensions"
+license = "MIT"
+depends = ["libx11"]
+recipe = "6440e684a701d9287789a6c29555e7200f5633c56c718fa8678b1fb4d184bdad"
+
+[libxfce4ui."4.20.2-1"]
+arch = "x86_64"
+description = "Xfce widget library"
+license = "LGPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "xfconf",
+    "libxfce4util",
+    "libsm",
+    "libice",
+    "libx11",
+]
+recipe = "ccc2a82cd942579478ed70362e33466af5e4f0462b0d889e6e4b8b019b545f14"
+
+[libxfce4util."4.20.1-1"]
+arch = "x86_64"
+description = "Xfce utility library"
+license = "LGPL-2.0-or-later"
+depends = ["glib"]
+recipe = "638f8d62c2a9dcbfadff5494dea0c9f22ebda25c9c6e9b379aa74fd57ce94347"
+
+[libxfixes."6.0.2-1"]
+arch = "x86_64"
+description = "XFIXES"
+license = "MIT"
+depends = ["libx11"]
+recipe = "010a8eba244d56b233c17287b88e946be61b72219ecf7f408687d33e362b427c"
+
+[libxfont2."2.0.9-1"]
+arch = "x86_64"
+description = "X font library"
+license = "MIT"
+depends = [
+    "freetype",
+    "libfontenc",
+    "xtrans",
+    "xorgproto",
+]
+recipe = "d28fc193dc227432ae8217dea45cf0e2d1640178bc4907d80e2c34d46f2abad2"
+
+[libxft."2.3.9-1"]
+arch = "x86_64"
+description = "X FreeType interface"
+license = "MIT"
+depends = [
+    "libxrender",
+    "fontconfig",
+    "freetype",
+]
+recipe = "8f12333e285cd3a96a1630bc75125245f0f8d305b910d7879ed9519ac39d2898"
+
+[libxi."1.8.4-1"]
+arch = "x86_64"
+description = "XInput"
+license = "MIT"
+depends = [
+    "libxext",
+    "libxfixes",
+]
+recipe = "dbff504d597f066fde6d3d3eede7e244af3447ab3b06fe8ace9ad65f2ef6caec"
+
+[libxinerama."1.1.6-1"]
+arch = "x86_64"
+description = "Xinerama"
+license = "MIT"
+depends = ["libxext"]
+recipe = "8f4e1fdb01b095d8f138b405adb35320a1471b2754e3e756751588c5f52b3eb6"
+
+[libxkbcommon."1.13.2-1"]
+arch = "x86_64"
+description = "Keyboard handling library"
+license = "MIT"
+depends = [
+    "xkeyboard-config",
+    "libxcb",
+]
+recipe = "0dadf2b970b2a0fdd5db8a4fed7774be159d111758b00484866ef24c4f14e340"
+
+[libxkbfile."1.2.0-1"]
+arch = "x86_64"
+description = "XKB file handling"
+license = "MIT"
+depends = ["libx11"]
+recipe = "1efb0e533b5ab669e25f714ec341baf3fa091b618aaafc237370c8a70c639e02"
+
+[libxml2."2.14.6-1"]
+arch = "x86_64"
+description = "XML library"
+license = "MIT"
+depends = [
+    "zlib",
+    "xz",
+]
+recipe = "68b21d5fe6b03c3898500365489232307cbd3187cd7042e1d7286165dd8cd349"
+
+[libxmu."1.3.1-1"]
+arch = "x86_64"
+description = "X miscellaneous utilities"
+license = "MIT"
+depends = [
+    "libxt",
+    "libxext",
+]
+recipe = "cc452e6d493c1a5f32fc4782d569bdbe1165202ff0f44b33ea5db35d7898088a"
+
+[libxpm."3.5.20-1"]
+arch = "x86_64"
+description = "X pixmap"
+license = "MIT"
+depends = [
+    "libx11",
+    "libxt",
+    "libxext",
+]
+recipe = "060b2e56414fe5a872e5808395e7da2afb1e34d8d1b32311250503e52e4c4e6b"
+
+[libxrandr."1.5.5-1"]
+arch = "x86_64"
+description = "XRandR"
+license = "MIT"
+depends = [
+    "libxext",
+    "libxrender",
+]
+recipe = "2c9456271a51a1699945b1c202b862fa1b2750b530afb20c78f3cf0cbb363ecb"
+
+[libxrender."0.9.13-1"]
+arch = "x86_64"
+description = "XRender"
+license = "MIT"
+depends = ["libx11"]
+recipe = "50f7e51c6c053c62b48dd364cdd463d762c487c0ff5f03fcd178c08c022be56b"
+
+[libxshmfence."1.3.3-1"]
+arch = "x86_64"
+description = "Shared memory fences"
+license = "MIT"
+depends = ["xorgproto"]
+recipe = "64849cb3d868f0614393c3fcf480a2f9bf17e8e8d573017e10211d06cc6a6b57"
+
+[libxt."1.3.1-1"]
+arch = "x86_64"
+description = "X toolkit intrinsics"
+license = "MIT"
+depends = [
+    "libsm",
+    "libx11",
+]
+recipe = "b9e26259d6908cbb8b0fd337dc9cc72e99e708c7f88a648576df9a36a1b40381"
+
+[libxtst."1.2.6-1"]
+arch = "x86_64"
+description = "XTest and RECORD"
+license = "MIT"
+depends = [
+    "libxext",
+    "libxi",
+]
+recipe = "72c6ae48d49db07212054c6c00db671c538844d822e54ddef4370af882f9c92d"
+
+[libxv."1.0.13-1"]
+arch = "x86_64"
+description = "XVideo"
+license = "MIT"
+depends = ["libxext"]
+recipe = "af2e6941d64d378c94f130ff577898c0d27b1f1ef73d42f993fbcb5e8be067d8"
+
+[libxxf86vm."1.1.7-1"]
+arch = "x86_64"
+description = "XFree86-VidMode"
+license = "MIT"
+depends = ["libxext"]
+recipe = "f12e8942c6971191569052fa1e7f7a1b95296223c5b1b6d651a87ed931ac2d36"
+
+[linux."7.3.4-2"]
 arch = "x86_64"
 description = "The Linux kernel and its modules"
 license = "GPL-2.0-only"
 depends = ["kmod"]
-recipe = "fd8370afb96214dd73c262e33d93c67d8d13f08d7e0d74f8d9d10b98fa56575f"
+recipe = "919165804daafa56adf4613c1bc2128d87c16188f4a77b5791b675aeada5cf8c"
+
+[linux-firmware.20261019-1]
+arch = "x86_64"
+description = "Firmware of GPUs and other devices (amdgpu, radeon, i915, xe, nvidia)"
+license = "Redistributable"
+recipe = "ab4e3c0589348e0c73d3282b0c02b7f36a7ac9c957a5e6467f87f20621c1e3eb"
 
 [linux-headers."6.16.1-1"]
 arch = "x86_64"
 description = "The kernel headers glibc is built against"
 license = "GPL-2.0-only WITH Linux-syscall-note"
 recipe = "14348b4b0fc7dcf58b0735f862f6ad2746a333e0383a31c418619e4af474b285"
+
+[llvm."23.1.5-1"]
+arch = "x86_64"
+description = "The LLVM compiler infrastructure (libraries, for Mesa)"
+license = "Apache-2.0 WITH LLVM-exception"
+depends = [
+    "libffi",
+    "zlib",
+    "zstd",
+]
+build_depends = ["cmake"]
+recipe = "b827ad60527719212c055600ee66a3c6a8a51fd613f2c1f29621d52d807e5477"
 
 [lz4."1.10.0-1"]
 arch = "x86_64"
@@ -462,6 +1005,32 @@ arch = "x86_64"
 description = "GNU make"
 license = "GPL-3.0-or-later"
 recipe = "3766c92e9b324091e2ed2b0ac60151fc99693188a3fe11d583ee73ac32cfc6a6"
+
+[mesa."26.3.0-1"]
+arch = "x86_64"
+description = "OpenGL, EGL and Vulkan drivers: radeonsi, radv, nouveau, llvmpipe"
+license = "MIT"
+depends = [
+    "libdrm",
+    "llvm",
+    "expat",
+    "zlib",
+    "zstd",
+    "libxshmfence",
+    "libx11",
+    "libxext",
+    "libxfixes",
+    "libxxf86vm",
+    "libxrandr",
+    "libxcb",
+    "libxdamage",
+]
+build_depends = [
+    "python-mako",
+    "python-pyyaml",
+    "python-packaging",
+]
+recipe = "f7a3d7b771d31266472c99243fc4bb12ad12d027c79cac8b52d70de1eea523df"
 
 [meson."1.8.3-1"]
 arch = "x86_64"
@@ -489,6 +1058,12 @@ description = "Multiple precision floating point"
 license = "LGPL-3.0-or-later"
 depends = ["gmp"]
 recipe = "281f943d69e641e0a54d8a9cb78b6d32dc8517c7c4ed53479afca0a461f3b63b"
+
+[mtdev."1.1.7-1"]
+arch = "x86_64"
+description = "Multitouch protocol translation library"
+license = "MIT"
+recipe = "6da09b4152e300971b828c0491adde29bfb8a134cdc0129847d625014e928469"
 
 [ncurses."6.6-1"]
 arch = "x86_64"
@@ -525,11 +1100,32 @@ depends = ["glibc"]
 build_depends = ["rust-bin"]
 recipe = "33a4c7583e7e7c4c5033ed38798189bb38592ef9e707337f4e2aca33cdbf901d"
 
+[pango."1.58.2-1"]
+arch = "x86_64"
+description = "Text layout and rendering"
+license = "LGPL-2.1-or-later"
+depends = [
+    "glib",
+    "cairo",
+    "harfbuzz",
+    "fribidi",
+    "freetype",
+    "fontconfig",
+    "libxft",
+]
+recipe = "c85ee8d30d9ab10b0891fe946e32e50c959bf70f490641e9e70ebbfecd471c87"
+
 [patch."2.8-1"]
 arch = "x86_64"
 description = "Apply patches"
 license = "GPL-3.0-or-later"
 recipe = "aad194896cbaaf5f045b5433a70911b818668ba04aa575eb8a81afe37776d429"
+
+[pcre2."10.49-1"]
+arch = "x86_64"
+description = "Perl-compatible regular expressions"
+license = "BSD-3-Clause"
+recipe = "055132b0be850ea0f93284dbbf627bbbfe99921a90d6723544b82d482a4d9997"
 
 [perl."5.42.0-1"]
 arch = "x86_64"
@@ -543,6 +1139,12 @@ arch = "x86_64"
 description = "A pretty system information tool written in POSIX sh"
 license = "MIT"
 recipe = "e8c73b2e94ad758dfc112259cf5f7ad2be3203f00952cb709fd44a3b26ae9b6e"
+
+[pixman."0.46.4-1"]
+arch = "x86_64"
+description = "Pixel manipulation library"
+license = "MIT"
+recipe = "0055ee067d3953cb2abc51af0b7953906aa31058ab80140d670d04c57fc4bd0d"
 
 [pkgconf."2.5.1-1"]
 arch = "x86_64"
@@ -583,6 +1185,37 @@ depends = [
 ]
 recipe = "498798008b1d25fcdd285f0af284177cfd7d0ca78a0d51b3e0dbfa930f638e8b"
 
+[python-mako."1.4.3-1"]
+arch = "x86_64"
+description = "Template library"
+license = "MIT"
+depends = [
+    "python",
+    "python-markupsafe",
+]
+recipe = "008b1bc4eb0f4935740721fe5888c92481e771c027aec55ed07f9cebb657e3b1"
+
+[python-markupsafe."3.0.4-1"]
+arch = "x86_64"
+description = "String escaping for templates"
+license = "BSD-3-Clause"
+depends = ["python"]
+recipe = "7c21b03800f0585218b44704c09c34084a8ec08e7be04806b961532dac048149"
+
+[python-packaging."26.3-1"]
+arch = "x86_64"
+description = "Python package version handling"
+license = "Apache-2.0"
+depends = ["python"]
+recipe = "5eb16d1bf805859c3cb18cb6faf978943bfefc7b7c43be662273c17c93ce89fb"
+
+[python-pyyaml."6.0.3-1"]
+arch = "x86_64"
+description = "YAML parser"
+license = "MIT"
+depends = ["python"]
+recipe = "421443b43f12c146b1bd7509eca115366758cbdec32baa86fcb9db1f7c72d799"
+
 [readline."8.3-1"]
 arch = "x86_64"
 description = "Line editing library"
@@ -606,6 +1239,16 @@ description = "Stream editor"
 license = "GPL-3.0-or-later"
 recipe = "87c476c6901970de438ce6a874adda2432d0c78e7f9afedd88224342a3bf4f52"
 
+[setxkbmap."1.3.5-1"]
+arch = "x86_64"
+description = "X.Org application setxkbmap"
+license = "MIT"
+depends = [
+    "libxkbfile",
+    "libx11",
+]
+recipe = "36a12f845bd4c7d5a05626145dd13f3a9d6286d847a10510794680bfeda6ffd8"
+
 [shadow."4.18.0-2"]
 arch = "x86_64"
 description = "User and group management"
@@ -616,6 +1259,16 @@ depends = [
     "attr",
 ]
 recipe = "818fbde0139e9f8a123880b033d36a026ceb656a1176e3deebb61a8f77b1ecff"
+
+[shared-mime-info."2.5.1-1"]
+arch = "x86_64"
+description = "MIME type database"
+license = "GPL-2.0-or-later"
+depends = [
+    "glib",
+    "libxml2",
+]
+recipe = "0b510a3ed0cd435818d20cc8e7e138bb0aa06116a076f68cdaa50116cc96c713"
 
 [squashfs-tools."4.7.5-1"]
 arch = "x86_64"
@@ -658,6 +1311,22 @@ depends = [
 ]
 recipe = "3d6c2b59568a5e6fa6d319bf7c0e955107096e34ccb3d27222616ebf14171760"
 
+[thunar."4.20.10-1"]
+arch = "x86_64"
+description = "Xfce file manager"
+license = "GPL-2.0-or-later"
+depends = [
+    "exo",
+    "gtk+",
+    "libxfce4ui",
+    "libxfce4util",
+    "xfconf",
+    "gdk-pixbuf",
+    "shared-mime-info",
+    "desktop-file-utils",
+]
+recipe = "ab2f88aa2286b7b48c08fb56ebd19f3862537f8bb76f73fd43062321b546d8ec"
+
 [tzdata.2025b-1]
 arch = "x86_64"
 description = "Time zone database"
@@ -674,12 +1343,364 @@ depends = [
 ]
 recipe = "e05e03cf3561b3468c7d6901ac5f49fe22e1ae61d974d345530030c09156cabf"
 
+[util-macros."1.20.2-1"]
+arch = "x86_64"
+description = "X.Org autotools macros"
+license = "MIT"
+recipe = "6b240ff6315e780bb5b9b1c1b436882da24ad478d07a5254d55157d78b8b7951"
+
 [vim."9.1.1629-1"]
 arch = "x86_64"
 description = "Text editor"
 license = "Vim"
 depends = ["ncurses"]
 recipe = "d80ffed1ab88f9a6adebd0351468f048b78248512f449b2efaade778f9cd4eee"
+
+[xauth."1.1.5-1"]
+arch = "x86_64"
+description = "X.Org application xauth"
+license = "MIT"
+depends = [
+    "libxau",
+    "libxext",
+    "libxmu",
+    "libx11",
+]
+recipe = "49af089a7046da9517025fce66eb64d19e13a1095499be2cfef8d4d2d694564c"
+
+[xcb-proto."1.17.0-1"]
+arch = "x86_64"
+description = "XCB protocol descriptions"
+license = "MIT"
+depends = ["python"]
+recipe = "003b8185d45453fbf3624f22b86610acb93cc589e91d75f910441f7291c6beac"
+
+[xcb-util."0.4.1-1"]
+arch = "x86_64"
+description = "XCB utility library xcb-util"
+license = "MIT"
+depends = ["libxcb"]
+recipe = "1829139bed3b96b1b786a6f3c455648741090ac2c865f76a243dcee32a34a56f"
+
+[xcb-util-cursor."0.1.6-1"]
+arch = "x86_64"
+description = "XCB utility library xcb-util-cursor"
+license = "MIT"
+depends = [
+    "xcb-util-image",
+    "xcb-util-renderutil",
+]
+recipe = "9769cd81b196b2912ac18bc7fe65b25d192f1e87328b0b1541c1443bf0f463ee"
+
+[xcb-util-image."0.4.1-1"]
+arch = "x86_64"
+description = "XCB utility library xcb-util-image"
+license = "MIT"
+depends = ["xcb-util"]
+recipe = "4a94ef80309d99caad1138d70f759a0d69706a3f06dcbe736f35529c613bbce9"
+
+[xcb-util-keysyms."0.4.1-1"]
+arch = "x86_64"
+description = "XCB utility library xcb-util-keysyms"
+license = "MIT"
+depends = ["libxcb"]
+recipe = "29feedb0210026d449cc34ea76287f046a6a07383fb2cc3b6b59451eba254d4a"
+
+[xcb-util-renderutil."0.3.10-1"]
+arch = "x86_64"
+description = "XCB utility library xcb-util-renderutil"
+license = "MIT"
+depends = ["libxcb"]
+recipe = "78b8f14b394a91245e93ec1ed246fc7be810c50b5191bf2865aa814428c7c397"
+
+[xcb-util-wm."0.4.2-1"]
+arch = "x86_64"
+description = "XCB utility library xcb-util-wm"
+license = "MIT"
+depends = ["libxcb"]
+recipe = "725e097c2cc935598d76b615a8544b94f098f371bc876fa7df0930fb25a289b7"
+
+[xdpyinfo."1.4.0-1"]
+arch = "x86_64"
+description = "X.Org application xdpyinfo"
+license = "MIT"
+depends = [
+    "libx11",
+    "libxext",
+    "libxtst",
+    "libxi",
+]
+recipe = "fc9c10dcd41fe6643843dd5c806133b082745a2b1ba1d0b86e73716fca36c42e"
+
+[xf86-input-libinput."1.5.0-1"]
+arch = "x86_64"
+description = "libinput driver for the X server"
+license = "MIT"
+depends = [
+    "libinput",
+    "xorg-server",
+]
+recipe = "1bb409f1817c2340a828cb2b9280c6f60f0c23fec027499f2c1dc2c201853d2b"
+
+[xfce4-appfinder."4.20.0-1"]
+arch = "x86_64"
+description = "Xfce application finder"
+license = "GPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "garcon",
+    "libxfce4ui",
+    "libxfce4util",
+    "xfconf",
+]
+recipe = "49266099c8a7e628bf6261d10c42dee00347b08b6a953f21e5d7d29ea7e81e61"
+
+[xfce4-panel."4.20.8-1"]
+arch = "x86_64"
+description = "Xfce panel"
+license = "GPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "garcon",
+    "exo",
+    "libxfce4ui",
+    "libxfce4util",
+    "xfconf",
+    "libwnck",
+    "libx11",
+    "libxext",
+]
+recipe = "fb358973d2659a0c1dcce7e6624cd5a01266f39f98dd3a3d015b791de20c8f15"
+
+[xfce4-session."4.20.4-1"]
+arch = "x86_64"
+description = "Xfce session manager"
+license = "GPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "libxfce4ui",
+    "libxfce4util",
+    "xfconf",
+    "libwnck",
+    "libsm",
+    "xorg-server",
+    "xinit",
+    "dbus",
+]
+recipe = "ddac29bd41143e2c382ebaf43347f5d7762e0390a239ad99597341a8c967a549"
+
+[xfce4-settings."4.20.5-1"]
+arch = "x86_64"
+description = "Xfce settings manager"
+license = "GPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "exo",
+    "garcon",
+    "libxfce4ui",
+    "libxfce4util",
+    "xfconf",
+    "libxi",
+    "libxrandr",
+    "libxcursor",
+    "libxkbfile",
+]
+recipe = "436dc1c3ef86035a523bc96375c1e4bd17d0b23098ea80a4b234588f3d6db084"
+
+[xfconf."4.20.0-1"]
+arch = "x86_64"
+description = "Xfce configuration storage"
+license = "LGPL-2.0-or-later"
+depends = [
+    "glib",
+    "dbus",
+    "libxfce4util",
+]
+recipe = "84df632e4a8f36b10fe9d56ead06710d5fd042149617c367b15b0c863c667965"
+
+[xfdesktop."4.20.2-1"]
+arch = "x86_64"
+description = "Xfce desktop manager"
+license = "GPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "exo",
+    "garcon",
+    "libxfce4ui",
+    "libxfce4util",
+    "xfconf",
+    "libwnck",
+    "thunar",
+]
+recipe = "ae98d3be041ab570cccc2820ec82cd050fe3976f9d020159837834e89f3bb976"
+
+[xfwm4."4.20.0-1"]
+arch = "x86_64"
+description = "Xfce window manager"
+license = "GPL-2.0-or-later"
+depends = [
+    "gtk+",
+    "libxfce4ui",
+    "libxfce4util",
+    "xfconf",
+    "libwnck",
+    "libxcomposite",
+    "libxdamage",
+    "libxrandr",
+    "libxext",
+    "libepoxy",
+]
+recipe = "00b7a2465243281960f51fe910d93cb4c1109f3168e5fefc41ced7538d21447e"
+
+[xinit."1.4.4-1"]
+arch = "x86_64"
+description = "X.Org application xinit"
+license = "MIT"
+depends = [
+    "libx11",
+    "xauth",
+]
+recipe = "bd6286792ee0e22ba6b4e541240bd793b648e21e8aa7ea126e5f5720abf8349d"
+
+[xinput."1.6.4-1"]
+arch = "x86_64"
+description = "X.Org application xinput"
+license = "MIT"
+depends = [
+    "libxi",
+    "libxrandr",
+    "libx11",
+]
+recipe = "6cdd22ff764daed760d34b3a63aec621bbb8f0b8437c9918d16c5543f0c52cc2"
+
+[xkbcomp."1.5.0-1"]
+arch = "x86_64"
+description = "XKB keymap compiler"
+license = "MIT"
+depends = [
+    "libxkbfile",
+    "libx11",
+]
+build_depends = ["xorgproto"]
+recipe = "82025650b76fdb548f93c007520c5c06d50c4d006a45a004a7a4e342e8eb86e9"
+
+[xkeyboard-config."2.48-1"]
+arch = "x86_64"
+description = "Keyboard layouts for XKB"
+license = "MIT"
+depends = ["xkbcomp"]
+recipe = "a1dac24e547aaa05fe42481b907a65336cb959ca8aeeb9a0deea5183c7a28f29"
+
+[xmodmap."1.0.12-1"]
+arch = "x86_64"
+description = "X.Org application xmodmap"
+license = "MIT"
+depends = ["libx11"]
+recipe = "475a0ef59d8e27630e87f348536d7397937d5596ff3f48da5f40a4b02ce0294c"
+
+[xorg-server."21.1.26-1"]
+arch = "x86_64"
+description = "The X.Org X server"
+license = "MIT"
+depends = [
+    "libdrm",
+    "mesa",
+    "libepoxy",
+    "pixman",
+    "libxfont2",
+    "libxkbfile",
+    "libxcvt",
+    "libpciaccess",
+    "xkbcomp",
+    "xkeyboard-config",
+    "eudev",
+    "libxau",
+    "libxdmcp",
+    "xorgproto",
+    "xtrans",
+    "libxshmfence",
+    "libx11",
+    "libxext",
+]
+recipe = "addbd4e61267e9ee327150e3b74fe7aa43dbff085769be4d45919aa61bf07bc6"
+
+[xorgproto."2026.1-1"]
+arch = "x86_64"
+description = "X.Org protocol headers"
+license = "MIT"
+build_depends = ["util-macros"]
+recipe = "702900051a91d678f20b5c8a5d4ad4bcd79e505f77ffe1ce71a393a11a6f3075"
+
+[xprop."1.2.8-1"]
+arch = "x86_64"
+description = "X.Org application xprop"
+license = "MIT"
+depends = ["libx11"]
+recipe = "8b9b250be05bcf85a1dbfd2d9437ef0aa2c34d7731e95c1403dd12f53e16f1d4"
+
+[xrandr."1.5.4-1"]
+arch = "x86_64"
+description = "X.Org application xrandr"
+license = "MIT"
+depends = [
+    "libxrandr",
+    "libx11",
+]
+recipe = "79452e34337755012d0a5864a7c18527d0f1793e99992e1912bad9fc444131a8"
+
+[xrdb."1.2.3-1"]
+arch = "x86_64"
+description = "X.Org application xrdb"
+license = "MIT"
+depends = [
+    "libx11",
+    "libxmu",
+]
+recipe = "d855da6dda80b26c1b93d971c37572bdbb75b346e177ad7c981866397b9b9138"
+
+[xset."1.2.6-1"]
+arch = "x86_64"
+description = "X.Org application xset"
+license = "MIT"
+depends = [
+    "libxmu",
+    "libx11",
+    "libxext",
+]
+recipe = "1e2f710374cc25553af1b0b49cb64fa7be5213f5d882b81d1b7bc9a09da6b7d8"
+
+[xsetroot."1.1.4-1"]
+arch = "x86_64"
+description = "X.Org application xsetroot"
+license = "MIT"
+depends = [
+    "libx11",
+    "libxmu",
+]
+recipe = "bd5c30c5d7678708d1021b87792dad6fabf3660ef35aeeb354d32e0d00af1a8e"
+
+[xterm.412-1]
+arch = "x86_64"
+description = "Terminal emulator for X"
+license = "X11"
+depends = [
+    "libxaw",
+    "libxft",
+    "fontconfig",
+    "ncurses",
+    "libxinerama",
+    "libxt",
+    "libxmu",
+    "libxpm",
+]
+recipe = "6d1d6273fd59b2570cf49cf6019161d0f06c23dcc125646bbd1bceab96c8cadb"
+
+[xtrans."1.6.0-1"]
+arch = "x86_64"
+description = "X transport library"
+license = "MIT"
+build_depends = ["util-macros"]
+recipe = "a23f7790a38312d5d49db0eb18538b07c491928f461efb5e61f33271c0d14a59"
 
 [xz."5.8.1-1"]
 arch = "x86_64"

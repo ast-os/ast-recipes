@@ -1,0 +1,18 @@
+[package]
+name = "libxt"
+version = "1.3.1"
+description = "X toolkit intrinsics"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libsm", "libx11"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXt-1.3.1.tar.xz"
+sha256 = "e0a774b33324f4d4c05b199ea45050f87206586d81655f8bef4dba434d931288"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

@@ -1,0 +1,15 @@
+[package]
+name = "libdrm"
+version = "2.4.134"
+description = "Direct rendering manager library"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libpciaccess"]
+
+[source]
+url = "https://dri.freedesktop.org/libdrm/libdrm-2.4.134.tar.xz"
+sha256 = "ac5e74d157830eb8bee44c6a6bf3ad49774ef0dd2a72bdad74a8f20308b52a95"
+
+[build]
+style = "meson"
+configure = ["-Dintel=enabled", "-Dradeon=enabled", "-Damdgpu=enabled", "-Dnouveau=enabled", "-Dvmwgfx=enabled", "-Dcairo-tests=disabled", "-Dvalgrind=disabled", "-Dman-pages=disabled", "-Dtests=false"]

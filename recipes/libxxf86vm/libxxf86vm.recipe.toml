@@ -1,0 +1,18 @@
+[package]
+name = "libxxf86vm"
+version = "1.1.7"
+description = "XFree86-VidMode"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxext"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXxf86vm-1.1.7.tar.xz"
+sha256 = "ae50c0f669e0af5a67cc4cd0f54f21d64a64d2660af883e80e95d3fe51b945d8"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

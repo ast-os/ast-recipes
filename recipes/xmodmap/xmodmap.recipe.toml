@@ -1,0 +1,18 @@
+[package]
+name = "xmodmap"
+version = "1.0.12"
+description = "X.Org application xmodmap"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libx11"]
+
+[source]
+url = "https://www.x.org/releases/individual/app/xmodmap-1.0.12.tar.xz"
+sha256 = "fc54b9b5bbf2ae58ba8f9d42bd051c41c7438377400c42c17d7496d19e1bb3ce"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

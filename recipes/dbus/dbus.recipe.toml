@@ -1,0 +1,25 @@
+[package]
+name = "dbus"
+version = "1.16.4"
+description = "Message bus"
+license = "AFL-2.1 OR GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["expat", "libx11", "libice", "libsm", "eudev"]
+config_files = ["/etc/orchid/services/dbus.toml"]
+
+[source]
+url = "https://dbus.freedesktop.org/releases/dbus/dbus-1.16.4.tar.xz"
+sha256 = "d08b05526c2cb7966a5fb79210d6112b1aca3d135f315c1b302e14b4b0297dac"
+
+[build]
+style = "meson"
+configure = ["-Dsystemd=disabled", "-Duser_session=false", "-Dxml_docs=disabled", "-Ddoxygen_docs=disabled", "-Dx11_autolaunch=enabled", "-Dmodular_tests=disabled", "-Dselinux=disabled", "-Dapparmor=disabled", "-Druntime_dir=/run", "-Dsystem_pid_file=/run/dbus/pid", "-Dsession_socket_dir=/tmp"]
+fixup = '''
+install -d "$DESTDIR/etc/orchid/services"
+cat > "$DESTDIR/etc/orchid/services/dbus.toml" <<'SERVICE'
+[service]
+description = "message bus"
+exec = ["/bin/sh", "-c", "mkdir -p /run/dbus && /usr/bin/dbus-uuidgen --ensure && exec /usr/bin/dbus-daemon --system --nofork --nopidfile"]
+restart = "on-failure"
+SERVICE
+'''

@@ -1,0 +1,15 @@
+[package]
+name = "pango"
+version = "1.58.2"
+description = "Text layout and rendering"
+license = "LGPL-2.1-or-later"
+arch = ["x86_64"]
+depends = ["glib", "cairo", "harfbuzz", "fribidi", "freetype", "fontconfig", "libxft"]
+
+[source]
+url = "https://download.gnome.org/sources/pango/1.58/pango-1.58.2.tar.xz"
+sha256 = "342385b6ca3b7c73455d7c80a13b7dbe4489e00bc3bd4c5bd6ed4dce421e374a"
+
+[build]
+style = "meson"
+configure = ["-Dintrospection=disabled", "-Dbuild-testsuite=false", "-Dbuild-examples=false", "-Ddocumentation=false", "-Dlibthai=disabled", "-Dxft=enabled"]

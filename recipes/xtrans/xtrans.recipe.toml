@@ -1,0 +1,15 @@
+[package]
+name = "xtrans"
+version = "1.6.0"
+description = "X transport library"
+license = "MIT"
+arch = ["x86_64"]
+build_depends = ["util-macros"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/xtrans-1.6.0.tar.xz"
+sha256 = "faafea166bf2451a173d9d593352940ec6404145c5d1da5c213423ce4d359e92"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]

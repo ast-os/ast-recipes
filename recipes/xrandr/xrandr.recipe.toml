@@ -1,0 +1,18 @@
+[package]
+name = "xrandr"
+version = "1.5.4"
+description = "X.Org application xrandr"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxrandr", "libx11"]
+
+[source]
+url = "https://www.x.org/releases/individual/app/xrandr-1.5.4.tar.xz"
+sha256 = "2cafccb2aaf2491a4068676117a0d4f90ab307724b96fffc54cd1da953779400"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

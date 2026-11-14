@@ -1,0 +1,18 @@
+[package]
+name = "xprop"
+version = "1.2.8"
+description = "X.Org application xprop"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libx11"]
+
+[source]
+url = "https://www.x.org/releases/individual/app/xprop-1.2.8.tar.xz"
+sha256 = "d689e2adb7ef7b439f6469b51cda8a7daefc83243854c2a3b8f84d0f029d67ee"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

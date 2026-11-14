@@ -1,0 +1,18 @@
+[package]
+name = "freetype"
+version = "2.15.0"
+description = "Font rendering library"
+license = "FTL"
+arch = ["x86_64"]
+depends = ["zlib", "bzip2", "libpng"]
+
+[source]
+url = "https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz"
+sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--with-harfbuzz=no"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

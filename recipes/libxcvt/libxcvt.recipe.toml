@@ -1,0 +1,14 @@
+[package]
+name = "libxcvt"
+version = "0.1.3"
+description = "VESA CVT modelines"
+license = "MIT"
+arch = ["x86_64"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libxcvt-0.1.3.tar.xz"
+sha256 = "a929998a8767de7dfa36d6da4751cdbeef34ed630714f2f4a767b351f2442e01"
+
+[build]
+style = "meson"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]

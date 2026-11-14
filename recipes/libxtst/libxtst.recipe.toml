@@ -1,0 +1,18 @@
+[package]
+name = "libxtst"
+version = "1.2.6"
+description = "XTest and RECORD"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libxext", "libxi"]
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXtst-1.2.6.tar.xz"
+sha256 = "f94f0b37c07d80d877f3eda2c2405cc7e62aa9842f6310354aa349e3d66a4fe5"
+
+[build]
+style = "gnu"
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''
