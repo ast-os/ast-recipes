@@ -4,7 +4,7 @@ version = "4.20.2"
 description = "Xfce widget library"
 license = "LGPL-2.0-or-later"
 arch = ["x86_64"]
-depends = ["gtk+", "xfconf", "libxfce4util", "libsm", "libice", "libx11"]
+depends = ["gtk+", "xfconf", "libxfce4util", "libsm", "libice", "libx11", "librsvg"]
 build_depends = ["xfce4-dev-tools"]
 
 [source]

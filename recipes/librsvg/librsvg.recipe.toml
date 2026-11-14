@@ -1,0 +1,17 @@
+[package]
+name = "librsvg"
+version = "2.63.4"
+description = "SVG rendering library and the gdk-pixbuf loader for it"
+license = "LGPL-2.1-or-later"
+arch = ["x86_64"]
+depends = ["cairo", "pango", "gdk-pixbuf", "libxml2", "harfbuzz", "freetype", "glib"]
+build_depends = ["rust-bin", "cargo-c"]
+
+[source]
+git = "https://gitlab.gnome.org/GNOME/librsvg"
+commit = "0c074d0a25adefd65843067306f9bc1fb609f68f"
+vendor = true
+
+[build]
+style = "meson"
+configure = ["-Dintrospection=disabled", "-Dvala=disabled", "-Ddocs=disabled", "-Dtests=false", "-Davif=disabled", "-Dpixbuf-loader=enabled", "-Drsvg-convert=enabled"]

@@ -4,7 +4,7 @@ version = "4.20.5"
 description = "Xfce settings manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
-depends = ["gtk+", "exo", "garcon", "libxfce4ui", "libxfce4util", "xfconf", "libxi", "libxrandr", "libxcursor", "libxkbfile"]
+depends = ["gtk+", "exo", "garcon", "libxfce4ui", "libxfce4util", "xfconf", "libxi", "libxrandr", "libxcursor", "libxkbfile", "libxfce4windowing"]
 build_depends = ["xfce4-dev-tools"]
 
 [source]

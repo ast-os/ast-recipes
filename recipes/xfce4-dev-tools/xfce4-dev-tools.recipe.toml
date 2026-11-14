@@ -4,7 +4,7 @@ version = "4.20.0"
 description = "Autotools macros and xdt-autogen of the Xfce projects"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
-depends = ["glib", "gtk-doc"]
+depends = ["glib", "gtk-doc", "docbook-xsl"]
 build_depends = ["libxslt"]
 
 [source]

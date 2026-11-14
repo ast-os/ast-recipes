@@ -1,0 +1,22 @@
+[package]
+name = "libxfce4windowing"
+version = "4.20.7"
+description = "Xfce windowing library"
+license = "LGPL-2.1-or-later"
+arch = ["x86_64"]
+depends = ["gtk+", "libwnck", "libx11", "libxrandr", "glib"]
+build_depends = ["xfce4-dev-tools"]
+
+[source]
+git = "https://gitlab.xfce.org/xfce/libxfce4windowing"
+commit = "e288652b65a103c64161307281116b838c5df643"
+
+[build]
+style = "gnu"
+prepare = '''
+NOCONFIGURE=1 xdt-autogen
+'''
+configure = ["--enable-maintainer-mode", "--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug", "--disable-wayland"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

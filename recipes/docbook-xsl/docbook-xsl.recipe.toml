@@ -1,0 +1,29 @@
+[package]
+name = "docbook-xsl"
+version = "1.79.2"
+description = "DocBook XSL stylesheets (the release archive: the git tree generates them with a Java build), with a catalog that maps their web address to the installed files"
+license = "MIT"
+arch = ["x86_64"]
+config_files = ["/etc/xml/catalog"]
+
+[source]
+url = "https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-nons-1.79.2.tar.bz2"
+sha256 = "ee8b9eca0b7a8f89075832a2da7534bce8c5478fc8fc2676f512d5d87d832102"
+
+[build]
+build = '''
+true
+'''
+install = '''
+d="$DESTDIR/usr/share/xml/docbook/xsl-stylesheets"
+install -d "$d" "$DESTDIR/etc/xml"
+cp -r . "$d/"
+cat > "$DESTDIR/etc/xml/catalog" <<'CATALOG'
+<?xml version="1.0"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <rewriteURI uriStartString="http://docbook.sourceforge.net/release/xsl/current" rewritePrefix="file:///usr/share/xml/docbook/xsl-stylesheets"/>
+  <rewriteSystem systemIdStartString="http://docbook.sourceforge.net/release/xsl/current" rewritePrefix="file:///usr/share/xml/docbook/xsl-stylesheets"/>
+</catalog>
+CATALOG
+'''

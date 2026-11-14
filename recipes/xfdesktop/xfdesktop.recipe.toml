@@ -4,7 +4,7 @@ version = "4.20.2"
 description = "Xfce desktop manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
-depends = ["gtk+", "exo", "garcon", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "thunar"]
+depends = ["gtk+", "exo", "garcon", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "thunar", "libxfce4windowing"]
 build_depends = ["xfce4-dev-tools"]
 
 [source]

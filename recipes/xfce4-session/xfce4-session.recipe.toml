@@ -4,7 +4,7 @@ version = "4.20.4"
 description = "Xfce session manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
-depends = ["gtk+", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "libsm", "xorg-server", "xinit", "dbus"]
+depends = ["gtk+", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "libsm", "xorg-server", "xinit", "dbus", "libxfce4windowing"]
 build_depends = ["xfce4-dev-tools"]
 
 [source]

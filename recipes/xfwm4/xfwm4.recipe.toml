@@ -4,7 +4,7 @@ version = "4.20.0"
 description = "Xfce window manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
-depends = ["gtk+", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "libxcomposite", "libxdamage", "libxrandr", "libxext", "libepoxy"]
+depends = ["gtk+", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "libxcomposite", "libxdamage", "libxrandr", "libxext", "libepoxy", "libxfce4windowing"]
 build_depends = ["xfce4-dev-tools"]
 
 [source]

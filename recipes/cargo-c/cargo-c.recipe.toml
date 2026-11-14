@@ -1,0 +1,16 @@
+[package]
+name = "cargo-c"
+version = "0.10.26"
+description = "Cargo subcommands that build and install C libraries"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["glibc", "openssl", "zlib"]
+build_depends = ["rust-bin", "cmake"]
+
+[source]
+git = "https://github.com/lu-zero/cargo-c"
+commit = "22591c05bff0f705ef93530e743f2546236544cf"
+
+[build]
+style = "cargo"
+bins = ["cargo-cbuild", "cargo-cinstall", "cargo-capi", "cargo-ctest"]
