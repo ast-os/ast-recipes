@@ -657,7 +657,7 @@ arch = "x86_64"
 description = "PCI access"
 license = "MIT"
 depends = ["zlib"]
-recipe = "87979b6ae025702e77aafc1a43a391968d9581a94497bd6f62bbc1cd205a086c"
+recipe = "df3afab11d56e464898fc01dcc5c0757b6aeb069bb581d4a81c208920716fff6"
 
 [libpng."1.6.59-1"]
 arch = "x86_64"
@@ -760,7 +760,7 @@ recipe = "68fa6670a7d2c993ba6ec721b4bed8feda025d71db3cb210f7bf8d6bef55af9a"
 arch = "x86_64"
 description = "VESA CVT modelines"
 license = "MIT"
-recipe = "9dad74b2db55f56977553827a5b5340bd1d57e02adb48b28ea5e010d03790213"
+recipe = "541effa6da5bac9b4ff7dc49d34cdd7eed5b3728c3656b9e43dc411fb4b3a82e"
 
 [libxdamage."1.1.7-1"]
 arch = "x86_64"
@@ -866,7 +866,7 @@ arch = "x86_64"
 description = "XKB file handling"
 license = "MIT"
 depends = ["libx11"]
-recipe = "1efb0e533b5ab669e25f714ec341baf3fa091b618aaafc237370c8a70c639e02"
+recipe = "6bc6d3b49003e85c9f072fd4aff6f1a30406b766645865e3401bc50efc73a8d1"
 
 [libxml2."2.14.6-1"]
 arch = "x86_64"
