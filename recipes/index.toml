@@ -1013,7 +1013,7 @@ recipe = "919165804daafa56adf4613c1bc2128d87c16188f4a77b5791b675aeada5cf8c"
 arch = "x86_64"
 description = "Firmware of GPUs and other devices (amdgpu, radeon, i915, xe, nvidia)"
 license = "Redistributable"
-recipe = "db079e7bdc9a75b4c822ef5f12ab7ac2f19477d47b93828fa0e168669640a5a5"
+recipe = "99f952b403590f143f2439b1f53cc4bbef5ff562ccedfeeafbe7f938e923534c"
 
 [linux-headers."6.16.1-1"]
 arch = "x86_64"
@@ -1416,6 +1416,13 @@ depends = [
 build_depends = ["util-macros"]
 recipe = "ecc5b975e44775fd0e473a68bd66df7dd11d725d2c9c9efb03487ab40a6da237"
 
+[xbitmaps."1.1.4-1"]
+arch = "x86_64"
+description = "X.Org bitmaps"
+license = "MIT"
+build_depends = ["util-macros"]
+recipe = "3b44927cd57720336b453cfae2dbf5d494a799707a8148d3422922d95cf59e22"
+
 [xcb-proto."1.17.0-1"]
 arch = "x86_64"
 description = "XCB protocol descriptions"
@@ -1757,9 +1764,11 @@ license = "MIT"
 depends = [
     "libx11",
     "libxmu",
+    "xbitmaps",
+    "libxcursor",
 ]
 build_depends = ["util-macros"]
-recipe = "deef093223e14e5deb716ded2589320bc34fe77e1dc2e7f6e62aab855dcbc571"
+recipe = "e51a9e0abf14dee356c289d36866ab0a572a4e76df51f70ceedce4e2b9cfb4c3"
 
 [xterm.412-1]
 arch = "x86_64"

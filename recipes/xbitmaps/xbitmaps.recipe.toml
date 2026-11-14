@@ -1,0 +1,17 @@
+[package]
+name = "xbitmaps"
+version = "1.1.4"
+description = "X.Org bitmaps"
+license = "MIT"
+arch = ["x86_64"]
+build_depends = ["util-macros"]
+
+[source]
+git = "https://gitlab.freedesktop.org/xorg/data/bitmaps"
+commit = "433634f36f791c2779af974ab444c4b521b4a4d8"
+
+[build]
+style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''

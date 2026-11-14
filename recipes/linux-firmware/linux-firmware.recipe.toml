@@ -17,7 +17,7 @@ install = '''
 for d in amdgpu radeon i915 xe nvidia intel/ibt-* ; do
     [ -e "$d" ] || continue
     install -d "$DESTDIR/usr/lib/firmware/$(dirname "$d")"
-    cp -a "$d" "$DESTDIR/usr/lib/firmware/$(dirname "$d")/"
+    cp -a --sparse=never "$d" "$DESTDIR/usr/lib/firmware/$(dirname "$d")/"
 done
 install -Dm644 WHENCE "$DESTDIR/usr/share/doc/linux-firmware/WHENCE"
 '''
