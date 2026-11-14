@@ -8,11 +8,8 @@ depends = ["zlib", "bzip2", "libpng"]
 
 [source]
 url = "https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz"
-sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+sha256 = "93cd47eb719c325107f2d3cf087d06299e944c3b48a40b55537302304dea1dd5"
 
 [build]
-style = "gnu"
-configure = ["--disable-static", "--with-harfbuzz=no"]
-fixup = '''
-find "$DESTDIR" -name "*.la" -delete
-'''
+style = "meson"
+configure = ["-Dharfbuzz=disabled", "-Dzlib=system", "-Dbzip2=enabled", "-Dpng=enabled", "-Dbrotli=disabled"]

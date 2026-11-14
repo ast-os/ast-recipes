@@ -335,7 +335,7 @@ depends = [
     "bzip2",
     "libpng",
 ]
-recipe = "875f5e2d5a7ebac9cf33be0c7c61206b32fdc44c5e10c3686e678a3252346f71"
+recipe = "b8a6837801efeda814e25b606c32a407ae2de2bd76b7727480ec6899f0303e54"
 
 [fribidi."1.0.18-1"]
 arch = "x86_64"
