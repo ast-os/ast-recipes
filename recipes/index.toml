@@ -587,8 +587,11 @@ recipe = "ee72f1cfa32e08e9ee1bfd72ca00765c8c28b3d067beb87c3d376caf892baa9a"
 arch = "x86_64"
 description = "OpenGL function pointer management"
 license = "MIT"
-depends = ["libx11"]
-recipe = "da32fbaf5be55bf122ffe7335f4e699d6200bd6539ec326906fdc44e38df7331"
+depends = [
+    "libx11",
+    "mesa",
+]
+recipe = "35a0f40f4d478e744daf97ca0b36529926e39d668ffa3bead937b9b368bf228e"
 
 [libevdev."1.14.0-1"]
 arch = "x86_64"

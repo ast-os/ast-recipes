@@ -4,7 +4,7 @@ version = "1.5.10"
 description = "OpenGL function pointer management"
 license = "MIT"
 arch = ["x86_64"]
-depends = ["libx11"]
+depends = ["libx11", "mesa"]
 
 [source]
 git = "https://github.com/anholt/libepoxy"
