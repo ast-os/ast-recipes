@@ -1,0 +1,15 @@
+[package]
+name = "vte"
+description = "Terminal widget for GTK 3"
+license = "LGPL-3.0-or-later"
+arch = ["x86_64"]
+depends = ["gtk+", "glib", "pango", "cairo", "pcre2", "lz4", "fribidi", "simdutf"]
+build_depends = ["fmt", "fast_float", "gperf", "gettext"]
+
+[source]
+git = "https://gitlab.gnome.org/GNOME/vte"
+commit = "f2223e45d7f04c5383c59e76772501f0ed4215bc"
+
+[build]
+style = "meson"
+configure = ["-Dgtk3=true", "-Dgtk4=false", "-Dgir=false", "-Dvapi=false", "-Dgnutls=false", "-Dicu=false", "-D_systemd=false", "-Ddocs=false", "-Dglade=false", "-Dfribidi=true"]

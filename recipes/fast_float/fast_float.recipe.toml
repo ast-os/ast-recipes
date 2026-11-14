@@ -1,0 +1,14 @@
+[package]
+name = "fast_float"
+description = "Number parsing library (headers)"
+license = "Apache-2.0 OR MIT"
+arch = ["x86_64"]
+build_depends = ["cmake", "ninja"]
+
+[source]
+git = "https://github.com/fastfloat/fast_float"
+commit = "dbeabeeb3e6791cb96994c2a7a084c36e62ccfb2"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DFASTFLOAT_TEST=OFF", "-DFASTFLOAT_BENCHMARKS=OFF"]

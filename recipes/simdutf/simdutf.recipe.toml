@@ -1,0 +1,15 @@
+[package]
+name = "simdutf"
+description = "Unicode validation and transcoding"
+license = "Apache-2.0 OR MIT"
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["cmake", "ninja"]
+
+[source]
+git = "https://github.com/simdutf/simdutf"
+commit = "59589cd3df6823cbfdbd253cde3377e7c3e1fe9b"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DBUILD_SHARED_LIBS=ON", "-DSIMDUTF_TESTS=OFF", "-DSIMDUTF_BENCHMARKS=OFF", "-DSIMDUTF_TOOLS=OFF"]

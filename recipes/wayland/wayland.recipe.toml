@@ -1,0 +1,15 @@
+[package]
+name = "wayland"
+description = "Wayland protocol library"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libffi", "expat"]
+build_depends = ["libxml2"]
+
+[source]
+git = "https://gitlab.freedesktop.org/wayland/wayland"
+commit = "87cc8a8728a923fc57938faa81ba0e74f34ecdc7"
+
+[build]
+style = "meson"
+configure = ["-Dtests=false", "-Ddocumentation=false", "-Ddtd_validation=false"]

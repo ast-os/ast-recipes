@@ -1,0 +1,14 @@
+[package]
+name = "fmt"
+description = "Formatting library"
+license = "MIT"
+arch = ["x86_64"]
+build_depends = ["cmake", "ninja"]
+
+[source]
+git = "https://github.com/fmtlib/fmt"
+commit = "208219daff58f2a7438f6931cc2ddc358acf33ef"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DFMT_TEST=OFF", "-DFMT_DOC=OFF", "-DBUILD_SHARED_LIBS=ON"]

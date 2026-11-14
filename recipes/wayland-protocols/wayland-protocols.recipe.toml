@@ -1,0 +1,14 @@
+[package]
+name = "wayland-protocols"
+description = "Wayland protocol extensions"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["wayland"]
+
+[source]
+git = "https://gitlab.freedesktop.org/wayland/wayland-protocols"
+commit = "3eab2dccf4bfdd85c16d312a6c8c8fbc2a6e73a8"
+
+[build]
+style = "meson"
+configure = ["-Dtests=false"]

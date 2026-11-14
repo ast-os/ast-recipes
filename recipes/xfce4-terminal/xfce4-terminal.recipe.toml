@@ -1,0 +1,21 @@
+[package]
+name = "xfce4-terminal"
+description = "Xfce terminal emulator"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["vte", "gtk+", "libxfce4ui", "libxfce4util", "xfconf", "libx11", "pcre2", "desktop-file-utils", "hicolor-icon-theme"]
+build_depends = ["xfce4-dev-tools"]
+
+[source]
+git = "https://gitlab.xfce.org/apps/xfce4-terminal"
+commit = "749be82280e9dc8d174267c1ec149e3b0fa9928b"
+
+[build]
+style = "gnu"
+prepare = '''
+NOCONFIGURE=1 xdt-autogen
+'''
+configure = ["--enable-maintainer-mode", "--disable-static", "--disable-gtk-doc", "--disable-debug", "--disable-wayland", "--disable-gtk-layer-shell"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''
