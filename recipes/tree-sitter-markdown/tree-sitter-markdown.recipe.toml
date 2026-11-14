@@ -1,0 +1,22 @@
+[package]
+name = "tree-sitter-markdown"
+description = "Markdown parsers for tree-sitter"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+
+[source]
+git = "https://github.com/tree-sitter-grammars/tree-sitter-markdown"
+commit = "41ff24a6c775492c543b09228aeb98d1cd2b3a0f"
+
+[build]
+build = '''
+mkdir -p out
+cc -shared -fPIC -O2 -Itree-sitter-markdown/src tree-sitter-markdown/src/*.c -o out/markdown.so
+cc -shared -fPIC -O2 -Itree-sitter-markdown-inline/src tree-sitter-markdown-inline/src/*.c -o out/markdown_inline.so
+'''
+install = '''
+install -Dm755 out/markdown.so "$DESTDIR/usr/lib/nvim/parser/markdown.so"
+install -Dm755 out/markdown_inline.so "$DESTDIR/usr/lib/nvim/parser/markdown_inline.so"
+'''

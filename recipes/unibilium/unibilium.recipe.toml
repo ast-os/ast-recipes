@@ -1,0 +1,15 @@
+[package]
+name = "unibilium"
+description = "Terminfo parsing library"
+license = "LGPL-3.0-or-later"
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["cmake", "ninja"]
+
+[source]
+git = "https://github.com/neovim/unibilium"
+commit = "b0567db6a30898d8b25d206223960a8be2795fa8"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DBUILD_SHARED_LIBS=ON", "-DBUILD_MAN_PAGES=OFF", "-DBUILD_TESTS=OFF", "-DBUILD_TOOLS=OFF"]

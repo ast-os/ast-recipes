@@ -1,0 +1,15 @@
+[package]
+name = "utf8proc"
+description = "Unicode string processing library"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["cmake", "ninja"]
+
+[source]
+git = "https://github.com/JuliaStrings/utf8proc"
+commit = "79cdd5ab40c79afa559f689ffc13b76812dee1ac"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DBUILD_SHARED_LIBS=ON", "-DUTF8PROC_ENABLE_TESTING=OFF"]

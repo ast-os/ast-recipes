@@ -1,0 +1,15 @@
+[package]
+name = "nvim"
+description = "Vim-based text editor"
+license = "Apache-2.0 AND Vim"
+arch = ["x86_64"]
+depends = ["luajit", "luv", "lpeg", "libuv", "tree-sitter", "utf8proc", "unibilium", "glibc", "tree-sitter-c", "tree-sitter-lua", "tree-sitter-vim", "tree-sitter-vimdoc", "tree-sitter-query", "tree-sitter-markdown"]
+build_depends = ["cmake", "ninja", "pkgconf", "gettext"]
+
+[source]
+git = "https://github.com/neovim/neovim"
+commit = "779c36969e31080503be2dfccbcc3f999e289606"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DENABLE_LTO=OFF", "-DENABLE_WASMTIME=OFF", "-DCI_LINT=OFF"]

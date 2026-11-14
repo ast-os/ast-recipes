@@ -1,0 +1,22 @@
+[package]
+name = "nano"
+description = "Small text editor"
+license = "GPL-3.0-or-later"
+arch = ["x86_64"]
+depends = ["ncurses", "glibc"]
+build_depends = ["gnulib", "autoconf", "automake", "libtool", "gettext", "texinfo", "m4", "pkgconf"]
+
+[source]
+git = "https://git.savannah.gnu.org/git/nano.git"
+commit = "a30a7ec25ed7230f438f08af3affe233de7a33bc"
+
+[build]
+style = "gnu"
+prepare = '''
+# what autogen.sh does, with gnulib from the gnulib package (autogen.sh clones it from the network)
+modules=$(sed -n '/^modules="/,/^"/p' autogen.sh | sed '1d;$d')
+rm -rf lib
+/usr/share/gnulib/gnulib-tool --import $modules
+autoreconf --install --symlink --force
+'''
+configure = ["--sysconfdir=/etc", "--enable-utf8", "--disable-libmagic", "--disable-speller"]

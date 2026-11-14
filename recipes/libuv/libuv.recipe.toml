@@ -1,0 +1,15 @@
+[package]
+name = "libuv"
+description = "Asynchronous I/O library"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["cmake", "ninja"]
+
+[source]
+git = "https://github.com/libuv/libuv"
+commit = "840404ce8ba7cc0204be52389a6cfff9f2c90fb6"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DBUILD_TESTING=OFF", "-DLIBUV_BUILD_TESTS=OFF", "-DLIBUV_BUILD_BENCH=OFF"]

@@ -1,0 +1,21 @@
+[package]
+name = "libnl"
+description = "Netlink library"
+license = "LGPL-2.1-only"
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["autoconf", "automake", "libtool", "m4", "flex", "bison"]
+
+[source]
+git = "https://github.com/thom311/libnl"
+commit = "43878680c994989f16637dc47be19bb8dc154985"
+
+[build]
+style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
+configure = ["--disable-static", "--disable-cli", "--sysconfdir=/etc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

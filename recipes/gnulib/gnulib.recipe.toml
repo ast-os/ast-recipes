@@ -1,0 +1,22 @@
+[package]
+name = "gnulib"
+description = "GNU portability library (sources, for packages built from git)"
+license = "GPL-3.0-or-later"
+arch = ["x86_64"]
+depends = ["python"]
+
+[source]
+git = "https://git.savannah.gnu.org/git/gnulib.git"
+commit = "d89ea630c1318a1a595aa3aff169586f4e626274"
+
+[build]
+build = '''
+true
+'''
+install = '''
+install -d "$DESTDIR/usr/share/gnulib"
+cp -a . "$DESTDIR/usr/share/gnulib/"
+rm -rf "$DESTDIR/usr/share/gnulib/.git" "$DESTDIR/usr/share/gnulib/doc" "$DESTDIR/usr/share/gnulib/tests"
+install -d "$DESTDIR/usr/bin"
+ln -s ../share/gnulib/gnulib-tool "$DESTDIR/usr/bin/gnulib-tool"
+'''

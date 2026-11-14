@@ -1,0 +1,19 @@
+[package]
+name = "tree-sitter-vimdoc"
+description = "Vim help parser for tree-sitter"
+license = "Apache-2.0"
+arch = ["x86_64"]
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+
+[source]
+git = "https://github.com/neovim/tree-sitter-vimdoc"
+commit = "13add92d357b69646c080a8028b82ffb106faf7a"
+
+[build]
+build = '''
+mkdir -p out; cc -shared -fPIC -O2 -I./src ./src/*.c -o out/vimdoc.so
+'''
+install = '''
+install -Dm755 out/vimdoc.so "$DESTDIR/usr/lib/nvim/parser/vimdoc.so"
+'''

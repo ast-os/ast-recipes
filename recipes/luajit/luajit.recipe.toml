@@ -1,0 +1,25 @@
+[package]
+name = "luajit"
+description = "Just-in-time compiler for Lua"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["make", "gcc"]
+
+[source]
+git = "https://github.com/LuaJIT/LuaJIT"
+commit = "63c8f1a9b479ba5518cf6a170ff7729178bc3cfd"
+
+[build]
+prepare = '''
+echo 1794386141 > src/luajit_relver.txt
+'''
+build = '''
+make -j"$JOBS" amalg PREFIX=/usr
+'''
+install = '''
+make install PREFIX=/usr DESTDIR="$DESTDIR"
+'''
+fixup = '''
+rm -rf "$DESTDIR/usr/lib/libluajit-5.1.a"
+'''

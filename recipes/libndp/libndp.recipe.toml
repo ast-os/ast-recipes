@@ -1,0 +1,21 @@
+[package]
+name = "libndp"
+description = "IPv6 Neighbor Discovery Protocol library"
+license = "LGPL-2.1-or-later"
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["autoconf", "automake", "libtool", "m4"]
+
+[source]
+git = "https://github.com/jpirko/libndp"
+commit = "2730638bf88984b09531813974f9bd14e1a50165"
+
+[build]
+style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
+configure = ["--disable-static"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''

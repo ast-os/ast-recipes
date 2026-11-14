@@ -1,0 +1,37 @@
+[package]
+name = "networkmanager"
+description = "Network connection manager"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+arch = ["x86_64"]
+depends = ["dbus", "glib", "libndp", "eudev", "util-linux", "curl", "readline", "wpa_supplicant", "iproute2"]
+build_depends = ["perl", "python", "libxslt", "gettext"]
+config_files = ["/etc/orchid/services/networkmanager.toml", "/etc/NetworkManager/NetworkManager.conf"]
+
+[source]
+git = "https://gitlab.freedesktop.org/NetworkManager/NetworkManager"
+commit = "7406dfbcc35beed79bf2734e3e7376ead320bd99"
+
+[build]
+style = "meson"
+configure = ["-Dsystemdsystemunitdir=no", "-Dsystemdsystemgeneratordir=no", "-Dsession_tracking=no", "-Dsuspend_resume=consolekit", "-Dsystemd_journal=false", "-Dconfig_logging_backend_default=syslog", "-Dselinux=false", "-Dlibaudit=no", "-Dpolkit=false", "-Dconfig_auth_polkit_default=root-only", "-Dwifi=true", "-Dwext=false", "-Diwd=false", "-Dconfig_wifi_backend_default=wpa_supplicant", "-Dppp=false", "-Dmodem_manager=false", "-Dofono=false", "-Dteamdctl=false", "-Dovs=false", "-Dbluez5_dun=false", "-Dnmcli=true", "-Dnmtui=false", "-Dnm_cloud_setup=false", "-Debpf=false", "-Dnbft=false", "-Dclat=false", "-Dfirewalld_zone=false", "-Dconfig_dhcp_default=internal", "-Dintrospection=false", "-Dvapi=false", "-Ddocs=false", "-Dman=false", "-Dtests=no", "-Dqt=false", "-Dlibpsl=false", "-Dcrypto=null", "-Dconcheck=true", "-Dreadline=libreadline", "-Dmore_asserts=0", "-Dmore_logging=false", "-Dudev_dir=/usr/lib/udev", "-Ddbus_conf_dir=/usr/share/dbus-1/system.d"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+install -d "$DESTDIR/etc/NetworkManager" "$DESTDIR/etc/orchid/services"
+cat > "$DESTDIR/etc/NetworkManager/NetworkManager.conf" <<'CONF'
+[main]
+plugins=keyfile
+dhcp=internal
+rc-manager=file
+
+[logging]
+backend=syslog
+CONF
+cat > "$DESTDIR/etc/orchid/services/networkmanager.toml" <<'SERVICE'
+[service]
+description = "network manager"
+exec = ["/bin/sh", "-c", "mkdir -p /run/NetworkManager /var/lib/NetworkManager && exec /usr/sbin/NetworkManager --no-daemon"]
+needs = ["dbus"]
+after = ["udev-settle"]
+restart = "on-failure"
+SERVICE
+'''

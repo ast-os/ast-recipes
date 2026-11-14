@@ -1,0 +1,19 @@
+[package]
+name = "tree-sitter-query"
+description = "Tree-sitter query parser for tree-sitter"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+
+[source]
+git = "https://github.com/tree-sitter-grammars/tree-sitter-query"
+commit = "a225e21d81201be77da58de614e2b7851735677a"
+
+[build]
+build = '''
+mkdir -p out; cc -shared -fPIC -O2 -I./src ./src/*.c -o out/query.so
+'''
+install = '''
+install -Dm755 out/query.so "$DESTDIR/usr/lib/nvim/parser/query.so"
+'''

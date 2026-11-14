@@ -1,0 +1,19 @@
+[package]
+name = "tree-sitter-vim"
+description = "Vimscript parser for tree-sitter"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+
+[source]
+git = "https://github.com/tree-sitter-grammars/tree-sitter-vim"
+commit = "3092fcd99eb87bbd0fc434aa03650ba58bd5b43b"
+
+[build]
+build = '''
+mkdir -p out; cc -shared -fPIC -O2 -I./src ./src/*.c -o out/vim.so
+'''
+install = '''
+install -Dm755 out/vim.so "$DESTDIR/usr/lib/nvim/parser/vim.so"
+'''

@@ -1,0 +1,20 @@
+[package]
+name = "lpeg"
+description = "Parsing expression grammars for Lua"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["luajit"]
+build_depends = ["make", "gcc", "pkgconf"]
+
+[source]
+git = "https://github.com/roberto-ieru/LPeg"
+commit = "73a96935337d78d0e1015d7ccce6cf7470c192c4"
+
+[build]
+build = '''
+cc -O2 -DNDEBUG -fPIC -shared -I/usr/include/luajit-2.1 lp*.c -o lpeg.so -lluajit-5.1
+'''
+install = '''
+install -Dm755 lpeg.so "$DESTDIR/usr/lib/lua/5.1/lpeg.so"
+install -Dm644 re.lua "$DESTDIR/usr/share/lua/5.1/re.lua"
+'''

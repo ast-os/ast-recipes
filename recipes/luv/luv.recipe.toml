@@ -1,0 +1,15 @@
+[package]
+name = "luv"
+description = "libuv bindings for Lua"
+license = "Apache-2.0"
+arch = ["x86_64"]
+depends = ["libuv", "luajit"]
+build_depends = ["cmake", "ninja", "pkgconf"]
+
+[source]
+git = "https://github.com/luvit/luv"
+commit = "61e08e7b6911b43e4b8d9d16c0fee35f76729354"
+
+[build]
+style = "cmake"
+configure = ["-GNinja", "-DBUILD_MODULE=OFF", "-DBUILD_SHARED_LIBS=ON", "-DBUILD_STATIC_LIBS=OFF", "-DWITH_SHARED_LIBUV=ON", "-DWITH_LUA_ENGINE=LuaJIT", "-DLUA_BUILD_TYPE=System"]

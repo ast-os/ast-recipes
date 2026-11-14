@@ -1,0 +1,19 @@
+[package]
+name = "tree-sitter-lua"
+description = "Lua parser for tree-sitter"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+
+[source]
+git = "https://github.com/tree-sitter-grammars/tree-sitter-lua"
+commit = "10fe0054734eec83049514ea2e718b2a56acd0c9"
+
+[build]
+build = '''
+mkdir -p out; cc -shared -fPIC -O2 -I./src ./src/*.c -o out/lua.so
+'''
+install = '''
+install -Dm755 out/lua.so "$DESTDIR/usr/lib/nvim/parser/lua.so"
+'''

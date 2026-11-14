@@ -1,0 +1,19 @@
+[package]
+name = "tree-sitter-c"
+description = "C parser for tree-sitter"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+
+[source]
+git = "https://github.com/tree-sitter/tree-sitter-c"
+commit = "b780e47fc780ddc8da13afa35a3f4ed5c157823d"
+
+[build]
+build = '''
+mkdir -p out; cc -shared -fPIC -O2 -I./src ./src/*.c -o out/c.so
+'''
+install = '''
+install -Dm755 out/c.so "$DESTDIR/usr/lib/nvim/parser/c.so"
+'''
