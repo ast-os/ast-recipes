@@ -1,6 +1,7 @@
 [package]
 name = "linux"
 version = "7.3.4"
+revision = 2
 description = "The Linux kernel and its modules"
 license = "GPL-2.0-only"
 arch = ["x86_64"]
@@ -42,7 +43,7 @@ CONFIG_CGROUPS=y
 CONFIG_SECCOMP=y
 CONFIG_SECCOMP_FILTER=y
 
-# SafeUpdate: root is btrfs, the ESP is FAT, and there is no initramfs to load either
+# btrfs for the root, FAT for the ESP, built in: there is no initramfs on an installed system
 CONFIG_BTRFS_FS=y
 CONFIG_BTRFS_FS_POSIX_ACL=y
 CONFIG_VFAT_FS=y
@@ -104,6 +105,32 @@ CONFIG_FRAMEBUFFER_CONSOLE_DETECT_PRIMARY=y
 CONFIG_DRM_SIMPLEDRM=y
 CONFIG_DRM_FBDEV_EMULATION=y
 CONFIG_DRM_BOCHS=y
+
+# graphics: the kernel drivers are modules (udev loads them by their PCI ids), the firmware is
+# the linux-firmware package; zstd and xz compressed firmware files load as they are
+CONFIG_DRM=y
+CONFIG_DRM_AMDGPU=m
+CONFIG_DRM_AMDGPU_SI=y
+CONFIG_DRM_AMDGPU_CIK=y
+CONFIG_DRM_AMD_DC=y
+CONFIG_DRM_RADEON=m
+CONFIG_DRM_NOUVEAU=m
+CONFIG_DRM_I915=m
+CONFIG_DRM_XE=m
+CONFIG_DRM_VIRTIO_GPU=m
+CONFIG_DRM_VMWGFX=m
+CONFIG_DRM_QXL=m
+CONFIG_DRM_CIRRUS_QEMU=m
+CONFIG_FW_LOADER=y
+CONFIG_FW_LOADER_COMPRESS=y
+CONFIG_FW_LOADER_COMPRESS_XZ=y
+CONFIG_FW_LOADER_COMPRESS_ZSTD=y
+CONFIG_VGA_SWITCHEROO=y
+CONFIG_INPUT_EVDEV=y
+CONFIG_INPUT_MOUSEDEV=y
+CONFIG_INPUT_UINPUT=m
+CONFIG_HID_MULTITOUCH=m
+CONFIG_I2C_HID_ACPI=m
 CFG
 scripts/kconfig/merge_config.sh -m .config asteros.cfg
 make olddefconfig
