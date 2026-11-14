@@ -1,0 +1,29 @@
+[package]
+name = "docbook-xsl"
+version = "1.79.2"
+description = "DocBook XSL stylesheets, with the catalog that maps their web address to the installed files"
+license = "MIT"
+arch = ["x86_64"]
+config_files = ["/etc/xml/catalog"]
+
+[source]
+git = "https://github.com/docbook/xslt10-stylesheets"
+commit = "135dc12e26b28fa26b2ba55f78edc9741f56acda"
+
+[build]
+build = '''
+true
+'''
+install = '''
+d="$DESTDIR/usr/share/xml/docbook/xsl-stylesheets"
+install -d "$d" "$DESTDIR/etc/xml"
+cp -r xsl/. "$d/"
+cat > "$DESTDIR/etc/xml/catalog" <<'CATALOG'
+<?xml version="1.0"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <rewriteURI uriStartString="http://docbook.sourceforge.net/release/xsl/current" rewritePrefix="file:///usr/share/xml/docbook/xsl-stylesheets"/>
+  <rewriteSystem systemIdStartString="http://docbook.sourceforge.net/release/xsl/current" rewritePrefix="file:///usr/share/xml/docbook/xsl-stylesheets"/>
+</catalog>
+CATALOG
+'''
