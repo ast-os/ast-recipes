@@ -1,2 +1,1 @@
-# <file system>  <mount point>  <type>  <options>  <dump>  <fsck>
-# astfstab ROOT >> ROOT/etc/fstab writes the lines for what is mounted
+# file system  mount point  type  options  dump  fsck
