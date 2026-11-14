@@ -53,7 +53,10 @@ for p in "$@"; do
 done
 if [ "${POST:-1}" = 1 ]; then
 # recipes that changed since the last run (the host-built ast of the first lines becomes the package)
-ast -uay --adopt
+# one package at a time: a failure keeps what is done, and a second run goes on from there
+for p in "$@"; do
+    ast -uy --adopt "$p" || { echo "FAILED: $p"; exit 1; }
+done
 # the cross toolchain of the first stages is not part of the system (the temporary tools were
 # adopted by the packages; what no package owns and is named for the cross target goes)
 rm -rf /usr/x86_64-aster-linux-gnu /usr/lib/gcc/x86_64-aster-linux-gnu /usr/libexec/gcc/x86_64-aster-linux-gnu /usr/include/c++/*/x86_64-aster-linux-gnu
