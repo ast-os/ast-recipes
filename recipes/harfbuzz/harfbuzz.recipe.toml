@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["glib", "freetype"]
 
 [source]
-url = "https://github.com/harfbuzz/harfbuzz/releases/download/15.1.0/harfbuzz-15.1.0.tar.xz"
-sha256 = "0fc7c565443a5f4be7da65ac5ee5bd737d9b158dc908708b7689a0a5796b0c8d"
+git = "https://github.com/harfbuzz/harfbuzz"
+commit = "3df40d9b98d6b32f0e4288d4ecfbb158ddb3a372"
 
 [build]
 style = "meson"

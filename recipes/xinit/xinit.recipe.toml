@@ -5,13 +5,17 @@ description = "X.Org application xinit"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libx11", "xauth"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/app/xinit-1.4.4.tar.xz"
-sha256 = "40a47c7a164c7f981ce3787b4b37f7e411fb43231dcde543d70094075dacfef9"
+git = "https://gitlab.freedesktop.org/xorg/app/xinit"
+commit = "cfa71d44248562f22f2d92732c5e493e89061569"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

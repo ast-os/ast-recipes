@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["zlib"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libpciaccess-0.19.tar.xz"
-sha256 = "3c55aa86c82e54a4e3109786f0463530d53b36b6d1cfd14616454f985dd2aa43"
+git = "https://gitlab.freedesktop.org/xorg/lib/libpciaccess"
+commit = "38e6f15f839fba2c49982e7ad61cde681fd5d4d6"
 
 [build]
 style = "meson"

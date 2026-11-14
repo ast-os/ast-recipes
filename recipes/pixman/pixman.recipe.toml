@@ -6,8 +6,8 @@ license = "MIT"
 arch = ["x86_64"]
 
 [source]
-url = "https://www.cairographics.org/releases/pixman-0.46.4.tar.xz"
-sha256 = "a098c33924754ad43f981b740f6d576c70f9ed1006e12221b1845431ebce1239"
+git = "https://gitlab.freedesktop.org/pixman/pixman"
+commit = "9cc163c9da0fb4da430641715313d95a6ec466d9"
 
 [build]
 style = "meson"

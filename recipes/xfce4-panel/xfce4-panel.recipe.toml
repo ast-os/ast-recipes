@@ -5,13 +5,17 @@ description = "Xfce panel"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
 depends = ["gtk+", "garcon", "exo", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "libx11", "libxext"]
+build_depends = ["xfce4-dev-tools"]
 
 [source]
-url = "https://archive.xfce.org/src/xfce/xfce4-panel/4.20/xfce4-panel-4.20.8.tar.bz2"
-sha256 = "d69cb1f377953aeb1fb9bdbcef12c246bea66586e3f2868f3b758e0e8ce3d3fe"
+git = "https://gitlab.xfce.org/xfce/xfce4-panel"
+commit = "56211a5feb13158447c930c8de2b713a9256c1be"
 
 [build]
 style = "gnu"
+prepare = '''
+NOCONFIGURE=1 xdt-autogen
+'''
 configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug", "--disable-wayland"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

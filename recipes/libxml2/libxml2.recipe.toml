@@ -7,11 +7,14 @@ arch = ["x86_64"]
 depends = ["zlib", "xz"]
 
 [source]
-url = "https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.6.tar.xz"
-sha256 = "7ce458a0affeb83f0b55f1f4f9e0e55735dbfc1a9de124ee86fb4a66b597203a"
+git = "https://gitlab.gnome.org/GNOME/libxml2"
+commit = "d23960a130c5bb82779c9405fbbf85e65fb3c57c"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--without-python", "--without-icu"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

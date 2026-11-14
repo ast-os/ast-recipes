@@ -5,13 +5,17 @@ description = "XTest and RECORD"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxext", "libxi"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXtst-1.2.6.tar.xz"
-sha256 = "f94f0b37c07d80d877f3eda2c2405cc7e62aa9842f6310354aa349e3d66a4fe5"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXtst"
+commit = "b95aac652cd77f66c4b472aa840b30c337b77715"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

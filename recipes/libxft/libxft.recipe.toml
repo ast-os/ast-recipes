@@ -5,13 +5,17 @@ description = "X FreeType interface"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxrender", "fontconfig", "freetype"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXft-2.3.9.tar.xz"
-sha256 = "60a25b78945ed6932635b3bb1899a517d31df7456e69867ffba27f89ff3976f5"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXft"
+commit = "f4805c8645914cbdcfd42e71051ba3f8fc664ef5"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

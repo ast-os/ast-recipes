@@ -5,13 +5,17 @@ description = "XFree86-VidMode"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxext"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXxf86vm-1.1.7.tar.xz"
-sha256 = "ae50c0f669e0af5a67cc4cd0f54f21d64a64d2660af883e80e95d3fe51b945d8"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXxf86vm"
+commit = "7f200bf00e3e288e47265c01decc401616c57f10"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

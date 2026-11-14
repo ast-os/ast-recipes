@@ -5,13 +5,17 @@ description = "X cursors"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxfixes", "libxrender"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXcursor-1.2.3.tar.xz"
-sha256 = "fde9402dd4cfe79da71e2d96bb980afc5e6ff4f8a7d74c159e1966afb2b2c2c0"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXcursor"
+commit = "8ae6cf61b18ecddf26f72a07bbfbd1ea9f022c36"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

@@ -8,8 +8,8 @@ depends = ["expat", "libx11", "libice", "libsm", "eudev"]
 config_files = ["/etc/orchid/services/dbus.toml"]
 
 [source]
-url = "https://dbus.freedesktop.org/releases/dbus/dbus-1.16.4.tar.xz"
-sha256 = "d08b05526c2cb7966a5fb79210d6112b1aca3d135f315c1b302e14b4b0297dac"
+git = "https://gitlab.freedesktop.org/dbus/dbus"
+commit = "5a5d900180296686a7604b04a0185b034a073b15"
 
 [build]
 style = "meson"

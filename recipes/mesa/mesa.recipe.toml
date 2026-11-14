@@ -8,8 +8,8 @@ depends = ["libdrm", "llvm", "expat", "zlib", "zstd", "libxshmfence", "libx11", 
 build_depends = ["python-mako", "python-pyyaml", "python-packaging"]
 
 [source]
-url = "https://archive.mesa3d.org/mesa-26.3.0.tar.xz"
-sha256 = "91d729aa68bb89e4ec857841300bbe922bcb3e52b1f97566ca83930d3b28343a"
+git = "https://gitlab.freedesktop.org/mesa/mesa"
+commit = "0a6fa60abb737d26ac8a316a4aad7c9ddf64f9e4"
 
 [build]
 style = "meson"

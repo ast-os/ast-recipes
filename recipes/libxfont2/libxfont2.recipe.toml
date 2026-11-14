@@ -5,13 +5,17 @@ description = "X font library"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["freetype", "libfontenc", "xtrans", "xorgproto"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXfont2-2.0.9.tar.xz"
-sha256 = "f042a370666815e7b941e9b7019024755bd1c6c2954afbfa515af378251799e2"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXfont"
+commit = "975cc6526e892c6fad8fa49d0fef58565fbaa003"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc", "--disable-devel-docs"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

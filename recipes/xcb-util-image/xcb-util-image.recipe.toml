@@ -5,13 +5,17 @@ description = "XCB utility library xcb-util-image"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["xcb-util"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://xcb.freedesktop.org/dist/xcb-util-image-0.4.1.tar.xz"
-sha256 = "ccad8ee5dadb1271fd4727ad14d9bd77a64e505608766c4e98267d9aede40d3d"
+git = "https://gitlab.freedesktop.org/xorg/lib/libxcb-image"
+commit = "525ce59fe2329d4b23fc0c52ed9dd92daac8ac2a"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

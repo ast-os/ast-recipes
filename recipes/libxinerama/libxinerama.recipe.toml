@@ -5,13 +5,17 @@ description = "Xinerama"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxext"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXinerama-1.1.6.tar.xz"
-sha256 = "d00fc1599c303dc5cbc122b8068bdc7405d6fcb19060f4597fc51bd3a8be51d7"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXinerama"
+commit = "cc4ac9cf36fdf3815381b791e47a90b8aebc7e78"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["libpciaccess"]
 
 [source]
-url = "https://dri.freedesktop.org/libdrm/libdrm-2.4.134.tar.xz"
-sha256 = "ac5e74d157830eb8bee44c6a6bf3ad49774ef0dd2a72bdad74a8f20308b52a95"
+git = "https://gitlab.freedesktop.org/mesa/drm"
+commit = "e984d448b8b17aab853369e6c203e53719f46de1"
 
 [build]
 style = "meson"

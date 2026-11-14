@@ -5,11 +5,15 @@ description = "XCB protocol descriptions"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["python"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://xcb.freedesktop.org/dist/xcb-proto-1.17.0.tar.xz"
-sha256 = "2c1bacd2110f4799f74de6ebb714b94cf6f80fb112316b1219480fd22562148c"
+git = "https://gitlab.freedesktop.org/xorg/proto/xcbproto"
+commit = "77d7fc04da729ddc5ed4aacf30253726fac24dca"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]

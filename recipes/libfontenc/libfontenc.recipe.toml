@@ -5,13 +5,17 @@ description = "Font encodings"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["zlib", "xorgproto"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libfontenc-1.1.9.tar.xz"
-sha256 = "9d8392705cb10803d5fe1d27d236cbab3f664e26841ce01916bbbe430cf273e2"
+git = "https://gitlab.freedesktop.org/xorg/lib/libfontenc"
+commit = "780d1f6f192a331de7b298a96e23ebc44d2a884b"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

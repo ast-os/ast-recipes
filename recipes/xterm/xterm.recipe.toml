@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["libxaw", "libxft", "fontconfig", "ncurses", "libxinerama", "libxt", "libxmu", "libxpm"]
 
 [source]
-url = "https://github.com/ThomasDickey/xterm-snapshots/archive/refs/tags/xterm-412.tar.gz"
-sha256 = "26b76917f13b56f5bfa69ac1984ef688c1b22cf7100cd4ad02352ba5899c537d"
+git = "https://github.com/ThomasDickey/xterm-snapshots"
+commit = "5c75ead9a75d4b2e666ca06fa94503b5766ed93f"
 
 [build]
 style = "gnu"

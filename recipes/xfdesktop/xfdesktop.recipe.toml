@@ -5,13 +5,17 @@ description = "Xfce desktop manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
 depends = ["gtk+", "exo", "garcon", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "thunar"]
+build_depends = ["xfce4-dev-tools"]
 
 [source]
-url = "https://archive.xfce.org/src/xfce/xfdesktop/4.20/xfdesktop-4.20.2.tar.bz2"
-sha256 = "1d9bd76015fb6e9aca05e73cd998c7c66ed4fc8c10b626e08fc2eb7c39df3f7b"
+git = "https://gitlab.xfce.org/xfce/xfdesktop"
+commit = "9f50062e0c7c97c6eb5c95457f4cf0c3ae799ece"
 
 [build]
 style = "gnu"
+prepare = '''
+NOCONFIGURE=1 xdt-autogen
+'''
 configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug", "--disable-notifications", "--disable-thunarx"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

@@ -5,13 +5,17 @@ description = "X authorization"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["xorgproto"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXau-1.0.12.tar.xz"
-sha256 = "74d0e4dfa3d39ad8939e99bda37f5967aba528211076828464d2777d477fc0fb"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXau"
+commit = "a9c65683e68b3a4349afee5d7673b393fb924d2e"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

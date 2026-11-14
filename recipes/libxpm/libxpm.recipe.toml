@@ -5,13 +5,17 @@ description = "X pixmap"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libx11", "libxt", "libxext"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXpm-3.5.20.tar.xz"
-sha256 = "c064ead03e4dde78afdeb121fe0b644d25c550444cf903fbdc537f1a78f3ef74"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXpm"
+commit = "34f15baa50a14e1bb8e33ed42d8f252a06446fd8"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

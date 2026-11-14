@@ -7,9 +7,12 @@ arch = ["x86_64"]
 build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/proto/xorgproto-2026.1.tar.xz"
-sha256 = "f9bfe4a9ed8c8ab9d2a3b0d49797f046052dadd06b7a8b45dbffaffb137e8290"
+git = "https://gitlab.freedesktop.org/xorg/proto/xorgproto"
+commit = "6d3907b6d5dc4aa7d7ee6ee5d7d8714e7466630b"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]

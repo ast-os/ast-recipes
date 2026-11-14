@@ -6,8 +6,8 @@ license = "Redistributable"
 arch = ["x86_64"]
 
 [source]
-url = "https://cdn.kernel.org/pub/linux/kernel/firmware/linux-firmware-20261019.tar.xz"
-sha256 = "a10d1ab5baf2c74ba92e8c7cf313e691696c26bddfa6df00db795e48d70cd4ca"
+git = "https://gitlab.com/kernel-firmware/linux-firmware"
+commit = "a2dcb924f0897368b0b4f305cbf9808cdda90ce0"
 
 [build]
 build = '''

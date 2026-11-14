@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["zlib", "bzip2", "libpng"]
 
 [source]
-url = "https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz"
-sha256 = "93cd47eb719c325107f2d3cf087d06299e944c3b48a40b55537302304dea1dd5"
+git = "https://gitlab.freedesktop.org/freetype/freetype"
+commit = "37515cf56ba3349656049edbed89ffc6f6466f2d"
 
 [build]
 style = "meson"

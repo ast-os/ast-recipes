@@ -5,13 +5,17 @@ description = "Xlib"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxcb", "xorgproto", "xtrans"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libX11-1.8.14.tar.xz"
-sha256 = "bbc78c46217174655c2b32b138ad119f3ac15f50808b4d0b3a2677a4b1afc950"
+git = "https://gitlab.freedesktop.org/xorg/lib/libX11"
+commit = "b8d5a7046a98a244ee8ca3c9c07fd617c800dde2"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc", "--disable-malloc0returnsnull"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

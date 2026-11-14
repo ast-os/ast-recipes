@@ -5,13 +5,17 @@ description = "Session management"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libice", "util-linux"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libSM-1.2.6.tar.xz"
-sha256 = "be7c0abdb15cbfd29ac62573c1c82e877f9d4047ad15321e7ea97d1e43d835be"
+git = "https://gitlab.freedesktop.org/xorg/lib/libSM"
+commit = "5f6da959a34bcefc425b6e37462553acf44369a3"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

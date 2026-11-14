@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["glib"]
 
 [source]
-url = "https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-0.29.tar.xz"
-sha256 = "661f225be4c667abc4962f075717db4252b63c84480f6d37b26050d029da8fa0"
+git = "https://gitlab.freedesktop.org/xdg/desktop-file-utils"
+commit = "495012ddb82b1b97d4c80b51b95aa00eb07655e0"
 
 [build]
 style = "meson"

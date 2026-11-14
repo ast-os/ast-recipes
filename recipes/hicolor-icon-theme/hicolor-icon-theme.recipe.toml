@@ -6,8 +6,8 @@ license = "GPL-2.0-only"
 arch = ["x86_64"]
 
 [source]
-url = "https://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.18.tar.xz"
-sha256 = "db0e50a80aa3bf64bb45cbca5cf9f75efd9348cf2ac690b907435238c3cf81d7"
+git = "https://gitlab.freedesktop.org/xdg/default-icon-theme"
+commit = "a6dd02575b9e3d9e3e476b135ba92738563fe763"
 
 [build]
-style = "gnu"
+style = "meson"

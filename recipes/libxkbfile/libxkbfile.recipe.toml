@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["libx11"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libxkbfile-1.2.0.tar.xz"
-sha256 = "7f71884e5faf56fb0e823f3848599cf9b5a9afce51c90982baeb64f635233ebf"
+git = "https://gitlab.freedesktop.org/xorg/lib/libxkbfile"
+commit = "42e5dedd7fd3c7c73f3870a8751893c03c1afc69"
 
 [build]
 style = "meson"

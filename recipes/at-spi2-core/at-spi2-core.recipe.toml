@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["dbus", "glib", "libxml2", "libx11", "libxtst", "libxi"]
 
 [source]
-url = "https://download.gnome.org/sources/at-spi2-core/2.62/at-spi2-core-2.62.1.tar.xz"
-sha256 = "cca6b6a86e4389d89b370288761ce2385ddeceb10c4412da78689bc30c88af2d"
+git = "https://gitlab.gnome.org/GNOME/at-spi2-core"
+commit = "3a214cddffbf345b8c0d0b17e458abbc5ed851b1"
 
 [build]
 style = "meson"

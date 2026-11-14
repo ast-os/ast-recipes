@@ -5,13 +5,17 @@ description = "X.Org application xauth"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxau", "libxext", "libxmu", "libx11"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/app/xauth-1.1.5.tar.xz"
-sha256 = "a4000e2f441facebf569026bedecc23ba262cc6927be52070abe0002625cfbe0"
+git = "https://gitlab.freedesktop.org/xorg/app/xauth"
+commit = "6fe9365f11181a043f151f2e67f36015c278791d"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

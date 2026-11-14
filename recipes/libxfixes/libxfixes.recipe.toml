@@ -5,13 +5,17 @@ description = "XFIXES"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libx11"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXfixes-6.0.2.tar.xz"
-sha256 = "39f115d72d9c5f8111e4684164d3d68cc1fd21f9b27ff2401b08fddfc0f409ba"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXfixes"
+commit = "70d5b0e37f8a759f3dbc218f22954347ceed094a"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

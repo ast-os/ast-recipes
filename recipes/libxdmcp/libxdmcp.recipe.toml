@@ -5,13 +5,17 @@ description = "X display manager control protocol"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["xorgproto"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXdmcp-1.1.5.tar.xz"
-sha256 = "d8a5222828c3adab70adf69a5583f1d32eb5ece04304f7f8392b6a353aa2228c"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXdmcp"
+commit = "1192d3bc407348ff316bd3bffc791b3ac73f591b"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

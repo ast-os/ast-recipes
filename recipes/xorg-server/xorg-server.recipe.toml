@@ -7,8 +7,8 @@ arch = ["x86_64"]
 depends = ["libdrm", "mesa", "libepoxy", "pixman", "libxfont2", "libxkbfile", "libxcvt", "libpciaccess", "xkbcomp", "xkeyboard-config", "eudev", "libxau", "libxdmcp", "xorgproto", "xtrans", "libxshmfence", "libx11", "libxext"]
 
 [source]
-url = "https://www.x.org/releases/individual/xserver/xorg-server-21.1.26.tar.xz"
-sha256 = "c8609f9cdafde14de7ec7cb406dac9507add1d536df8d3c3e3d3d9c1cd864066"
+git = "https://gitlab.freedesktop.org/xorg/xserver"
+commit = "7dbd8d0dd1929c2011009fd1770c8aa470df97fb"
 
 [build]
 style = "meson"

@@ -5,13 +5,17 @@ description = "Xfce configuration storage"
 license = "LGPL-2.0-or-later"
 arch = ["x86_64"]
 depends = ["glib", "dbus", "libxfce4util"]
+build_depends = ["xfce4-dev-tools"]
 
 [source]
-url = "https://archive.xfce.org/src/xfce/xfconf/4.20/xfconf-4.20.0.tar.bz2"
-sha256 = "8bc43c60f1716b13cf35fc899e2a36ea9c6cdc3478a8f051220eef0f53567efd"
+git = "https://gitlab.xfce.org/xfce/xfconf"
+commit = "078859af53858cddfa99c4b72070a70ed3eb6772"
 
 [build]
 style = "gnu"
+prepare = '''
+NOCONFIGURE=1 xdt-autogen
+'''
 configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

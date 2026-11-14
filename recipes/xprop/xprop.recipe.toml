@@ -5,13 +5,17 @@ description = "X.Org application xprop"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libx11"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/app/xprop-1.2.8.tar.xz"
-sha256 = "d689e2adb7ef7b439f6469b51cda8a7daefc83243854c2a3b8f84d0f029d67ee"
+git = "https://gitlab.freedesktop.org/xorg/app/xprop"
+commit = "a6906a8a067bbfaf2f4a47af1521a85340461714"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

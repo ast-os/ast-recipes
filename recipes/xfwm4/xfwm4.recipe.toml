@@ -5,13 +5,17 @@ description = "Xfce window manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
 depends = ["gtk+", "libxfce4ui", "libxfce4util", "xfconf", "libwnck", "libxcomposite", "libxdamage", "libxrandr", "libxext", "libepoxy"]
+build_depends = ["xfce4-dev-tools"]
 
 [source]
-url = "https://archive.xfce.org/src/xfce/xfwm4/4.20/xfwm4-4.20.0.tar.bz2"
-sha256 = "a58b63e49397aa0d8d1dcf0636be93c8bb5926779aef5165e0852890190dcf06"
+git = "https://gitlab.xfce.org/xfce/xfwm4"
+commit = "7cadce33226be955fa2677b97a1969701d246b80"
 
 [build]
 style = "gnu"
+prepare = '''
+NOCONFIGURE=1 xdt-autogen
+'''
 configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug", "--disable-startup-notification"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

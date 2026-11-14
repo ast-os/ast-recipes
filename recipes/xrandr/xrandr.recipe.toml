@@ -5,13 +5,17 @@ description = "X.Org application xrandr"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxrandr", "libx11"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/app/xrandr-1.5.4.tar.xz"
-sha256 = "2cafccb2aaf2491a4068676117a0d4f90ab307724b96fffc54cd1da953779400"
+git = "https://gitlab.freedesktop.org/xorg/app/xrandr"
+commit = "0a9c71cc8a44798ad2ce9a4d27aa33470bff5da3"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

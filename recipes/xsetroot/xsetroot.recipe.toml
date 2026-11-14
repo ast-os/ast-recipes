@@ -5,13 +5,17 @@ description = "X.Org application xsetroot"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libx11", "libxmu"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/app/xsetroot-1.1.4.tar.xz"
-sha256 = "1315a3f7e9abe06357363b93461e272601f67225ce0bc075c430cce35073362b"
+git = "https://gitlab.freedesktop.org/xorg/app/xsetroot"
+commit = "ea3de0ef94ca885f7104c9db34efe7e150e28269"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

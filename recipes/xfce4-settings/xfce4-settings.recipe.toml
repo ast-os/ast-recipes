@@ -5,13 +5,17 @@ description = "Xfce settings manager"
 license = "GPL-2.0-or-later"
 arch = ["x86_64"]
 depends = ["gtk+", "exo", "garcon", "libxfce4ui", "libxfce4util", "xfconf", "libxi", "libxrandr", "libxcursor", "libxkbfile"]
+build_depends = ["xfce4-dev-tools"]
 
 [source]
-url = "https://archive.xfce.org/src/xfce/xfce4-settings/4.20/xfce4-settings-4.20.5.tar.bz2"
-sha256 = "a5fbe0e511cce29d603320ade575ad4001bd570e60f37760233237ba478affe8"
+git = "https://gitlab.xfce.org/xfce/xfce4-settings"
+commit = "02ee2a3ff9c83a4fa9ebce73377c61a77e7549f6"
 
 [build]
 style = "gnu"
+prepare = '''
+NOCONFIGURE=1 xdt-autogen
+'''
 configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug", "--disable-libnotify", "--disable-libxklavier", "--disable-upower-glib", "--disable-colord", "--enable-xorg-libinput"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

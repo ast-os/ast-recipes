@@ -5,13 +5,17 @@ description = "XCB utility library xcb-util-keysyms"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxcb"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://xcb.freedesktop.org/dist/xcb-util-keysyms-0.4.1.tar.xz"
-sha256 = "7c260a5294412aed429df1da2f8afd3bd07b7cba3fec772fba15a613a6d5c638"
+git = "https://gitlab.freedesktop.org/xorg/lib/libxcb-keysyms"
+commit = "85e093f14b0ade2956e0a5d1c37cfde06d8b1ba6"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

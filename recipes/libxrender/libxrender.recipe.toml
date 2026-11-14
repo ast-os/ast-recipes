@@ -5,13 +5,17 @@ description = "XRender"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libx11"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXrender-0.9.13.tar.xz"
-sha256 = "3fe88c609df6782e1e7af2e4de36b2563d70cd70ff7dcb1cda561ad64912bb64"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXrender"
+commit = "f30d654658ebf17d41141ed3ec2abf607d8a512e"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

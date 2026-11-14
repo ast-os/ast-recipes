@@ -5,13 +5,17 @@ description = "X protocol C binding"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxau", "libxdmcp", "xcb-proto"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://xcb.freedesktop.org/dist/libxcb-1.17.0.tar.xz"
-sha256 = "599ebf9996710fea71622e6e184f3a8ad5b43d0e5fa8c4e407123c88a59a6d55"
+git = "https://gitlab.freedesktop.org/xorg/lib/libxcb"
+commit = "622152ee42a310876f10602601206954b8d0613e"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc", "--enable-xinput", "--enable-xkb"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

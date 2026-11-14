@@ -5,13 +5,17 @@ description = "Xfce widget library"
 license = "LGPL-2.0-or-later"
 arch = ["x86_64"]
 depends = ["gtk+", "xfconf", "libxfce4util", "libsm", "libice", "libx11"]
+build_depends = ["xfce4-dev-tools"]
 
 [source]
-url = "https://archive.xfce.org/src/xfce/libxfce4ui/4.20/libxfce4ui-4.20.2.tar.bz2"
-sha256 = "5d3d67b1244a10cee0e89b045766c05fe1035f7938f0410ac6a3d8222b5df907"
+git = "https://gitlab.xfce.org/xfce/libxfce4ui"
+commit = "0a95a6494817072b97452c198dfc552d15711b3e"
 
 [build]
 style = "gnu"
+prepare = '''
+NOCONFIGURE=1 xdt-autogen
+'''
 configure = ["--disable-static", "--disable-gtk-doc", "--disable-vala", "--disable-introspection", "--disable-debug", "--disable-gladeui2", "--disable-glade"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete

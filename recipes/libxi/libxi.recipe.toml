@@ -5,13 +5,17 @@ description = "XInput"
 license = "MIT"
 arch = ["x86_64"]
 depends = ["libxext", "libxfixes"]
+build_depends = ["util-macros"]
 
 [source]
-url = "https://www.x.org/releases/individual/lib/libXi-1.8.4.tar.xz"
-sha256 = "ddd6057b89a91903bc2f884d55c8467440906945e482c36547260dff28661afc"
+git = "https://gitlab.freedesktop.org/xorg/lib/libXi"
+commit = "9ea632ab9dce9ad6630ef7db9d1850ea3d0a2419"
 
 [build]
 style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
 configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete
