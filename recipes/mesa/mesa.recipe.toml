@@ -13,4 +13,4 @@ commit = "0a6fa60abb737d26ac8a316a4aad7c9ddf64f9e4"
 
 [build]
 style = "meson"
-configure = ["-Dplatforms=x11", "-Dgallium-drivers=llvmpipe,softpipe,radeonsi,nouveau,virgl", "-Dvulkan-drivers=amd,swrast", "-Dglx=dri", "-Dgbm=enabled", "-Degl=enabled", "-Dgles1=disabled", "-Dgles2=enabled", "-Dllvm=enabled", "-Dshared-llvm=enabled", "-Dvalgrind=disabled", "-Dlibunwind=disabled", "-Dbuild-tests=false", "-Dglvnd=disabled", "-Dvideo-codecs="]
+configure = ["-Dplatforms=x11", "-Dgallium-drivers=llvmpipe,softpipe,radeonsi,nouveau,virgl", "-Dvulkan-drivers=", "-Dglx=dri", "-Dgbm=enabled", "-Degl=enabled", "-Dgles1=disabled", "-Dgles2=enabled", "-Dllvm=enabled", "-Dshared-llvm=enabled", "-Dvalgrind=disabled", "-Dlibunwind=disabled", "-Dbuild-tests=false", "-Dglvnd=disabled", "-Dvideo-codecs="]
