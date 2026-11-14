@@ -1,7 +1,7 @@
 [package]
 name = "aster"
 version = "1.7"
-revision = 3
+revision = 4
 description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
 license = "MIT"
 arch = ["x86_64"]
@@ -9,7 +9,7 @@ config_files = ["/etc/ast/ast.toml", "/etc/ast/repos.toml", "/etc/default/grub",
 
 [source]
 git = "https://github.com/ast-os/ast-recipes"
-commit = "92820a0dbbffa4fb9fe44d17ae2d0295edfe2889"
+commit = "7878ab7b0537d23e07f3f4e4886488fd07e12e57"
 
 [build]
 build = '''
