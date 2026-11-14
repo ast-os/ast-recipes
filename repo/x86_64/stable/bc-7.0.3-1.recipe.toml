@@ -1,0 +1,19 @@
+[package]
+name = "bc"
+version = "7.0.3"
+description = "Arbitrary precision calculator"
+license = "BSD-2-Clause"
+arch = ["x86_64"]
+
+[source]
+url = "https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-7.0.3.tar.xz"
+sha256 = "91eb74caed0ee6655b669711a4f350c25579778694df248e28363318e03c7fc4"
+
+[build]
+build = '''
+CC="gcc -std=gnu17" ./configure --prefix=/usr -G -O3 -r
+make -j"$JOBS"
+'''
+install = '''
+make DESTDIR="$DESTDIR" install
+'''

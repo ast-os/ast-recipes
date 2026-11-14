@@ -1,0 +1,17 @@
+[package]
+name = "inetutils"
+version = "2.6"
+description = "hostname, ping, ifconfig and friends"
+license = "GPL-3.0-or-later"
+arch = ["x86_64"]
+
+[source]
+url = "https://ftpmirror.gnu.org/inetutils/inetutils-2.6.tar.xz"
+sha256 = "68bedbfeaf73f7d86be2a7d99bcfbd4093d829f52770893919ae174c0b2357ca"
+
+[build]
+style = "gnu"
+configure = ["--bindir=/usr/bin", "--disable-logger", "--disable-whois", "--disable-rcp", "--disable-rexec", "--disable-rlogin", "--disable-rsh", "--disable-servers", "--disable-telnet", "--disable-ftp", "--disable-talk", "--disable-tftp"]
+fixup = '''
+mkdir -p "$DESTDIR/usr/sbin"; mv "$DESTDIR/usr/bin/ifconfig" "$DESTDIR/usr/sbin/ifconfig"
+'''

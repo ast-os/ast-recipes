@@ -1,0 +1,40 @@
+[package]
+name = "eudev"
+version = "3.2.14"
+description = "Device manager"
+license = "GPL-2.0-or-later"
+revision = 2
+arch = ["x86_64"]
+config_files = ["/etc/orchid/services/udevd.toml", "/etc/orchid/services/udev-trigger.toml", "/etc/orchid/services/udev-settle.toml"]
+depends = ["kmod", "gperf"]
+
+[source]
+url = "https://github.com/eudev-project/eudev/releases/download/v3.2.14/eudev-3.2.14.tar.gz"
+sha256 = "8da4319102f24abbf7fff5ce9c416af848df163b29590e666d334cc1927f006f"
+
+[build]
+style = "gnu"
+configure = ["--bindir=/usr/sbin", "--disable-static", "--disable-manpages", "--enable-kmod"]
+fixup = '''
+install -d "$DESTDIR/etc/orchid/services"
+cat > "$DESTDIR/etc/orchid/services/udevd.toml" <<'SERVICE'
+[service]
+description = "device manager"
+exec = ["/usr/sbin/udevd"]
+restart = "on-failure"
+SERVICE
+cat > "$DESTDIR/etc/orchid/services/udev-trigger.toml" <<'SERVICE'
+[service]
+description = "load drivers for the devices that are present"
+exec = ["/usr/sbin/udevadm", "trigger", "--action=add"]
+needs = ["udevd"]
+type = "oneshot"
+SERVICE
+cat > "$DESTDIR/etc/orchid/services/udev-settle.toml" <<'SERVICE'
+[service]
+description = "wait for the devices"
+exec = ["/usr/sbin/udevadm", "settle"]
+needs = ["udev-trigger"]
+type = "oneshot"
+SERVICE
+'''

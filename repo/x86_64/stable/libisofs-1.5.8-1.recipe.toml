@@ -1,0 +1,15 @@
+[package]
+name = "libisofs"
+version = "1.5.8"
+description = "Library to create ISO 9660 filesystems"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["zlib", "acl", "attr"]
+
+[source]
+url = "https://files.libburnia-project.org/releases/libisofs-1.5.8.tar.gz"
+sha256 = "910532653e6a56b5e4c2ef8717500d913debd5fd29f616fed15134b7522059a6"
+
+[build]
+style = "gnu"
+configure = ["--disable-static"]

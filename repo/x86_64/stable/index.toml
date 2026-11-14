@@ -1,0 +1,700 @@
+[metadata]
+repo = "ast"
+arch = "x86_64"
+channel = "stable"
+
+[acl."2.3.2-1"]
+arch = "x86_64"
+description = "Access control lists"
+license = "GPL-2.0-or-later"
+depends = ["attr"]
+recipe = "16ea7d6cb17a3568c9861d235e192c1fecca960c19696ad096fede0c050f4bae"
+
+[ast."0.1.0-4"]
+arch = "x86_64"
+description = "The package manager of asterOS"
+license = "BSD-3-Clause"
+depends = [
+    "glibc",
+    "bubblewrap",
+    "ca-certificates",
+]
+build_depends = ["rust-bin"]
+recipe = "aac994fd9fea8d71086a2082b4e9979baefd5a6b3a9d582b8277286139d023bf"
+
+[aster."1.6-1"]
+arch = "x86_64"
+description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
+license = "MIT"
+recipe = "36938fa165d84e27a175cc20e03bd4ece8cfe2c3001ed7984cafa00f64393de3"
+
+[attr."2.5.2-1"]
+arch = "x86_64"
+description = "Extended attributes"
+license = "GPL-2.0-or-later"
+recipe = "9e7805c2ed1fdbe6d4bc1c771cb234a99f0aa0ce9b7081e0f96d1c0a2a9490b7"
+
+[autoconf."2.72-1"]
+arch = "x86_64"
+description = "Configure script generator"
+license = "GPL-3.0-or-later"
+depends = [
+    "m4",
+    "perl",
+]
+recipe = "cf0d3ba487e41e8c923f0dadd2452eb9ae9292970a5d8f667130650dd0855c33"
+
+[automake."1.18.1-1"]
+arch = "x86_64"
+description = "Makefile generator"
+license = "GPL-2.0-or-later"
+depends = [
+    "autoconf",
+    "perl",
+]
+recipe = "d9c70b69757e319754de5c7ba933fd46a547beb654621f3713ad0249d8598b25"
+
+[bash."5.3-2"]
+arch = "x86_64"
+description = "The GNU shell"
+license = "GPL-3.0-or-later"
+depends = [
+    "readline",
+    "ncurses",
+]
+recipe = "9211b4ff2d671523ccb028885ff26f7c3ef28cd636d614ba9582e0ce29f4eaf6"
+
+[bc."7.0.3-1"]
+arch = "x86_64"
+description = "Arbitrary precision calculator"
+license = "BSD-2-Clause"
+recipe = "8e29eac8f7af012252d958f3ec5938f3bcf07829da9288418e79b4e4be8b36a1"
+
+[binutils."2.45-1"]
+arch = "x86_64"
+description = "Assembler, linker and binary tools"
+license = "GPL-3.0-or-later"
+recipe = "efebeaddf86aac8bf6fa11586ee173df258ab599a8d5ff67f7617a27353af302"
+
+[bison."3.8.2-1"]
+arch = "x86_64"
+description = "Parser generator"
+license = "GPL-3.0-or-later"
+recipe = "e089a419686e7c5ec22b5b58a8f979eeeea98547772ab87fbf3319bcedbf5e5f"
+
+[bubblewrap."0.13.1-1"]
+arch = "x86_64"
+description = "Unprivileged sandboxing tool (ast runs the build scripts in it)"
+license = "LGPL-2.0-or-later"
+depends = ["libcap"]
+build_depends = [
+    "meson",
+    "ninja",
+    "pkgconf",
+]
+recipe = "db4a17f1f235aeaf349ebeb662b5f6d00e28cb9839c2d4af984f9582e704a997"
+
+[bzip2."1.0.8-2"]
+arch = "x86_64"
+description = "bzip2 compression"
+license = "bzip2-1.0.6"
+recipe = "b1479592f5802226a2e42f9c58765d2f80dedb074fd77605d7035820307af313"
+
+[ca-certificates."2026.11.05-1"]
+arch = "x86_64"
+description = "The certificate authorities Mozilla trusts, as a bundle (extracted by the curl project)"
+license = "MPL-2.0"
+recipe = "4ff2e06e095e0945af970365c9e302c2daf7f159661441ba87ca6defa2d4bad6"
+
+[cmake."4.5.0-1"]
+arch = "x86_64"
+description = "Cross-platform build system generator"
+license = "BSD-3-Clause"
+depends = [
+    "zlib",
+    "xz",
+    "zstd",
+]
+build_depends = [
+    "gcc",
+    "make",
+]
+recipe = "e347319e99a70f3e0e8e2fa64023a7bab5c8f7ff8e14aa5f53c4cba006377053"
+
+[coreutils."9.7-1"]
+arch = "x86_64"
+description = "Basic file, shell and text utilities"
+license = "GPL-3.0-or-later"
+depends = [
+    "acl",
+    "attr",
+    "libcap",
+]
+recipe = "1863d960899c4e03832f086512e80bd33b12ed3b5323e6c936f710a05ca831c6"
+
+[curl."8.23.0-1"]
+arch = "x86_64"
+description = "Transfer data with URLs"
+license = "curl"
+depends = [
+    "openssl",
+    "zlib",
+    "zstd",
+    "ca-certificates",
+]
+recipe = "8b5251df07552700ebc63f4104256a565dd2410be4e1180c7a3c5c19090e4165"
+
+[dhcpcd."10.5.2-1"]
+arch = "x86_64"
+description = "DHCP and IPv6 client"
+license = "BSD-2-Clause"
+depends = ["glibc"]
+recipe = "04d4e111a130942c831e577acbcffa1097c9b74793e2f9949432d94fd475797b"
+
+[diffutils."3.12-1"]
+arch = "x86_64"
+description = "File comparison"
+license = "GPL-3.0-or-later"
+recipe = "62dd13e821857961c294239e0c4c766af74178f9bdc4c8bcd7a1541f58607641"
+
+[dosfstools."4.2-1"]
+arch = "x86_64"
+description = "FAT file system tools"
+license = "GPL-3.0-or-later"
+recipe = "be8cc70b2f7cc073c0f9eafbc6fb9a991c1e589d384dd18e90951a9a9828cac3"
+
+[e2fsprogs."1.47.3-1"]
+arch = "x86_64"
+description = "ext2/3/4 tools"
+license = "GPL-2.0-only"
+depends = ["util-linux"]
+recipe = "1c761f619a05765112b0b6b63aaee64ba725290075222a32e36eb1d652b0bf5f"
+
+[efibootmgr.18-1]
+arch = "x86_64"
+description = "UEFI boot manager tool"
+license = "GPL-2.0-or-later"
+depends = [
+    "efivar",
+    "popt",
+]
+recipe = "a3f4d9bc057ba94a4403ea3529d9e76d3ea5454515ed3ac1f510734a027c30fa"
+
+[efivar.39-1]
+arch = "x86_64"
+description = "EFI variable library"
+license = "LGPL-2.1-only"
+recipe = "12184e6bc1997aa927e91165902d31ca349515462068139a6f89964c32dc5524"
+
+[elfutils."0.193-1"]
+arch = "x86_64"
+description = "libelf (the rest of elfutils is not installed)"
+license = "GPL-3.0-or-later"
+depends = [
+    "zlib",
+    "zstd",
+    "xz",
+]
+recipe = "f66aba20653b4f5e1ba1a61f0e9ed51575fd3fd13efa242a2837c1684239fb2d"
+
+[eudev."3.2.14-2"]
+arch = "x86_64"
+description = "Device manager"
+license = "GPL-2.0-or-later"
+depends = [
+    "kmod",
+    "gperf",
+]
+recipe = "821edd418922726b8686a057cda39c83d3d055756ed13c01f24f2e31b0d83286"
+
+[expat."2.7.1-1"]
+arch = "x86_64"
+description = "XML parser"
+license = "MIT"
+recipe = "4cd73829384d7886708a893f60f0b676c5711ea7f83170d5847b31d808b536fd"
+
+[fastfetch."2.71.0-1"]
+arch = "x86_64"
+description = "Fast system information tool written in C"
+license = "MIT"
+depends = [
+    "glibc",
+    "zlib",
+]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+]
+recipe = "318f750b7a20ea8a3118486e2d91254fa9b46ca632f63812039532408b5afe90"
+
+[file."5.46-1"]
+arch = "x86_64"
+description = "File type identification"
+license = "BSD-2-Clause"
+recipe = "8ed01de0da0c8c49f18a665eb65b8a9691e5bc3830fc9375af17cd3dff0835e5"
+
+[findutils."4.10.0-1"]
+arch = "x86_64"
+description = "find, locate, xargs"
+license = "GPL-3.0-or-later"
+recipe = "a1c3c878c5322a90fcc470e9517f69fe11c1806decff7be73489ae0afe1e29a6"
+
+[flex."2.6.4-1"]
+arch = "x86_64"
+description = "Lexical analyser generator"
+license = "BSD-2-Clause"
+recipe = "5fae1b41916840bebfaf0952da69ebbe2bedf481efa183c9a776ec91252bb4d2"
+
+[gawk."5.3.2-1"]
+arch = "x86_64"
+description = "Text processing"
+license = "GPL-3.0-or-later"
+depends = ["readline"]
+recipe = "98e87c3b83fb7cfaf69764a19a850b766a6d782d636723b4274a5fa06920b6cd"
+
+[gcc."15.2.0-1"]
+arch = "x86_64"
+description = "The GNU compiler collection (C, C++)"
+license = "GPL-3.0-or-later"
+depends = [
+    "binutils",
+    "gmp",
+    "mpfr",
+    "mpc",
+    "zlib",
+]
+recipe = "815c1b220b9382bf36f665403c2b8576830e630f388620a043d005edfb378256"
+
+[gdbm."1.26-1"]
+arch = "x86_64"
+description = "Database library"
+license = "GPL-3.0-or-later"
+depends = ["readline"]
+recipe = "53cdaed87865e91dc2facb556c8f8efdeabe471cbdea7f59dec543ee1aa8e65e"
+
+[gettext."0.26-1"]
+arch = "x86_64"
+description = "Internationalisation tools"
+license = "GPL-3.0-or-later"
+recipe = "12247f6989c9672a2a33796d6de37ea2a58ccd6350d4b90173faec934e6c0360"
+
+[git."2.56.1-1"]
+arch = "x86_64"
+description = "Distributed version control system"
+license = "GPL-2.0-only"
+depends = [
+    "curl",
+    "openssl",
+    "zlib",
+    "expat",
+    "ca-certificates",
+]
+build_depends = ["gettext"]
+recipe = "e080670fbe5b5a2cc1da818b8e78339116834f03477ff432e36c88d3a7db513f"
+
+[glibc."2.42-1"]
+arch = "x86_64"
+description = "The GNU C library"
+license = "LGPL-2.1-or-later"
+recipe = "322a162cc87fb8496c2d6f8bc6097e2465f66df54c24a828329082dc7a58e058"
+
+[gmp."6.3.0-1"]
+arch = "x86_64"
+description = "Arbitrary precision arithmetic"
+license = "LGPL-3.0-or-later"
+recipe = "d2ccf014bb9b833960ce769669abdfcd29ae5d6b581ecdb70a0d1e6744a08b54"
+
+[gperf."3.3-1"]
+arch = "x86_64"
+description = "Perfect hash function generator"
+license = "GPL-3.0-or-later"
+recipe = "96e0809692ee6f0d3d64d90836328a095a81cfa9fdb139d7aa565a759374685e"
+
+[grep."3.12-1"]
+arch = "x86_64"
+description = "Pattern matching"
+license = "GPL-3.0-or-later"
+recipe = "7857df19e4975c422f63e6b96f485c7ae0ea5add28b5b75c3c1f3610708de8fe"
+
+[grub."2.12-1"]
+arch = "x86_64"
+description = "The boot loader (UEFI)"
+license = "GPL-3.0-or-later"
+depends = ["gettext"]
+recipe = "2ef9418fe085d204ee95eb71944b474149832e3a5a42b3d7989792021dee7975"
+
+[gzip."1.14-1"]
+arch = "x86_64"
+description = "gzip compression"
+license = "GPL-3.0-or-later"
+recipe = "bfca731695d1561f5ef74ab6d11090818591e700f688dda8a868932fb8a4450a"
+
+[hello."2.12.2-1"]
+arch = "x86_64"
+description = "Prints a greeting (the test package)"
+license = "GPL-3.0-or-later"
+recipe = "1cf88007349e09f1e20647ef0fd8b05f2a3d50e5a16d32e8b2ef63f43d5bf11e"
+
+[iana-etc.20250807-1]
+arch = "x86_64"
+description = "Protocol and port names for /etc"
+license = "MIT"
+recipe = "c6c382209571edcb836fb98f2a29a980038d134175d145a2aceb38906f30541a"
+
+[inetutils."2.6-1"]
+arch = "x86_64"
+description = "hostname, ping, ifconfig and friends"
+license = "GPL-3.0-or-later"
+recipe = "904f5e738a4eff51e9b3e147a0efd9622d05202068ff4b8cdfbc352a37bb7dd0"
+
+[iproute2."6.16.0-1"]
+arch = "x86_64"
+description = "Networking tools (ip, ss)"
+license = "GPL-2.0-or-later"
+recipe = "98234b3acda0363bbc6af27c151c3d3fdc2d017d950ac8369c60981417fc2c1f"
+
+[kbd."2.8.0-2"]
+arch = "x86_64"
+description = "Keyboard and console tools"
+license = "GPL-2.0-or-later"
+recipe = "6282c7215e92004c11e2930feb356bdf645f41439d9bcb6953a8fd9deae3330f"
+
+[kmod."34.2-1"]
+arch = "x86_64"
+description = "Kernel module tools"
+license = "LGPL-2.1-or-later"
+depends = [
+    "zlib",
+    "xz",
+    "zstd",
+    "openssl",
+]
+recipe = "337b13d2e0d69eae39f306e4bd0a5caf15776a2ef3ad28850430eb9307ad47df"
+
+[less.679-1]
+arch = "x86_64"
+description = "Pager"
+license = "GPL-3.0-or-later"
+depends = ["ncurses"]
+recipe = "9f8c4681522bf79b13e79480f25819ccc25e732df913d321b7c743247b455f9a"
+
+[libburn."1.5.8-1"]
+arch = "x86_64"
+description = "Library to write optical discs"
+license = "GPL-2.0-or-later"
+depends = ["glibc"]
+recipe = "27364839571c225df0e4c778fb81d9ef73c9ef38de07c1632ef389f3faeb4bb5"
+
+[libcap."2.76-2"]
+arch = "x86_64"
+description = "POSIX capabilities"
+license = "BSD-3-Clause"
+recipe = "f8cb57108a83592069728f7c46c5a61ebf4df9f2bba6117bfb06ab31bb051ec2"
+
+[libffi."3.5.2-1"]
+arch = "x86_64"
+description = "Foreign function interface"
+license = "MIT"
+recipe = "65fa99abe2829834883bc96564e2ea823ba997e2ce43e239dd9e9127e7be5539"
+
+[libisoburn."1.5.8-1"]
+arch = "x86_64"
+description = "xorriso: create, modify and write ISO 9660 images"
+license = "GPL-2.0-or-later"
+depends = [
+    "libburn",
+    "libisofs",
+    "readline",
+]
+recipe = "6ab51563b09c6b54854d691f5b89058030cd47da0de3e6e28626c4eb288e904b"
+
+[libisofs."1.5.8-1"]
+arch = "x86_64"
+description = "Library to create ISO 9660 filesystems"
+license = "GPL-2.0-or-later"
+depends = [
+    "zlib",
+    "acl",
+    "attr",
+]
+recipe = "b7435f2191d679b8afbcd723849a8b08fba74d5891356133e237001d1cf8091e"
+
+[libtool."2.5.4-1"]
+arch = "x86_64"
+description = "Generic library support script"
+license = "GPL-2.0-or-later"
+recipe = "f34340f3f3b0872be5cfddaad47f41bede6d14b408f77f3281cb2563cc9735bd"
+
+[libxcrypt."4.4.38-1"]
+arch = "x86_64"
+description = "Password hashing library"
+license = "LGPL-2.1-or-later"
+recipe = "cbbf8271155e00bfacb40e5e371f7c56164ab2c03b7a107dbd5eb19e21e80f64"
+
+[linux."7.3.4-1"]
+arch = "x86_64"
+description = "The Linux kernel and its modules"
+license = "GPL-2.0-only"
+depends = ["kmod"]
+recipe = "fd8370afb96214dd73c262e33d93c67d8d13f08d7e0d74f8d9d10b98fa56575f"
+
+[linux-headers."6.16.1-1"]
+arch = "x86_64"
+description = "The kernel headers glibc is built against"
+license = "GPL-2.0-only WITH Linux-syscall-note"
+recipe = "14348b4b0fc7dcf58b0735f862f6ad2746a333e0383a31c418619e4af474b285"
+
+[lz4."1.10.0-1"]
+arch = "x86_64"
+description = "LZ4 compression"
+license = "BSD-2-Clause"
+recipe = "aa65bbd26fec9147d69b28157cc24aa6424a026d6ab012fa02cfc8afe48dcfc3"
+
+[m4."1.4.20-1"]
+arch = "x86_64"
+description = "GNU macro processor"
+license = "GPL-3.0-or-later"
+recipe = "9ae695dcd3273fc26586d4e55b1fb83e8dd6231b9f240b2e97223cb3b1990ade"
+
+[make."4.4.1-1"]
+arch = "x86_64"
+description = "GNU make"
+license = "GPL-3.0-or-later"
+recipe = "3766c92e9b324091e2ed2b0ac60151fc99693188a3fe11d583ee73ac32cfc6a6"
+
+[meson."1.8.3-1"]
+arch = "x86_64"
+description = "Build system"
+license = "Apache-2.0"
+depends = [
+    "python",
+    "ninja",
+]
+recipe = "95771253d00cae408c6828f0752a6057b5eb1ab32894864cac13cb50090050df"
+
+[mpc."1.3.1-1"]
+arch = "x86_64"
+description = "Complex number arithmetic"
+license = "LGPL-3.0-or-later"
+depends = [
+    "gmp",
+    "mpfr",
+]
+recipe = "60664803a51f447c89326827d9896a83006867f7b720bd90058b5f272fb6d5b7"
+
+[mpfr."4.2.2-1"]
+arch = "x86_64"
+description = "Multiple precision floating point"
+license = "LGPL-3.0-or-later"
+depends = ["gmp"]
+recipe = "281f943d69e641e0a54d8a9cb78b6d32dc8517c7c4ed53479afca0a461f3b63b"
+
+[ncurses."6.6-1"]
+arch = "x86_64"
+description = "Terminal handling library"
+license = "MIT"
+recipe = "63a25b968d97c6279b949f2e282dc5a4499d66bcb53b51f9c020500e0f12777a"
+
+[neofetch."7.1.0-1"]
+arch = "x86_64"
+description = "System information tool written in bash"
+license = "MIT"
+depends = ["bash"]
+recipe = "a5fb7472afdb624585e048788877951790eebcb53f7fc3940dc59b4d90a315e6"
+
+[ninja."1.13.1-1"]
+arch = "x86_64"
+description = "Build system"
+license = "Apache-2.0"
+depends = ["python"]
+recipe = "472374c665f7069fbb15e9e4dca65129d77e6921d7e32cf6633413b555d8ab85"
+
+[openssl."3.5.2-1"]
+arch = "x86_64"
+description = "TLS and cryptography"
+license = "Apache-2.0"
+depends = ["zlib"]
+recipe = "ef2fcd19f8b2099c514d7e3393f9a4c33ba30167c46ef8794dcfc853926b963c"
+
+[orchid."1.0.0-6"]
+arch = "x86_64"
+description = "The init system of asterOS"
+license = "BSD-3-Clause"
+depends = ["glibc"]
+build_depends = ["rust-bin"]
+recipe = "b19e8e2fce18cd8ee482cd76ed3be06d6ef9b8ea886e9e7ce7227536c71551d6"
+
+[patch."2.8-1"]
+arch = "x86_64"
+description = "Apply patches"
+license = "GPL-3.0-or-later"
+recipe = "aad194896cbaaf5f045b5433a70911b818668ba04aa575eb8a81afe37776d429"
+
+[perl."5.42.0-1"]
+arch = "x86_64"
+description = "Perl"
+license = "GPL-1.0-or-later OR Artistic-1.0-Perl"
+depends = ["gdbm"]
+recipe = "51ead9d3215ed26faa3f3ab07e9a1cf119716a210ccfc80c2990f9c23b4e7450"
+
+[pfetch."0.6.0-1"]
+arch = "x86_64"
+description = "A pretty system information tool written in POSIX sh"
+license = "MIT"
+recipe = "e8c73b2e94ad758dfc112259cf5f7ad2be3203f00952cb709fd44a3b26ae9b6e"
+
+[pkgconf."2.5.1-1"]
+arch = "x86_64"
+description = "Compiler flags for libraries"
+license = "ISC"
+recipe = "bb6285505956ab4b1c641913742ee2edffe583adc80a6b67ba3923de9c26b9e0"
+
+[popt."1.19-1"]
+arch = "x86_64"
+description = "Command line option parsing"
+license = "MIT"
+recipe = "5731d526366d2a21427f2aaa08d61c1a29a5e8b3d32d81957542c85e5c5d75fa"
+
+[procps-ng."4.0.5-1"]
+arch = "x86_64"
+description = "ps, top, free, vmstat..."
+license = "GPL-2.0-or-later"
+depends = ["ncurses"]
+recipe = "abe6bae71a5af6bca1f533a9ee8ddc3dc9f0c7a5c940108db91f8ba7084c8b4f"
+
+[psmisc."23.7-1"]
+arch = "x86_64"
+description = "Process utilities (killall, fuser)"
+license = "GPL-2.0-or-later"
+depends = ["ncurses"]
+recipe = "8f47798a0669cc8463d0ae76acfbe606e16c77899c70e3951df7281622748adf"
+
+[python."3.13.7-1"]
+arch = "x86_64"
+description = "Python"
+license = "PSF-2.0"
+depends = [
+    "expat",
+    "libffi",
+    "openssl",
+    "zlib",
+    "readline",
+]
+recipe = "498798008b1d25fcdd285f0af284177cfd7d0ca78a0d51b3e0dbfa930f638e8b"
+
+[readline."8.3-1"]
+arch = "x86_64"
+description = "Line editing library"
+license = "GPL-3.0-or-later"
+depends = ["ncurses"]
+recipe = "24ed84e421d125edeaeecfd805f16d8c4b9c83513be743fc5e6bbc4a0b81075c"
+
+[rust-bin."1.99.1-1"]
+arch = "x86_64"
+description = "The Rust compiler and cargo, from the official binary release (the bootstrap of everything written in Rust)"
+license = "MIT OR Apache-2.0"
+depends = [
+    "glibc",
+    "gcc",
+]
+recipe = "ca742719caf8e104c02a0b03b90b150d7d101f640c1af1f811bbf8d864f9839d"
+
+[sed."4.9-1"]
+arch = "x86_64"
+description = "Stream editor"
+license = "GPL-3.0-or-later"
+recipe = "87c476c6901970de438ce6a874adda2432d0c78e7f9afedd88224342a3bf4f52"
+
+[shadow."4.18.0-2"]
+arch = "x86_64"
+description = "User and group management"
+license = "BSD-3-Clause"
+depends = [
+    "libxcrypt",
+    "acl",
+    "attr",
+]
+recipe = "818fbde0139e9f8a123880b033d36a026ceb656a1176e3deebb61a8f77b1ecff"
+
+[squashfs-tools."4.7.5-1"]
+arch = "x86_64"
+description = "Tools to create and extract squashfs filesystems"
+license = "GPL-2.0-or-later"
+depends = [
+    "zlib",
+    "xz",
+    "zstd",
+    "lz4",
+]
+recipe = "46a095ef549dd4e24c16ee7fa6efbeedb7a574aec34b2599b215b14af4da93db"
+
+[sudo."1.9.17p2-1"]
+arch = "x86_64"
+description = "Run commands as another user"
+license = "ISC"
+depends = ["zlib"]
+recipe = "a4851b3a638132a3975185c567f5370765d14aed1d86dac23fd122770c9f9d26"
+
+[sysklogd."2.7.2-2"]
+arch = "x86_64"
+description = "System and kernel logging"
+license = "BSD-3-Clause"
+recipe = "6cdb971ce8e006886ed9c2e878c49e7e99589554a44ef2b76d826002f52607b1"
+
+[tar."1.35-1"]
+arch = "x86_64"
+description = "Archiver"
+license = "GPL-3.0-or-later"
+recipe = "3d5dc19ad9dc23501d64fc6c9e90408eb073bd26d21a6a770f8f3259a29eeeee"
+
+[texinfo."7.2-1"]
+arch = "x86_64"
+description = "Documentation system"
+license = "GPL-3.0-or-later"
+depends = [
+    "perl",
+    "ncurses",
+]
+recipe = "3d6c2b59568a5e6fa6d319bf7c0e955107096e34ccb3d27222616ebf14171760"
+
+[tzdata.2025b-1]
+arch = "x86_64"
+description = "Time zone database"
+license = "LicenseRef-Public-Domain"
+recipe = "3b0a7452de67c08b0472e58c5e36b0109f170cd795582e92c952801e31119cf0"
+
+[util-linux."2.41.1-4"]
+arch = "x86_64"
+description = "System utilities (mount, fdisk, lsblk...)"
+license = "GPL-2.0-or-later"
+depends = [
+    "ncurses",
+    "zlib",
+]
+recipe = "e05e03cf3561b3468c7d6901ac5f49fe22e1ae61d974d345530030c09156cabf"
+
+[vim."9.1.1629-1"]
+arch = "x86_64"
+description = "Text editor"
+license = "Vim"
+depends = ["ncurses"]
+recipe = "d80ffed1ab88f9a6adebd0351468f048b78248512f449b2efaade778f9cd4eee"
+
+[xz."5.8.1-1"]
+arch = "x86_64"
+description = "XZ compression"
+license = "0BSD"
+recipe = "0b0708af3c544255f0e331ec05195860a297a42b15144c03098ec5e4aa4d12d0"
+
+[zlib."1.3.1-1"]
+arch = "x86_64"
+description = "Compression library"
+license = "Zlib"
+recipe = "554cd14a661429a1e749328b20d3a271d51f1bb5279393ab4949294621e6d19b"
+
+[zstd."1.5.7-1"]
+arch = "x86_64"
+description = "Zstandard compression"
+license = "BSD-3-Clause"
+recipe = "f20f4374a693eeafb562e4ff5359bac5c9bfd9481fa3b24332e0803d73035ab9"

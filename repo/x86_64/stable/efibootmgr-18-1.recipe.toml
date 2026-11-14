@@ -1,0 +1,19 @@
+[package]
+name = "efibootmgr"
+version = "18"
+description = "UEFI boot manager tool"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+depends = ["efivar", "popt"]
+
+[source]
+url = "https://github.com/rhboot/efibootmgr/archive/refs/tags/18.tar.gz"
+sha256 = "442867d12f8525034a404fc8af3036dba8e1fc970998af2486c3b940dfad0874"
+
+[build]
+build = '''
+make -j"$JOBS" EFIDIR=asteros
+'''
+install = '''
+make DESTDIR="$DESTDIR" EFIDIR=asteros install
+'''

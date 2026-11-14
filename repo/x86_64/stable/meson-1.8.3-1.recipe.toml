@@ -1,0 +1,28 @@
+[package]
+name = "meson"
+version = "1.8.3"
+description = "Build system"
+license = "Apache-2.0"
+arch = ["x86_64"]
+depends = ["python", "ninja"]
+
+[source]
+url = "https://github.com/mesonbuild/meson/releases/download/1.8.3/meson-1.8.3.tar.gz"
+sha256 = "f118aa910fc0a137cc2dd0122232dbf82153d9a12fb5b0f5bb64896f6a157abf"
+
+[build]
+build = '''
+true
+'''
+install = '''
+site="$DESTDIR/usr/lib/python3.13/site-packages"
+mkdir -p "$site" "$DESTDIR/usr/bin"
+cp -r mesonbuild "$site/"
+cat > "$DESTDIR/usr/bin/meson" <<'MESON'
+#!/usr/bin/python3
+import sys
+from mesonbuild.mesonmain import main
+sys.exit(main())
+MESON
+chmod 755 "$DESTDIR/usr/bin/meson"
+'''
