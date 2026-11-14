@@ -16,3 +16,6 @@ style = "gnu"
 prepare = '''
 autoreconf -fiv
 '''
+# the manual page of xdt-csource is generated from DocBook, which needs the network: no docs, no tests
+make = ['SUBDIRS="helpers m4macros scripts xdt-csource"']
+install_args = ['SUBDIRS="helpers m4macros scripts xdt-csource"']
