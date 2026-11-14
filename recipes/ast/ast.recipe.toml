@@ -9,7 +9,7 @@ build_depends = ["rust-bin"]
 
 [source]
 git = "https://github.com/ast-os/ast-pm"
-commit = "2c15f99e7f56a9a8b96e3ac087124d3572d8fbe3"
+commit = "62cbfd4f377fe109a6e1835df0a9c1cdd68a1c3e"
 
 [build]
 style = "cargo"

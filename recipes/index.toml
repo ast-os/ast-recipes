@@ -16,7 +16,7 @@ build_depends = [
 ]
 recipe = "295ff9475d58aa863d559c69917ff06faa15e69bf1c9de5b4d7fcc1a50767a3f"
 
-[ast."git.2c15f99e-8"]
+[ast."git.62cbfd4f-8"]
 arch = "x86_64"
 description = "The package manager of asterOS"
 license = "BSD-3-Clause"
@@ -26,13 +26,13 @@ depends = [
     "ca-certificates",
 ]
 build_depends = ["rust-bin"]
-recipe = "5657caa2801ca04550123fc5046264391372d222155cd46e01313ebe8bd34367"
+recipe = "a7dcbf698b174b5ef724c6946f63de977040ab7003ed413ee44788d1815361fc"
 
-[aster."git.7878ab7b-4"]
+[aster."git.58b15fc9-4"]
 arch = "x86_64"
 description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
 license = "MIT"
-recipe = "d862aa5f69dc321b065d967df7ded24eba28c463c07621d7c74c3c1e963283e8"
+recipe = "8417b69bd3243bf78264618cf689c2ededc39808887d7c7fbf590bcffe4ec29b"
 
 [at-spi2-core."git.3a214cdd-1"]
 arch = "x86_64"
@@ -1347,13 +1347,13 @@ license = "Apache-2.0"
 depends = ["zlib"]
 recipe = "9733a8fe2e7d5fd3f0d56b1db73af0806baf7176865b3429d928b685f68548db"
 
-[orchid."git.eb10092c-11"]
+[orchid."git.79fe93ef-11"]
 arch = "x86_64"
 description = "The init system of asterOS"
 license = "BSD-3-Clause"
 depends = ["glibc"]
 build_depends = ["rust-bin"]
-recipe = "00efeca51ba79efbcc4133a2cf855894f6fa2262d47c56c7a52425e45f10be31"
+recipe = "b19dbe03a02991d86ac6ab7582d823a8cf8cc4973d359220ad3630705d564849"
 
 [pango."git.d360f140-1"]
 arch = "x86_64"

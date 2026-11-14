@@ -10,7 +10,7 @@ config_files = ["/etc/orchid/services/efivars.toml", "/etc/orchid/services/fsck.
 
 [source]
 git = "https://github.com/ast-os/ast-orchid"
-commit = "eb10092c85c68fdc3a878d52fab192ff67f046c3"
+commit = "79fe93ef966f65dd1144b4e0994ace0f383542b7"
 
 [build]
 style = "cargo"

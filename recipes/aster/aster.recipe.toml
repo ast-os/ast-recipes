@@ -8,7 +8,7 @@ config_files = ["/etc/ast/ast.toml", "/etc/ast/repos.toml", "/etc/default/grub",
 
 [source]
 git = "https://github.com/ast-os/ast-recipes"
-commit = "7878ab7b0537d23e07f3f4e4886488fd07e12e57"
+commit = "58b15fc9a0be325d02a42be5f916bb3d52be7c4e"
 
 [build]
 build = '''
