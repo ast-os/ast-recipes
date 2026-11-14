@@ -1,20 +1,21 @@
 [package]
 name = "aster"
 version = "1.7"
+revision = 2
 description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
 license = "MIT"
 arch = ["x86_64"]
 config_files = ["/etc/ast/ast.toml", "/etc/ast/repos.toml", "/etc/default/grub", "/etc/fstab", "/etc/group", "/etc/hosts", "/etc/passwd", "/etc/inputrc", "/etc/issue", "/etc/profile", "/etc/shells"]
 
 [source]
-url = "aster/aster-1.7.tar.gz"
-sha256 = "0b979d58df0d3e566c18fa3afcedeca14b5efe7f5aac3f037bc742e9d04e5e19"
-strip = 0
+url = "https://github.com/ast-os/ast-recipes/archive/bceed9e8bcdae0efbfd286f9da2ca26b8a3520f2.tar.gz"
+sha256 = "00ed54faa54c950ea9c2ac35913ad3942583ad1530021a9d36083af000057d31"
 
 [build]
 build = '''
 true
 '''
 install = '''
+cd files/aster
 cp -a bin sbin lib lib64 etc "$DESTDIR/"
 '''

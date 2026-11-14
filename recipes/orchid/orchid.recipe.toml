@@ -3,15 +3,15 @@ name = "orchid"
 version = "1.0.0"
 description = "The init system of asterOS"
 license = "BSD-3-Clause"
-revision = 6
+revision = 7
 arch = ["x86_64"]
 depends = ["glibc"]
 build_depends = ["rust-bin"]
 config_files = ["/etc/orchid/services/efivars.toml", "/etc/orchid/services/fsck.toml", "/etc/orchid/services/hwclock.toml", "/etc/orchid/services/loopback.toml", "/etc/orchid/services/mounts.toml", "/etc/orchid/services/random-seed.toml", "/etc/orchid/services/rescue-shell.toml", "/etc/orchid/services/rootfs.toml", "/etc/orchid/services/swap.toml", "/etc/orchid/services/sysctl.toml"]
 
 [source]
-url = "orchid/orchid-1.0.0.tar.xz"
-sha256 = "6c5b1daee529e748f6aa08bc521cee0dabb02c67b5929f1209c8de218ac3f507"
+url = "https://github.com/ast-os/ast-orchid/archive/5e244deb2862e92e460694ddf5bedc6550f6e08e.tar.gz"
+sha256 = "06dea583cfd0504dd07c92041876446e69637039e4033d8f0a533d78c8c5ba13"
 
 [build]
 style = "cargo"
