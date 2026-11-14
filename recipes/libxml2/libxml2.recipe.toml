@@ -1,6 +1,6 @@
 [package]
 name = "libxml2"
-version = "2.14.6"
+version = "2.15.4"
 description = "XML library"
 license = "MIT"
 arch = ["x86_64"]
@@ -8,7 +8,7 @@ depends = ["zlib", "xz"]
 
 [source]
 git = "https://gitlab.gnome.org/GNOME/libxml2"
-commit = "d23960a130c5bb82779c9405fbbf85e65fb3c57c"
+commit = "96498992efa48d52b0e8b83058bd88dbdaf153c1"
 
 [build]
 style = "gnu"
