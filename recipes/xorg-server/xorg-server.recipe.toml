@@ -12,4 +12,4 @@ commit = "7dbd8d0dd1929c2011009fd1770c8aa470df97fb"
 
 [build]
 style = "meson"
-configure = ["-Dxorg=true", "-Dxnest=false", "-Dxvfb=false", "-Dglamor=true", "-Dsystemd_logind=false", "-Dudev=true", "-Dudev_kms=true", "-Dxkb_dir=/usr/share/X11/xkb", "-Dxkb_output_dir=/var/lib/xkb", "-Dsuid_wrapper=false", "-Ddocs=false", "-Ddevel-docs=false"]
+configure = ["-Dxorg=true", "-Dsecure-rpc=false", "-Dxnest=false", "-Dxvfb=false", "-Dglamor=true", "-Dsystemd_logind=false", "-Dudev=true", "-Dudev_kms=true", "-Dxkb_dir=/usr/share/X11/xkb", "-Dxkb_output_dir=/var/lib/xkb", "-Dsuid_wrapper=false", "-Ddocs=false", "-Ddevel-docs=false"]
