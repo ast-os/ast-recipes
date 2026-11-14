@@ -1,0 +1,14 @@
+[package]
+name = "libdisplay-info"
+version = "0.4.0"
+description = "EDID and DisplayID library"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["hwdata"]
+
+[source]
+git = "https://gitlab.freedesktop.org/emersion/libdisplay-info"
+commit = "c67a3e9bedb05ab61c7443704a1a107e76254595"
+
+[build]
+style = "meson"

@@ -4,7 +4,7 @@ version = "4.20.7"
 description = "Xfce windowing library"
 license = "LGPL-2.1-or-later"
 arch = ["x86_64"]
-depends = ["gtk+", "libwnck", "libx11", "libxrandr", "glib"]
+depends = ["gtk+", "libwnck", "libx11", "libxrandr", "glib", "libdisplay-info"]
 build_depends = ["xfce4-dev-tools"]
 
 [source]

@@ -1,0 +1,18 @@
+[package]
+name = "hwdata"
+version = "0.413"
+description = "Hardware identification and configuration data (pci.ids, usb.ids, pnp.ids)"
+license = "GPL-2.0-or-later"
+arch = ["x86_64"]
+
+[source]
+git = "https://github.com/vcrhonek/hwdata"
+commit = "1cf7032160ad57e2eaad36c4f23eede1edd8203b"
+
+[build]
+build = '''
+./configure --prefix=/usr --datadir=/usr/share --disable-blacklist
+'''
+install = '''
+make DESTDIR="$DESTDIR" install
+'''
