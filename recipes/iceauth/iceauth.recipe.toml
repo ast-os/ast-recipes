@@ -1,0 +1,22 @@
+[package]
+name = "iceauth"
+version = "1.0.11"
+description = "X.Org application iceauth"
+license = "MIT"
+arch = ["x86_64"]
+depends = ["libice"]
+build_depends = ["util-macros"]
+
+[source]
+git = "https://gitlab.freedesktop.org/xorg/app/iceauth"
+commit = "dd8a8dbe100d6427c01605da0a69a74fa36ddc87"
+
+[build]
+style = "gnu"
+prepare = '''
+autoreconf -fiv
+'''
+configure = ["--disable-static", "--disable-specs", "--disable-docs", "--without-doxygen", "--without-xmlto", "--without-fop", "--without-xsltproc"]
+fixup = '''
+find "$DESTDIR" -name "*.la" -delete
+'''
