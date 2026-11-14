@@ -3,14 +3,14 @@ name = "ast"
 version = "0.1.0"
 description = "The package manager of asterOS"
 license = "BSD-3-Clause"
-revision = 3
+revision = 4
 arch = ["x86_64"]
 depends = ["glibc", "bubblewrap", "ca-certificates"]
 build_depends = ["rust-bin"]
 
 [source]
 url = "ast-0.1.0.tar.xz"
-sha256 = "0f7152e4c978878567aa54c7b62f4b8f9e3ff187dd967146000b92773e4a5347"
+sha256 = "41aef78b2cc9793ee300112b81475c6ed2019c4f1539a99b54f49ca0d7bdb19c"
 
 [build]
 style = "cargo"
