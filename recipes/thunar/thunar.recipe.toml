@@ -20,3 +20,6 @@ configure = ["--enable-maintainer-mode", "--disable-static", "--disable-gtk-doc"
 fixup = '''
 find "$DESTDIR" -name "*.la" -delete
 '''
+# the manual pages are generated from DocBook with its stylesheets, which are not in git: no docs
+make = ['SUBDIRS="icons thunarx thunar examples plugins po"']
+install_args = ['SUBDIRS="icons thunarx thunar examples plugins po"']
