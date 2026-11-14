@@ -1283,6 +1283,20 @@ description = "The kernel headers glibc is built against"
 license = "GPL-2.0-only WITH Linux-syscall-note"
 recipe = "3f5607afb8f6dcd3d80fd7f0164c9944aad9cb4b768182374cbe6954be4e2527"
 
+[linux-pam."git.28fce1fd-1"]
+arch = "x86_64"
+description = "Pluggable authentication modules"
+license = "BSD-3-Clause"
+depends = [
+    "libxcrypt",
+    "glibc",
+]
+build_depends = [
+    "flex",
+    "pkgconf",
+]
+recipe = "834a0b4becbd7d6d17ea5dd8c58b735a052aa26e5343cce5fb39674efed2b5a9"
+
 [llvm."git.392dfff9-1"]
 arch = "x86_64"
 description = "The LLVM compiler infrastructure (libraries, for Mesa)"
@@ -1685,6 +1699,104 @@ license = "MIT"
 depends = ["python"]
 recipe = "1c8a287a34f67a11809990f0685fc7cd5594af5ff3900b41e21666985fcc7013"
 
+[qtbase."git.025bdad1-1"]
+arch = "x86_64"
+description = "Qt 6 core, gui and network libraries (X11 xcb platform, no widgets)"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+depends = [
+    "libxcb",
+    "xcb-util",
+    "xcb-util-image",
+    "xcb-util-keysyms",
+    "xcb-util-renderutil",
+    "xcb-util-wm",
+    "xcb-util-cursor",
+    "libxkbcommon",
+    "libx11",
+    "libxi",
+    "libxext",
+    "libxrender",
+    "libxfixes",
+    "libice",
+    "libsm",
+    "fontconfig",
+    "freetype",
+    "harfbuzz",
+    "libpng",
+    "libjpeg-turbo",
+    "zlib",
+    "zstd",
+    "pcre2",
+    "dbus",
+    "mesa",
+    "libdrm",
+    "libepoxy",
+    "libxcb",
+    "glib",
+]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+    "perl",
+    "python",
+    "xorgproto",
+]
+recipe = "32c00e2448b6f1c90d53a2e1b81eacecec0aac2f9ec2c952a0081c16996d165e"
+
+[qtdeclarative."git.4332fbbb-1"]
+arch = "x86_64"
+description = "Qt 6 QML and Qt Quick"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+depends = [
+    "qtbase",
+    "qtshadertools",
+]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+    "python",
+]
+recipe = "61a4c4ab4d73b7c733091cc28756a1c46290915e5c916e790d99ebdb5080e594"
+
+[qtshadertools."git.bccd516b-1"]
+arch = "x86_64"
+description = "Qt 6 shader tools"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+depends = ["qtbase"]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+]
+recipe = "6a1a19373c26eb12aa2c61dadda3f506160482a6e25a610c45d9942ea7e8e520"
+
+[qtsvg."git.883a5853-1"]
+arch = "x86_64"
+description = "Qt 6 SVG support"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+depends = ["qtbase"]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+]
+recipe = "cd4cc2cd796593affd7af1b44bc11266b1a398ad48e3146f697d881d7d46ddf8"
+
+[qttools."git.613a6fbf-1"]
+arch = "x86_64"
+description = "Qt 6 lupdate, lrelease and the other command line tools"
+license = "LGPL-3.0-only OR GPL-3.0-only"
+depends = ["qtbase"]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+    "qtdeclarative",
+]
+recipe = "b3ace7d533214c16788ef657434a7d33cab08ac1a267902c8454a25530351a79"
+
 [readline."git.447b8290-1"]
 arch = "x86_64"
 description = "Line editing library"
@@ -1701,6 +1813,30 @@ depends = [
     "gcc",
 ]
 recipe = "ca742719caf8e104c02a0b03b90b150d7d101f640c1af1f811bbf8d864f9839d"
+
+[sddm."git.63780fcd-1"]
+arch = "x86_64"
+description = "Display manager"
+license = "GPL-2.0-or-later"
+depends = [
+    "qtbase",
+    "qtdeclarative",
+    "qtsvg",
+    "linux-pam",
+    "libxcb",
+    "libxau",
+    "libxkbcommon",
+    "xorg-server",
+    "xauth",
+    "dbus",
+]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+    "qttools",
+]
+recipe = "d61b401e3b6740ff68c8ac34cc3488106babb3cc4a5ddc38fda8a169bfcddc3a"
 
 [sed."4.9-1"]
 arch = "x86_64"
@@ -2004,6 +2140,29 @@ build_depends = [
 ]
 recipe = "81709b6e0a306cddd06bd258e887a32c098675504c79c1f9aec7fffb0a144dcd"
 
+[x11.1-1]
+arch = "x86_64"
+description = "X session: server, input, tools, terminal, drivers, firmware"
+depends = [
+    "xorg-server",
+    "xf86-input-libinput",
+    "xinit",
+    "xauth",
+    "xrandr",
+    "setxkbmap",
+    "xset",
+    "xsetroot",
+    "xrdb",
+    "xprop",
+    "xmodmap",
+    "xinput",
+    "xdpyinfo",
+    "xterm",
+    "mesa",
+    "linux-firmware",
+]
+recipe = "caa25e76daced8114401163d9f95a07cea6375efb38a0db2c5d1f0fb11198c9e"
+
 [xauth."git.6fe9365f-1"]
 arch = "x86_64"
 description = "X.Org application xauth"
@@ -2106,6 +2265,26 @@ depends = [
 ]
 build_depends = ["util-macros"]
 recipe = "d909f18e07a8bfaa0617a9f708d0cadcb1f9885549c0f093413f1cb7f4383100"
+
+[xfce4.1-1]
+arch = "x86_64"
+description = "Xfce desktop"
+depends = [
+    "x11",
+    "dbus",
+    "dejavu-fonts",
+    "librsvg",
+    "networkmanager",
+    "xfce4-session",
+    "xfce4-panel",
+    "xfwm4",
+    "xfdesktop",
+    "xfce4-settings",
+    "xfce4-appfinder",
+    "thunar",
+    "xfce4-terminal",
+]
+recipe = "eb48b69e7638cfed0bbc43103bd7b00c75fe2b83af99f7f871645f051bc9c997"
 
 [xfce4-appfinder."git.a96aaffd-1"]
 arch = "x86_64"
