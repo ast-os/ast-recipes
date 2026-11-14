@@ -558,6 +558,13 @@ description = "Arbitrary precision arithmetic"
 license = "LGPL-3.0-or-later"
 recipe = "d2ccf014bb9b833960ce769669abdfcd29ae5d6b581ecdb70a0d1e6744a08b54"
 
+[gnulib."git.d89ea630-1"]
+arch = "x86_64"
+description = "GNU portability library (sources, for packages built from git)"
+license = "GPL-3.0-or-later"
+depends = ["python"]
+recipe = "a3f303bc23987246badb16cefbc99dbc722253694eff52fb30b2bfb923cf6af1"
+
 [gperf."3.3-1"]
 arch = "x86_64"
 description = "Perfect hash function generator"
@@ -841,6 +848,34 @@ license = "BSD-3-Clause"
 build_depends = ["cmake"]
 recipe = "fa25a277264ef16988dcf6d6cb5cb3b724eba5f591744ed983e48e24adf95c27"
 
+[libndp."git.2730638b-1"]
+arch = "x86_64"
+description = "IPv6 Neighbor Discovery Protocol library"
+license = "LGPL-2.1-or-later"
+depends = ["glibc"]
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "m4",
+]
+recipe = "08cc6a88130aa2e4e0269f32df01acbd371854d8bbfe2b910b6bc33fbb6412e2"
+
+[libnl."git.43878680-1"]
+arch = "x86_64"
+description = "Netlink library"
+license = "LGPL-2.1-only"
+depends = ["glibc"]
+build_depends = [
+    "autoconf",
+    "automake",
+    "libtool",
+    "m4",
+    "flex",
+    "bison",
+]
+recipe = "c5ddd9ca3855c95b5de56fc231a14f1edec9fe6b1ab28cdc329f5a133fc140a0"
+
 [libpciaccess."git.38e6f15f-1"]
 arch = "x86_64"
 description = "PCI access"
@@ -891,6 +926,17 @@ arch = "x86_64"
 description = "Generic library support script"
 license = "GPL-2.0-or-later"
 recipe = "f34340f3f3b0872be5cfddaad47f41bede6d14b408f77f3281cb2563cc9735bd"
+
+[libuv."git.840404ce-1"]
+arch = "x86_64"
+description = "Asynchronous I/O library"
+license = "MIT"
+depends = ["glibc"]
+build_depends = [
+    "cmake",
+    "ninja",
+]
+recipe = "43acdc193562e6bccbf4a6df66836bf1509a67e6ad8f624fab66303a78cddc9c"
 
 [libwnck."git.75e56cf1-1"]
 arch = "x86_64"
@@ -1249,6 +1295,44 @@ depends = [
 build_depends = ["cmake"]
 recipe = "f4609a03d42bbbf17003e68b09e9428e6373efbee4c55979f4d991cb7fe2ecf1"
 
+[lpeg."git.73a96935-1"]
+arch = "x86_64"
+description = "Parsing expression grammars for Lua"
+license = "MIT"
+depends = ["luajit"]
+build_depends = [
+    "make",
+    "gcc",
+    "pkgconf",
+]
+recipe = "0b6ca4c712635bdba531b791dbaea6aacf2398f8a85c8cb9cda7366c23911284"
+
+[luajit."git.63c8f1a9-1"]
+arch = "x86_64"
+description = "Just-in-time compiler for Lua"
+license = "MIT"
+depends = ["glibc"]
+build_depends = [
+    "make",
+    "gcc",
+]
+recipe = "bd28ac72013cd03fcfa6f93eb1b29392715bca4c4e09f14ce85150f45dbbe2b7"
+
+[luv."git.61e08e7b-1"]
+arch = "x86_64"
+description = "libuv bindings for Lua"
+license = "Apache-2.0"
+depends = [
+    "libuv",
+    "luajit",
+]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+]
+recipe = "0d5c6b84b3cafc9d14d7059dc0ae59cad0e72a0aa74a8aef5bea9cfd1988a1e0"
+
 [lz4."git.ebb370ca-1"]
 arch = "x86_64"
 description = "LZ4 compression"
@@ -1340,6 +1424,26 @@ description = "Multitouch protocol translation library"
 license = "MIT"
 recipe = "6da09b4152e300971b828c0491adde29bfb8a134cdc0129847d625014e928469"
 
+[nano."git.a30a7ec2-1"]
+arch = "x86_64"
+description = "Small text editor"
+license = "GPL-3.0-or-later"
+depends = [
+    "ncurses",
+    "glibc",
+]
+build_depends = [
+    "gnulib",
+    "autoconf",
+    "automake",
+    "libtool",
+    "gettext",
+    "texinfo",
+    "m4",
+    "pkgconf",
+]
+recipe = "6b8205a78d67e8ecb5cc0669da7edb763216484fc8f80e8991ba1c6bf6eb9c10"
+
 [ncurses."git.0096bd40-1"]
 arch = "x86_64"
 description = "Terminal handling library"
@@ -1353,12 +1457,63 @@ license = "MIT"
 depends = ["bash"]
 recipe = "63c17ef2e80a43226db36c94a16275c80b6d9abfff2fcce23e12ded1246b9a41"
 
+[networkmanager."git.7406dfbc-1"]
+arch = "x86_64"
+description = "Network connection manager"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+depends = [
+    "dbus",
+    "glib",
+    "libndp",
+    "eudev",
+    "util-linux",
+    "curl",
+    "readline",
+    "wpa_supplicant",
+    "iproute2",
+]
+build_depends = [
+    "perl",
+    "python",
+    "libxslt",
+    "gettext",
+]
+recipe = "31c624904808199e30bed50c760d6627f50345789e849e48e4f46b5d11902294"
+
 [ninja."git.79feac0f-1"]
 arch = "x86_64"
 description = "Build system"
 license = "Apache-2.0"
 depends = ["python"]
 recipe = "a2f4abdb6a90b7a9d79733702c66032c8b5720c6b341a89275e2318ffe54dcd8"
+
+[nvim."git.779c3696-1"]
+arch = "x86_64"
+description = "Vim-based text editor"
+license = "Apache-2.0 AND Vim"
+depends = [
+    "luajit",
+    "luv",
+    "lpeg",
+    "libuv",
+    "tree-sitter",
+    "utf8proc",
+    "unibilium",
+    "glibc",
+    "tree-sitter-c",
+    "tree-sitter-lua",
+    "tree-sitter-vim",
+    "tree-sitter-vimdoc",
+    "tree-sitter-query",
+    "tree-sitter-markdown",
+]
+build_depends = [
+    "cmake",
+    "ninja",
+    "pkgconf",
+    "gettext",
+]
+recipe = "066c50cdaf973c5a7c09f1960feff74b2a71c8ac5c008b9fbe361349657779f5"
 
 [openssl."git.0893a623-1"]
 arch = "x86_64"
@@ -1674,11 +1829,92 @@ depends = [
 build_depends = ["xfce4-dev-tools"]
 recipe = "2d3283be72e53305371957252b7b3ef56384b8776b3063f1d0942b59b84aeb90"
 
+[tree-sitter."git.3fb7be49-1"]
+arch = "x86_64"
+description = "Incremental parsing library"
+license = "MIT"
+depends = ["glibc"]
+build_depends = [
+    "make",
+    "gcc",
+]
+recipe = "2f278580f8d17d32dc8a1f21cfb0cf021eeaefd8cd157de63515cbe40763fee7"
+
+[tree-sitter-c."git.b780e47f-1"]
+arch = "x86_64"
+description = "C parser for tree-sitter"
+license = "MIT"
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+recipe = "f40341e1dc9d6588977517f2e3506ee252e2f7b3b51dc1627ffcde8fb66bdfef"
+
+[tree-sitter-lua."git.10fe0054-1"]
+arch = "x86_64"
+description = "Lua parser for tree-sitter"
+license = "MIT"
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+recipe = "4382448b29cf689773109d255555287e8b13e4d174d12d6d2d386b8c1c524701"
+
+[tree-sitter-markdown."git.41ff24a6-1"]
+arch = "x86_64"
+description = "Markdown parsers for tree-sitter"
+license = "MIT"
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+recipe = "7a2ff42cbc71471c174b01bc45167feeabad99dfb770341ca74736e39908782a"
+
+[tree-sitter-query."git.a225e21d-1"]
+arch = "x86_64"
+description = "Tree-sitter query parser for tree-sitter"
+license = "MIT"
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+recipe = "ac772c2736cd747f67ea3ea7214d3ca9fcc67cb7fc180a48bb53d9fccb0ddb37"
+
+[tree-sitter-vim."git.3092fcd9-1"]
+arch = "x86_64"
+description = "Vimscript parser for tree-sitter"
+license = "MIT"
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+recipe = "7c70b558372e60e53b9284c11451557a7174c7930a9b28cf8ab144298813fbe0"
+
+[tree-sitter-vimdoc."git.13add92d-1"]
+arch = "x86_64"
+description = "Vim help parser for tree-sitter"
+license = "Apache-2.0"
+depends = ["tree-sitter"]
+build_depends = ["gcc"]
+recipe = "7d623ba8ae11ac163b87584718f006906cce01cb97865375d79e90421508b6cb"
+
 [tzdata."git.7e1145bf-1"]
 arch = "x86_64"
 description = "Time zone database"
 license = "LicenseRef-Public-Domain"
 recipe = "d1c1268389b1c72ed39cd2f61404acabbe0c5cfc8cf91c5e44f2ca8f4e1dadcb"
+
+[unibilium."git.b0567db6-1"]
+arch = "x86_64"
+description = "Terminfo parsing library"
+license = "LGPL-3.0-or-later"
+depends = ["glibc"]
+build_depends = [
+    "cmake",
+    "ninja",
+]
+recipe = "7c2f92bc8749df0efc838056e457d0e7e10c76d45f6a5e618e90f3a790242363"
+
+[utf8proc."git.79cdd5ab-1"]
+arch = "x86_64"
+description = "Unicode string processing library"
+license = "MIT"
+depends = ["glibc"]
+build_depends = [
+    "cmake",
+    "ninja",
+]
+recipe = "15c819b0600b6f80372a4dd0223de3aa917319b1592200c37657835d5fca1355"
 
 [util-linux."git.67b6f19a-4"]
 arch = "x86_64"
@@ -1750,6 +1986,23 @@ description = "Wayland protocol extensions"
 license = "MIT"
 depends = ["wayland"]
 recipe = "11633a86ae45aa5528ac08641863520778021209c97564a40bcbdefd8d1878fc"
+
+[wpa_supplicant."git.831364bf-1"]
+arch = "x86_64"
+description = "WPA/WPA2/WPA3 supplicant for wifi"
+license = "BSD-3-Clause"
+depends = [
+    "libnl",
+    "openssl",
+    "dbus",
+    "readline",
+]
+build_depends = [
+    "pkgconf",
+    "make",
+    "gcc",
+]
+recipe = "81709b6e0a306cddd06bd258e887a32c098675504c79c1f9aec7fffb0a144dcd"
 
 [xauth."git.6fe9365f-1"]
 arch = "x86_64"
