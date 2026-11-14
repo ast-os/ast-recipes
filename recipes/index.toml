@@ -351,6 +351,16 @@ build_depends = [
 ]
 recipe = "9e22862087dee0be800878c142663591d5294feddc8bb8b43115bb3e00313d3b"
 
+[fast_float."git.dbeabeeb-1"]
+arch = "x86_64"
+description = "Number parsing library (headers)"
+license = "Apache-2.0 OR MIT"
+build_depends = [
+    "cmake",
+    "ninja",
+]
+recipe = "264c60ec5a19d06fa0021f4f43b3c2fb9742ed26d9d689785049a1a25f6a9347"
+
 [fastfetch."git.8c9d9c04-1"]
 arch = "x86_64"
 description = "Fast system information tool written in C"
@@ -397,6 +407,16 @@ build_depends = [
     "texinfo",
 ]
 recipe = "6fa91050f7e60dbb1b7fa9a616a27a15eaa2d341a5653fa4b7b4fa07b254c08e"
+
+[fmt."git.208219da-1"]
+arch = "x86_64"
+description = "Formatting library"
+license = "MIT"
+build_depends = [
+    "cmake",
+    "ninja",
+]
+recipe = "ef6f38da12d237aa8782cf2e46c9f5bb374b02ffd3ec29b19e908be0574c5ad2"
 
 [font-util."git.5c92c114-1"]
 arch = "x86_64"
@@ -1573,6 +1593,17 @@ depends = [
 ]
 recipe = "581d25e0789b0e38d012d5664442721fd7aa337268aa365c4cc2cc6b04ee7aae"
 
+[simdutf."git.59589cd3-1"]
+arch = "x86_64"
+description = "Unicode validation and transcoding"
+license = "Apache-2.0 OR MIT"
+depends = ["glibc"]
+build_depends = [
+    "cmake",
+    "ninja",
+]
+recipe = "416937fbda655fb2a2f6523f0613f40d04eaa41cc15c91d474e74ee9983ddf31"
+
 [squashfs-tools."git.708c59ae-1"]
 arch = "x86_64"
 description = "Tools to create and extract squashfs filesystems"
@@ -1679,6 +1710,46 @@ description = "Text editor"
 license = "Vim"
 depends = ["ncurses"]
 recipe = "e6f4e6db6ca1797afd91eb02559acbfe7d2af51fa6d4098123b8d471d8b7f324"
+
+[vte."git.f2223e45-1"]
+arch = "x86_64"
+description = "Terminal widget for GTK 3"
+license = "LGPL-3.0-or-later"
+depends = [
+    "gtk+",
+    "glib",
+    "pango",
+    "cairo",
+    "pcre2",
+    "lz4",
+    "fribidi",
+    "simdutf",
+]
+build_depends = [
+    "fmt",
+    "fast_float",
+    "gperf",
+    "gettext",
+]
+recipe = "62dd779e8e2681798a2f36e81027cc0220bae51d41e0582511ac748c04221eda"
+
+[wayland."git.87cc8a87-1"]
+arch = "x86_64"
+description = "Wayland protocol library"
+license = "MIT"
+depends = [
+    "libffi",
+    "expat",
+]
+build_depends = ["libxml2"]
+recipe = "3ca514d440d19aeccc901b6b6fa0dab3499752712fc8e26175686dc6733e88a9"
+
+[wayland-protocols."git.3eab2dcc-1"]
+arch = "x86_64"
+description = "Wayland protocol extensions"
+license = "MIT"
+depends = ["wayland"]
+recipe = "11633a86ae45aa5528ac08641863520778021209c97564a40bcbdefd8d1878fc"
 
 [xauth."git.6fe9365f-1"]
 arch = "x86_64"
@@ -1867,6 +1938,24 @@ depends = [
 ]
 build_depends = ["xfce4-dev-tools"]
 recipe = "d3df8a50bbf4469f7c9cd792570814a00c89b83174cb0530301fccaea59ce233"
+
+[xfce4-terminal."git.749be822-1"]
+arch = "x86_64"
+description = "Xfce terminal emulator"
+license = "GPL-2.0-or-later"
+depends = [
+    "vte",
+    "gtk+",
+    "libxfce4ui",
+    "libxfce4util",
+    "xfconf",
+    "libx11",
+    "pcre2",
+    "desktop-file-utils",
+    "hicolor-icon-theme",
+]
+build_depends = ["xfce4-dev-tools"]
+recipe = "10d0ab20ae545aaa55a10a619decf22f9fc91d44851080b002bc0f8a3b3caf99"
 
 [xfconf."git.078859af-1"]
 arch = "x86_64"
