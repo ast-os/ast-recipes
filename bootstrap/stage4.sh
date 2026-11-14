@@ -9,8 +9,8 @@ KEY=${ASTEROS_KEY:-$HOME/.config/asteros-keys/asteros}   # the release key (secr
 
 # ast itself, the recipes as a repository, its configuration, the sources as a mirror
 install -m755 "$ASTBIN/ast" "$ASTBIN/astpkg" "$AST/usr/bin/"
-rm -rf "$AST/repo"; mkdir -p "$AST/repo"
-"$ASTBIN/astpkg" publish "$HERE/recipes" --no-build --out "$AST/repo" --name ast --arch x86_64 --channel stable --key "$KEY.key" --files "$HERE/work/dist" >/dev/null
+rm -rf "$AST/repo"; cp -a "$HERE/recipes" "$AST/repo"
+"$ASTBIN/astpkg" index "$AST/repo" --name ast --arch x86_64 --channel stable --key "$KEY.key" >/dev/null
 mkdir -p "$AST/etc/ast-bootstrap/keys" "$AST/var/cache/ast" "$AST"/{dev,proc,sys,run,sources}
 cp "$KEY.pub" "$AST/etc/ast-bootstrap/keys/asteros.pub"
 cat > "$AST/etc/ast-bootstrap/ast.toml" <<TOML

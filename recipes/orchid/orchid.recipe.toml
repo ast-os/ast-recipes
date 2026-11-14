@@ -10,7 +10,7 @@ build_depends = ["rust-bin"]
 config_files = ["/etc/orchid/services/efivars.toml", "/etc/orchid/services/fsck.toml", "/etc/orchid/services/hwclock.toml", "/etc/orchid/services/loopback.toml", "/etc/orchid/services/mounts.toml", "/etc/orchid/services/random-seed.toml", "/etc/orchid/services/rescue-shell.toml", "/etc/orchid/services/rootfs.toml", "/etc/orchid/services/swap.toml", "/etc/orchid/services/sysctl.toml"]
 
 [source]
-url = "orchid-1.0.0.tar.xz"
+url = "orchid/orchid-1.0.0.tar.xz"
 sha256 = "6c5b1daee529e748f6aa08bc521cee0dabb02c67b5929f1209c8de218ac3f507"
 
 [build]
