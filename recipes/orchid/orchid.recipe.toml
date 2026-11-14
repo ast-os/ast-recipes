@@ -3,7 +3,7 @@ name = "orchid"
 version = "1.0.0"
 description = "The init system of asterOS"
 license = "BSD-3-Clause"
-revision = 5
+revision = 6
 arch = ["x86_64"]
 depends = ["glibc"]
 build_depends = ["rust-bin"]
@@ -11,7 +11,7 @@ config_files = ["/etc/orchid/services/efivars.toml", "/etc/orchid/services/fsck.
 
 [source]
 url = "orchid-1.0.0.tar.xz"
-sha256 = "8b40c37c6a397470903b7cf6e25573e818da7bb97858cedfdb2ef369e8773345"
+sha256 = "6c5b1daee529e748f6aa08bc521cee0dabb02c67b5929f1209c8de218ac3f507"
 
 [build]
 style = "cargo"
