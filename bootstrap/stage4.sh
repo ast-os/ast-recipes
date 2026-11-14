@@ -51,6 +51,7 @@ for p in "$@"; do
     echo "== $p"
     ast -iy --adopt "$p" || { echo "FAILED: $p"; exit 1; }
 done
+if [ "${POST:-1}" = 1 ]; then
 # recipes that changed since the last run (the host-built ast of the first lines becomes the package)
 ast -uay --adopt
 # the cross toolchain of the first stages is not part of the system (the temporary tools were
@@ -59,8 +60,10 @@ rm -rf /usr/x86_64-aster-linux-gnu /usr/lib/gcc/x86_64-aster-linux-gnu /usr/libe
 rm -f /usr/bin/x86_64-aster-linux-gnu-*
 # what only the build needed
 for p in rust-bin; do ast -l | grep -q "^$p  " && ast -ry "$p"; done
+fi
 echo "== stage 4 done"
 INNER
+export STAGE4_POST=${STAGE4_POST:-1}   # 0: only the packages named, no upgrade or clean-up afterwards
 exec unshare --mount --pid --fork --propagation private -- bash -ec '
     mount --rbind /dev "$0/dev"; mount --make-rslave "$0/dev"
     mount -t proc proc "$0/proc"
@@ -68,5 +71,5 @@ exec unshare --mount --pid --fork --propagation private -- bash -ec '
     mount -t tmpfs tmpfs "$0/run"
     mount --bind "$1" "$0/sources"
     shift 1
-    exec chroot "$0" /usr/bin/env -i HOME=/root TERM="$TERM" PATH=/usr/bin:/usr/sbin LC_ALL=POSIX /bin/bash /stage4-chroot.sh "$@"
+    exec chroot "$0" /usr/bin/env -i HOME=/root TERM="$TERM" PATH=/usr/bin:/usr/sbin LC_ALL=POSIX POST="$STAGE4_POST" /bin/bash /stage4-chroot.sh "$@"
 ' "$AST" "$SRC" $list
