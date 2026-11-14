@@ -12,4 +12,4 @@ commit = "0bd66153abb6bd548febb82337db79cbefe694b0"
 
 [build]
 style = "meson"
-configure = ["-Dintrospection=disabled", "-Dman=false", "-Ddocumentation=false", "-Dtests=false", "-Dinstalled_tests=false", "-Dothers=disabled", "-Dtiff=disabled", "-Dpng=enabled", "-Djpeg=enabled", "-Dbuiltin_loaders=png,jpeg", "-Dgio_sniffing=false"]
+configure = ["-Dintrospection=disabled", "-Dman=false", "-Ddocumentation=false", "-Dtests=false", "-Dinstalled_tests=false", "-Dothers=disabled", "-Dglycin=disabled", "-Dtiff=disabled", "-Dpng=enabled", "-Djpeg=enabled", "-Dbuiltin_loaders=png,jpeg", "-Dgio_sniffing=false"]

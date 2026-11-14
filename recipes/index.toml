@@ -400,7 +400,7 @@ depends = [
     "libjpeg-turbo",
     "shared-mime-info",
 ]
-recipe = "d8c246ba4faf1b1d2899b639d6124f5c76060bfcc23a4dfdc90211f113f8234c"
+recipe = "d80d1d6d940fe9a4272f3691a57d80c9d6b4c0718e0e00e3fcdbc1d25f6e2310"
 
 [gettext."0.26-1"]
 arch = "x86_64"
