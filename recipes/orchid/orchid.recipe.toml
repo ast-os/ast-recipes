@@ -3,7 +3,7 @@ name = "orchid"
 version = "1.0.0"
 description = "The init system of asterOS"
 license = "BSD-3-Clause"
-revision = 9
+revision = 10
 arch = ["x86_64"]
 depends = ["glibc"]
 build_depends = ["rust-bin"]
@@ -11,7 +11,7 @@ config_files = ["/etc/orchid/services/efivars.toml", "/etc/orchid/services/fsck.
 
 [source]
 git = "https://github.com/ast-os/ast-orchid"
-commit = "5aec7c8b259a4bcdfa32e5ee9b804794603b373a"
+commit = "79a939d114b3fe1e9c9e87a7c49fb29b6c5fe933"
 
 [build]
 style = "cargo"
