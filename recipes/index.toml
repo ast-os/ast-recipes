@@ -28,6 +28,14 @@ depends = [
 build_depends = ["rust-bin"]
 recipe = "8f529366a8b52b39eab6f6029c4bf1645a640164268c4ef0f6046e511311caf0"
 
+[ast-pkg."git.52236a8b-1"]
+arch = "x86_64"
+description = "Package builder for ast"
+license = "BSD-3-Clause"
+depends = ["glibc"]
+build_depends = ["rust-bin"]
+recipe = "12a41c5b78b12ad774d81a97166e88c016b1b8668e1b2b810ddd993b452a7c72"
+
 [aster."git.58b15fc9-4"]
 arch = "x86_64"
 description = "asterOS: the layout of the file system, the system accounts, os-release, profile, fstab, the configuration and the key of ast"
