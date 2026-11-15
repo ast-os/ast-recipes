@@ -1,0 +1,16 @@
+[package]
+name = "ast-pkg"
+description = "Package builder for ast"
+license = "BSD-3-Clause"
+revision = 1
+arch = ["x86_64"]
+depends = ["glibc"]
+build_depends = ["rust-bin"]
+
+[source]
+git = "https://github.com/ast-os/ast-pkg"
+commit = "52236a8b9ccf74c0ca3df21e04900524b48f5718"
+
+[build]
+style = "cargo"
+bins = ["astpkg"]
